@@ -19,6 +19,7 @@ COUNTRY_MAP = {
     "polen": "PL", "tschechien": "CZ", "dänemark": "DK", "schweden": "SE",
     "norwegen": "NO", "finnland": "FI", "iran": "IR", "israel": "IL",
     "kanada": "CA", "australien": "AU", "indien": "IN", "japan": "JP",
+    "south africa": "ZA", "südafrika": "ZA",
 }
 
 VECTOR_MAP = {
@@ -56,10 +57,15 @@ def _slugify(raw: str) -> str:
     return s or "unknown"
 
 
-def _parse_date(raw: str) -> tuple[date, str]:
-    """Return (date, precision) from strings like '25.12.2014' or '01.07.2015*'."""
+def _parse_date(raw: Any) -> tuple[date, str]:
+    """Return (date, precision) from strings like '25.12.2014' or '01.07.2015*',
+    or from datetime/date objects as produced by openpyxl."""
     precision = "day"
-    s = raw.strip()
+    if isinstance(raw, datetime):
+        return raw.date(), precision
+    if isinstance(raw, date):
+        return raw, precision
+    s = str(raw).strip()
     if s.endswith("*"):
         precision = "month"
         s = s[:-1]
@@ -119,7 +125,7 @@ def _actor(raw: str) -> tuple[str | None, str]:
 
 def _row_to_doc(headers: list[str], row: tuple[Any, ...]) -> dict[str, Any]:
     data = dict(zip(headers, row))
-    event_date, precision = _parse_date(str(data["Datum"]))
+    event_date, precision = _parse_date(data["Datum"])
     confirmed = _bool_de(data.get("Bestätigung"))
     actor_name, actor_conf = _actor(str(data.get("Täter") or ""))
 

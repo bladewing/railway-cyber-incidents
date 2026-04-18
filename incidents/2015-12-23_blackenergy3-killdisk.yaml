@@ -1,0 +1,50 @@
+id: 2015-12-23_blackenergy3-killdisk
+schema_version: '1.0'
+event_date: '2015-12-23'
+event_date_precision: day
+reported_date: null
+countries_impacted:
+- UA
+region: null
+coordinates: null
+target_organization: null
+industry_sector: null
+operator_type: null
+attack_vector: unknown
+supply_chain: false
+malware:
+- name: BlackEnergy3
+  family: null
+  mitre_software_id: null
+- name: KillDIsk
+  family: null
+  mitre_software_id: null
+extortion: false
+motive: unknown
+mitre_attack_techniques: null
+threat_actor: Sandwurm
+threat_actor_country: null
+attribution_confidence: suspected
+confirmation_status: reported
+affected_systems:
+- unclear_system
+data_published: false
+impact: null
+description_en: Imported from DZSF raw data on 2015-12-23. Needs review and narrative
+  description.
+description_de: null
+sources:
+- url: https://www.dzsf.bund.de/
+  type: academic_paper
+  publisher: DZSF
+  published_date: '2023-05-16'
+  language: de
+  accessed_date: null
+contributors:
+- DZSF import
+last_updated: '2026-04-19'
+notes: null
+provenance:
+  origin: DZSF-2020-23-S-1202
+  imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
+  needs_review: true
