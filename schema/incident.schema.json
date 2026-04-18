@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://railway-cyber-incidents.org/schema/incident-v1.json",
+  "title": "Railway Cyber Incident",
+  "type": "object",
+  "required": [
+    "id", "schema_version", "event_date", "event_date_precision",
+    "countries_impacted", "confirmation_status", "description_en",
+    "sources", "last_updated"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}_[a-z0-9][a-z0-9-]*$"},
+    "schema_version": {"type": "string", "const": "1.0"},
+    "event_date": {"type": "string", "format": "date"},
+    "event_date_precision": {"type": "string", "enum": ["day", "month", "year"]},
+    "reported_date": {"type": ["string", "null"], "format": "date"},
+    "countries_impacted": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "string", "pattern": "^[A-Z]{2}$"}
+    },
+    "region": {"type": ["string", "null"]},
+    "coordinates": {
+      "type": ["object", "null"],
+      "required": ["lat", "lon"], "additionalProperties": false,
+      "properties": {
+        "lat": {"type": "number", "minimum": -90, "maximum": 90},
+        "lon": {"type": "number", "minimum": -180, "maximum": 180}
+      }
+    },
+    "target_organization": {"type": ["string", "null"]},
+    "industry_sector": {
+      "type": ["string", "null"],
+      "enum": ["freight", "long_distance_passenger", "regional_passenger",
+               "urban_transit", "infrastructure_manager",
+               "rolling_stock_manufacturer", "other", null]
+    },
+    "operator_type": {
+      "type": ["string", "null"],
+      "enum": ["incumbent", "private", "public_authority", "unknown", null]
+    },
+    "attack_vector": {
+      "type": ["string", "null"],
+      "enum": ["exploit", "phishing", "supply_chain", "insider", "physical",
+               "credential_theft", "unknown", null]
+    },
+    "supply_chain": {"type": ["boolean", "null"]},
+    "malware": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "object", "required": ["name"], "additionalProperties": false,
+        "properties": {
+          "name": {"type": "string"},
+          "family": {"type": ["string", "null"]},
+          "mitre_software_id": {"type": ["string", "null"], "pattern": "^S[0-9]{4}$"}
+        }
+      }
+    },
+    "extortion": {"type": ["boolean", "null"]},
+    "motive": {
+      "type": ["string", "null"],
+      "enum": ["financial", "espionage", "disruption", "hacktivism",
+               "state_geopolitical", "unknown", "mixed", null]
+    },
+    "mitre_attack_techniques": {
+      "type": ["array", "null"],
+      "items": {"type": "string", "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"}
+    },
+    "threat_actor": {"type": ["string", "null"]},
+    "threat_actor_country": {"type": ["string", "null"], "pattern": "^[A-Z]{2}$"},
+    "attribution_confidence": {
+      "type": ["string", "null"],
+      "enum": ["confirmed", "reported", "suspected", "rumored", "unknown", null]
+    },
+    "confirmation_status": {
+      "type": "string",
+      "enum": ["confirmed", "reported", "suspected", "rumored", "unknown"]
+    },
+    "affected_systems": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "string",
+        "enum": ["unclear_system", "internal_communication",
+                 "train_driver_communication", "payment_system", "station_it",
+                 "internal_train_tracking", "passenger_information", "website",
+                 "data", "rail_operations"]
+      }
+    },
+    "data_published": {"type": ["boolean", "null"]},
+    "impact": {
+      "type": ["object", "null"], "additionalProperties": false,
+      "properties": {
+        "scope": {
+          "type": ["string", "null"],
+          "enum": ["local", "regional", "national", "international", "unknown", null]
+        },
+        "duration_hours": {"type": ["integer", "null"], "minimum": 0},
+        "magnitude": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": {
+            "affected_trains": {"type": ["integer", "null"], "minimum": 0},
+            "affected_passengers": {"type": ["integer", "null"], "minimum": 0},
+            "monetary_damage_eur": {"type": ["integer", "null"], "minimum": 0}
+          }
+        },
+        "data_compromise": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": {
+            "intellectual_property": {"type": ["boolean", "null"]},
+            "organizational_data": {"type": ["boolean", "null"]},
+            "customer_data": {"type": ["boolean", "null"]}
+          }
+        }
+      }
+    },
+    "description_en": {"type": "string", "minLength": 10},
+    "description_de": {"type": ["string", "null"]},
+    "sources": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["url", "type"], "additionalProperties": false,
+        "properties": {
+          "url": {"type": "string", "format": "uri"},
+          "type": {
+            "type": "string",
+            "enum": ["cert_advisory", "news", "press_release",
+                     "official_statement", "academic_paper", "blog", "other"]
+          },
+          "publisher": {"type": ["string", "null"]},
+          "published_date": {"type": ["string", "null"], "format": "date"},
+          "language": {"type": ["string", "null"], "pattern": "^[a-z]{2}$"},
+          "accessed_date": {"type": ["string", "null"], "format": "date"}
+        }
+      }
+    },
+    "contributors": {"type": ["array", "null"], "items": {"type": "string"}},
+    "last_updated": {"type": "string", "format": "date"},
+    "notes": {"type": ["string", "null"]},
+    "provenance": {
+      "type": ["object", "null"], "additionalProperties": false,
+      "properties": {
+        "origin": {"type": ["string", "null"]},
+        "imported_from": {"type": ["string", "null"]},
+        "needs_review": {"type": ["boolean", "null"]}
+      }
+    }
+  }
+}
