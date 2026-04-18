@@ -1,19 +1,19 @@
 .PHONY: install validate build test lint clean
 
 install:
-	python -m pip install -e ".[dev]"
+	uv sync
 
 validate:
-	python scripts/validate.py
+	uv run python scripts/validate.py
 
 build:
-	python scripts/build_release.py
+	uv run python scripts/build_release.py
 
 test:
-	pytest -v
+	uv run pytest -v
 
 lint:
-	ruff check .
+	uv run ruff check .
 
 clean:
 	rm -rf dist/ .pytest_cache/ .ruff_cache/ **/__pycache__

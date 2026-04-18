@@ -36,8 +36,7 @@ top = sys.groupby("system").size().sort_values(ascending=False)
 ### Validate the whole package
 
 ```bash
-pip install frictionless
-frictionless validate dist/datapackage.json
+uvx frictionless validate dist/datapackage.json
 ```
 
 ## Contributing
