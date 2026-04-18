@@ -1,11 +1,69 @@
 # Railway Cyber Incidents
 
-An open, machine-readable dataset of publicly reported cyber incidents
-against railway systems worldwide.
+An open, machine-readable dataset of publicly reported cyber incidents against
+railway systems worldwide. Intended as a citable research resource, with
+structured data suitable for journalism and public-interest analysis.
 
-**Status:** pre-release (v0.1.0 in preparation).
-**Data license:** CC-BY 4.0 (see `LICENSE`).
-**Code license:** MIT (see `LICENSE-CODE`).
+**Latest release:** v0.1.0 (pending) · **Data license:** CC-BY 4.0 ·
+**Code license:** MIT · **Living dataset — contributions welcome.**
 
-See `CODEBOOK.md` for field definitions and `CONTRIBUTING.md` for how
-to add a new incident.
+## What's in the box
+
+- `incidents/*.yaml` — one file per incident (the source of truth).
+- `schema/incident.schema.json` — JSON Schema, validates every entry.
+- `vocabularies/*.yaml` — controlled values for systems, vectors, sectors, etc.
+- `dist/` *(generated, not checked in)* — flat CSV, long-format CSVs, JSONL,
+  and a Frictionless Data Package.
+
+## Quick start
+
+### Load the data in Python
+
+```python
+import pandas as pd
+df = pd.read_csv("dist/incidents.csv")
+```
+
+### Load all affected systems (long format)
+
+```python
+sys = pd.read_csv("dist/affected_systems.csv")
+top = sys.groupby("system").size().sort_values(ascending=False)
+```
+
+### Validate the whole package
+
+```bash
+pip install frictionless
+frictionless validate dist/datapackage.json
+```
+
+## Contributing
+
+Read `CONTRIBUTING.md` and copy `incidents/TEMPLATE.yaml`. Then open a PR.
+
+## Field definitions
+
+See `CODEBOOK.md`.
+
+## Citation
+
+See `CITATION.cff` — GitHub renders a "Cite this repository" button, and
+Zenodo mints a DOI per tagged release.
+
+## Schema evolution
+
+- MINOR bumps: backward-compatible (new optional field, new vocab value).
+- MAJOR bumps: breaking; a migration script ships with the release.
+
+## Data provenance
+
+v0.1.0 ports the corpus of DZSF project 2020-23-S-1202
+("Identifikation bestehender Angriffspotentiale") published 2023. Imported
+entries are marked `provenance.needs_review: true` until manually verified.
+
+## Acknowledgements
+
+Built on prior work in DZSF project 2020-23-S-1202 and the publication
+"Cyberangriffe auf das Bahnsystem" (2023). Schema vocabulary inspired by
+VERIS (Verizon) and the CISSM Cyber Events Database.
