@@ -1,50 +1,81 @@
 id: 2017-05-13_wannacry
 schema_version: '1.0'
-event_date: '2017-05-13'
+event_date: '2017-05-12'
 event_date_precision: day
-reported_date: null
+reported_date: '2017-05-13'
 countries_impacted:
 - DE
 - RU
 region: null
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: Deutsche Bahn AG
+industry_sector: long_distance_passenger
+operator_type: incumbent
 attack_vector: exploit
 supply_chain: false
 malware:
-- name: Wannacry
-  family: null
-  mitre_software_id: null
+- name: WannaCry
+  family: ransomware
+  mitre_software_id: S0366
 extortion: true
 motive: financial
-mitre_attack_techniques: null
-threat_actor: Lazarous Group
-threat_actor_country: null
+mitre_attack_techniques:
+- T1486
+- T1190
+threat_actor: Lazarus Group
+threat_actor_country: KP
 attribution_confidence: suspected
 confirmation_status: confirmed
 affected_systems:
 - payment_system
 - station_it
-- rail_operations
+- passenger_information
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2017-05-13. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: 48
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On 12 May 2017, ticket machines and passenger information displays of
+  Deutsche Bahn were infected with the WannaCry ransomware as collateral
+  damage during the global outbreak exploiting the EternalBlue SMB flaw.
+  Train operations themselves were not affected. Russian Railways (RZD)
+  also reported WannaCry infections on office systems on the same day.
+description_de: >
+  Am 12. Mai 2017 wurden Fahrkartenautomaten und Anzeigetafeln der
+  Deutschen Bahn im Rahmen der globalen WannaCry-Welle (EternalBlue-SMB)
+  als Kollateralschaden infiziert. Der Zugbetrieb war nicht betroffen.
+  Auch die Russischen Eisenbahnen (RZD) meldeten am gleichen Tag
+  WannaCry-Infektionen auf Büro-IT.
 sources:
-- url: https://www.dzsf.bund.de/
-  type: academic_paper
-  publisher: DZSF
-  published_date: '2023-05-16'
+- url: https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2017/2017-197149-10G2.pdf
+  type: cert_advisory
+  publisher: BSI
+  published_date: '2017-05-13'
   language: de
-  accessed_date: null
+  accessed_date: '2026-04-19'
+- url: https://www.reuters.com/article/us-cyber-attack-germany-idUSKBN18905M
+  type: news
+  publisher: Reuters
+  published_date: '2017-05-13'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Collateral damage case: DB was not specifically targeted; WannaCry spread
+  via exposed SMBv1 services using the EternalBlue exploit. Attribution to
+  Lazarus Group (DPRK) is based on code-reuse analysis by multiple agencies.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false
