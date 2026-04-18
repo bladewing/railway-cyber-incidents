@@ -1,5 +1,7 @@
 # Railway Cyber Incidents
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19646516.svg)](https://doi.org/10.5281/zenodo.19646516)
+
 An open, machine-readable dataset of publicly reported cyber incidents against
 railway systems worldwide. Intended as a citable research resource, with
 structured data suitable for journalism and public-interest analysis.
