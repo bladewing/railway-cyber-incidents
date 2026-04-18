@@ -67,3 +67,14 @@ entries are marked `provenance.needs_review: true` until manually verified.
 Built on prior work in DZSF project 2020-23-S-1202 and the publication
 "Cyberangriffe auf das Bahnsystem" (2023). Schema vocabulary inspired by
 VERIS (Verizon) and the CISSM Cyber Events Database.
+
+## Maintainer: connecting Zenodo
+
+To mint a DOI per tagged release:
+
+1. Sign in to <https://zenodo.org> with your GitHub account.
+2. Open <https://zenodo.org/account/settings/github/>.
+3. Toggle ON the switch next to this repository.
+4. Push a tag matching `v*` (e.g. `git tag v0.1.0 && git push --tags`).
+5. Zenodo archives the GitHub Release and returns a DOI. Paste the DOI into
+   `CITATION.cff` under `identifiers` and commit.
