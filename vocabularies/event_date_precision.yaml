@@ -1,0 +1,7 @@
+values:
+  - id: day
+    label: Day-level precision (exact date)
+  - id: month
+    label: Month-level precision (day is placeholder 01)
+  - id: year
+    label: Year-level precision (month and day are placeholder 01-01)

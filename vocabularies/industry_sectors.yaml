@@ -1,0 +1,15 @@
+values:
+  - id: freight
+    label: Freight rail
+  - id: long_distance_passenger
+    label: Long-distance passenger rail
+  - id: regional_passenger
+    label: Regional passenger rail
+  - id: urban_transit
+    label: Urban transit (metro, S-Bahn, light rail, tram)
+  - id: infrastructure_manager
+    label: Infrastructure manager (network operator)
+  - id: rolling_stock_manufacturer
+    label: Rolling-stock manufacturer
+  - id: other
+    label: Other / mixed

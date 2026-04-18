@@ -1,0 +1,15 @@
+values:
+  - id: financial
+    label: Financial gain (ransomware, extortion, fraud)
+  - id: espionage
+    label: Espionage / intelligence collection
+  - id: disruption
+    label: Disruption / sabotage
+  - id: hacktivism
+    label: Hacktivism / ideological
+  - id: state_geopolitical
+    label: State-sponsored geopolitical
+  - id: unknown
+    label: Unknown
+  - id: mixed
+    label: Mixed motives

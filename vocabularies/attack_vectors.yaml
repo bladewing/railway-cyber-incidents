@@ -1,0 +1,15 @@
+values:
+  - id: exploit
+    label: Exploitation of a software vulnerability
+  - id: phishing
+    label: Phishing / social engineering
+  - id: supply_chain
+    label: Supply-chain compromise
+  - id: insider
+    label: Insider threat
+  - id: physical
+    label: Physical tampering / access
+  - id: credential_theft
+    label: Credential theft / abuse
+  - id: unknown
+    label: Unknown

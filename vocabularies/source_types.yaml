@@ -1,0 +1,15 @@
+values:
+  - id: cert_advisory
+    label: CERT / national cyber-security agency advisory
+  - id: news
+    label: News media article
+  - id: press_release
+    label: Press release from the affected organisation
+  - id: official_statement
+    label: Official statement from a government body
+  - id: academic_paper
+    label: Academic paper or conference publication
+  - id: blog
+    label: Blog post (vendor, researcher, independent)
+  - id: other
+    label: Other

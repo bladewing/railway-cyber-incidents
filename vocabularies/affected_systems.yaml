@@ -1,0 +1,22 @@
+# Controlled values for incidents[].affected_systems
+values:
+  - id: unclear_system
+    label: Unclear which system was affected
+  - id: internal_communication
+    label: Internal communication systems
+  - id: train_driver_communication
+    label: Communication with train driver (GSM-R, radio)
+  - id: payment_system
+    label: Payment / ticketing systems
+  - id: station_it
+    label: Station IT (displays, gates, staff PCs)
+  - id: internal_train_tracking
+    label: Internal train tracking / dispatch
+  - id: passenger_information
+    label: Passenger information systems
+  - id: website
+    label: Public website
+  - id: data
+    label: Data (administrative / corporate)
+  - id: rail_operations
+    label: Rail operations (signalling, interlocking, CBTC, ETCS)

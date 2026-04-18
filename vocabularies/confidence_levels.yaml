@@ -1,0 +1,11 @@
+values:
+  - id: confirmed
+    label: Confirmed by the affected party, an investigating authority, or a court
+  - id: reported
+    label: Reported by a primary source (CERT advisory, technical report, official statement)
+  - id: suspected
+    label: Suspected based on circumstantial evidence
+  - id: rumored
+    label: Rumored / alleged, no strong source
+  - id: unknown
+    label: Unknown

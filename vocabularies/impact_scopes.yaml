@@ -1,0 +1,11 @@
+values:
+  - id: local
+    label: Single station / local service
+  - id: regional
+    label: Regional (one region / one operator)
+  - id: national
+    label: National
+  - id: international
+    label: International / cross-border
+  - id: unknown
+    label: Unknown

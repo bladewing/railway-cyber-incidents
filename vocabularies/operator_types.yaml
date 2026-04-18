@@ -1,0 +1,9 @@
+values:
+  - id: incumbent
+    label: Incumbent national operator (e.g. Deutsche Bahn, SNCF, SBB)
+  - id: private
+    label: Private operator
+  - id: public_authority
+    label: Public transport authority
+  - id: unknown
+    label: Unknown
