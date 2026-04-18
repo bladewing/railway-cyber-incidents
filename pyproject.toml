@@ -1,0 +1,30 @@
+[project]
+name = "railway-cyber-incidents-tools"
+version = "0.1.0"
+description = "Tooling for the Railway Cyber Incidents open dataset"
+requires-python = ">=3.11"
+dependencies = [
+    "PyYAML>=6.0",
+    "jsonschema>=4.21",
+    "frictionless[excel]>=5.17",
+    "openpyxl>=3.1",
+    "python-docx>=1.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
+py-modules = []
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
