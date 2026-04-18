@@ -1,0 +1,63 @@
+# Copy this file to incidents/YYYY-MM-DD_slug.yaml and fill in the fields.
+# Consult CODEBOOK.md for field definitions and controlled vocabularies.
+
+id: YYYY-MM-DD_slug
+schema_version: "1.0"
+
+event_date: YYYY-MM-DD
+event_date_precision: day        # day | month | year
+reported_date: null
+
+countries_impacted: []           # ISO 3166-1 alpha-2 codes, e.g. [DE, AT]
+region: null
+coordinates: null
+
+target_organization: null
+industry_sector: null            # see vocabularies/industry_sectors.yaml
+operator_type: null              # see vocabularies/operator_types.yaml
+
+attack_vector: null              # see vocabularies/attack_vectors.yaml
+supply_chain: null
+malware: null
+extortion: null
+motive: null                     # see vocabularies/motives.yaml
+mitre_attack_techniques: null
+
+threat_actor: null
+threat_actor_country: null       # ISO 3166-1 alpha-2
+attribution_confidence: null     # see vocabularies/confidence_levels.yaml
+
+confirmation_status: reported    # REQUIRED. See vocabularies/confidence_levels.yaml
+
+affected_systems: null           # see vocabularies/affected_systems.yaml
+
+data_published: null
+
+impact:
+  scope: null                    # see vocabularies/impact_scopes.yaml
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+
+description_en: >
+  One to three sentences, in English, describing what happened.
+description_de: null
+
+sources:                          # REQUIRED: at least one source
+  - url: https://example.org/...
+    type: news                    # see vocabularies/source_types.yaml
+    publisher: null
+    published_date: null
+    language: null
+    accessed_date: null
+
+contributors:
+  - "Your Name"
+last_updated: YYYY-MM-DD
+notes: null

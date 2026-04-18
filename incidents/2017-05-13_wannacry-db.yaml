@@ -1,0 +1,72 @@
+id: 2017-05-13_wannacry-db
+schema_version: "1.0"
+
+event_date: 2017-05-12
+event_date_precision: day
+reported_date: 2017-05-13
+
+countries_impacted: [DE]
+region: null
+coordinates: null
+
+target_organization: "Deutsche Bahn AG"
+industry_sector: long_distance_passenger
+operator_type: incumbent
+
+attack_vector: exploit
+supply_chain: false
+malware:
+  - name: WannaCry
+    family: ransomware
+    mitre_software_id: S0366
+extortion: true
+motive: financial
+mitre_attack_techniques:
+  - T1486
+  - T1190
+
+threat_actor: "Lazarus Group"
+threat_actor_country: KP
+attribution_confidence: suspected
+
+confirmation_status: confirmed
+
+affected_systems:
+  - payment_system
+  - station_it
+  - passenger_information
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: 48
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+
+description_en: >
+  Ticket machines and information displays of Deutsche Bahn were infected
+  with WannaCry ransomware as collateral damage during the global outbreak.
+  Train operations were not affected.
+description_de: >
+  Fahrkartenautomaten und Anzeigetafeln der Deutschen Bahn wurden im Rahmen
+  der globalen WannaCry-Welle befallen. Der Zugbetrieb war nicht betroffen.
+
+sources:
+  - url: https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2017/WannaCry_13052017.html
+    type: cert_advisory
+    publisher: BSI
+    published_date: 2017-05-13
+    language: de
+    accessed_date: 2026-04-19
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: 2026-04-19
+notes: null
