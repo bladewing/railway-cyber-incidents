@@ -8,8 +8,8 @@ abstract: >
 authors:
   - family-names: Iffländer
     given-names: Lukas
-version: 0.1.0
-date-released: "2026-04-23"
+version: 0.1.1
+date-released: "2026-04-19"
 license: CC-BY-4.0
 repository-code: https://github.com/bladewing/railway-cyber-incidents
 keywords:
