@@ -97,7 +97,7 @@ def _datapackage(incidents_count: int) -> dict[str, Any]:
     return {
         "name": "railway-cyber-incidents",
         "title": "Railway Cyber Incidents",
-        "version": "0.2.0",
+        "version": "0.3.0",
         "licenses": [{"name": "CC-BY-4.0", "title": "Creative Commons Attribution 4.0"}],
         "resources": [
             {
