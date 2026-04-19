@@ -47,7 +47,7 @@ This is a data-quality pass, not a schema change. `schema_version` stays `"1.0"`
 ## Architecture
 
 ```
-plans/2026-04-19-incident-enrichment.md     (plan file — source of truth for progress)
+docs/superpowers/plans/2026-04-19-incident-enrichment.md  (plan file — source of truth for progress)
             │
             │  subagent-driven-development executes tasks in batches of 3–5
             ▼
@@ -225,7 +225,7 @@ Per repo policy, adding a vocab value is a MINOR schema bump. Data `schema_versi
 
 ## Progress tracking and resumability
 
-**Plan file:** `plans/2026-04-19-incident-enrichment.md`, standard `superpowers:writing-plans` format. Each task uses checkbox markers (`[ ] / [x]`).
+**Plan file:** `docs/superpowers/plans/2026-04-19-incident-enrichment.md`, standard `superpowers:writing-plans` format. Each task uses checkbox markers (`[ ] / [x]`).
 
 **Tasks:**
 
