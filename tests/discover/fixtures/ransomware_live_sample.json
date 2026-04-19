@@ -1,0 +1,16 @@
+[
+  {
+    "victim": "DB Schenker",
+    "group": "lockbit",
+    "discovered": "2024-03-01T10:00:00Z",
+    "post_url": "https://ransomware.live/posts/2024-03-01-db-schenker",
+    "description": "Rail freight operator listed on leak site"
+  },
+  {
+    "victim": "ACME Bakery",
+    "group": "lockbit",
+    "discovered": "2024-03-02T11:00:00Z",
+    "post_url": "https://ransomware.live/posts/2024-03-02-acme",
+    "description": "Bakery listed on leak site"
+  }
+]
