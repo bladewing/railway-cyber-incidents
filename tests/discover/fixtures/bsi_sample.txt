@@ -1,0 +1,8 @@
+BSI Lagebericht 2024
+
+Im August 2023 wurde bei der Deutschen Bahn ein IT-Vorfall bekannt,
+der zu Einschränkungen im Fahrgastbetrieb führte. Die Ursache war
+ein Ransomware-Angriff.
+
+Unabhängig davon meldete ein Energieversorger im Mai 2023 einen
+Phishing-Vorfall.
