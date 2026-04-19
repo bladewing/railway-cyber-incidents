@@ -39,6 +39,8 @@ add no value.
 - Dedup against `incidents/*.yaml` (deterministic + Haiku tiebreak).
 - Writing stubs to `incidents/drafts/` with `needs_review: true`.
 - Cost reporting per run.
+- `scripts/enrich.py` — thin wrapper that dispatches the existing
+  v0.2.0 enrichment subagent flow on a single incident id.
 
 **Out**:
 
@@ -125,7 +127,9 @@ No Anthropic SDK dependency is added.
 **Rail keyword list** (one file, reused everywhere): `rail`, `railway`,
 `railroad`, `train`, `metro`, `subway`, `tram`, `transit`, plus operator
 names (DB Schenker, Deutsche Bahn, SNCF, Trenitalia, ÖBB, NS, Amtrak,
-ProRail, …). Editable YAML under `config/rail_keywords.yaml`.
+ProRail, …). Editable YAML under `vocabularies/rail_keywords.yaml`
+(fits the existing `vocabularies/` convention; not a controlled enum,
+but an aggregator filter list).
 
 Each adapter is isolated: one aggregator failing (site down, PDF layout
 change) logs a warning and the run continues with the others.
@@ -257,13 +261,13 @@ entire `impact.*` tree (including `impact.scope`), `description_de`.
 If the source article is in German, swap: original-language text goes to
 `description_de`, Pass 4 translation goes to `description_en`.
 
-### Schema consideration
+### Schema bump
 
-`provenance.needs_review` is already used by the DZSF import; confirm it
-is expressible under the current schema (`schema/incident.schema.json`).
-If `provenance.discovered_by`, `provenance.aggregator`, or
-`provenance.haiku_classify_confidence` are not covered, add them as
-optional in a MINOR schema bump at the start of implementation.
+`provenance.needs_review` is already used by the DZSF import. The three
+new keys — `provenance.discovered_by`, `provenance.aggregator`,
+`provenance.haiku_classify_confidence` — are added as **optional** fields
+under `provenance` in a MINOR schema bump at the start of implementation.
+No migration needed for existing incidents (additive).
 
 ## Directory conventions
 
@@ -389,16 +393,15 @@ Check `pyproject.toml` before adding; some may already be vendored.
 | Prompt drift over time | Prompt-snapshot tests force deliberate updates. |
 | Runaway token spend | Per-call cost returned by `claude -p`; summed per run; `--max-cost` halt flag. |
 
-## Open questions (maintainer to resolve before implementation)
+## Resolved decisions
 
 1. `provenance.discovered_by` / `provenance.aggregator` /
-   `provenance.haiku_classify_confidence` — add to schema as optional in
-   the same MINOR bump, or drop them from the stub shape?
-2. `config/rail_keywords.yaml` location — is `config/` the right new dir,
-   or fold into `vocabularies/`?
-3. Should `scripts/enrich.py` (thin wrapper around the existing
-   enrichment subagent flow) be in scope for this pipeline's
-   implementation, or deferred to a follow-up?
+   `provenance.haiku_classify_confidence` → added as optional fields in
+   a MINOR schema bump at the start of implementation.
+2. Rail keyword list lives at `vocabularies/rail_keywords.yaml`, not
+   under a new `config/` directory.
+3. `scripts/enrich.py` (thin wrapper around the existing enrichment
+   subagent flow) is in scope for this pipeline's first implementation.
 
 ## Success criteria
 
