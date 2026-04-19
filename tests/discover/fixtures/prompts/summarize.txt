@@ -1,0 +1,14 @@
+Write a neutral factual summary of the incident below.
+
+Return JSON ONLY:
+{"description_en": "<1-3 sentences English, <=80 words>", "description_de": <null or <=80 words German original>}
+
+Rules:
+- English text must be neutral, no speculation, no adjectives like "devastating" or "massive".
+- If the source language is "<LANG>" and "<LANG>" == "de", set description_de to a faithful German rendering of the same facts. Otherwise set description_de to null.
+- Only facts supported by the text. No invention.
+
+Title: <TITLE>
+Source language: <LANG>
+Text:
+<BODY>

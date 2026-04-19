@@ -1,0 +1,12 @@
+You are deciding whether a newly-discovered candidate is the SAME incident
+as any of the existing incidents below. Answer JSON ONLY:
+{"duplicate_of": "<incident id>" | null, "reason": "<=20 words"}
+
+Candidate:
+  title: <TITLE>
+  date: <DATE>
+  url: <URL>
+  excerpt: <EXCERPT>
+
+Possibly matching existing incidents:
+<EXISTING>

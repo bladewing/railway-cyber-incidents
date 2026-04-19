@@ -1,0 +1,19 @@
+Extract facts from the text below. Return JSON ONLY, no prose:
+{
+  "event_date": "YYYY-MM-DD" or null,
+  "event_date_precision": "day" | "month" | "year",
+  "countries_impacted": ["ISO-3166 alpha-2", ...],
+  "target_organization": "string" or null,
+  "reported_date": "YYYY-MM-DD" or null
+}
+
+Rules:
+- Prefer null over inventing a value.
+- Use "day" precision only when a full date is explicit. "month" when only
+  month+year is given. "year" when only the year is given.
+- countries_impacted lists every country where the attack caused impact,
+  ISO 3166-1 alpha-2 codes (DE, FR, IT, ...).
+- target_organization is the primary victim if named; otherwise null.
+
+Text:
+<BODY>
