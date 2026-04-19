@@ -36,40 +36,52 @@ def run(
     candidates = _load_candidates(candidates_path)
 
     total_cost = 0.0
-    classified_kept = dropped_classify = dropped_dedup = stubs = 0
+    classified_kept = dropped_classify = dropped_dedup = stubs = errored = 0
     halted = False
     almost: list[dict] = []
+    errors: list[dict] = []
 
     for c in candidates:
-        verdict, meta = classify(c)
-        total_cost += float(meta.get("cost_usd", 0.0))
-        if not verdict.kept:
-            dropped_classify += 1
-            if 0.5 <= verdict.confidence < 0.6:
-                almost.append({"url": c.url, "confidence": verdict.confidence, "title": c.title})
-            if max_cost_usd is not None and total_cost >= max_cost_usd:
-                halted = True
-                break
-            continue
-        classified_kept += 1
+        # Per-candidate isolation: a transient LLM failure or one bad
+        # response (empty result, refusal, quota blip) must not kill the
+        # whole batch. Log the URL, count it, and move on — the fetch
+        # stage uses the same pattern for adapter isolation.
+        try:
+            verdict, meta = classify(c)
+            total_cost += float(meta.get("cost_usd", 0.0))
+            if not verdict.kept:
+                dropped_classify += 1
+                if 0.5 <= verdict.confidence < 0.6:
+                    almost.append({
+                        "url": c.url, "confidence": verdict.confidence, "title": c.title,
+                    })
+                if max_cost_usd is not None and total_cost >= max_cost_usd:
+                    halted = True
+                    break
+                continue
+            classified_kept += 1
 
-        dedup_res = dedup(c, incidents_dir=incidents_dir)
-        if dedup_res.used_llm and dedup_res.meta:
-            total_cost += float(dedup_res.meta.get("cost_usd", 0.0))
-        if not dedup_res.kept:
-            dropped_dedup += 1
-            if max_cost_usd is not None and total_cost >= max_cost_usd:
-                halted = True
-                break
-            continue
+            dedup_res = dedup(c, incidents_dir=incidents_dir)
+            if dedup_res.used_llm and dedup_res.meta:
+                total_cost += float(dedup_res.meta.get("cost_usd", 0.0))
+            if not dedup_res.kept:
+                dropped_dedup += 1
+                if max_cost_usd is not None and total_cost >= max_cost_usd:
+                    halted = True
+                    break
+                continue
 
-        fields, meta = extract(c)
-        total_cost += float(meta.get("cost_usd", 0.0))
-        summary_res, meta = summarize(c)
-        total_cost += float(meta.get("cost_usd", 0.0))
+            fields, meta = extract(c)
+            total_cost += float(meta.get("cost_usd", 0.0))
+            summary_res, meta = summarize(c)
+            total_cost += float(meta.get("cost_usd", 0.0))
 
-        write_stub(c, verdict, fields, summary_res, drafts_dir=drafts_dir, today=today)
-        stubs += 1
+            write_stub(c, verdict, fields, summary_res, drafts_dir=drafts_dir, today=today)
+            stubs += 1
+        except Exception as e:
+            errored += 1
+            errors.append({"url": c.url, "error": f"{type(e).__name__}: {e}"})
+            LOG.warning("%s: candidate failed, skipping: %s", c.url, e)
 
         if max_cost_usd is not None and total_cost >= max_cost_usd:
             halted = True
@@ -85,6 +97,8 @@ def run(
         "dropped_classify": dropped_classify,
         "dropped_dedup": dropped_dedup,
         "stubs_written": stubs,
+        "errored": errored,
+        "errors": errors[:10],
         "total_cost_usd": round(total_cost, 4),
         "halted_on_cost": halted,
         "almost_passed": almost[:5],
@@ -112,13 +126,18 @@ def main() -> None:
     print(
         f"fetched: {s['fetched']} | kept: {s['classified_kept']} | "
         f"dropped: classify {s['dropped_classify']}, dedup {s['dropped_dedup']} | "
-        f"stubs: {s['stubs_written']} | cost: ${s['total_cost_usd']:.4f}"
+        f"stubs: {s['stubs_written']} | errored: {s['errored']} | "
+        f"cost: ${s['total_cost_usd']:.4f}"
         + (" | HALTED ON COST" if s["halted_on_cost"] else "")
     )
     if s["almost_passed"]:
         print("almost-passed (review):")
         for a in s["almost_passed"]:
             print(f"  {a['confidence']:.2f}  {a['title']}  ({a['url']})")
+    if s["errors"]:
+        print("errored (logged, not a hard failure):")
+        for e in s["errors"]:
+            print(f"  {e['error']}  ({e['url']})")
 
 
 if __name__ == "__main__":

@@ -118,10 +118,10 @@ No Anthropic SDK dependency is added.
 
 | id             | kind  | source                                                          | notes                                   |
 |----------------|-------|-----------------------------------------------------------------|-----------------------------------------|
-| konbriefing    | html  | `konbriefing.com/en-topics/cyber-attacks-railway.html`          | rail-specific, high precision           |
-| eurepoc        | json  | EuRepoC search API filtered to Transport sector                 | EU-centric                              |
+| konbriefing    | html  | `konbriefing.com/en-topics/cyber-attacks.html`                  | generic listing, rail-filtered in adapter (dedicated railway page retired) |
+| eurepoc        | csv   | Zenodo Global Dataset CSV, rail-filtered in adapter             | EU-centric; CC-BY-NC-4.0 (academic use) |
 | enisa_transport| pdf   | annual Transport Threat Landscape PDFs                          | text-extract via `pypdf` + rail keywords|
-| ransomware_live| json  | `api.ransomware.live/groups` victims feed                       | filter victim names with rail keywords  |
+| ransomware_live| json  | `api.ransomware.live/v2/recentvictims` (IPv4-forced in adapter) | filter victim names with rail keywords  |
 | bsi_lagebericht| pdf   | BSI annual Lagebericht PDFs                                     | German rail keywords                    |
 
 **Rail keyword list** (one file, reused everywhere): `rail`, `railway`,

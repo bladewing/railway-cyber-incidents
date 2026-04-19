@@ -1,4 +1,11 @@
-"""Rail-adjacency keyword loader and whole-word matcher."""
+"""Rail-adjacency keyword loader and whole-word matcher.
+
+The matcher allows an optional trailing ``s`` so that English plurals
+(``railways``, ``trains``, ``metros``) match their singular keywords
+without having to double-list every term. German compounds that we
+cannot catch with whole-word matching (``Straßenbahn``, ``S-Bahn``)
+are listed explicitly in ``vocabularies/rail_keywords.yaml``.
+"""
 
 from __future__ import annotations
 
@@ -21,6 +28,6 @@ def matches_rail(text: str, keywords: frozenset[str] | set[str] | None = None) -
     kws = keywords if keywords is not None else load_rail_keywords()
     hay = text.lower()
     for k in kws:
-        if re.search(rf"\b{re.escape(k.lower())}\b", hay):
+        if re.search(rf"\b{re.escape(k.lower())}s?\b", hay):
             return True
     return False

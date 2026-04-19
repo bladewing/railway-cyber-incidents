@@ -39,7 +39,15 @@ def parse(payload: list[dict], *, discovered_at: str) -> list[Candidate]:
 def fetch(url: str, *, discovered_at: str, timeout_s: int = 20) -> list[Candidate]:
     import httpx
 
-    resp = httpx.get(url, timeout=timeout_s, follow_redirects=True,
-                     headers={"User-Agent": "railway-cyber-incidents-discover/0.1"})
+    # api.ransomware.live's IPv6 endpoint unconditionally 301s to www, which 404s.
+    # Bind the client socket to an IPv4 local address to force AF_INET resolution.
+    transport = httpx.HTTPTransport(local_address="0.0.0.0")
+    with httpx.Client(
+        transport=transport,
+        timeout=timeout_s,
+        follow_redirects=True,
+        headers={"User-Agent": "railway-cyber-incidents-discover/0.1"},
+    ) as client:
+        resp = client.get(url)
     resp.raise_for_status()
     return parse(resp.json(), discovered_at=discovered_at)

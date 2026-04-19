@@ -1,21 +1,51 @@
 <!doctype html>
 <html lang="en">
 <body>
-<ul class="cyberattack-list">
-  <li>
-    <span class="date">2024-03-01</span>
-    <a href="https://news.example.com/db-schenker-hack">
-      DB Schenker confirms ransomware attack
-    </a>
-    <p>Short summary of the attack on rail freight operations.</p>
-  </li>
-  <li>
-    <span class="date">2023-08-14</span>
-    <a href="https://news.example.com/metro-attack">
-      Paris metro operator hit by cyberattack
-    </a>
-    <p>Metro network disruption reported.</p>
-  </li>
-</ul>
+<!-- Mimics the article.portfolio-item layout on konbriefing.com/en-topics/cyber-attacks.html -->
+<article id="Res001" class="portfolio-item col-12">
+  <div class="portfolio-item kbresbox1">
+    <div>
+      <div><img src="flags/de.png" alt="Flag Germany"/>March 1, 2024</div>
+      <div style="font-weight:bold;">DB Schenker confirms ransomware attack</div>
+    </div>
+    <div>
+      <div>DB Schenker - Germany</div>
+      <div>
+        <div><a href="https://news.example.com/db-schenker-hack" target="_blank" rel="nofollow noopener">DB Schenker confirms ransomware attack on rail freight</a></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article id="Res002" class="portfolio-item col-12">
+  <div class="portfolio-item kbresbox1">
+    <div>
+      <div><img src="flags/fr.png" alt="Flag France"/>August 14, 2023</div>
+      <div style="font-weight:bold;">Paris metro operator hit by cyberattack</div>
+    </div>
+    <div>
+      <div>RATP - France</div>
+      <div>
+        <div><a href="https://news.example.com/metro-attack" target="_blank" rel="nofollow noopener">Metro network disruption reported</a></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- Non-rail entry that must be filtered out by the rail-keyword match. -->
+<article id="Res003" class="portfolio-item col-12">
+  <div class="portfolio-item kbresbox1">
+    <div>
+      <div><img src="flags/us.png" alt="Flag USA"/>June 2, 2024</div>
+      <div style="font-weight:bold;">Cyber attack on a bakery chain</div>
+    </div>
+    <div>
+      <div>Example Bakery Inc. - USA</div>
+      <div>
+        <div><a href="https://news.example.com/bakery-breach" target="_blank" rel="nofollow noopener">Bakery chain discloses breach</a></div>
+      </div>
+    </div>
+  </div>
+</article>
 </body>
 </html>

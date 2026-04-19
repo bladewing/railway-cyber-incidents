@@ -57,6 +57,57 @@ def test_orchestrator_writes_one_stub_per_kept_candidate(tmp_path):
     assert summary["total_cost_usd"] > 0
 
 
+def test_orchestrator_isolates_per_candidate_failures(tmp_path):
+    """A failing extract on one candidate must not kill the batch."""
+    from scripts import stub_candidates
+    from scripts.discover.llm import LLMError
+
+    candidates_path = tmp_path / "candidates.json"
+    drafts_dir = tmp_path / "drafts"
+    incidents_dir = tmp_path / "incidents"
+    incidents_dir.mkdir()
+    candidates_path.write_text(json.dumps([
+        _candidate_dict("https://a.example/bad", "boom — extract will fail"),
+        _candidate_dict("https://a.example/good", "DB Schenker hit"),
+    ]))
+
+    extract_results = iter([
+        LLMError("simulated: Haiku returned unparseable JSON"),
+        (ExtractedFields("2024-03-01", "day", ("DE",), "DB Schenker", None),
+         {"cost_usd": 0.002}),
+    ])
+
+    def fake_extract(_c):
+        result = next(extract_results)
+        if isinstance(result, Exception):
+            raise result
+        return result
+
+    with patch(
+        "scripts.stub_candidates.classify",
+        return_value=(ClassifyVerdict(True, 0.9, "ok", True), {"cost_usd": 0.001}),
+    ), patch("scripts.stub_candidates.dedup", return_value=type("D", (), {
+        "duplicate_of": None, "kept": True, "used_llm": False, "meta": None,
+    })()), patch("scripts.stub_candidates.extract", side_effect=fake_extract), \
+         patch("scripts.stub_candidates.summarize", return_value=(
+             SummaryResult("Rail freight operator hit.", None), {"cost_usd": 0.002},
+         )):
+        summary = stub_candidates.run(
+            candidates_path=candidates_path,
+            drafts_dir=drafts_dir,
+            incidents_dir=incidents_dir,
+            cost_log_path=tmp_path / ".cost.log",
+        )
+
+    assert summary["fetched"] == 2
+    assert summary["stubs_written"] == 1
+    assert summary["errored"] == 1
+    assert summary["errors"][0]["url"] == "https://a.example/bad"
+    assert "LLMError" in summary["errors"][0]["error"]
+    stubs = list(drafts_dir.glob("*.yaml"))
+    assert len(stubs) == 1
+
+
 def test_orchestrator_halts_on_max_cost(tmp_path):
     from scripts import stub_candidates
 

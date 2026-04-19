@@ -9,7 +9,7 @@ def test_load_returns_at_least_five_enabled_sources():
 
 def test_each_aggregator_has_kind_and_url_or_pdfs():
     for a in load_aggregators():
-        assert a.kind in {"html", "json", "pdf"}
+        assert a.kind in {"html", "json", "pdf", "csv"}
         assert a.id
         if a.kind == "pdf":
             # PDFs list may be empty until maintainer supplies stable URLs

@@ -1,0 +1,6 @@
+incident_id,name,description,start_date,receiver_name,receiver_category,receiver_subcategory,receiver_country,source_url
+1001,Ransomware against DB Schenker,Rail freight operator hit by ransomware across European sites.,01.03.2024,DB Schenker,Transportation,Rail,Germany,https://eurepoc.eu/incident/2024-0321
+1001,Ransomware against DB Schenker,Rail freight operator hit by ransomware across European sites.,01.03.2024,DB Schenker Logistics,Transportation,Rail,Germany,https://eurepoc.eu/incident/2024-0321
+1002,Metro Paris cyber incident,Metro network disruption reported in Paris.,14.08.2023,RATP,Transportation,Metro,France,https://eurepoc.eu/incident/2023-0818
+1003,Cyber attack on a bakery chain,Unrelated bakery breach to verify rail filter drops non-rail rows.,02.06.2024,Example Bakery,Commercial,Food,USA,https://eurepoc.eu/incident/2024-0602
+1004,Vocational training institute breach,Korea Research Institute for Vocational Education and Training compromise.,15.08.2024,KRIVET,Government / ministries,Research,"Korea, Republic of",https://eurepoc.eu/incident/2024-0815

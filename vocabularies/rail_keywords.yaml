@@ -1,6 +1,9 @@
 # Rail-adjacency keywords used by discovery adapters to filter broad
 # aggregator feeds. Not a controlled enum — purely a filter list.
-# Case-insensitive match; adapters do whole-word matching.
+# Case-insensitive match; adapters do whole-word matching with an
+# optional trailing ``s`` (so plurals like ``railways`` match).
+# German compounds must be listed explicitly — whole-word matching
+# cannot decompose ``Straßenbahn`` into ``bahn``.
 keywords:
   - rail
   - railway
@@ -11,6 +14,14 @@ keywords:
   - tram
   - transit
   - bahn
+  # German compounds (deliberately excludes ``Autobahn`` — that's a
+  # road, not rail):
+  - Eisenbahn
+  - Straßenbahn
+  - S-Bahn
+  - U-Bahn
+  - Stadtbahn
+  - Regionalbahn
   # Operators (add as discovered):
   - "Deutsche Bahn"
   - DB Schenker

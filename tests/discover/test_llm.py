@@ -62,7 +62,11 @@ def test_raises_after_exhausting_retries():
             call_haiku_json("p", retries=1)
 
 
-def test_passes_model_flag():
+def test_passes_fully_qualified_haiku_model_flag():
+    # `--model haiku` is NOT a valid CLI alias (only `sonnet`/`opus`
+    # are); passing it silently falls back to the default model. We
+    # must pass the fully-qualified `claude-haiku-4-5` to actually run
+    # on Haiku instead of paying Sonnet prices.
     captured = {}
 
     def _run(cmd, **kwargs):
@@ -76,6 +80,29 @@ def test_passes_model_flag():
         call_haiku_json("p")
     assert "--model" in captured["cmd"]
     idx = captured["cmd"].index("--model")
-    assert captured["cmd"][idx + 1] == "haiku"
+    assert captured["cmd"][idx + 1] == "claude-haiku-4-5"
     assert "--output-format" in captured["cmd"]
     assert "json" in captured["cmd"]
+
+
+def test_strips_markdown_code_fences_around_json():
+    # Claude 4.x routinely wraps JSON in ```json ... ``` fences;
+    # the wrapper must strip them before parsing.
+    fenced = '```json\n{"ok": true, "n": 2}\n```'
+    with patch("subprocess.run", side_effect=_fake_run(fenced)):
+        result, _meta = call_haiku_json("p")
+    assert result == {"ok": True, "n": 2}
+
+
+def test_strips_plain_triple_backtick_fences():
+    # Models sometimes omit the language tag on the opening fence.
+    fenced = "```\n{\"a\": 1}\n```"
+    with patch("subprocess.run", side_effect=_fake_run(fenced)):
+        result, _meta = call_haiku_json("p")
+    assert result == {"a": 1}
+
+
+def test_plain_json_without_fences_still_parses():
+    with patch("subprocess.run", side_effect=_fake_run('{"a": 1}')):
+        result, _meta = call_haiku_json("p")
+    assert result == {"a": 1}

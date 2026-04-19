@@ -5,13 +5,18 @@ aggregators:
   - id: konbriefing
     kind: html
     enabled: true
-    url: https://konbriefing.com/en-topics/cyber-attacks-railway.html
+    # Dedicated railway topic page was retired; the adapter now parses
+    # the generic cyber-attacks listing and filters on rail keywords.
+    url: https://konbriefing.com/en-topics/cyber-attacks.html
     source_type: news
 
   - id: eurepoc
-    kind: json
+    kind: csv
     enabled: true
-    url: https://eurepoc.eu/api/incidents?sector=Transport
+    # The public HTTP API was deprecated. Data now ships as the
+    # Global Dataset CSV on Zenodo (EuRepoC v1.3, 2025-03).
+    # Licence: CC-BY-NC-4.0 (academic/non-commercial use only).
+    url: https://zenodo.org/api/records/14965395/files/eurepoc_global_dataset_1_3.csv/content
     source_type: database
 
   - id: enisa_transport
@@ -25,6 +30,8 @@ aggregators:
   - id: ransomware_live
     kind: json
     enabled: true
+    # api.ransomware.live's IPv6 endpoint unconditionally redirects
+    # to www and 404s; the adapter forces IPv4 to avoid this.
     url: https://api.ransomware.live/v2/recentvictims
     source_type: leak_site
 
