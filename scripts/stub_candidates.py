@@ -48,7 +48,8 @@ def run(
             if 0.5 <= verdict.confidence < 0.6:
                 almost.append({"url": c.url, "confidence": verdict.confidence, "title": c.title})
             if max_cost_usd is not None and total_cost >= max_cost_usd:
-                halted = True; break
+                halted = True
+                break
             continue
         classified_kept += 1
 
@@ -58,7 +59,8 @@ def run(
         if not dedup_res.kept:
             dropped_dedup += 1
             if max_cost_usd is not None and total_cost >= max_cost_usd:
-                halted = True; break
+                halted = True
+                break
             continue
 
         fields, meta = extract(c)
@@ -70,7 +72,8 @@ def run(
         stubs += 1
 
         if max_cost_usd is not None and total_cost >= max_cost_usd:
-            halted = True; break
+            halted = True
+            break
 
     cost_log_path.parent.mkdir(parents=True, exist_ok=True)
     with cost_log_path.open("a", encoding="utf-8") as fh:

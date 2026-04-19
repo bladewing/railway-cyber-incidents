@@ -43,6 +43,19 @@ uvx frictionless validate dist/datapackage.json
 
 Read `CONTRIBUTING.md` and copy `incidents/TEMPLATE.yaml`. Then open a PR.
 
+## Discovering new incidents
+
+`make discover` runs a two-stage pipeline that harvests candidates from
+curated aggregators (konbriefing, EuRepoC, ENISA, BSI, ransomware.live)
+and writes `needs_review: true` stubs to `incidents/drafts/`. Stage 1
+(`scripts/fetch_candidates.py`) is deterministic Python; Stage 2
+(`scripts/stub_candidates.py`) calls Haiku four times per candidate
+(classify → dedup → extract → summarise) via the `claude` CLI subscription.
+Stubs are ignored by `validate.py`/`build_release.py` until promoted.
+Promotion path: enrich with `uv run python scripts/enrich.py <id>`, review
+the filled YAML, then atomically move into `incidents/` via
+`scripts/promote_drafts.py`.
+
 ## Field definitions
 
 See `CODEBOOK.md`.
