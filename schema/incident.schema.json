@@ -141,7 +141,10 @@
       "properties": {
         "origin": {"type": ["string", "null"]},
         "imported_from": {"type": ["string", "null"]},
-        "needs_review": {"type": ["boolean", "null"]}
+        "needs_review": {"type": ["boolean", "null"]},
+        "discovered_by": { "type": "string" },
+        "aggregator":    { "type": "string" },
+        "haiku_classify_confidence": { "type": "number", "minimum": 0, "maximum": 1 }
       }
     }
   }
