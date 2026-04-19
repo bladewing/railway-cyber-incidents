@@ -1,0 +1,26 @@
+# Rail-adjacency keywords used by discovery adapters to filter broad
+# aggregator feeds. Not a controlled enum — purely a filter list.
+# Case-insensitive match; adapters do whole-word matching.
+keywords:
+  - rail
+  - railway
+  - railroad
+  - train
+  - metro
+  - subway
+  - tram
+  - transit
+  # Operators (add as discovered):
+  - "Deutsche Bahn"
+  - DB Schenker
+  - SNCF
+  - Trenitalia
+  - ÖBB
+  - NS
+  - Amtrak
+  - ProRail
+  - Network Rail
+  - Renfe
+  - JR East
+  - CFL
+  - CD Cargo
