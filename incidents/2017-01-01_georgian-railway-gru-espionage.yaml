@@ -1,0 +1,89 @@
+id: 2017-01-01_georgian-railway-gru-espionage
+schema_version: '1.0'
+event_date: '2017-01-01'
+event_date_precision: year
+reported_date: '2024-10-22'
+countries_impacted:
+- GE
+region: null
+coordinates: null
+target_organization: Georgian Railway (national railway company of Georgia)
+industry_sector: other
+operator_type: incumbent
+attack_vector: unknown
+supply_chain: null
+malware: null
+extortion: false
+motive: espionage
+mitre_attack_techniques: null
+threat_actor: GRU (Russian Main Intelligence Directorate)
+threat_actor_country: RU
+attribution_confidence: reported
+confirmation_status: reported
+affected_systems:
+- data
+data_published: false
+impact:
+  scope: null
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  Between approximately 2017 and 2020, operatives of Russia's military
+  intelligence service (GRU) gained and maintained access to multiple IT
+  systems at Georgian Railway (the national railway company of Georgia)
+  for a period of more than two years. The railway intrusion was one
+  component of a broader multi-year cyber-espionage campaign against
+  Georgian targets that also compromised government ministries, the
+  Central Election Commission, email accounts, the central bank,
+  telecommunications providers, and media organisations including Imedi
+  and Maestro. No operational disruption of rail services was publicly
+  reported, and the access appears to have been intelligence-collection
+  oriented rather than destructive. The intrusion came to wider public
+  attention through an October 2024 Stars and Stripes report based on
+  Georgian and US government sources.
+description_de: null
+sources:
+- url: https://www.stripes.com/theaters/europe/2024-10-22/how-russia-spies-hacked-georgia-15590579.html
+  type: news
+  publisher: Stars and Stripes
+  published_date: '2024-10-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and
+  type: other
+  publisher: U.S. Department of Justice
+  published_date: '2020-10-19'
+  language: en
+  accessed_date: '2026-04-19'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.92
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-19'
+notes: >
+  Rail is a peripheral target within a cross-sector GRU espionage campaign
+  against Georgia, but the access is non-trivial: IT-system-level presence
+  maintained for more than two years. The Stripes report does not name the
+  specific GRU unit responsible for the rail intrusion; the 2020 US DOJ
+  indictment of Unit 74455 (Sandworm) covers GRU cyber operations against
+  Georgia in 2018-2019 focused on media defacement and wipers, which may
+  or may not be the same track as the railway IT access. Attribution is
+  therefore kept at the GRU level rather than a specific unit. Exact dates
+  within the 2017-2020 window are not public; event_date uses the
+  start-of-window placeholder per the dataset's year-precision convention.
+  This entry was manually rewritten from the discovery-pipeline draft
+  2017-01-01_eurepoc-50fa, which had null target_organization and a
+  generic cross-sector description; scope was narrowed to the rail
+  component and a second source (the 2020 DOJ indictment of Unit 74455)
+  was added for GRU attribution context.

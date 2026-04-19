@@ -1,0 +1,71 @@
+id: 2022-04-01_metrospetstekhnika
+schema_version: '1.0'
+event_date: '2022-04-01'
+event_date_precision: month
+reported_date: '2022-04-19'
+countries_impacted:
+- RU
+region: null
+coordinates: null
+target_organization: Metrospetstekhnika
+industry_sector: infrastructure_manager
+operator_type: private
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: hacktivism
+mitre_attack_techniques: null
+threat_actor: GhostSec (Anonymous-affiliated collective)
+threat_actor_country: null
+attribution_confidence: reported
+confirmation_status: reported
+affected_systems:
+- data
+data_published: true
+impact:
+  scope: null
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: null
+description_en: >
+  In April 2022, the Anonymous-affiliated hacktivist collective GhostSec
+  claimed to have breached Metrospetstekhnika, a Russian contractor
+  providing maintenance equipment and services to metro (subway)
+  systems. GhostSec stated the intrusion was conducted as part of the
+  #OpRussia campaign launched by Anonymous in response to the Russian
+  invasion of Ukraine. The group claimed to have exfiltrated internal
+  corporate data and published samples on its public channels. No
+  operational impact on Russian metro services was publicly reported.
+  The breach was not independently verified by the victim organisation
+  or by Russian authorities.
+description_de: null
+sources:
+- url: https://www.hstoday.us/featured/anonymous-oprussia-reports-metro-system-hack-counter-disinformation-milestone/
+  type: news
+  publisher: HSToday
+  published_date: '2022-04-19'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.96
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Single-source, claimed-but-unverified incident. Metrospetstekhnika
+  itself is not a transit operator but a supplier to Russian metro
+  operators, so the direct impact scope is limited to the supplier's
+  corporate data. event_date uses month precision because the exact
+  breach date was not disclosed; the claim emerged mid-to-late April
+  2022.

@@ -1,0 +1,81 @@
+id: 2023-08-01_belt-railway-company-of-chicago
+schema_version: '1.0'
+event_date: '2023-08-01'
+event_date_precision: month
+reported_date: '2023-08-10'
+countries_impacted:
+- US
+region: null
+coordinates: null
+target_organization: The Belt Railway Company of Chicago
+industry_sector: freight
+operator_type: private
+attack_vector: unknown
+supply_chain: false
+malware:
+- name: Akira
+  family: Akira
+  mitre_software_id: null
+extortion: true
+motive: financial
+mitre_attack_techniques: null
+threat_actor: Akira ransomware group
+threat_actor_country: null
+attribution_confidence: reported
+confirmation_status: confirmed
+affected_systems:
+- data
+data_published: true
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: null
+description_en: >
+  In August 2023, the Akira ransomware group listed The Belt Railway
+  Company of Chicago on its darknet leak site, claiming to have
+  exfiltrated approximately 85 GB of data from the operator's
+  networks. Belt Railway, the largest switching and terminal railroad
+  in the United States, operates around 28 miles of track and
+  interchanges freight traffic between seven Class I railroads in the
+  Chicago area. The company publicly confirmed awareness of the claim,
+  stated that it was investigating the allegations in cooperation
+  with federal authorities and an external cybersecurity firm, and
+  emphasised that rail operations had not been impacted. Whether a
+  ransom was paid is not publicly known.
+description_de: null
+sources:
+- url: https://therecord.media/belt-railway-chicago-ransomware-data-theft-akira
+  type: news
+  publisher: The Record (Recorded Future News)
+  published_date: '2023-08-10'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://www.teiss.co.uk/news/belt-railway-company-of-chicago-investigates-data-theft-by-akira-ransomware-gang-12706
+  type: news
+  publisher: teiss
+  published_date: '2023-08-11'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Akira emerged in March 2023 and by mid-2023 had compromised dozens of
+  organisations across multiple sectors, typically using double-extortion
+  tactics (encryption + data-leak threat). Belt Railway is identified
+  as a victim in the FBI's 2024 Akira joint advisory. event_date uses
+  month precision because the exact breach/exfiltration date is not
+  public; Akira's leak-site post appeared around 10 August 2023.

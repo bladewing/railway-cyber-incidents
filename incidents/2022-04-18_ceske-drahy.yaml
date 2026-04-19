@@ -1,0 +1,96 @@
+id: 2022-04-18_ceske-drahy
+schema_version: '1.0'
+event_date: '2022-04-18'
+event_date_precision: day
+reported_date: '2022-04-20'
+countries_impacted:
+- CZ
+region: null
+coordinates: null
+target_organization: České dráhy (Czech Railways / ČD)
+industry_sector: long_distance_passenger
+operator_type: incumbent
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: hacktivism
+mitre_attack_techniques: null
+threat_actor: Killnet
+threat_actor_country: RU
+attribution_confidence: reported
+confirmation_status: confirmed
+affected_systems:
+- website
+- payment_system
+- passenger_information
+data_published: false
+impact:
+  scope: null
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  On 18 April 2022, Czech Railways (České dráhy / ČD) suffered a
+  distributed denial-of-service attack that disrupted its public website
+  and online sales channels, including an outage of the Můj vlak ("My
+  Train") mobile application used for ticket purchase and connection
+  search. ČD confirmed the attack via an official statement on its
+  Twitter account, stating that online operations had been affected and
+  that some railway applications were unavailable. No data exfiltration
+  was reported. The attack was part of a broader pro-Russian Killnet
+  campaign against Czech critical infrastructure that ran from 18 April
+  2022 onward and also targeted the Interior Ministry, Chamber of
+  Deputies, Prague Airport, the regional airports of Karlovy Vary,
+  Pardubice, Brno-Tuřany and Ostrava, Komerční banka, and the
+  telecommunications operator O2. Killnet claimed responsibility on its
+  Telegram channels.
+description_de: null
+sources:
+- url: https://www.bankinfosecurity.com/pro-russian-killnet-group-in-ddos-attacks-on-czech-entities-a-18949
+  type: news
+  publisher: BankInfoSecurity
+  published_date: '2022-04-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.expats.cz/czech-news/article/pro-russian-hackers-target-czech-websites-in-a-series-of-attacks
+  type: news
+  publisher: Expats.cz
+  published_date: '2022-04-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securelist.com/ddos-attacks-in-q2-2022/107025/
+  type: blog
+  publisher: Securelist (Kaspersky)
+  published_date: '2022-08-01'
+  language: en
+  accessed_date: '2026-04-19'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.9
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-19'
+notes: >
+  Rail-primary incident within a cross-sector Killnet campaign. ČD's
+  core rail operations (signalling, interlocking, dispatch) were not
+  affected — the outage was limited to public-facing web and ticketing
+  surfaces. Duration was reported in the scale of hours to a day but
+  exact duration was not disclosed. ČD's Annual Report 2022 mentions
+  cyber-incident handling generally but does not itemise this event.
+  This entry was manually rewritten from the discovery-pipeline draft
+  2023-02-09_eurepoc-085a, which had conflated 16 Killnet target
+  countries into a single stub with the wrong event_date (the 2023
+  SecurityAffairs report date, not the 2022 incident date). Scope was
+  narrowed to the ČD victim, event_date corrected to 2022-04-18, and
+  sources replaced with rail-naming reporting from BankInfoSecurity,
+  Expats.cz, and Securelist.

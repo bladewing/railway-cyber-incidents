@@ -1,0 +1,83 @@
+id: 2023-11-24_greater-richmond-transit-company-grtc
+schema_version: '1.0'
+event_date: '2023-11-24'
+event_date_precision: day
+reported_date: '2023-12-07'
+countries_impacted:
+- US
+region: null
+coordinates: null
+target_organization: Greater Richmond Transit Company (GRTC)
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: unknown
+supply_chain: false
+malware:
+- name: Play
+  family: Play
+  mitre_software_id: null
+extortion: true
+motive: financial
+mitre_attack_techniques: null
+threat_actor: Play (PlayCrypt) ransomware group
+threat_actor_country: null
+attribution_confidence: reported
+confirmation_status: confirmed
+affected_systems:
+- data
+- internal_communication
+data_published: true
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: null
+description_en: >
+  Over the US Thanksgiving weekend of late November 2023, the Greater
+  Richmond Transit Company (GRTC) - the public transit provider for
+  central Virginia - experienced a network disruption subsequently
+  confirmed to be a ransomware attack. The incident temporarily
+  affected certain applications and parts of the GRTC network. GRTC
+  IT staff and third-party cybersecurity specialists worked to
+  investigate and restore systems; bus services continued to operate
+  during the incident. The Play (PlayCrypt) ransomware group claimed
+  responsibility and listed GRTC Transit System on its darknet leak
+  site. GRTC was subsequently hit by a second, separate cyber
+  incident in early 2024.
+description_de: null
+sources:
+- url: https://therecord.media/central-va-transit-system-cyberattack
+  type: news
+  publisher: The Record (Recorded Future News)
+  published_date: '2023-12-07'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://www.vpm.org/news/2024-09-25/greater-richmond-transit-company-hack-cybersecurity
+  type: news
+  publisher: VPM News
+  published_date: '2024-09-25'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  event_date set to the Friday of US Thanksgiving weekend 2023 based on
+  GRTC's statement that the network disruption began over Thanksgiving;
+  the exact intrusion date within that weekend is not public.
+  reported_date is the public-disclosure date via The Record. A separate
+  follow-up incident at GRTC in February-September 2024 (covered by the
+  VPM News source) is out of scope for this entry and would warrant its
+  own record.

@@ -1,0 +1,72 @@
+id: 2014-03-01_seoul-metro
+schema_version: '1.0'
+event_date: '2014-03-01'
+event_date_precision: month
+reported_date: '2014-10-07'
+countries_impacted:
+- KR
+region: null
+coordinates: null
+target_organization: Seoul Metro
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: espionage
+mitre_attack_techniques: null
+threat_actor: North Korea (suspected)
+threat_actor_country: KP
+attribution_confidence: suspected
+confirmation_status: reported
+affected_systems:
+- data
+- internal_communication
+data_published: false
+impact:
+  scope: null
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: null
+description_en: >
+  Between March and August 2014, unidentified attackers compromised
+  several servers of Seoul Metro, the operator of four major subway
+  lines in the South Korean capital carrying millions of daily
+  commuters. Nearly 60 employee computers were infected with malware.
+  The intrusion was disclosed in October 2014 by a South Korean ruling
+  party legislator citing intelligence reports, and North Korea was
+  named as the suspected perpetrator. Attribution has not been formally
+  confirmed by Seoul Metro or by a judicial process. No operational
+  disruption of subway services was reported; the intrusion appears to
+  have been intelligence-collection oriented.
+description_de: null
+sources:
+- url: https://www.securityweek.com/north-korea-suspected-hacking-seoul-subway-operator-mp/
+  type: news
+  publisher: SecurityWeek
+  published_date: '2014-10-07'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Part of the broader wave of North Korean cyber operations against
+  South Korean critical infrastructure in 2014 (which also included
+  the December 2014 Korea Hydro and Nuclear Power breach attributed to
+  Kimsuky). The specific DPRK unit involved in the Seoul Metro
+  intrusion is not publicly identified. event_date uses the start of
+  the reported March-August 2014 activity window with month precision.

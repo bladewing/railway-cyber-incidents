@@ -1,0 +1,68 @@
+id: 2024-01-18_nmbs-sncb
+schema_version: '1.0'
+event_date: '2024-01-18'
+event_date_precision: day
+reported_date: '2024-01-18'
+countries_impacted:
+- BE
+region: null
+coordinates: null
+target_organization: NMBS/SNCB (Belgian National Railways)
+industry_sector: long_distance_passenger
+operator_type: incumbent
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: unknown
+mitre_attack_techniques: null
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: null
+confirmation_status: reported
+affected_systems:
+- website
+- internal_communication
+data_published: false
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  On 18 January 2024, NMBS/SNCB - the national passenger railway
+  operator of Belgium - was targeted by a distributed denial-of-service
+  attack that disrupted public-facing communication channels and
+  website services. Rail operations and train movements were not
+  affected by the incident. No threat actor was publicly identified;
+  the attack pattern is consistent with pro-Russian hacktivist DDoS
+  campaigns active against European transport operators during this
+  period.
+description_de: null
+sources:
+- url: https://www.vrt.be/vrtnws/de/2024/01/18/die-kommunikation-der-belgischen-bahn-funktioniert-wieder-gross/
+  type: news
+  publisher: VRT NWS
+  published_date: '2024-01-18'
+  language: de
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Single-source entry. Motive set to hacktivism by inference from the
+  attack pattern and the broader 2023-2024 wave of pro-Russian DDoS
+  against European rail operators; no specific group claimed
+  responsibility in public reporting.

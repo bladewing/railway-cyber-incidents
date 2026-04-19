@@ -1,0 +1,97 @@
+id: 2022-01-01_newag-sa
+schema_version: '1.0'
+event_date: '2022-01-01'
+event_date_precision: year
+reported_date: '2023-12-05'
+countries_impacted:
+- PL
+region: null
+coordinates: null
+target_organization: Newag S.A.
+industry_sector: rolling_stock_manufacturer
+operator_type: private
+attack_vector: insider
+supply_chain: false
+malware: null
+extortion: false
+motive: financial
+mitre_attack_techniques: null
+threat_actor: Newag S.A. (alleged; disputed by vendor)
+threat_actor_country: PL
+attribution_confidence: suspected
+confirmation_status: reported
+affected_systems:
+- unclear_system
+data_published: false
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: 30
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  In 2022, Polish regional rail operators began experiencing unexplained
+  failures of Impuls-class electric multiple units manufactured by
+  Newag S.A. after the trains were sent for maintenance to
+  independent third-party workshops (notably SPS) rather than to Newag
+  itself. Dragon Sector, a Polish security research team hired by SPS
+  in May 2022, reverse-engineered the PLC firmware and in August 2022
+  identified logic embedded in the train control software that caused
+  the trains to refuse to start under specific conditions: if the
+  train had stayed for more than a threshold number of days in GPS
+  coordinate ranges corresponding to third-party repair facilities
+  competing with Newag's own service arm, and/or after certain
+  calendar dates. Dragon Sector publicly disclosed their findings at
+  the Chaos Communication Congress (37C3) in December 2023. At least
+  30 Impuls units across several Polish operators were confirmed
+  affected by lock-out conditions. Newag denies the allegations,
+  asserts the findings are a "slander from our competition," and has
+  filed civil lawsuits against the Dragon Sector researchers for
+  intellectual property infringement and unfair competition.
+description_de: null
+sources:
+- url: https://www.theregister.com/2023/12/08/polish_trains_geofenced_allegation/
+  type: news
+  publisher: The Register
+  published_date: '2023-12-08'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://www.kaspersky.com/blog/train-hack-37c3-talk/50321/
+  type: blog
+  publisher: Kaspersky (Secure List)
+  published_date: '2024-01-05'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://www.railway-technology.com/news/the-story-of-the-great-polish-train-hack/
+  type: news
+  publisher: Railway Technology
+  published_date: null
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.9
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Atypical entry: the alleged threat actor is the rolling-stock OEM
+  itself, and the "attack" is embedded manufacturer code that disables
+  trains under conditions favouring the OEM's own service business,
+  not an external intrusion. Classified here under attack_vector:
+  insider because the malicious logic was introduced by someone with
+  authorised access to the product software-supply chain (Newag
+  engineering, per the Dragon Sector allegation). Newag disputes the
+  allegations and has sued; the matter remains in civil litigation at
+  the accessed_date. event_date uses year precision because the lock-
+  out logic was identified across multiple Impuls units with different
+  delivery and activation dates; the earliest observed lock-out was
+  in 2022, and Dragon Sector's investigation began May 2022.

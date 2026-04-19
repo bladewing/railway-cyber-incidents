@@ -1,0 +1,71 @@
+id: 2023-07-05_rzd
+schema_version: '1.0'
+event_date: '2023-07-05'
+event_date_precision: day
+reported_date: '2023-07-05'
+countries_impacted:
+- RU
+region: null
+coordinates: null
+target_organization: Russian Railways (РЖД / RZD)
+industry_sector: other
+operator_type: incumbent
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: hacktivism
+mitre_attack_techniques: null
+threat_actor: Belarusian Cyber-Partisans
+threat_actor_country: BY
+attribution_confidence: reported
+confirmation_status: reported
+affected_systems:
+- website
+- payment_system
+data_published: false
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  On 5 July 2023, the Belarusian hacktivist collective Cyber-Partisans
+  claimed responsibility for an attack that disrupted the public
+  website and online ticket-purchasing systems of Russian Railways
+  (RZD / РЖД). Passengers reportedly could not buy tickets online
+  for a period during the outage; rail operations themselves were not
+  affected. The group framed the operation as part of its ongoing
+  hacktivist campaign against Russian and Belarusian state
+  infrastructure in response to the Russian invasion of Ukraine.
+description_de: null
+sources:
+- url: https://therecord.media/russian-railway-site-taken-down-by-ukrainian-hackers
+  type: news
+  publisher: The Record (Recorded Future News)
+  published_date: '2023-07-05'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.98
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Cyber-Partisans have conducted repeated attacks against RZD and
+  Belarusian Railway infrastructure since 2022; this entry covers the
+  specific 5 July 2023 incident. The Record headline describes the
+  attackers as "Ukrainian hackers", but subsequent reporting
+  consistently attributes this operation to the Belarusian
+  Cyber-Partisans collective (which operates in coordination with
+  Ukrainian hacktivist groups).

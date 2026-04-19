@@ -1,0 +1,66 @@
+id: 2023-11-18_rostocker-strassenbahn-ag
+schema_version: '1.0'
+event_date: '2023-11-18'
+event_date_precision: day
+reported_date: '2023-11-20'
+countries_impacted:
+- DE
+region: null
+coordinates: null
+target_organization: Rostocker Straßenbahn AG (RSAG)
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: null
+motive: unknown
+mitre_attack_techniques: null
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: null
+confirmation_status: confirmed
+affected_systems:
+- data
+- internal_communication
+data_published: null
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: null
+description_en: >
+  On 18 November 2023, Rostocker Straßenbahn AG (RSAG) - the
+  municipal tram and bus operator of the Hanseatic city of Rostock
+  in Mecklenburg-Vorpommern, Germany - detected a cyberattack against
+  its IT infrastructure. The attack affected internal administrative
+  systems; tram and bus operations continued. No threat actor
+  claimed responsibility publicly at the time of reporting. RSAG
+  worked with IT security specialists to restore affected systems.
+description_de: null
+sources:
+- url: https://www.stern.de/gesellschaft/regional/mecklenburg-vorpommern/cyberkriminalitaet--hackerangriff-auf-rostocker-strassenbahn-ag-34212106.html
+  type: news
+  publisher: Stern
+  published_date: '2023-11-20'
+  language: de
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Single-source German-language reporting; threat actor, malware family,
+  and extortion/ransom status were not publicly disclosed. RSAG is
+  owned by the City of Rostock, classified as public_authority.

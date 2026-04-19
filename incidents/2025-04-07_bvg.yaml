@@ -1,0 +1,99 @@
+id: 2025-04-07_bvg
+schema_version: '1.0'
+event_date: '2025-04-07'
+event_date_precision: day
+reported_date: '2025-05-15'
+countries_impacted:
+- DE
+region: null
+coordinates: null
+target_organization: Berliner Verkehrsbetriebe (BVG) via Richard Scholz GmbH (IT service provider)
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: unknown
+supply_chain: true
+malware: null
+extortion: null
+motive: unknown
+mitre_attack_techniques: null
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: null
+confirmation_status: confirmed
+affected_systems:
+- data
+data_published: null
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: 180000
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: true
+description_en: >
+  On 7 April 2025, attackers compromised the IT infrastructure of
+  Richard Scholz GmbH, a Berlin-based IT service provider contracted by
+  Berliner Verkehrsbetriebe (BVG) - the public transport operator of
+  the city of Berlin - and exfiltrated personal data of approximately
+  180,000 BVG subscription customers. Exposed data included names,
+  postal addresses, email addresses, customer numbers, and in some
+  cases subscription contract numbers; according to the forensic
+  assessment published by BVG, no dates of birth, bank account
+  details, passwords, or contract financial details were accessed.
+  BVG was informed of the incident by its service provider at the
+  end of April 2025. BVG reported the data breach to the Berlin
+  Commissioner for Data Protection and Freedom of Information on
+  30 April 2025 and publicly disclosed the incident via a statement
+  on 15 May 2025. Bus, tram, and U-Bahn services were not affected
+  by the incident.
+description_de: null
+sources:
+- url: https://www.bvg.de/de/unternehmen/medienportal/pressemitteilungen/2025-05-15-statment-it-angriff-dienstleister
+  type: press_release
+  publisher: Berliner Verkehrsbetriebe (BVG)
+  published_date: '2025-05-15'
+  language: de
+  accessed_date: '2026-04-20'
+- url: https://www.lto.de/recht/nachrichten/n/cyberangriff-kundendaten-berliner-verkehrsbetriebe-bvg-schadensersatz-datenschutz
+  type: news
+  publisher: Legal Tribune Online (LTO)
+  published_date: '2025-05-16'
+  language: de
+  accessed_date: '2026-04-20'
+- url: https://www.tagesspiegel.de/berlin/hackerangriff-gegen-die-bvg-unbekannte-erbeuten-bei-externem-dienstleister-mehrere-kundendaten-13689394.html
+  type: news
+  publisher: Der Tagesspiegel
+  published_date: '2025-05-15'
+  language: de
+  accessed_date: '2026-04-20'
+- url: https://berlin.t-online.de/region/berlin/id_100722538/berlin-hackerangriff-auf-bvg-dienstleister-kundendaten-gestohlen.html
+  type: news
+  publisher: t-online
+  published_date: '2025-05-15'
+  language: de
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: konbriefing
+  haiku_classify_confidence: 0.97
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Supply-chain incident: the directly compromised organisation was
+  Richard Scholz GmbH (an IT service provider), not BVG; however,
+  the affected data subjects were BVG subscription customers, which
+  places the incident in scope for the railway/urban-transit dataset.
+  BVG is classified as public_authority (owned by the State of
+  Berlin). Renamed from the original discovery-pipeline draft slug
+  "2025-05_bvg" (which reflected the public disclosure month) to
+  "2025-04-07_bvg" once the actual attack date (7 April 2025) at
+  Richard Scholz was identified; reported_date preserves the public
+  disclosure date of 15 May 2025. No ransomware or extortion
+  publicly reported; data-theft-only incident.

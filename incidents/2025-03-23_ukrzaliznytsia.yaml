@@ -1,0 +1,100 @@
+id: 2025-03-23_ukrzaliznytsia
+schema_version: '1.0'
+event_date: '2025-03-23'
+event_date_precision: day
+reported_date: '2025-03-23'
+countries_impacted:
+- UA
+region: null
+coordinates: null
+target_organization: Ukrzaliznytsia (Укрзалізниця)
+industry_sector: other
+operator_type: incumbent
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: state_geopolitical
+mitre_attack_techniques: null
+threat_actor: Russian state-linked actor (unattributed to a specific group)
+threat_actor_country: RU
+attribution_confidence: suspected
+confirmation_status: confirmed
+affected_systems:
+- website
+- payment_system
+- passenger_information
+data_published: false
+impact:
+  scope: national
+  duration_hours: 89
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: false
+description_en: >
+  On 23 March 2025, Ukrzaliznytsia - the Ukrainian state-owned railway
+  operator and the country's largest cargo carrier - was targeted by a
+  large-scale cyberattack that disrupted its online ticket-purchasing
+  system and mobile application. Ukrzaliznytsia described the attack
+  as "systematic, complex, and multi-layered." The central railway
+  station in Kyiv experienced unusually large queues on the morning
+  after the attack began, as passengers were forced to buy tickets at
+  physical counters. Train schedules and rail operations themselves
+  were not affected, and the operator stated that no confidential
+  passenger data had been exfiltrated. Technical specialists worked
+  continuously for 89 hours to restore the affected website and
+  application. On 1 April 2025, Yevheniia Nakonechna, a senior
+  Ukrainian cybersecurity official, attributed the attack to tactics,
+  techniques, and procedures typical of Russian intelligence services
+  and characterised the operation as an "act of terrorism". A retaliatory DDoS
+  attack on the Moscow Metro website was reported shortly afterwards.
+description_de: null
+sources:
+- url: https://therecord.media/ukraine-railway-ukrzaliznytsia-cyberattack-online-ticket-system
+  type: news
+  publisher: The Record (Recorded Future News)
+  published_date: '2025-03-24'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://industrialcyber.co/transport/ukraines-ukrzaliznytsia-railway-operator-hit-by-cyberattack-ticket-system-disrupted-sparking-long-queues/
+  type: news
+  publisher: Industrial Cyber
+  published_date: '2025-03-24'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://www.infosecurity-magazine.com/news/ukraine-russia-railway-hack/
+  type: news
+  publisher: Infosecurity Magazine
+  published_date: '2025-04-02'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://kyivindependent.com/ukrainian-railways-cyberattack-russian-tactics/
+  type: news
+  publisher: Kyiv Independent
+  published_date: '2025-04-01'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: konbriefing
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  One of the most significant incidents against European rail in 2025.
+  Attribution to Russia is made on the basis of TTP analysis by
+  Ukrainian cybersecurity authorities; no specific GRU or FSB unit
+  (Sandworm / APT28 / Gamaredon / Turla / etc.) has been named
+  publicly. Impact scope classified as "widespread" because
+  nationwide online ticketing was unavailable during a 89-hour
+  recovery window; however, physical rail operations and train
+  schedules continued. Replaced the original discovery-pipeline
+  single-source t.me link with four reputable reporting sources.

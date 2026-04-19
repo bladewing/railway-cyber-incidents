@@ -1,0 +1,70 @@
+id: 2025-04-01_rzd
+schema_version: '1.0'
+event_date: '2025-04-01'
+event_date_precision: day
+reported_date: '2025-04-01'
+countries_impacted:
+- RU
+region: null
+coordinates: null
+target_organization: Russian Railways (РЖД / RZD)
+industry_sector: other
+operator_type: incumbent
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: hacktivism
+mitre_attack_techniques: null
+threat_actor: Pro-Ukraine hacktivist actor (unidentified)
+threat_actor_country: null
+attribution_confidence: suspected
+confirmation_status: confirmed
+affected_systems:
+- website
+- payment_system
+data_published: false
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  On or around 1 April 2025, a distributed denial-of-service attack
+  targeted the website and mobile application of Russian Railways
+  (RZD / РЖД), the Russian state-owned incumbent railway operator.
+  The attack disrupted online ticket purchasing and digital
+  passenger-facing services; rail operations and train schedules
+  were not affected. The incident was widely interpreted in Russian
+  and international reporting as a retaliatory action following the
+  23 March 2025 cyberattack on Ukraine's state railway Ukrzaliznytsia,
+  though no specific threat actor claimed responsibility publicly.
+description_de: null
+sources:
+- url: https://therecord.media/russia-state-railway-rzd-ddos-website-app
+  type: news
+  publisher: The Record (Recorded Future News)
+  published_date: '2025-04-01'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: konbriefing
+  haiku_classify_confidence: 0.97
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Tit-for-tat pattern: closely follows (and is widely reported as
+  retaliation for) the 23 March 2025 Ukrzaliznytsia attack, with the
+  direction reversed. Attribution to a pro-Ukraine hacktivist actor is
+  inferred from context rather than formally claimed. Single reputable
+  English-language source at the time of enrichment.

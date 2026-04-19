@@ -1,0 +1,67 @@
+id: 2025-07-09_transdev-hannover-s-bahn-hannover
+schema_version: '1.0'
+event_date: '2025-07-09'
+event_date_precision: day
+reported_date: '2025-07-09'
+countries_impacted:
+- DE
+region: null
+coordinates: null
+target_organization: Transdev Hannover GmbH (S-Bahn Hannover)
+industry_sector: regional_passenger
+operator_type: private
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: unknown
+mitre_attack_techniques: null
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: null
+confirmation_status: reported
+affected_systems:
+- website
+data_published: false
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  On 9 July 2025, the public-facing website of S-Bahn Hannover,
+  operated by Transdev Hannover GmbH in the Hannover region of Lower
+  Saxony, Germany, was rendered unavailable by a cyberattack. No
+  operational impact on train services was reported; onboard and
+  platform passenger information continued through other channels.
+  No threat actor claimed responsibility publicly. A second cyber
+  incident affecting the same website occurred on 24 July 2025
+  (tracked as a separate entry).
+description_de: null
+sources:
+- url: https://www.it-daily.net/shortnews/cyberangriff-website-s-bahn-hannover
+  type: news
+  publisher: IT-Daily
+  published_date: '2025-07-10'
+  language: de
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: konbriefing
+  haiku_classify_confidence: 0.9
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  First of two cyber incidents affecting the S-Bahn Hannover website in
+  July 2025; the second occurred on 24 July 2025. Single-source, low-
+  detail incident; attack vector (likely DDoS given the website-only
+  scope) not publicly confirmed.

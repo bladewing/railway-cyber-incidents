@@ -1,0 +1,68 @@
+id: 2025-07-24_transdev-hannover-s-bahn-hannover
+schema_version: '1.0'
+event_date: '2025-07-24'
+event_date_precision: day
+reported_date: '2025-07-25'
+countries_impacted:
+- DE
+region: null
+coordinates: null
+target_organization: Transdev Hannover GmbH (S-Bahn Hannover)
+industry_sector: regional_passenger
+operator_type: private
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: unknown
+mitre_attack_techniques: null
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: null
+confirmation_status: reported
+affected_systems:
+- website
+data_published: false
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  On 24 July 2025, a cyberattack disrupted the public website of
+  Transdev Hannover GmbH (operator of S-Bahn Hannover in the Hannover
+  region of Lower Saxony, Germany), rendering it unreachable for
+  several hours. No operational impact on train services was
+  reported. This was the second cyber incident to affect the same
+  website within a month, following an earlier incident on 9 July
+  2025 (tracked as a separate entry). No threat actor claimed
+  responsibility publicly.
+description_de: null
+sources:
+- url: https://www.haz.de/lokales/hannover/hackerangriff-website-der-s-bahn-hannover-nicht-erreichbar-4FLKZCLGQZBAHAYXZSAKM4J6CM.html
+  type: news
+  publisher: Hannoversche Allgemeine Zeitung (HAZ)
+  published_date: '2025-07-25'
+  language: de
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: konbriefing
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Second of two cyber incidents affecting the S-Bahn Hannover website
+  in July 2025. Single-source German-language reporting. Attack vector
+  (likely DDoS given website-only scope and short outage) not
+  publicly confirmed. Whether the two July 2025 incidents share a
+  common perpetrator is not publicly established.

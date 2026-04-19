@@ -1,0 +1,64 @@
+id: 2024-05-07_wmata
+schema_version: '1.0'
+event_date: '2024-05-07'
+event_date_precision: day
+reported_date: '2024-05-07'
+countries_impacted:
+- US
+region: null
+coordinates: null
+target_organization: Washington Metropolitan Area Transit Authority (WMATA / Metro)
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: unknown
+mitre_attack_techniques: null
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: null
+confirmation_status: reported
+affected_systems:
+- website
+data_published: false
+impact:
+  scope: local
+  duration_hours: 2
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  On 7 May 2024, the Washington Metropolitan Area Transit Authority
+  (WMATA), the operator of the Washington, DC Metro rail and bus
+  system, experienced a distributed denial-of-service attack that
+  rendered its public website inaccessible for approximately two
+  hours. Rail and bus operations were not affected; passenger-facing
+  information on platforms and onboard trains continued normally. No
+  threat actor claimed responsibility publicly.
+description_de: null
+sources:
+- url: https://www.nbcwashington.com/news/local/transportation/a-cyberattack-took-down-metros-website-for-two-hours-heres-what-a-cybersecurity-expert-says/3616048/
+  type: news
+  publisher: NBC Washington
+  published_date: '2024-05-07'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Low-impact, short-duration website DDoS. Single source. Motive and
+  threat actor remain unknown.

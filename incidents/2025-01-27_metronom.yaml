@@ -1,0 +1,91 @@
+id: 2025-01-27_metronom
+schema_version: '1.0'
+event_date: '2025-01-27'
+event_date_precision: day
+reported_date: '2025-01-28'
+countries_impacted:
+- DE
+region: null
+coordinates: null
+target_organization: metronom Eisenbahngesellschaft mbH (with affiliated operators erixx, erixx Holstein, enno)
+industry_sector: regional_passenger
+operator_type: private
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: unknown
+mitre_attack_techniques: null
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: null
+confirmation_status: confirmed
+affected_systems:
+- website
+- passenger_information
+data_published: false
+impact:
+  scope: regional
+  duration_hours: 72
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  At approximately 16:45 local time on Monday 27 January 2025, a
+  distributed denial-of-service attack - reported to have used a
+  botnet - rendered the websites and digital passenger-information
+  services of metronom Eisenbahngesellschaft mbH, together with its
+  affiliated regional operators erixx, erixx Holstein, and enno,
+  unavailable. The outage lasted approximately three days; public
+  access to timetables, delay and cancellation information, alternative
+  connection searches, lost-and-found services, and contact forms was
+  interrupted during this period. Train operations and onboard
+  services were not affected. Normal web and digital services were
+  restored on Friday 31 January 2025. No threat actor claimed
+  responsibility publicly.
+description_de: null
+sources:
+- url: https://www.heise.de/en/news/Presumed-DDoS-attack-Websites-of-several-railroad-companies-unavailable-10264506.html
+  type: news
+  publisher: heise online
+  published_date: '2025-01-28'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://www.kreiszeitung-wochenblatt.de/tostedt/c-panorama/fahrplaene-von-metronom-und-erixx-zeitweise-nicht-erreichbar_a347044
+  type: news
+  publisher: Kreiszeitung Wochenblatt
+  published_date: '2025-01-28'
+  language: de
+  accessed_date: '2026-04-20'
+- url: https://stelle-aktuell.de/2025/01/31/metronom-und-erixx-nach-cyber-angriff-wieder-online/
+  type: news
+  publisher: Stelle Aktuell
+  published_date: '2025-01-31'
+  language: de
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: konbriefing
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  metronom, erixx, erixx Holstein, and enno are co-managed regional
+  passenger rail operators in Lower Saxony and Schleswig-Holstein; they
+  share digital infrastructure and were therefore all taken offline
+  simultaneously by the DDoS attack. Treated as a single incident here
+  because the target infrastructure is shared. The attacker remains
+  unidentified; the January 2025 period saw increased pro-Russian
+  hacktivist DDoS activity against German targets, but no group
+  claimed this specific operation. Renamed from the original
+  discovery-pipeline draft slug "2025-01_metronom" (which lacked a
+  day component) once the exact start date (2025-01-27) was
+  corroborated via reporting.

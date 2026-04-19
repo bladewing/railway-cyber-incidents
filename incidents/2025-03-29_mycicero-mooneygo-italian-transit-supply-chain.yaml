@@ -1,0 +1,130 @@
+id: 2025-03-29_mycicero-mooneygo-italian-transit-supply-chain
+schema_version: '1.0'
+event_date: '2025-03-29'
+event_date_precision: day
+reported_date: '2025-04-01'
+countries_impacted:
+- IT
+region: null
+coordinates: null
+target_organization: Multiple Italian public transit and mobility operators (MyCicero / MooneyGo platform, operated by Pluservice S.r.l.)
+industry_sector: other
+operator_type: null
+attack_vector: unknown
+supply_chain: true
+malware: null
+extortion: null
+motive: financial
+mitre_attack_techniques: null
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: null
+confirmation_status: confirmed
+affected_systems:
+- payment_system
+- data
+data_published: null
+impact:
+  scope: null
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: true
+description_en: >
+  Between 29 and 30 March 2025, unknown attackers breached the
+  infrastructure of Pluservice S.r.l., an Italian IT service provider
+  that operates the MyCicero and MooneyGo digital-ticketing and
+  mobility-payment platforms on behalf of Mooney Servizi S.p.A.
+  (formerly MyCicero S.r.l.). The compromise was detected on 1 April
+  2025 when the hosting cloud provider WIIT S.p.A. observed anomalous
+  behaviour in the hosted infrastructure and recommended Pluservice
+  isolate and suspend the MyCicero service. Forensic analysis confirmed
+  data exfiltration from databases hosted at WIIT data-centre
+  facilities; WIIT stated that its cloud infrastructure itself was not
+  directly compromised. The incident exposed personal data of
+  customers across a large number of Italian public-transit, regional
+  bus, and mobility operators that rely on the MyCicero/MooneyGo
+  platform for ticketing and payments. Individual operators
+  subsequently issued GDPR Art. 34 data-breach notifications to their
+  customers. No ransomware component was publicly reported; the
+  incident has been characterised as data theft. Rail operations,
+  signalling, and onboard systems were not affected — the impact was
+  limited to customer-facing ticketing and payment surfaces.
+description_de: null
+sources:
+- url: https://beyondmachines.net/event_details/multiple-transit-companies-in-italy-affected-through-the-breach-of-mycicero-platform-u-i-4-c-7
+  type: news
+  publisher: BeyondMachines
+  published_date: '2025-04-15'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://aircampania.it/en/comunicazione-di-una-violazione-dei-dati-personali-agli-interessati/
+  type: press_release
+  publisher: Air Campania
+  published_date: null
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://tplfvg.it/it/news-e-aggiornamenti/news/2025/4/15/c%C3%A8-stata-una-violazione-dei-sistemi-informatici-del-nostro-fornitore-di-servizi-di-mobile-ticketing-fate-attenzione-a-eventuali-email-di-phishing-messaggi-o-chiamate-sospette/
+  type: press_release
+  publisher: TPL FVG
+  published_date: '2025-04-15'
+  language: it
+  accessed_date: '2026-04-20'
+- url: https://www.kymamobilita.it/comunicazione-di-violazione-dei-dati-personali-ai-sensi-dellart-34-del-regolamento-ue-2016-679/
+  type: press_release
+  publisher: Kyma Mobilità
+  published_date: null
+  language: it
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: konbriefing
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Consolidated entry merging nine per-victim stubs produced by the
+  discovery pipeline on 2026-04-19, all describing the same
+  supply-chain compromise of the MyCicero / MooneyGo ticketing and
+  mobility-payment platform operated by Pluservice S.r.l. (a
+  sub-contractor of Mooney Servizi S.p.A., formerly MyCicero S.r.l.;
+  infrastructure hosted by WIIT S.p.A.). The dataset follows its
+  existing shared-campaign precedent (e.g. 2017-05-13_wannacry,
+  2017-06-27_petya-variante) of representing a single root cause with
+  many downstream victims as one entry.
+  Known victim operators (non-exhaustive, alphabetised):
+    - Air Campania
+    - Arriva Italia (Milan)
+    - ASPO (Olbia)
+    - ATMA (Ancona)
+    - ATV (Verona)
+    - Azienda Trasporti Milanesi (ATM Milano)
+    - Busitalia Veneto
+    - FNM Autoservizi S.p.A.
+    - Kyma Mobilità S.p.A. (Taranto)
+    - Mobilità di Marca (MOM, Treviso)
+    - TPL FVG (Friuli-Venezia Giulia)
+    - TUA S.p.A. (Abruzzo)
+    - UnicoCampania
+  Additional victims beyond this list are likely, as BeyondMachines
+  reports the incident affected "multiple regional transport companies
+  that rely on the MyCicero and MooneyGo platforms". The affected data
+  categories were personal customer data (names, contact details,
+  possibly payment metadata depending on the operator); scope varies
+  per victim and is detailed in each operator's individual GDPR Art. 34
+  notice. No threat actor has been publicly attributed as of the
+  accessed_date. The original nine per-victim drafts
+  (2025-03-29_kyma-mobilit-s-p-a, 2025-03-29_mobilit-di-marca,
+  2025-03-29_my-cicero, 2025-03-29_tua-spa, 2025-03-30_arriva-italia,
+  2025-03-30_atma-soc-cons-per-azioni,
+  2025-03-30_azienda-trasporti-milanesi-atm,
+  2025-03-30_fnm-autoservizi-s-p-a, 2025-03-30_tpl-fvg) have been
+  removed from incidents/drafts/ in favour of this consolidated entry.

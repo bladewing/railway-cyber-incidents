@@ -1,0 +1,69 @@
+id: 2023-09-20_elron
+schema_version: '1.0'
+event_date: '2023-09-20'
+event_date_precision: day
+reported_date: '2023-09-21'
+countries_impacted:
+- EE
+region: null
+coordinates: null
+target_organization: Elron (Eesti Liinirongid AS)
+industry_sector: regional_passenger
+operator_type: incumbent
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: hacktivism
+mitre_attack_techniques: null
+threat_actor: Pro-Russian hacktivist group (unidentified)
+threat_actor_country: null
+attribution_confidence: suspected
+confirmation_status: reported
+affected_systems:
+- website
+data_published: false
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  On 20 September 2023, Elron - the Estonian state-owned passenger
+  rail operator - was targeted by a distributed denial-of-service
+  attack that disrupted its public-facing website. A suspected
+  pro-Russian hacktivist group was identified by the Estonian
+  Information System Authority (RIA) as the likely perpetrator, which
+  stated publicly that similar incidents were likely to recur. Rail
+  operations and ticket-vending machines at stations were not
+  affected by the incident.
+description_de: null
+sources:
+- url: https://news.err.ee/1609108433/ria-on-elron-cyberattack-it-is-likely-that-it-will-happen-again
+  type: news
+  publisher: ERR (Eesti Rahvusringhääling)
+  published_date: '2023-09-21'
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.98
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  The specific pro-Russian group was not named in public reporting.
+  Estonia was a frequent target of pro-Russian DDoS activity in 2022-
+  2023 in retaliation for its support of Ukraine; NoName057(16) and
+  Killnet are the most likely candidates by pattern-matching, though
+  no formal attribution was made. Elron is majority-owned by the
+  Estonian state, classified here as incumbent.

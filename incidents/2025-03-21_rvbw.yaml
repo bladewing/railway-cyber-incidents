@@ -1,0 +1,110 @@
+id: 2025-03-21_rvbw
+schema_version: '1.0'
+event_date: '2025-03-21'
+event_date_precision: day
+reported_date: '2025-04-03'
+countries_impacted:
+- CH
+region: null
+coordinates: null
+target_organization: Regionale Verkehrsbetriebe Baden-Wettingen (RVBW) AG
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: unknown
+supply_chain: false
+malware:
+- name: Play
+  family: Play
+  mitre_software_id: null
+extortion: true
+motive: financial
+mitre_attack_techniques: null
+threat_actor: Play (PlayCrypt) ransomware group
+threat_actor_country: null
+attribution_confidence: reported
+confirmation_status: confirmed
+affected_systems:
+- data
+- internal_communication
+data_published: null
+impact:
+  scope: null
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: false
+description_en: >
+  On 21 March 2025, Regionale Verkehrsbetriebe Baden-Wettingen (RVBW)
+  AG, a cantonal public-transport operator serving the Baden and
+  Wettingen region in Aargau, Switzerland, detected suspicious activity
+  in its IT infrastructure. RVBW immediately isolated affected
+  computers and disconnected network connections, but attackers
+  nonetheless succeeded in encrypting a portion of company data. The
+  operator publicly disclosed the incident in early April 2025. RVBW
+  stated that customer and subscription data were not affected and
+  that bus services continued on their normal schedule throughout the
+  incident. The attackers demanded a ransom and threatened to publish
+  stolen company data on the darknet; RVBW did not comply with the
+  demand. The Play (also known as PlayCrypt) ransomware group claimed
+  responsibility via its darknet leak site. RVBW coordinated with the
+  Swiss federal criminal police during the response. The same group
+  had previously conducted high-profile ransomware operations against
+  Swiss targets, including the 2023 breach of the hosting provider
+  Xplain.
+description_de: null
+sources:
+- url: https://www.inside-it.ch/verkehrsbetriebe-baden-wettingen-mit-ransomware-attackiert-20250403
+  type: news
+  publisher: Inside-IT
+  published_date: '2025-04-03'
+  language: de
+  accessed_date: '2026-04-20'
+- url: https://www.watson.ch/digital/ransomware/744643490-ransomware-bande-play-hackt-verkehrsbetriebe-der-region-baden-ag
+  type: news
+  publisher: Watson
+  published_date: '2025-04-07'
+  language: de
+  accessed_date: '2026-04-20'
+- url: https://www.netzwoche.ch/news/2025-04-07/regionale-verkehrsbetriebe-baden-wettingen-melden-ransomwareangriff
+  type: news
+  publisher: Netzwoche
+  published_date: '2025-04-07'
+  language: de
+  accessed_date: '2026-04-20'
+- url: https://www.badenertagblatt.ch/aargau/baden/baden-hackerangriff-auf-rvbw-cyberkriminelle-verlangen-loesegeld-was-bei-nichtbezahlung-droht-ld.2756220
+  type: news
+  publisher: Badener Tagblatt
+  published_date: null
+  language: de
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: konbriefing
+  haiku_classify_confidence: 0.93
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  RVBW's own corporate IT was the direct target; this was not a
+  supply-chain incident and is unrelated to the roughly contemporaneous
+  MyCicero/MooneyGo supply-chain compromise of late March 2025 in Italy
+  (separate entry). The exact initial access vector was not disclosed.
+  Impact on rail-adjacent operations (RVBW primarily operates bus
+  services in the Baden/Wettingen region, with some tram integration
+  via neighbouring operators) was nil; only internal IT and data were
+  affected. RVBW AG is majority-owned by Canton Aargau and participating
+  municipalities, classified here as a public_authority operator even
+  though structurally an Aktiengesellschaft. Attribution to Play is
+  based on the group listing RVBW on its darknet leak site and on
+  Swiss press reporting; no independent CERT or vendor confirmation is
+  cited in the English-language record. This entry was manually
+  completed from the discovery-pipeline stub; the original stub
+  correctly identified the victim and ransomware nature but had most
+  structured fields null.

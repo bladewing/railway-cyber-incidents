@@ -1,0 +1,95 @@
+id: 2024-09-25_network-rail
+schema_version: '1.0'
+event_date: '2024-09-25'
+event_date_precision: day
+reported_date: '2024-09-26'
+countries_impacted:
+- GB
+region: null
+coordinates: null
+target_organization: Network Rail (via Global Reach Technology, Wi-Fi service provider)
+industry_sector: infrastructure_manager
+operator_type: public_authority
+attack_vector: supply_chain
+supply_chain: true
+malware: null
+extortion: false
+motive: hacktivism
+mitre_attack_techniques: null
+threat_actor: Malicious insider (employee of Global Reach Technology)
+threat_actor_country: GB
+attribution_confidence: confirmed
+confirmation_status: confirmed
+affected_systems:
+- station_it
+data_published: false
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: false
+description_en: >
+  At approximately 17:03 local time on 25 September 2024, the public
+  Wi-Fi splash pages at around 20 major UK railway stations managed
+  by Network Rail - including London Euston, Manchester Piccadilly,
+  and Liverpool Lime Street - were defaced to display an Islamophobic
+  message beginning "We love you Europe" and listing prior
+  terrorist attacks in Europe. Users attempting to connect to the
+  free station Wi-Fi were presented with the message instead of the
+  normal login page. The free Wi-Fi service was suspended across
+  affected stations during the incident response. British Transport
+  Police subsequently arrested an employee of Global Reach Technology,
+  the third-party provider of Wi-Fi services at Network Rail
+  stations, as the suspected perpetrator. The individual later
+  received a suspended sentence. No personal data was compromised;
+  the abuse of access was limited to splash-page defacement.
+description_de: null
+sources:
+- url: https://securityaffairs.com/169009/hacking/cyber-vandalism-on-wi-fi-networks-at-uk-train-stations.html
+  type: news
+  publisher: Security Affairs
+  published_date: '2024-09-26'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://www.computerweekly.com/news/366612056/Racist-Network-Rail-Wi-Fi-hack-work-of-malicious-insider
+  type: news
+  publisher: Computer Weekly
+  published_date: '2024-10-01'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://www.itv.com/news/granada/2024-09-26/major-uk-train-stations-targeted-by-cyber-security-attack
+  type: news
+  publisher: ITV News Granada
+  published_date: '2024-09-26'
+  language: en
+  accessed_date: '2026-04-20'
+- url: https://hackread.com/man-suspended-sentence-hate-uk-train-stations-wifi-hack/
+  type: news
+  publisher: Hackread
+  published_date: null
+  language: en
+  accessed_date: '2026-04-20'
+provenance:
+  needs_review: true
+  discovered_by: discover_incidents
+  aggregator: eurepoc
+  haiku_classify_confidence: 0.95
+contributors:
+- discover_incidents
+- Lukas Iffländer
+last_updated: '2026-04-20'
+notes: >
+  Dual classification: insider threat (the perpetrator was a legitimate
+  employee of the Wi-Fi provider) and supply-chain (the compromised
+  party was Network Rail's third-party Wi-Fi vendor Global Reach
+  Technology, not Network Rail directly). Attack vector is therefore
+  classified as insider with supply_chain=true. The impact was limited
+  to a defacement of the captive-portal splash page; no credential
+  theft or user-data exfiltration has been publicly reported. Rail
+  operations and signalling were not affected.
