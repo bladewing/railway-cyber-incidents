@@ -1,37 +1,76 @@
 id: 2016-11-26_variante-hddcryptor
 schema_version: '1.0'
-event_date: '2016-11-26'
+event_date: '2016-11-25'
 event_date_precision: day
-reported_date: null
+reported_date: '2016-11-26'
 countries_impacted:
 - US
-region: null
+region: San Francisco, California
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: San Francisco Municipal Transportation Agency (SFMTA / Muni)
+industry_sector: urban_transit
+operator_type: public_authority
 attack_vector: exploit
 supply_chain: false
 malware:
-- name: Variante HDDCryptor
-  family: null
+- name: HDDCryptor
+  family: Mamba
   mitre_software_id: null
 extortion: true
 motive: financial
-mitre_attack_techniques: null
-threat_actor: '@yandex.com'
+mitre_attack_techniques:
+- T1486
+- T1490
+threat_actor: Andy Saolis (pseudonym; cryptom27@yandex.com)
 threat_actor_country: null
 attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - internal_communication
 - payment_system
+- station_it
 - data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2016-11-26. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: local
+  duration_hours: 48
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On the evening of Friday 25 November 2016 (Thanksgiving weekend), the San
+  Francisco Municipal Transportation Agency (SFMTA, operator of the "Muni"
+  light-rail and bus network) was hit by the HDDCryptor / Mamba ransomware,
+  which uses the open-source DiskCryptor utility to perform full-disk
+  encryption and rewrites the Master Boot Record of each infected host.
+  Roughly 2,112 of SFMTA's 8,656 Windows computers were affected, including
+  office PCs, email servers, ticket-vending machines and schedule monitors;
+  staff disabled faregates and let passengers ride for free through the
+  weekend. The attacker, using the pseudonym "Andy Saolis" and the address
+  cryptom27@yandex.com, demanded 100 BTC (≈US$73,000) and threatened to
+  release 30 GB of allegedly-stolen data. SFMTA refused to pay, restored
+  systems from backups by Monday 28 November, and later stated that trains
+  were unaffected and no customer or server data had been accessed.
+description_de: >
+  Am Abend des 25. November 2016 (Thanksgiving-Wochenende) wurde die San
+  Francisco Municipal Transportation Agency (SFMTA, Betreiberin der "Muni"
+  Stadtbahn und Busnetze) Opfer der Ransomware HDDCryptor bzw. Mamba, die
+  mit dem Open-Source-Tool DiskCryptor die Festplatten vollständig
+  verschlüsselt und den Master Boot Record überschreibt. Rund 2.112 von
+  8.656 Windows-Rechnern waren betroffen, darunter Büro-PCs, Mailserver,
+  Fahrkartenautomaten und Fahrplananzeigen; die Bezahlschranken wurden
+  abgeschaltet, sodass Fahrgäste über das Wochenende kostenlos fahren
+  konnten. Der Täter verlangte unter dem Pseudonym "Andy Saolis" und der
+  Adresse cryptom27@yandex.com 100 BTC (ca. 73.000 USD) und drohte mit
+  Veröffentlichung von 30 GB angeblich erbeuteter Daten. SFMTA zahlte nicht,
+  stellte die Systeme bis Montag, 28. November, aus Backups wieder her und
+  erklärte, der Zugverkehr sei nicht betroffen gewesen und weder Kunden-
+  noch Serverdaten seien abgeflossen.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -39,11 +78,124 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.sfmta.com/blog/update-sfmta-ransomware-attack
+  type: press_release
+  publisher: San Francisco Municipal Transportation Agency
+  published_date: '2016-11-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://krebsonsecurity.com/2016/11/san-francisco-rail-system-hacker-hacked/
+  type: blog
+  publisher: Krebs on Security
+  published_date: '2016-11-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/ransomware-hits-san-francisco-public-transit-system-asks-for-73-000/
+  type: news
+  publisher: Bleeping Computer
+  published_date: '2016-11-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securityweek.com/hddcryptor-ransomware-variant-used-san-francisco-rail-system-attack/
+  type: news
+  publisher: SecurityWeek
+  published_date: '2016-11-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.heise.de/security/meldung/OePNV-umsonst-Verschluesselungstrojaner-kapert-Bezahlterminals-der-Strassenbahn-in-San-Francisco-3506080.html
+  type: news
+  publisher: heise online
+  published_date: '2016-11-28'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.golem.de/news/san-francisco-kostenfreier-nahverkehr-dank-ransomware-1611-124734.html
+  type: news
+  publisher: Golem.de
+  published_date: '2016-11-28'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://thehackernews.com/2016/11/transit-system-hacked.html
+  type: news
+  publisher: The Hacker News
+  published_date: '2016-11-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.kaspersky.com/blog/mamba-hddcryptor-ransomware/13539/
+  type: blog
+  publisher: Kaspersky Lab
+  published_date: '2016-12-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.trendmicro.com/vinfo/gb/security/news/cybercrime-and-digital-threats/disk-locking-hddcryptor-mamba-ransomware-makes-a-comeback
+  type: blog
+  publisher: Trend Micro
+  published_date: '2017-08-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cyberscoop.com/malware-targeting-san-francisco-transit-may-wild-least-2-months-researcher-says/
+  type: news
+  publisher: CyberScoop
+  published_date: '2016-11-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://finance.yahoo.com/news/hackers-threaten-release-30gb-stolen-191709864.html
+  type: news
+  publisher: Fortune (via Yahoo Finance)
+  published_date: '2016-11-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ibtimes.co.uk/san-francisco-rail-hacker-gets-hacked-emails-reveal-clues-about-identity-tactics-1594026
+  type: news
+  publisher: International Business Times UK
+  published_date: '2016-11-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/san-francisco-sfmta-denies-that-hacker-stole-30gb-of-data-from-its-servers/
+  type: news
+  publisher: Bleeping Computer
+  published_date: '2016-11-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbc.ca/news/science/hackers-ransomware-san-francisco-1.3870726
+  type: news
+  publisher: CBC News
+  published_date: '2016-11-28'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  DZSF raw data carried the date 2016-11-26, but the attack was first
+  detected on the evening of Friday 25 November 2016; it became publicly
+  visible on 26 November when ticket machines across Muni stations
+  displayed the "You Hacked, ALL Data Encrypted. Contact For Key
+  (cryptom27@yandex.com)" message. The DZSF "threat_actor: @yandex.com"
+  placeholder corresponds to the cryptom27@yandex.com / cryptom2016@yandex.com
+  contact addresses used by the attacker under the pseudonym "Andy Saolis".
+  Krebs on Security reported that a third-party security researcher broke
+  into the attacker's Yandex mailboxes and found evidence pointing to Iran
+  (Farsi-language notes, Iranian IP addresses, usernames "Alireza" and
+  "Mokhi"); this remains unattributed and no law-enforcement action has
+  publicly tied any named individual to the SFMTA incident, so
+  `threat_actor_country` is left null. The exploitation vector was not
+  confirmed by SFMTA, but Fortinet and CyberScoop reported that the
+  HDDCryptor operators were running Oracle WebLogic / Primavera
+  vulnerability scans against internet-exposed servers; the SFMTA itself
+  stated it was likely a "spray and pray" rather than a targeted attack.
+  No MITRE Software ID exists for HDDCryptor / Mamba in the MITRE ATT&CK
+  knowledge base (checked 2026-04-19). MITRE techniques mapped: T1486
+  (Data Encrypted for Impact) and T1490 (Inhibit System Recovery, via MBR
+  overwrite). SFMTA publicly denied any data exfiltration, so
+  `data_published` is false and `data_compromise.customer_data` /
+  `organizational_data` are false; the attacker's 30 GB exfiltration claim
+  was not substantiated. Monetary loss is hard to pin down: SFBay reported
+  a potential fare loss of roughly US$559,000 per day of free rides and
+  SFMTA later estimated about US$50,000 in lost fares over the weekend,
+  but figures are not consistent enough to commit a single integer EUR
+  value here. Trains (rail operations / signalling) were not affected.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

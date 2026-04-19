@@ -65,3 +65,24 @@ def test_malformed_url_fails(tmp_repo, minimal_incident):
     _write(tmp_repo / "incidents" / "2020-01-01_example.yaml", minimal_incident)
     errors = validate_repository(tmp_repo)
     assert any("url" in e.lower() for e in errors)
+
+
+def test_validator_ignores_drafts_directory(tmp_repo, minimal_incident):
+    """Files under incidents/.drafts/ must never be validated."""
+    _write(tmp_repo / "incidents" / "2020-01-01_example.yaml", minimal_incident)
+    drafts_dir = tmp_repo / "incidents" / ".drafts"
+    drafts_dir.mkdir()
+    # A deliberately broken draft — missing required fields.
+    _write(drafts_dir / "2099-12-31_broken.yaml", {"id": "nope"})
+    errors = validate_repository(tmp_repo)
+    assert errors == [], f"drafts dir must be skipped, got: {errors}"
+
+
+def test_validator_ignores_hidden_subdirs_generally(tmp_repo, minimal_incident):
+    """Regression: glob('*.yaml') on incidents/ must remain non-recursive."""
+    _write(tmp_repo / "incidents" / "2020-01-01_example.yaml", minimal_incident)
+    nested = tmp_repo / "incidents" / "subdir"
+    nested.mkdir()
+    _write(nested / "2099-12-31_broken.yaml", {"id": "nope"})
+    errors = validate_repository(tmp_repo)
+    assert errors == []

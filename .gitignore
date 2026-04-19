@@ -86,3 +86,6 @@ AGENTS.md
 .ai/
 .agent/
 .prompts/
+
+# Enrichment sidecar drafts (see docs/superpowers/specs/2026-04-19-incident-enrichment-design.md)
+incidents/.drafts/

@@ -2,36 +2,134 @@ id: 2017-06-27_petya-variante
 schema_version: '1.0'
 event_date: '2017-06-27'
 event_date_precision: day
-reported_date: null
+reported_date: '2017-06-27'
 countries_impacted:
 - UA
 region: null
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: Ukrzaliznytsia (Ukrainian Railways)
+industry_sector: other
+operator_type: incumbent
+attack_vector: supply_chain
 supply_chain: true
 malware:
-- name: Petya Variante
-  family: null
-  mitre_software_id: null
-extortion: true
-motive: financial
-mitre_attack_techniques: null
-threat_actor: null
-threat_actor_country: null
-attribution_confidence: unknown
+- name: NotPetya
+  family: Petya
+  mitre_software_id: S0368
+extortion: false
+motive: state_geopolitical
+mitre_attack_techniques:
+- T1486
+- T1210
+- T1083
+- T1070.001
+- T1036
+- T1003.001
+- T1021.002
+- T1053.005
+- T1518.001
+- T1218.011
+- T1569.002
+- T1529
+- T1078.003
+- T1047
+threat_actor: Sandworm (GRU Unit 74455)
+threat_actor_country: RU
+attribution_confidence: confirmed
 confirmation_status: confirmed
 affected_systems:
 - payment_system
 - data
+- station_it
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2017-06-27. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: null
+description_en: On 27 June 2017 Ukrzaliznytsia, the Ukrainian state railway operator,
+  was among the critical-infrastructure entities disabled by the NotPetya wiper,
+  which spread via a trojanised update of the M.E.Doc Ukrainian tax-accounting
+  software. The malware, disguised as Petya-family ransomware, irreversibly
+  encrypted Windows hosts and forced the railway to issue paper tickets and
+  process payments manually while ticketing, corporate IT and station systems
+  were unavailable; the UK, US and allied governments later attributed the
+  operation to Russia's GRU Unit 74455 (Sandworm).
+description_de: Am 27. Juni 2017 gehörte die ukrainische Staatsbahn Ukrsalisnyzja
+  (Укрзалізниця) zu den kritischen Infrastrukturbetreibern, die durch den
+  NotPetya-Wiper lahmgelegt wurden. Der als Petya-Ransomware getarnte Schädling
+  verbreitete sich über ein kompromittiertes Update der ukrainischen
+  Steuersoftware M.E.Doc, zerstörte Windows-Systeme unwiderruflich und zwang
+  die Bahn, Fahrkarten manuell auszustellen und Zahlungen per Hand zu
+  bearbeiten. Britische, US-amerikanische und weitere Regierungen schrieben
+  den Angriff später der russischen GRU-Einheit 74455 (Sandworm) zu.
 sources:
+- url: https://en.wikipedia.org/wiki/2017_Ukraine_ransomware_attacks
+  type: other
+  publisher: Wikipedia
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://uk.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BA%D0%B5%D1%80%D1%81%D1%8C%D0%BA%D1%96_%D0%B0%D1%82%D0%B0%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%83_(2017)
+  type: other
+  publisher: Wikipedia (Ukrainian)
+  published_date: null
+  language: uk
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0368/
+  type: other
+  publisher: MITRE ATT&CK
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cisa.gov/news-events/alerts/2017/07/01/petya-ransomware
+  type: cert_advisory
+  publisher: CISA / US-CERT
+  published_date: '2017-07-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.heise.de/hintergrund/3-Jahre-NotPetya-Der-Erpressungstrojaner-der-keiner-war-4797250.html
+  type: news
+  publisher: heise online
+  published_date: '2020-06-27'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.welivesecurity.com/2022/03/21/sandworm-tale-disruption-told-anew/
+  type: blog
+  publisher: ESET WeLiveSecurity
+  published_date: '2022-03-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://euromaidanpress.com/2017/06/27/powerful-cyberattack-on-ukrainian-banks-energy-companies-underway/
+  type: news
+  publisher: Euromaidan Press
+  published_date: '2017-06-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.tripwire.com/state-of-security/notpetya-timeline-of-a-ransomworm
+  type: blog
+  publisher: Tripwire
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.gov.uk/government/news/foreign-office-minister-condemns-russia-for-notpetya-attacks
+  type: official_statement
+  publisher: UK Foreign & Commonwealth Office
+  published_date: '2018-02-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.gmfus.org/sites/default/files/2023-12/Kvartsiana%20-%20Ukraine%20Cyber%20-%20Report.pdf
+  type: academic_paper
+  publisher: German Marshall Fund (ReThink.CEE, Kvartsiana)
+  published_date: '2023-12-01'
+  language: en
+  accessed_date: '2026-04-19'
 - url: https://www.dzsf.bund.de/
   type: academic_paper
   publisher: DZSF
@@ -40,9 +138,19 @@ sources:
   accessed_date: null
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Incident originally imported from the DZSF raw-data spreadsheet as
+  "Petya-Variante"; filename stem retained for ID stability. The attack is
+  universally identified as NotPetya (a.k.a. ExPetr, Diskcoder.C, Nyetya),
+  a Sandworm/GRU wiper masquerading as Petya ransomware. MITRE technique
+  list is the full S0368 mapping (Enterprise); not every technique is
+  necessarily relevant to the railway-specific kill chain, but all are
+  attested for the malware. extortion=false reflects the consensus that
+  the ransom note was a cover and decryption was never possible.
+  description_de uses the German transliteration "Ukrsalisnyzja".
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

@@ -2,14 +2,14 @@ id: 2017-11-18_dzsf-import
 schema_version: '1.0'
 event_date: '2017-11-18'
 event_date_precision: day
-reported_date: null
+reported_date: '2017-11-20'
 countries_impacted:
 - US
-region: null
+region: Sacramento, California
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: Sacramento Regional Transit District (SacRT)
+industry_sector: urban_transit
+operator_type: public_authority
 attack_vector: unknown
 supply_chain: false
 malware: null
@@ -23,11 +23,54 @@ confirmation_status: confirmed
 affected_systems:
 - website
 - data
+- payment_system
+- internal_communication
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2017-11-18. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: false
+description_en: >
+  Over the weekend of 18-19 November 2017, the Sacramento Regional Transit
+  District (SacRT, operator of Sacramento's light-rail and bus network) was
+  hit by a two-stage intrusion. On Saturday 18 November an attacker defaced
+  the agency's public website with a message posing as a "good hacker"
+  offering to help fix vulnerabilities (contact address
+  nesddjerfn@protonmail.com); when SacRT technicians investigated on Sunday
+  19 November, the intruder wiped approximately 30 million of SacRT's 100
+  million files from its virtual servers, destroying programs used for
+  employee dispatch and bus-route assignment, and then sent a Facebook
+  message demanding a 1 BTC (~US$7,000–8,000) ransom ("hello, I will always
+  attack your website, we are hackers. we can do everything. Pay us now to
+  stop attacking"). SacRT refused to pay, took its website and credit-card
+  payment systems offline, restored data from daily backups, and worked
+  with the U.S. Department of Homeland Security on the investigation; bus
+  and light-rail operations continued uninterrupted (staff reverted to
+  manual dispatch) and no customer data was stolen.
+description_de: >
+  Am Wochenende vom 18./19. November 2017 wurde der Sacramento Regional
+  Transit District (SacRT, Betreiber des Stadtbahn- und Busnetzes von
+  Sacramento) Opfer eines zweistufigen Angriffs. Am Samstag, 18. November,
+  verunstaltete ein Angreifer die öffentliche Website der Agentur mit einer
+  Nachricht, die sich als "guter Hacker" ausgab und unter der Adresse
+  nesddjerfn@protonmail.com Hilfe bei der Behebung von Schwachstellen
+  anbot; als SacRT-Techniker am Sonntag, 19. November, den Schaden
+  untersuchten, löschte der Eindringling rund 30 Millionen der insgesamt
+  100 Millionen Dateien von den virtuellen Servern und damit Programme für
+  die Personalausteilung und Busrouten-Zuweisung. Anschließend forderte er
+  per Facebook-Nachricht ein Lösegeld von 1 BTC (ca. 7.000–8.000 US-$) an.
+  SacRT zahlte nicht, nahm Website und Kreditkartenzahlung offline, stellte
+  die Daten aus den täglichen Backups wieder her und arbeitete bei der
+  Ermittlung mit dem US-Heimatschutzministerium (DHS) zusammen; der Bus-
+  und Stadtbahnbetrieb lief ununterbrochen weiter (Disposition manuell),
+  und Kundendaten wurden nicht entwendet.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -35,11 +78,138 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.bleepingcomputer.com/news/security/hacker-breaches-sacramento-public-transportation-system-asks-for-1-btc-ransom/
+  type: news
+  publisher: Bleeping Computer
+  published_date: '2017-11-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.helpnetsecurity.com/2017/11/21/sacramento-regional-transit-hack/
+  type: news
+  publisher: Help Net Security
+  published_date: '2017-11-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.govtech.com/security/sacramento-calif-transit-system-recovers-from-ransomware-attack.html
+  type: news
+  publisher: Government Technology
+  published_date: '2017-11-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.govtech.com/security/hackers-target-sacramento-calif-regional-transit-system.html
+  type: news
+  publisher: Government Technology
+  published_date: '2017-11-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://insider.govtech.com/california/news/dhs-aiding-investigation-of-sacrt-hack.html
+  type: news
+  publisher: Government Technology Insider
+  published_date: '2017-11-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://m.washingtontimes.com/news/2017/nov/21/cyberattack-on-sacramento-regional-transit-deletes/
+  type: news
+  publisher: The Washington Times
+  published_date: '2017-11-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.foxnews.com/tech/hacker-targets-sacramento-regional-transit-deletes-30-million-files-in-ransomware-attack
+  type: news
+  publisher: Fox News
+  published_date: '2017-11-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbsnews.com/sacramento/news/sac-rt-cyber-attack/
+  type: news
+  publisher: CBS Sacramento (KMAX/KOVR)
+  published_date: '2017-11-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.hackread.com/sacramento-regional-transit-system-in-california-held-for-ransom/
+  type: news
+  publisher: HackRead
+  published_date: '2017-11-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://bitcoinist.com/hackers-demand-single-bitcoin-ransomware-attack/
+  type: news
+  publisher: Bitcoinist
+  published_date: '2017-11-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.route-fifty.com/tech-data/2017/11/sacramento-transit-hacker-ransom/142718/
+  type: news
+  publisher: Route Fifty
+  published_date: '2017-11-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.tripwire.com/state-of-security/latest-security-news/hackers-demanded-8k-sacramento-regional-transit-attack/
+  type: blog
+  publisher: Tripwire State of Security
+  published_date: '2017-11-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cyberpolicy.com/cybersecurity-education/trainspotting-hackers-attack-the-sacramento-transit-system
+  type: blog
+  publisher: CyberPolicy
+  published_date: '2017-11-22'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The DZSF raw-data row dated 2017-11-18 (US, extortion=true, motive
+  financial, affected_systems website+data, confirmation=confirmed) matches
+  the well-documented Sacramento Regional Transit (SacRT) intrusion of
+  the 18-19 November 2017 Thanksgiving-week weekend. The DZSF stub is
+  therefore resolved to SacRT. Chronology (from Mark Lonergan, SacRT COO,
+  quoted in The Washington Times, Route Fifty, Government Technology and
+  Bleeping Computer): Saturday 2017-11-18 — website defaced with a message
+  pretending to be a white-hat ("I'm sorry to modify the home page, i'm
+  good hacker, i I just want to help you fix these vulnerability …")
+  together with the contact address nesddjerfn@protonmail.com. Sunday
+  2017-11-19 — when SacRT IT staff logged in to investigate, the attacker
+  wiped ~30 million of 100 million files from virtual servers and sent a
+  Facebook private message demanding 1 BTC (≈US$7,000–8,000 depending on
+  exchange rate at the time). SacRT refused, restored roughly 80 % of
+  internal data from daily backups by Tuesday 2017-11-21 and recovered
+  more over the following days; the remaining systems were fully back
+  within about a week. Attack vector is recorded as `unknown`: no SacRT,
+  DHS or vendor statement has publicly disclosed how the attacker gained
+  initial access — the defacement itself could only have occurred after
+  write access to the web server was obtained, and contemporaneous
+  analysts (Tripwire, Help Net Security) speculated on unpatched
+  internet-facing systems but did not confirm. `threat_actor` and
+  `threat_actor_country` are `null`: no named individual or group has
+  been publicly attributed; the nesddjerfn@protonmail.com address is a
+  pseudonymous contact only. `mitre_attack_techniques` kept `null`
+  because no primary / CERT / vendor source formally maps this incident
+  into the ATT&CK framework; the technique inventory that best fits the
+  public evidence would be T1491.002 (External Defacement), T1190
+  (Exploit Public-Facing Application — suspected) and T1485 (Data
+  Destruction), but that mapping is the subagent's inference rather than
+  a cited one and per the codebook is therefore not committed. No
+  malware family was publicly named (the "ransomware" framing in press
+  coverage refers to the extortion demand; the destructive payload was a
+  wiper rather than an encryptor), so `malware: null`. `data_published`
+  is false and `customer_data` is false per SacRT's Twitter statement
+  ("Network damage was limited, and no personal data was compromised");
+  internal operational programs / dispatch data were destroyed rather
+  than exfiltrated, so `organizational_data` is set to true.
+  `affected_systems` expanded from the DZSF stub's [website, data] to
+  also include `payment_system` (Connect Card credit-card top-ups were
+  taken offline for several days) and `internal_communication` (SacRT
+  confirmed internal dispatch/operations systems were disrupted);
+  `rail_operations` is deliberately excluded because bus and light-rail
+  service continued uninterrupted. `impact.scope` is `local` (single
+  agency, single metropolitan area); `impact.magnitude.affected_trains`
+  is set to 0 per SacRT's own statement; monetary damage is not
+  quantified in any public source (the $8k ransom was never paid and
+  remediation cost was not disclosed), so `monetary_damage_eur` is null.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

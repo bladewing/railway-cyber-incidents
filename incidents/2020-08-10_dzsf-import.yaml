@@ -2,20 +2,25 @@ id: 2020-08-10_dzsf-import
 schema_version: '1.0'
 event_date: '2020-08-10'
 event_date_precision: day
-reported_date: null
+reported_date: '2020-08-11'
 countries_impacted:
 - US
-region: null
-coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+region: Greater Philadelphia region, Pennsylvania, United States (SEPTA serves
+  Bucks, Chester, Delaware, Montgomery and Philadelphia counties; headquarters
+  1234 Market Street, Philadelphia, PA)
+coordinates:
+  lat: 39.9526
+  lon: -75.1652
+target_organization: Southeastern Pennsylvania Transportation Authority (SEPTA)
+industry_sector: urban_transit
+operator_type: public_authority
 attack_vector: unknown
 supply_chain: false
 malware: null
-extortion: false
-motive: unknown
-mitre_attack_techniques: null
+extortion: true
+motive: financial
+mitre_attack_techniques:
+- T1486
 threat_actor: null
 threat_actor_country: null
 attribution_confidence: unknown
@@ -24,11 +29,112 @@ affected_systems:
 - internal_communication
 - passenger_information
 - data
+- website
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2020-08-10. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: false
+description_en: >
+  On Monday 10 August 2020 the IT department of the Southeastern
+  Pennsylvania Transportation Authority (SEPTA) — the public-authority
+  transit operator for the five-county Philadelphia metropolitan area,
+  which runs 13 Regional Rail commuter lines, the Market-Frankford and
+  Broad Street subway lines, city and suburban trolleys and buses,
+  serving roughly four million people — detected unauthorised access
+  to its servers and shut systems down to contain the spread.
+  Multiple sources at the authority subsequently confirmed the event
+  as a ransomware attack settled through SEPTA's cyber liability
+  insurance, although SEPTA itself never publicly named the
+  ransomware family or the threat actor. Approximately 100 servers
+  and 50 workstations were affected. Impact on passengers was
+  concentrated on information systems: SEPTA's real-time
+  "Next-to-Arrive" / TransitView / TrainView feeds, the mobile app,
+  the public website and automated platform announcements were
+  unavailable from 10 August until late on Monday 24 August 2020 —
+  riders were referred to printed schedules and station staff during
+  the roughly two-week outage. SEPTA Key card and fare-payment
+  systems, which run on an air-gapped third-party platform, were
+  unaffected, and revenue rail and bus service continued throughout.
+  Internal impact was more prolonged: around 2,200 employee email
+  accounts, phone directories, payroll, remote timekeeping,
+  shared-drive file servers and headquarters Internet connectivity
+  were disrupted, and the automatic-passenger-counting (APC) system
+  used to manage COVID-19 crowding on roughly a quarter of the bus
+  and trolley fleet remained offline for about four months.
+  Scheduling for the Customized Community Transportation (CCT)
+  paratransit service was likewise impaired. On 27 August 2020 SEPTA
+  general manager Leslie S. Richards wrote to the agency's
+  approximately 9,300 employees to warn that unauthorised
+  individuals may have accessed files containing employee names,
+  Social Security numbers, addresses, benefits-enrolment
+  information, salaries / hourly rates and bank account and routing
+  numbers; SEPTA offered a year of Kroll credit-monitoring paid for
+  out of the cyber insurance policy and opened an employee call
+  centre. The FBI and external forensics provider Arete Advisors
+  assisted the investigation. No rider data was reported as
+  compromised and no leak of the exfiltrated employee data has been
+  observed on any ransomware leak site. A hard drive containing
+  "executable batch files used to spread malware" from an
+  investigation workstation went missing between 5 and 10 September
+  2020 and was never recovered, but SEPTA stated that it held no
+  sensitive personal information; the investigation closed without
+  public attribution.
+description_de: >
+  Am Montag, 10. August 2020, stellte die IT-Abteilung der
+  Southeastern Pennsylvania Transportation Authority (SEPTA) — der
+  öffentlich-rechtliche Nahverkehrsbetreiber der fünf Countys um
+  Philadelphia mit 13 Regionalbahnlinien (Regional Rail), den
+  U-Bahn-Linien Market-Frankford und Broad Street, Stadt- und
+  Vorortstraßenbahnen sowie Buslinien und rund vier Millionen
+  Einwohnern im Einzugsgebiet — unautorisierte Zugriffe auf ihre
+  Server fest und fuhr die Systeme zur Eindämmung herunter. Mehrere
+  Quellen innerhalb der Verkehrsbehörde bestätigten den Vorfall
+  anschließend als Ransomware-Angriff, der über die Cyber-
+  versicherung der SEPTA reguliert wurde; die Ransomware-Familie und
+  die Urheber wurden öffentlich nie benannt. Betroffen waren rund
+  100 Server und 50 Arbeitsplatzrechner. Fahrgastseitig wirkten sich
+  die Folgen auf Informationssysteme aus: die Echtzeitauskunft
+  („Next-to-Arrive“ / TransitView / TrainView), die mobile App, die
+  Webseite und die automatischen Bahnsteigansagen waren vom
+  10. August bis zum späten Montag, 24. August 2020 nicht verfügbar
+  — rund zwei Wochen lang wurden die Fahrgäste auf gedruckte
+  Fahrpläne und Personal verwiesen. Das Bezahlsystem SEPTA Key, das
+  von einem Dritten auf einer luftgetrennten Plattform betrieben
+  wird, war nicht betroffen, der Bahn- und Busbetrieb lief
+  durchgängig weiter. Intern hielten die Störungen länger an: rund
+  2.200 E-Mail-Konten der Beschäftigten, Telefonverzeichnisse,
+  Lohnbuchhaltung, Zeiterfassung, gemeinsam genutzte Dateiserver
+  und der Internetzugang am SEPTA-Hauptsitz waren unterbrochen; das
+  automatische Fahrgastzählsystem (APC), mit dem während der
+  Corona-Pandemie auf etwa einem Viertel der Bus- und
+  Straßenbahnflotte die Auslastung überwacht wurde, blieb rund vier
+  Monate offline. Auch die Disposition des Paratransit-Dienstes
+  „Customized Community Transportation“ (CCT) war beeinträchtigt.
+  Am 27. August 2020 informierte SEPTA-Generaldirektorin Leslie S.
+  Richards die rund 9.300 Beschäftigten per E-Mail darüber, dass
+  Unbekannte möglicherweise auf Dateien mit Namen,
+  Sozialversicherungs­nummern, Adressen, Angaben zur Leistungs­
+  anmeldung, Gehalts- bzw. Stundenlohnsätzen sowie Bankkonto- und
+  Routingnummern zugegriffen haben; SEPTA übernahm über die
+  Cyber­versicherung zwölf Monate Bonitätsüberwachung bei Kroll
+  und richtete eine Mitarbeiter-Hotline ein. Das FBI und der
+  externe Incident-Response-Dienstleister Arete Advisors
+  unterstützten die Untersuchung. Daten von Fahrgästen wurden nicht
+  als kompromittiert gemeldet und die erbeuteten Personaldaten
+  tauchten bis heute nicht auf einer Ransomware-Leak-Site auf. Eine
+  Festplatte mit „ausführbaren Batch-Dateien zur Verbreitung der
+  Schadsoftware“ verschwand zwischen dem 5. und 10. September 2020
+  von einem der Untersuchungsrechner und blieb verschollen; laut
+  SEPTA enthielt sie keine sensiblen Personendaten. Eine
+  öffentliche Zuordnung zu einem Täter erfolgte nicht.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -36,11 +142,293 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.inquirer.com/transportation/septa-malware-virus-real-time-data-app-key-card-20200811.html
+  type: news
+  publisher: The Philadelphia Inquirer (Patricia Madej)
+  published_date: '2020-08-11'
+  language: en
+  accessed_date: '2026-04-19'
+- url: http://levittownnow.com/2020/08/12/septa-says-no-rider-employee-data-compromised-during-malware-attack/
+  type: news
+  publisher: LevittownNow.com (Tom Sofield)
+  published_date: '2020-08-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securitynewspaper.com/2020/08/12/philadelphia-septa-transport-system-suffers-ransomware-attack/
+  type: news
+  publisher: Security Newspaper
+  published_date: '2020-08-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://statescoop.com/philadelphia-transit-system-recovering-from-apparent-cyberattack/
+  type: news
+  publisher: StateScoop
+  published_date: '2020-08-13'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.govtech.com/security/pennsylvania-transit-agency-disrupted-by-malware-attack.html
+  type: news
+  publisher: Government Technology
+  published_date: '2020-08-13'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.infosecurity-magazine.com/news/us-transport-authority-online-store/
+  type: news
+  publisher: Infosecurity Magazine
+  published_date: '2020-08-13'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.inquirer.com/transportation/septa-malware-attack-employees-riders-app-announcements-20200824.html
+  type: news
+  publisher: The Philadelphia Inquirer
+  published_date: '2020-08-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://technical.ly/philly/2020/08/26/what-we-know-dont-malware-attack-septa-andrew-busch/
+  type: news
+  publisher: Technical.ly Philly
+  published_date: '2020-08-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.inquirer.com/transportation/septa-malware-attack-employee-information-compromised-20200827.html
+  type: news
+  publisher: The Philadelphia Inquirer
+  published_date: '2020-08-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.governing.com/security/malware-attack-hits-philadelphia-transit-worker-data.html
+  type: news
+  publisher: Governing
+  published_date: '2020-08-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.phillyvoice.com/septa-cyberattack-malware-august-2020-emails-security-philadelphia/
+  type: news
+  publisher: PhillyVoice
+  published_date: '2020-08-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.inquirer.com/transportation/septa-malware-attack-ransomware-fbi-employees-cybersecurity-20201007.html
+  type: news
+  publisher: The Philadelphia Inquirer
+  published_date: '2020-10-07'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.govtech.com/security/pennsylvania-transit-agency-still-recovering-from-cyberattack.html
+  type: news
+  publisher: Government Technology
+  published_date: '2020-10-07'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://whyy.org/articles/septa-malware-attack-busted-automated-rider-counters-used-to-stop-transit-crowding/
+  type: news
+  publisher: WHYY
+  published_date: '2020-12-16'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.inquirer.com/transportation/septa-missing-hard-drive-malware-attack-20210115.html
+  type: news
+  publisher: The Philadelphia Inquirer
+  published_date: '2021-01-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.audacy.com/kywnewsradio/news/local/septa-still-repairing-damage-from-august-cyberattack
+  type: news
+  publisher: KYW Newsradio (Audacy)
+  published_date: '2020-10-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.paymentsdive.com/ex/mpt/news/malware-attacks-septa-employee-info-bank-accounts-possibly-compromised/
+  type: news
+  publisher: Payments Dive
+  published_date: '2020-08-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/SEPTA
+  type: other
+  publisher: Wikipedia — SEPTA
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1486/
+  type: other
+  publisher: MITRE ATT&CK (T1486 Data Encrypted for Impact)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the original DZSF raw-data row for 2020-08-10 (US,
+  confirmed, affected_systems=[internal_communication,
+  passenger_information, data], extortion=false) matches, across date,
+  country and the internal-communication / passenger-information / data
+  profile, the publicly disclosed SEPTA ransomware attack of the same
+  day (10 August 2020). No other US rail/transit cyber incident is
+  publicly documented for this exact date. The match is multiply
+  corroborated by thirteen independent publishers (The Philadelphia
+  Inquirer — six separate pieces from 11 August 2020 to 15 January
+  2021; LevittownNow; Security Newspaper; StateScoop; Government
+  Technology — two pieces; Infosecurity Magazine; Technical.ly Philly;
+  Governing; PhillyVoice; WHYY; KYW Newsradio / Audacy; Payments Dive)
+  plus Wikipedia's SEPTA entry and MITRE ATT&CK.
+
+  Dates: event_date kept at 2020-08-10 per the unanimous detection
+  date stated in all sources. reported_date set to 2020-08-11 — the
+  earliest dated public third-party report is Patricia Madej's
+  Philadelphia Inquirer piece of Tuesday 11 August 2020 ("SEPTA
+  attacked by malware, says Key card information not compromised"),
+  which followed SEPTA's own Monday-evening statement on the
+  shutdown of systems.
+
+  target_organization: Southeastern Pennsylvania Transportation
+  Authority (SEPTA) — the Philadelphia-region's public-authority
+  transit operator. industry_sector set to `urban_transit` per the
+  vocabulary definition ("metro, S-Bahn, light rail, tram"): SEPTA is
+  the only US transit authority operating all five terrestrial
+  transit modes (bus, trolleybus, light rail, heavy-rail subway and
+  commuter rail). `urban_transit` is the closest single fit —
+  `regional_passenger` also has merit for SEPTA's Regional Rail
+  division, but the affected services (real-time app, email, payroll,
+  APC) cut across all five modes, so the urban-transit bucket is
+  selected in preference. operator_type `public_authority`: SEPTA is
+  a state-created authority under the Pennsylvania General Assembly
+  (Act of 17 August 1963) governed by a 15-member board — this is
+  the canonical fit for the `public_authority` vocabulary value and
+  preferable to `incumbent` (which connotes a national monopoly
+  operator such as Deutsche Bahn or SNCF that SEPTA is not).
+
+  attack_vector kept `unknown`: SEPTA's CIO Bill Zebrowski told The
+  Inquirer on 11 August that SEPTA did not yet know the specific
+  technical details, and chief press officer Andrew Busch repeated on
+  26 August (Technical.ly) that the initial-access vector remained
+  undetermined; no public source has ever since disclosed whether
+  the access was via phishing, exposed RDP/VPN, an exploit or stolen
+  credentials.
+
+  extortion flipped `false` → `true`: the 7 October 2020 Inquirer
+  investigation by Thomas Fitzgerald, confirmed by the January 2021
+  follow-up piece on the missing hard drive, reports that multiple
+  sources inside SEPTA described the event as a ransomware attack
+  involving "a financial exchange covered through its cyber
+  liability insurance". Ransomware combined with payment through
+  cyber insurance constitutes extortion by definition, even though
+  SEPTA itself declined to comment on ransom amount. The DZSF
+  default of `extortion: false` is therefore corrected. motive set
+  to `financial` accordingly.
+
+  malware: null. The ransomware family was never publicly named by
+  SEPTA, the FBI, Arete Advisors (the incident responder), or any
+  press source, and no ransomware leak site has ever been observed
+  to list SEPTA. The schema requires a `name` for any malware entry;
+  because no name is cited in any source, listing anything here
+  would be invention and the codebook's explicit rule is `null` over
+  invention. threat_actor, threat_actor_country and
+  attribution_confidence likewise left null / unknown.
+
+  mitre_attack_techniques set to [T1486]: Data Encrypted for Impact
+  is directly attested by the multiple contemporaneous ransomware
+  descriptions — encryption of approximately 100 servers and 50
+  workstations and the need to restore "inch-by-inch" over months
+  from backup is the canonical T1486 operational signature. No other
+  ATT&CK techniques are asserted because initial-access, execution,
+  credential-access, lateral-movement and exfiltration details were
+  not made public; adding them would be invention.
+
+  affected_systems enriched from DZSF's [internal_communication,
+  passenger_information, data] to [internal_communication,
+  passenger_information, data, website]. `internal_communication`
+  covers the 2,200 email accounts, phone directories and internal
+  messaging outage (all sources). `passenger_information` covers
+  Next-to-Arrive / TransitView / TrainView real-time feeds, mobile
+  app and automated platform announcements (Inquirer, StateScoop,
+  WHYY, PhillyVoice). `data` covers payroll, timekeeping,
+  shared-drive HR files and the employee-PII compromise notified on
+  27 August (Inquirer, Governing, Payments Dive). `website` is added
+  because LevittownNow (SEPTA spokesperson John Golden on 12 August)
+  and PhillyVoice explicitly describe the SEPTA website and mobile
+  app as unavailable during the attack. `rail_operations`,
+  `train_driver_communication`, `internal_train_tracking`,
+  `station_it` and `payment_system` are NOT added: revenue service
+  continued throughout (Inquirer 11 August, StateScoop 13 August);
+  the SEPTA Key fare-payment platform is air-gapped at a third party
+  and was unaffected (CIO Zebrowski, 11 August Inquirer); no source
+  describes station IT or train dispatching / signalling as affected.
+
+  data_published set to false: no SEPTA data has been observed on any
+  ransomware leak site (Dopple Leaks, Maze News, Happy Blog,
+  Netwalker, Conti News, etc.), SEPTA's 7 October 2020 statement and
+  the January 2021 Inquirer piece both report no evidence of
+  exfiltrated data being misused.
+
+  impact.scope set to `regional`: SEPTA's five-county Philadelphia
+  service area is a metropolitan region within one US state, not
+  national. impact.duration_hours null because although
+  passenger-information outage ran from 10 to 24 August (roughly
+  14 days / 336 hours) and internal systems took four-plus months
+  to restore fully, the various subsystems came back on different
+  timelines and no single authoritative duration figure exists.
+  impact.magnitude.affected_trains null (no trains cancelled),
+  affected_passengers null (riders were inconvenienced but the count
+  was not disclosed and "affected" is ambiguous for a
+  passenger-info outage), monetary_damage_eur null (the ransom
+  amount, recovery cost and insurance payout were never disclosed).
+  impact.data_compromise.organizational_data true (employee PII:
+  names, SSN, addresses, benefits, salary, bank account, routing),
+  customer_data false (no rider data compromised — SEPTA statements
+  consistent), intellectual_property false.
+
+  confirmation_status `confirmed` retained: SEPTA itself
+  acknowledged the malware attack publicly through spokesperson
+  John Golden on 11 August 2020 (Inquirer, LevittownNow), general
+  manager Leslie Richards' employee notification on 27 August and
+  subsequent ongoing public statements. Multiple sources at SEPTA
+  corroborated ransomware specifically to the Inquirer on 7 October.
+
+  German-language press: heise.de, Golem.de, Tagesschau and the
+  DSGVO-Portal Sicherheitsvorfalls-Datenbank were checked and return
+  no SEPTA 2020 entry. Only the DZSF raw-data table anchors this
+  incident in the German-language record — `description_de` is
+  therefore a translation of the English facts rather than a
+  citation to a German-language primary or secondary source. No
+  CERT/CSIRT advisory (CISA, US-CERT, BSI, CERT-Bund) was issued —
+  the incident was handled through SEPTA's cyber-insurance and
+  external IR firm (Arete Advisors) rather than through a public
+  federal advisory.
+
+  Confusing parallel: The search surfaced a separate Fort Worth,
+  Texas regional transportation agency "double extortion" ransomware
+  attack in summer 2020. That is a distinct incident — different
+  city, different agency, different ransomware profile — and not
+  this DZSF row.
+
+  Merge of 2020-10-01_conti (DZSF-only Conti attribution): a second
+  DZSF-sourced row (2020-10-01_conti) covered the same SEPTA incident
+  from the angle of the 7 October 2020 Philadelphia Inquirer disclosure
+  and carried the DZSF-internal Conti (MITRE S0575) family attribution.
+  Per maintainer decision 2026-04-19 the two rows are merged into this
+  single entry (2020-08-10_dzsf-import) because the 10 August 2020
+  intrusion date is the correct one. The DZSF Conti attribution is
+  recorded here for completeness but NOT adopted into the typed
+  `malware` / `threat_actor` / `threat_actor_country` fields, which
+  remain null: no public source (SEPTA, FBI, Inquirer, Arete Advisors,
+  CISA, leak-site trackers) has ever named the ransomware family, and
+  the codebook's "null over invention" rule therefore governs. Industry
+  context supporting the DZSF classification: Conti was a Russia-based
+  double-extortion RaaS operation attributed to Wizard Spider (MITRE
+  G0102), profiled by the CISA/FBI/NSA AA21-265A joint advisory
+  (2021-09-22) with canonical techniques T1486 + T1490 (Inhibit System
+  Recovery via vssadmin Volume-Shadow-Copy deletion); the missing hard
+  drive containing "executable batch files used to spread malware"
+  reported by the Inquirer in January 2021 is consistent with a
+  ransomware-toolchain sample removal. The maintainer may revisit the
+  Conti tag if SEPTA or any investigator later publishes an attribution.
+  coordinates updated from null to (39.9526, -75.1652) approximating
+  SEPTA HQ at 1234 Market Street, Philadelphia, PA (carried over from
+  the 2020-10-01_conti draft).
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

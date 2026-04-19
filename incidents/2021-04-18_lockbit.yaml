@@ -2,35 +2,115 @@ id: 2021-04-18_lockbit
 schema_version: '1.0'
 event_date: '2021-04-18'
 event_date_precision: day
-reported_date: null
+reported_date: '2021-04-18'
 countries_impacted:
 - GB
-region: null
+region: England — Liverpool City Region (Merseyside, Halton, Cheshire, Lancashire
+  fringe); Merseyrail headquartered in Liverpool
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: Merseyrail (Merseyrail Electrics 2002 Ltd — 50:50 concession
+  joint venture between Serco Group and Transport UK Group / formerly Abellio; train-operating
+  company for the Liverpool City Region under a Merseytravel concession)
+industry_sector: urban_transit
+operator_type: private
+attack_vector: credential_theft
 supply_chain: false
 malware:
-- name: Lockbit
-  family: null
+- name: LockBit
+  family: LockBit (pre-2.0 / ".abcd" era)
   mitre_software_id: null
 extortion: true
 motive: financial
-mitre_attack_techniques: null
-threat_actor: null
+mitre_attack_techniques:
+- T1078.004
+- T1114
+- T1486
+- T1657
+threat_actor: LockBit (LockBit gang; Russian-language cybercrime forum operator;
+  later associated with administrator "LockBitSupp" / Dmitry Khoroshev)
 threat_actor_country: null
-attribution_confidence: unknown
+attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - internal_communication
 - data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2021-04-18. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: true
+description_en: >
+  On 18 April 2021 the LockBit ransomware gang used a compromised
+  Microsoft Office 365 email account belonging to Merseyrail managing
+  director Andy Heath to email Merseyrail employees, BleepingComputer,
+  and several UK national newspapers under the subject line "Lockbit
+  Ransomware Attack and Data Theft". Merseyrail is the train-operating
+  company for the Liverpool City Region — a 50:50 concession joint
+  venture between Serco and Transport UK Group (formerly Abellio),
+  running urban/commuter rail across 68 stations on the Northern and
+  Wirral Lines under a Merseytravel concession. The attacker-sent
+  message, impersonating the MD, stated that a preceding weekend IT
+  outage had in fact been caused by a ransomware intrusion, that
+  employee and customer personal data had been stolen, and linked to
+  an image of a single employee's personal details as proof of
+  exfiltration. Merseyrail publicly confirmed the cyber-attack on
+  28 April 2021, stating that a full investigation had been launched,
+  that relevant authorities had been notified, and that the incident
+  "does not affect the operation of our services, which will continue
+  to run as advertised." The UK Information Commissioner's Office
+  (ICO) confirmed that Merseyrail had reported the incident and said
+  it was assessing the information provided. Trade press (Computer
+  Weekly; The Register) attributed the initial access to a
+  compromised privileged Office 365 credential — either spear-phishing
+  of the MD or brute-force against an externally-facing account —
+  consistent with Darktrace's prior observation that LockBit
+  intrusions commonly begin from a single compromised privileged
+  credential. No ransom-payment outcome, ransom amount, affected-
+  server count, downtime figure or subsequent ICO enforcement action
+  is publicly documented, and LockBit never posted Merseyrail data
+  on its leak site; the exfiltration claim rests on the attacker-
+  sent email and the single-employee image shared in that email.
+description_de: >
+  Am 18. April 2021 nutzte die Ransomware-Gruppe LockBit ein zuvor
+  kompromittiertes Microsoft-Office-365-Konto des Merseyrail-
+  Geschäftsführers Andy Heath, um Merseyrail-Mitarbeitende,
+  BleepingComputer und mehrere britische Tageszeitungen unter dem
+  Betreff „Lockbit Ransomware Attack and Data Theft" anzuschreiben.
+  Merseyrail ist die Zugbetreibergesellschaft für die Liverpool City
+  Region — ein paritätisches (50:50) Konsortium aus Serco und
+  Transport UK Group (vormals Abellio), das im Rahmen einer
+  Merseytravel-Konzession den städtischen/regionalen Nahverkehr auf
+  den Linien Northern Line und Wirral Line mit 68 Stationen betreibt.
+  In der vom Angreifer unter falschem Absender verschickten Nachricht
+  wurde behauptet, eine IT-Störung am vorangegangenen Wochenende sei
+  in Wahrheit durch einen Ransomware-Einbruch verursacht worden, und
+  personenbezogene Daten von Mitarbeitenden und Kunden seien
+  entwendet worden; als Beleg war ein Bildausschnitt mit Daten
+  einer einzelnen beschäftigten Person beigefügt. Merseyrail
+  bestätigte den Angriff öffentlich am 28. April 2021 und erklärte,
+  eine umfassende Untersuchung sei eingeleitet, die zuständigen
+  Behörden seien benachrichtigt und der Zugbetrieb werde planmäßig
+  fortgeführt. Das britische Information Commissioner's Office (ICO)
+  bestätigte den Eingang der Meldung und wertete die vorgelegten
+  Informationen aus. Fachmedien (Computer Weekly; The Register)
+  ordneten den Erstzugriff einem kompromittierten privilegierten
+  Office-365-Zugang zu — entweder per Spear-Phishing des MDs oder
+  Brute-Force gegen ein extern erreichbares Konto — analog zu
+  Darktrace-Vorveröffentlichungen, wonach LockBit-Einbrüche
+  regelmäßig mit einem einzigen kompromittierten privilegierten
+  Zugangsdatum beginnen. Ein Lösegeldausgang, eine Lösegeldsumme,
+  die Anzahl betroffener Systeme, Ausfallzeiten oder eine spätere
+  ICO-Sanktion sind nicht öffentlich dokumentiert; LockBit
+  veröffentlichte keine Merseyrail-Daten auf seiner Leak-Seite, die
+  Exfiltrationsbehauptung stützt sich allein auf die Angreifer-Mail
+  und den darin verlinkten Einzel-Screenshot.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -38,11 +118,254 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.bleepingcomputer.com/news/security/uk-rail-network-merseyrail-likely-hit-by-lockbit-ransomware/
+  type: news
+  publisher: BleepingComputer (Lawrence Abrams)
+  published_date: '2021-04-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.theregister.com/2021/04/28/merseyrail_ransomware_claim/
+  type: news
+  publisher: The Register (Gareth Corfield)
+  published_date: '2021-04-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.computerweekly.com/news/252499929/Office-365-compromise-likely-led-to-Merseyrail-ransomware-attack
+  type: news
+  publisher: Computer Weekly (Alex Scroxton)
+  published_date: '2021-04-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://grahamcluley.com/merseyrail-ransomware/
+  type: blog
+  publisher: Graham Cluley
+  published_date: '2021-04-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/117312/malware/merseyrail-lockbit-ransomware.html
+  type: news
+  publisher: Security Affairs (Pierluigi Paganini)
+  published_date: '2021-04-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.information-age.com/merseyrail-likely-hit-by-lockbit-ransomware-attack-17970/
+  type: news
+  publisher: Information Age (Aaron Hurst)
+  published_date: '2021-04-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://databreaches.net/2021/04/29/uk-rail-network-merseyrail-likely-hit-by-lockbit-ransomware/
+  type: blog
+  publisher: DataBreaches.net
+  published_date: '2021-04-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://latesthackingnews.com/2021/05/03/uks-merseyrail-rail-network-suffered-ransomware-attack/
+  type: news
+  publisher: Latest Hacking News (Abeerah Hashim)
+  published_date: '2021-05-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.izoologic.com/2021/05/03/lock-bit-ransomware-attacks-merseyrail-the-uk-based-rail-network/
+  type: blog
+  publisher: iZOOlogic
+  published_date: '2021-05-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://informationsecuritybuzz.com/experts-insight-on-merseyrail-targeted-with-lockbit-ransomware/
+  type: blog
+  publisher: Information Security Buzz (Expert comments)
+  published_date: '2021-04-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.darktrace.com/blog/lockbit-ransomware-analysis-rapid-detonation-using-a-single-compromised-credential
+  type: blog
+  publisher: Darktrace (LockBit analysis — single compromised credential)
+  published_date: '2021-02-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/LockBit
+  type: other
+  publisher: Wikipedia (English) — LockBit article
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Merseyrail
+  type: other
+  publisher: Wikipedia (English) — Merseyrail article
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S1199/
+  type: other
+  publisher: MITRE ATT&CK — LockBit 2.0 (Software S1199)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S1202/
+  type: other
+  publisher: MITRE ATT&CK — LockBit 3.0 (Software S1202)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF raw-data row (GB, 2021-04-18, threat_actor
+  LockBit, extortion, data + internal_communication) unambiguously
+  maps to the Merseyrail LockBit incident publicly disclosed via
+  BleepingComputer on 28 April 2021 (email arrival date: 18 April
+  2021). 18 April 2021 was a Sunday — consistent with the "previous
+  weekend outage" referenced in the attacker-sent email. No other UK
+  railway LockBit incident is publicly attested for April 2021; the
+  next publicly documented LockBit rail-adjacent case is the
+  post-2.0 era (Q3-2021 onward).
+
+  Date handling: event_date kept at 2021-04-18 — the day the
+  attacker-sent email carrying the "Lockbit Ransomware Attack and
+  Data Theft" subject was disseminated to BleepingComputer, UK
+  newspapers, and Merseyrail staff (explicit in BleepingComputer,
+  The Register, Computer Weekly, Graham Cluley, Information Age,
+  Security Affairs, DataBreaches.net). That same day is also the
+  earliest publicly fixed calendar date in the incident timeline
+  (the "weekend outage" reference is qualitative, not a dated
+  event). reported_date set to 2021-04-18 because that is the day
+  the incident became externally known via the attacker's mass-
+  email tactic, even though Merseyrail's own corporate confirmation
+  statement followed ten days later on 28 April 2021. The actual
+  intrusion date (initial Office 365 compromise → lateral movement
+  → deployment) is not publicly known and is presumably earlier.
+
+  target_organization: Merseyrail Electrics (2002) Ltd, the train-
+  operating company, trading as "Merseyrail". 50:50 concession
+  joint venture between Serco Group plc and Transport UK Group Ltd
+  (the Netherlands-incorporated NedRailways parent was renamed
+  Abellio in 2009; Abellio UK was rebranded Transport UK in 2024 —
+  as of the 2021 incident the JV partner was still branded Abellio).
+  Network owned by Merseytravel (Liverpool City Region Combined
+  Authority) and Network Rail; Merseyrail holds a 25-year concession
+  running to 2028. This is why operator_type is coded `private`
+  rather than `public_authority`: the attack target is the private
+  train-operating JV, not Merseytravel itself.
+
+  industry_sector: `urban_transit` — Merseyrail is a self-contained
+  third-rail commuter/metro-style network in the Liverpool City
+  Region with frequent-interval services on the Northern and
+  Wirral Lines; it is classed as a rapid-transit/urban operation
+  rather than long-distance or regional passenger rail in Wikipedia,
+  Transport UK marketing material and the UK Rail Industry Safety
+  & Standards Board taxonomy.
+
+  attack_vector: `credential_theft`. Computer Weekly (Alex Scroxton,
+  2021-04-28) cites Darktrace analysis pointing to "a successful
+  compromise of a privileged Microsoft Office 365 account" via
+  spear-phishing of a privileged credential; The Register (Gareth
+  Corfield) repeats the Office-365-account-takeover framing. The
+  Darktrace background blog (2021-02-24) notes that LockBit
+  intrusions typically begin with one compromised privileged
+  credential obtained via brute-force against an externally-facing
+  device or phishing. `credential_theft` is the best-fitting
+  vocabulary value; `phishing` is a plausible alternative if the
+  specific Office-365 access was obtained via a spear-phishing lure
+  rather than brute-force, but no source pins down the method
+  further — `credential_theft` captures the "account takeover via
+  compromised privileged credentials" fact set without overstating.
+
+  malware: LockBit, family LockBit (pre-2.0 / ".abcd" era; April
+  2021 predates LockBit 2.0's debut in June 2021). MITRE ATT&CK
+  has Software entries S1199 (LockBit 2.0) and S1202 (LockBit 3.0)
+  plus S1200 (StealBit), but no distinct Software ID for the
+  original 2019-2021 LockBit build used here. `mitre_software_id`
+  therefore kept null (the orchestrator prompt's suggestion of
+  S0372 / S1073 appears erroneous: S0372 is LockerGoga; S1073 is
+  unrelated).
+
+  threat_actor: LockBit gang. Russian-language forum origins
+  (Wikipedia). US DOJ/UK NCA 2024 unmasked group administrator
+  "LockBitSupp" as Dmitry Yuryevich Khoroshev of Voronezh, Russia
+  (Krebs on Security 2024). However, as of the 2021 Merseyrail
+  incident, no formal nation-state attribution existed; Wikipedia
+  and Brandefense note that members have publicly claimed non-
+  Russian origins (the group self-reported as "located in the
+  Netherlands"). Taking `threat_actor_country` as null here
+  (honest over-assertion avoidance) and `attribution_confidence`
+  at `reported` (the LockBit attribution rests on the attacker's
+  own email subject-line branding + the image proof + BleepingComputer
+  first-hand coverage — widely reported but not independently
+  forensically confirmed).
+
+  MITRE ATT&CK techniques asserted: T1078.004 (Valid Accounts:
+  Cloud Accounts — compromised Office 365 privileged MD account);
+  T1114 (Email Collection — attacker used the compromised mailbox
+  to send outbound messages; covers mailbox access + Email
+  Forwarding behaviour documented by Computer Weekly/The Register);
+  T1486 (Data Encrypted for Impact — LockBit's canonical payload
+  behaviour, supported by Darktrace); T1657 (Financial Theft —
+  the extortion/ransom component). Additional LockBit-generic
+  techniques (T1566 Phishing; T1110 Brute Force; T1021.002
+  SMB/Windows Admin Shares; T1490 Inhibit System Recovery) are
+  deliberately not asserted — Darktrace's general LockBit write-up
+  enumerates them but no Merseyrail-specific public source pins
+  them to this intrusion, and the draft conforms to the repo's
+  "prefer null over invention" rule.
+
+  motive = `financial` (standard ransomware monetisation).
+  extortion = true (explicit ransom threat + data-theft coercion
+  via the mass email). data_published = `false`: LockBit did not
+  post Merseyrail data on its leak site ("Happy Blog" /
+  subsequent leak sites) — public record shows only the attacker-
+  sent email with an embedded employee screenshot, not a dark-web
+  data dump. data_compromise.customer_data = true and
+  organizational_data = true are asserted because the attacker
+  message (quoted verbatim across Computer Weekly / The Register /
+  Graham Cluley / BleepingComputer) explicitly claimed theft of
+  both employee and customer personal data, with an embedded
+  single-employee screenshot provided as proof. data_compromise.
+  intellectual_property = false: no IP/trade secret/design
+  exfiltration claim or leaked sample.
+
+  affected_systems = [internal_communication, data]. The MD's
+  Office 365 mailbox is an internal-communication system that
+  was definitively compromised (attacker sent internal emails
+  from it to Merseyrail staff); data is supported by the personal-
+  data exfiltration claim and embedded image. No source attests
+  compromise of station IT, passenger information, train-driver
+  communication, ticketing/payment, website, train tracking or
+  rail-operations systems — consistent with Merseyrail's own
+  public statement that "this does not affect the operation of
+  our services".
+
+  impact.scope = `regional`: Merseyrail serves the Liverpool City
+  Region and adjacent counties (Merseyside, Halton, Cheshire,
+  Lancashire fringe), i.e. a metropolitan-regional footprint
+  within the UK rather than the national rail network.
+  duration_hours left null — the "weekend outage" referenced in
+  the attacker email is not quantified. affected_trains and
+  affected_passengers null (no operational disruption reported;
+  Merseyrail stated services continued). monetary_damage_eur
+  null (no public figure).
+
+  confirmation_status = `confirmed`: Merseyrail's own public
+  statement confirmed the cyber-attack and the notification to
+  relevant authorities; the UK ICO confirmed receipt of the
+  breach report. This meets the highest tier of confirmation.
+
+  German-language press coverage was not located (heise.de,
+  Golem.de, Tagesschau, Süddeutsche searches returned no
+  Merseyrail 2021 article). The DZSF entry is the sole German-
+  language primary anchor; noted as a coverage gap rather than
+  a substantive discrepancy. Native Russian-language coverage
+  also not located beyond generic LockBit-group write-ups.
+
+  No CVE/CERT advisory was issued — the Merseyrail attack is
+  characterised as a privileged-credential compromise plus
+  commodity ransomware deployment rather than exploitation of a
+  disclosed vulnerability; NCSC did not issue a Merseyrail-
+  specific advisory. No long-term ICO enforcement action is in
+  the 2021-2026 public record.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

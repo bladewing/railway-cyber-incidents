@@ -1,35 +1,190 @@
 id: 2020-12-05_dzsf-import
 schema_version: '1.0'
-event_date: '2020-12-05'
+event_date: '2020-12-01'
 event_date_precision: day
-reported_date: null
+reported_date: '2020-12-02'
 countries_impacted:
 - CA
-region: null
+region: Metro Vancouver, British Columbia, Canada (South Coast British Columbia
+  Transportation Authority service area — 21 municipalities, one electoral area
+  and one First Nation; headquarters 400-287 Nelson's Court, New Westminster)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: South Coast British Columbia Transportation Authority
+  (TransLink) — including subsidiaries Coast Mountain Bus Company (CMBC),
+  British Columbia Rapid Transit Company (SkyTrain Expo + Millennium lines),
+  West Coast Express and Metro Vancouver Transit Police
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: phishing
 supply_chain: false
-malware: null
+malware:
+- name: Egregor
+  family: Egregor
+  mitre_software_id: S0554
 extortion: true
 motive: financial
-mitre_attack_techniques: null
-threat_actor: null
+mitre_attack_techniques:
+- T1566
+- T1486
+- T1039
+- T1059.001
+- T1059.003
+threat_actor: Egregor ransomware affiliate (unattributed individual)
 threat_actor_country: null
-attribution_confidence: unknown
+attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - train_driver_communication
 - payment_system
 - passenger_information
+- internal_communication
 - data
+- website
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2020-12-05. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: false
+description_en: >
+  Between late November and 1 December 2020 the South Coast British
+  Columbia Transportation Authority (TransLink) — the statutory public
+  authority responsible for regional transportation in Metro Vancouver,
+  operating the SkyTrain automated rapid-transit Expo, Millennium and
+  Canada lines, the West Coast Express commuter rail service to Mission,
+  the SeaBus, a bus network of roughly 8,500 employees, and overseeing
+  the subsidiaries Coast Mountain Bus Company, British Columbia Rapid
+  Transit Company, West Coast Express Ltd. and the Metro Vancouver
+  Transit Police — was breached by an affiliate of the Egregor
+  ransomware-as-a-service operation (MITRE ATT&CK S0554). According to
+  the 2024 judgment of the British Columbia Court of Appeal
+  (G.D. v. South Coast British Columbia Transportation Authority,
+  2024 BCCA 252), initial access was obtained through a successful
+  phishing attempt on an employee of one of TransLink's subsidiaries.
+  TransLink first publicly described "issues" with its computing
+  systems on 1 December 2020 and confirmed it was investigating
+  "suspicious network activity" on 2 December. The attack became
+  unmistakable on the evening of 2–3 December when TransLink's
+  office printers began repeatedly spooling the Egregor ransom
+  letter — a signature Egregor tactic. CEO Kevin Desmond
+  acknowledged the ransomware attack in a public statement on
+  3 December 2020 and confirmed that "immediate steps" had been
+  taken to isolate and shut down key IT assets. Customer-facing
+  impact was concentrated on payment and information systems:
+  credit- and debit-card purchases at Compass vending machines and
+  Tap-to-Pay on fare gates were unavailable for three days (restored
+  Thursday 3 December evening per CBC News), the TransLink Trip
+  Planner and the customer-service phone lines were offline, the
+  Next Bus real-time information feed was broken and was not fully
+  restored until 11 May 2021, and the bus-fleet radio system was
+  non-functional for more than 24 hours, leaving drivers unable to
+  communicate with dispatch and the authority unable to track buses
+  in real time on the second day of the attack. Payroll and
+  employee-portal systems were shut down, forcing TransLink to pay
+  employees by cash advance at approximately 65% of normal pay
+  without regular deductions. Revenue bus and SkyTrain service
+  itself continued to operate, and no transit safety or signalling
+  systems were affected. On the data-theft side, the attackers
+  accessed restricted network drives holding payroll and benefits
+  administration files — including banking information, social
+  insurance numbers, salary and wage rates, deductions and tax
+  withholdings — for current, former and retired employees of
+  TransLink, Coast Mountain Bus Company, British Columbia Rapid
+  Transit Company, West Coast Express, former BC Transit employees,
+  third-party HandyDART operators, some spouses and dependents, and
+  Metro Vancouver Transit Police, as well as scanned personal cheques
+  used to purchase TaxiSaver coupons under the Access Transit
+  Program. Roughly 40,000 individuals received notification letters
+  in 2021. Customer Compass fare-payment data was not accessed, as
+  TransLink uses a third-party payment processor and does not store
+  cardholder data. The attackers demanded a ransom reported at
+  approximately CA$7.5 million (≈ US$6 million); TransLink declined
+  to pay and restored systems from backups over a period of
+  approximately five months. Two years of free credit monitoring
+  were offered to affected individuals. As of the TransLink Cyber
+  Incident page the authority states it is not aware of any misuse
+  of the accessed personal information. The incident subsequently
+  became the basis of a class-action lawsuit (2024 BCCA 252) that
+  the Supreme Court of Canada declined to hear on further appeal in
+  March 2025, allowing the class proceeding to continue. The DZSF
+  2023 event_date of 2020-12-05 corresponds to the Saturday after
+  the public ransomware confirmation and likely reflects DZSF's
+  press-coverage cluster rather than the detection date; the
+  event_date is corrected here to 2020-12-01 per TransLink's own
+  disclosure.
+description_de: >
+  Zwischen Ende November und dem 1. Dezember 2020 wurde die
+  South Coast British Columbia Transportation Authority (TransLink)
+  — die gesetzliche öffentlich-rechtliche Verkehrsbehörde der
+  Region Metro Vancouver, Betreiberin des vollautomatischen SkyTrain
+  (Expo-, Millennium- und Canada-Linie), der Pendlerbahn West Coast
+  Express nach Mission, der SeaBus-Passagierfähre und eines
+  Busnetzes mit rund 8.500 Beschäftigten sowie Konzernmutter der
+  Tochtergesellschaften Coast Mountain Bus Company, British Columbia
+  Rapid Transit Company, West Coast Express Ltd. und der Metro
+  Vancouver Transit Police — Ziel eines Ransomware-Angriffs durch
+  einen Affiliate der Egregor-RaaS-Operation (MITRE ATT&CK S0554).
+  Nach dem Urteil des Berufungsgerichts von British Columbia
+  (G.D. v. South Coast British Columbia Transportation Authority,
+  2024 BCCA 252) erlangten die Angreifer den Erstzugang über eine
+  erfolgreiche Phishing-Attacke auf eine Beschäftigte einer
+  TransLink-Tochter. TransLink meldete am 1. Dezember 2020
+  zunächst „Probleme" mit den IT-Systemen, am 2. Dezember bestätigte
+  sie eine Untersuchung „verdächtiger Netzwerkaktivität". In der
+  Nacht vom 2. auf den 3. Dezember druckten TransLink-Drucker
+  wiederholt den typischen Egregor-Erpresserbrief — ein
+  charakteristisches Merkmal der Gruppe. CEO Kevin Desmond
+  bestätigte am 3. Dezember 2020 öffentlich den Ransomware-Angriff
+  und erklärte, „zentrale IT-Ressourcen" seien umgehend isoliert
+  und heruntergefahren worden. Fahrgastseitig betraf der Vorfall
+  vor allem Bezahl- und Informationssysteme: Kredit- und
+  EC-Karten-Bezahlung an Compass-Automaten und per Tap-to-Pay an
+  den Fahrzeugsperren war drei Tage lang (bis zum Abend des
+  3. Dezember laut CBC News) nicht möglich, der Trip-Planner und
+  die Kunden-Hotline waren offline, die Echtzeit-Fahrgastinformation
+  „Next Bus" blieb gestört und wurde erst am 11. Mai 2021 vollständig
+  wiederhergestellt, und das Funksystem der Busflotte fiel mehr als
+  24 Stunden aus, sodass Fahrer nicht mit der Leitstelle
+  kommunizieren konnten und TransLink Busse am zweiten Angriffstag
+  nicht mehr live verfolgen konnte. Gehaltsabrechnung und
+  Mitarbeiterportal waren ebenfalls heruntergefahren; TransLink
+  zahlte Beschäftigten Vorschüsse in Höhe von rund 65 % des
+  Normallohns ohne die üblichen Abzüge. Der eigentliche Bus- und
+  SkyTrain-Betrieb lief durchgehend weiter; keine Sicherheits- oder
+  Leittechnik war betroffen. Datenseitig griffen die Angreifer auf
+  ein abgeschottetes Netzlaufwerk mit Personaldaten zu —
+  Bankverbindungen, kanadische Sozialversicherungs­nummern (SIN),
+  Gehalts- bzw. Stundenlohnsätze, Abzüge und Steuerquellen­
+  abzüge — für aktuelle, ehemalige und ausgeschiedene Beschäftigte
+  von TransLink, Coast Mountain Bus Company, British Columbia Rapid
+  Transit Company, West Coast Express, ehemaligen BC-Transit-
+  Beschäftigten, externen HandyDART-Operatoren, teils Ehepartnern
+  und Angehörigen sowie der Metro Vancouver Transit Police, und
+  außerdem auf Scans privater Schecks zum Kauf von TaxiSaver-
+  Gutscheinen im Rahmen des Access Transit Program. Rund 40.000
+  Personen erhielten 2021 Benachrichtigungsschreiben. Die
+  Compass-Zahlungsdaten der Fahrgäste waren nicht betroffen, da
+  TransLink die Kartenabwicklung an einen Zahlungsdienstleister
+  ausgelagert hat und keine Karteninhaberdaten speichert. Die
+  Angreifer forderten rund 7,5 Mio. CAD (etwa 6 Mio. USD); TransLink
+  lehnte die Zahlung ab und stellte die Systeme über rund fünf
+  Monate aus Backups wieder her. Betroffenen wurden zwei Jahre
+  Bonitätsüberwachung angeboten. Nach Angaben der Cyber-Incident-
+  Seite von TransLink ist der Behörde bislang kein Missbrauch der
+  abgeflossenen Daten bekannt. Aus dem Vorfall erwuchs eine
+  Sammelklage (2024 BCCA 252), deren Weiterführung der kanadische
+  Supreme Court im März 2025 durch Ablehnung der Revision
+  ermöglicht hat. Das von DZSF in der Rohdatentabelle geführte
+  event_date 2020-12-05 liegt am Samstag nach der öffentlichen
+  Bestätigung und spiegelt vermutlich das DZSF-Pressecluster wider;
+  das event_date wird hier auf den 1. Dezember 2020 (TransLink-
+  eigene Erstmitteilung) korrigiert.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -37,11 +192,313 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.translink.ca/news/2020/december/statement%20from%20translink%20ceo%20kevin%20desmond
+  type: official_statement
+  publisher: TransLink — Statement from CEO Kevin Desmond
+  published_date: '2020-12-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.translink.ca/about-us/about-translink/cyber-incident
+  type: official_statement
+  publisher: TransLink — Cyber Incident information page
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://globalnews.ca/news/7499986/translink-suspicious-network-activity-update/
+  type: news
+  publisher: Global News (Jordan Armstrong)
+  published_date: '2020-12-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/metro-vancouvers-transit-system-hit-by-egregor-ransomware/
+  type: news
+  publisher: BleepingComputer (Lawrence Abrams)
+  published_date: '2020-12-04'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/translink-confirms-ransomware-data-theft-still-restoring-systems/
+  type: news
+  publisher: BleepingComputer
+  published_date: '2021-01-04'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://siliconangle.com/2020/12/06/vancouvers-public-transport-provider-hit-ransomware-attack/
+  type: news
+  publisher: SiliconANGLE
+  published_date: '2020-12-06'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bitdefender.com/en-us/blog/hotforsecurity/metro-vancouver-translink-hit-by-egregor-ransomware-attack-travellers-disrupted
+  type: blog
+  publisher: Bitdefender Hot for Security
+  published_date: '2020-12-04'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://threatpost.com/vancouver-metro-egregor-ransomware/161892/
+  type: news
+  publisher: Threatpost
+  published_date: '2020-12-04'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securitynewspaper.com/2020/12/07/vancouver-transit-system-is-affected-by-ransomware-infection/
+  type: news
+  publisher: Security Newspaper
+  published_date: '2020-12-07'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbc.ca/news/canada/british-columbia/translink-debit-credit-payment-down-1.5826868
+  type: news
+  publisher: CBC News
+  published_date: '2020-12-04'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://globalnews.ca/news/7548761/translink-cyberattack-personal-info/
+  type: news
+  publisher: Global News
+  published_date: '2021-01-04'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ctvnews.ca/vancouver/article/translink-has-been-slow-to-reveal-details-about-ransomware-attack-union-says
+  type: news
+  publisher: CTV News Vancouver / The Canadian Press
+  published_date: '2021-02-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.masstransitmag.com/safety-security/article/21202091/translink-stm-experienced-cyber-attacks-this-fall
+  type: news
+  publisher: Mass Transit Magazine
+  published_date: '2021-01-18'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.controleng.com/throwback-attack-egregor-ransomware-attacks-metro-vancouver-translink/
+  type: news
+  publisher: Control Engineering — Throwback Attack
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://globalnews.ca/news/9750377/court-scuttles-class-action-over-translink-data-breach/
+  type: news
+  publisher: Global News
+  published_date: '2023-06-14'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.canlii.org/en/bc/bcca/doc/2024/2024bcca252/2024bcca252.html
+  type: official_statement
+  publisher: Court of Appeal for British Columbia — G.D. v. South Coast British
+    Columbia Transportation Authority, 2024 BCCA 252
+  published_date: '2024-07-05'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0554/
+  type: other
+  publisher: MITRE ATT&CK (S0554 — Egregor)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1486/
+  type: other
+  publisher: MITRE ATT&CK (T1486 Data Encrypted for Impact)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/TransLink_(British_Columbia)
+  type: other
+  publisher: Wikipedia — TransLink (British Columbia)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF raw-data row for 2020-12-05 (country CA,
+  confirmed, affected_systems=[train_driver_communication,
+  payment_system, passenger_information, data], extortion=true,
+  motive=financial) uniquely matches the publicly disclosed Egregor
+  ransomware attack against Metro Vancouver's TransLink detected on
+  1 December 2020 and publicly confirmed by CEO Kevin Desmond on
+  3 December 2020. No other Canadian rail or public-transit cyber
+  incident is documented for early December 2020; the neighbouring
+  Canadian DZSF entry (2020-10-28_ransomexx) corresponds to the
+  separate Société de transport de Montréal (STM) RansomExx attack
+  of 19 October 2020 detected on 28 October. The match is multiply
+  corroborated by a BC Court of Appeal judgment (2024 BCCA 252),
+  TransLink's own CEO statement, TransLink's dedicated cyber-
+  incident information page, CBC News, Global News (two pieces),
+  CTV News / The Canadian Press, BleepingComputer (two pieces),
+  Bitdefender, Threatpost, SiliconANGLE, Security Newspaper,
+  Mass Transit Magazine, Control Engineering, Wikipedia and the
+  MITRE ATT&CK entries for Egregor (S0554) and Data Encrypted for
+  Impact (T1486).
+
+  Dates: the DZSF event_date 2020-12-05 is inconsistent with
+  TransLink's own disclosure, CEO Desmond's 3 December 2020
+  statement and every contemporaneous press report. 2020-12-05 is
+  a Saturday in the coverage cluster and is not attested in any
+  source. event_date corrected to 2020-12-01 (TransLink's first
+  public service-issue notice and the date on which the DDoS/ICMP
+  disruption began inside the network per BC Court of Appeal
+  2024 BCCA 252 and TransLink's own CEO statement). The filename
+  stem is kept as `2020-12-05_dzsf-import` so that `id == stem`
+  continues to hold and no rename is required; the incident-body
+  event_date correctly reflects reality. reported_date set to
+  2020-12-02 — the Global News tweet of the printed ransom note by
+  Jordan Armstrong and the first press references to a cyber
+  attack (CBC and Global News early editions) are dated 2 December
+  2020, one day before CEO Desmond's 3 December statement.
+
+  target_organization: South Coast British Columbia Transportation
+  Authority (TransLink) — a Provincial statutory authority under
+  the South Coast British Columbia Transportation Authority Act,
+  with subsidiaries Coast Mountain Bus Company (CMBC), British
+  Columbia Rapid Transit Company (BCRTC, SkyTrain Expo + Millennium
+  lines), West Coast Express Ltd. (commuter rail to Mission) and
+  Metro Vancouver Transit Police. All four subsidiaries are listed
+  explicitly as victims of the data-theft component.
+  industry_sector set to `urban_transit`: the overwhelming majority
+  of affected services (SkyTrain, Coast Mountain buses, SeaBus,
+  Compass fare gates) are urban-transit modes; the West Coast
+  Express commuter-rail component, which could alternately fit
+  `regional_passenger`, is secondary. operator_type
+  `public_authority`: TransLink is a Provincial statutory authority
+  with a mayors' council and board of directors — the canonical
+  fit for `public_authority`.
+
+  attack_vector `phishing`: the 2024 BC Court of Appeal judgment
+  G.D. v. South Coast British Columbia Transportation Authority,
+  2024 BCCA 252 states explicitly that "third party hackers had
+  gained access into TransLink's computer network through a
+  successful phishing attempt on an employee of one of TransLink's
+  subsidiaries." This is corroborated by Egregor's standard modus
+  operandi (phishing email → Qakbot → Cobalt Strike) as documented
+  by BankInfoSecurity, Group-IB, Palo Alto Unit 42, MITRE ATT&CK
+  S0554 and Emsisoft. The DZSF default `unknown` is therefore
+  corrected to `phishing`. supply_chain kept false (no supply-
+  chain involvement reported).
+
+  malware: Egregor (MITRE S0554), family Egregor / Sekhmet (the
+  RaaS successor to Maze). The ransom note, printer-bomb signature
+  and Tor contact instructions are all standard Egregor indicators.
+  threat_actor left as "Egregor ransomware affiliate (unattributed
+  individual)" — the Egregor operation is confirmed as the
+  responsible group but the specific affiliate was never publicly
+  named. Ukrainian police arrested suspected Egregor affiliates in
+  February 2021, but no link to the TransLink attack was ever
+  publicly established. threat_actor_country left null and
+  attribution_confidence set to `reported` — the Egregor
+  attribution is reported by press and by TransLink's own
+  acknowledgement of the printed Egregor ransom note, but there is
+  no formal CERT or law-enforcement attribution naming the
+  specific actor or country.
+
+  extortion kept `true` (DZSF correct). motive kept `financial`.
+  mitre_attack_techniques: T1566 Phishing (court-confirmed initial
+  vector), T1486 Data Encrypted for Impact (file encryption across
+  TransLink systems — the canonical ransomware technique),
+  T1039 Data from Network Shared Drive (the attackers accessed a
+  restricted network drive with payroll and benefits files —
+  literal match to T1039), T1059.001 PowerShell and T1059.003
+  Windows Command Shell (both attested in the MITRE S0554 Egregor
+  software profile). Further Egregor-profile techniques (T1055
+  Process Injection, T1027.002 Software Packing, T1562.001
+  Impair Defenses etc.) are NOT included because their use in the
+  TransLink case specifically was not publicly documented — only
+  the techniques directly attested for this incident or
+  authoritative on-host are listed.
+
+  affected_systems enriched to [train_driver_communication,
+  payment_system, passenger_information, internal_communication,
+  data, website]. DZSF's four values are retained; two are added.
+  `train_driver_communication` (DZSF value; German original
+  "Komm. mit Fahrzeugführer") is preserved and documented as the
+  bus-fleet radio outage (>24 hours, sources inside TransLink and
+  the Bleeping Computer follow-up) — the vocabulary label
+  "Communication with train driver (GSM-R, radio)" is interpreted
+  inclusively to cover bus-driver radio for a multi-modal public
+  transport authority. `payment_system` covers the Compass tap-
+  to-pay fare gate outage (3 days per CBC News) and credit/debit
+  purchases at Compass vending machines. `passenger_information`
+  covers the Trip Planner outage (Desmond statement, Global News)
+  and the Next Bus real-time feed, which was not fully restored
+  until 11 May 2021 (~5 months). `internal_communication` is
+  added: phone systems, customer-service phone lines and employee
+  portal were all shut down (Bleeping Computer, Bitdefender,
+  Global News). `data` covers the restricted-network-drive
+  exfiltration affecting ~40,000 employees and associated persons
+  (TransLink cyber-incident page, 2024 BCCA 252, Global News).
+  `website` is added because Trip Planner, online services and
+  phones were all described as disabled (TransLink own statement,
+  Threatpost, Bitdefender, Bleeping Computer). `rail_operations`,
+  `internal_train_tracking` and `station_it` are NOT added:
+  SkyTrain revenue service continued without interruption,
+  signalling / CBTC was not affected, and no source describes
+  station IT beyond the Compass payment subsystem as affected —
+  the TransLink CEO explicitly stated "transit safety systems
+  were not affected."
+
+  data_published set to false: no TransLink data was ever observed
+  on the Egregor leak site ("Egregor News" on the Tor network);
+  the attackers threatened publication within three days but
+  TransLink's backup-led recovery appears to have completed
+  before they followed through, and as of the TransLink cyber-
+  incident page (June 2021 privacy-review conclusion) the
+  authority states it is "not aware of any misuse" of accessed
+  personal information.
+
+  impact.scope set to `regional`: Metro Vancouver is a metropolitan
+  region within one Canadian province. impact.duration_hours null
+  because different subsystems were restored on different
+  timelines (payment 3 days, bus radio >24 hours, Next Bus ~5
+  months) and no single authoritative figure exists.
+  impact.magnitude.affected_trains null (SkyTrain/West Coast
+  Express/bus revenue service continued throughout;
+  affected_passengers null (riders were inconvenienced but the
+  count was not disclosed and is ambiguous for a payment-/info-
+  system outage); monetary_damage_eur null (TransLink declined
+  the CA$7.5M / US$6M ransom demand and has not disclosed the
+  recovery cost or the insurance payout).
+  impact.data_compromise.organizational_data true (employee
+  banking, SIN, payroll, benefits and tax data for TransLink,
+  CMBC, BCRTC, WCE, Transit Police and third-party HandyDART
+  operators — explicit in TransLink's own statement and the
+  2024 BCCA 252 judgment), customer_data false (Compass
+  cardholder data is handled by a third-party processor and
+  was not accessed — explicit in TransLink's CEO statement and
+  cyber-incident page; only TaxiSaver cheque scans of TaxiSaver
+  coupon purchasers could arguably be "customer" data, but the
+  TaxiSaver Access Transit Program is an accessibility programme
+  for clients of HandyDART and is treated as organisational
+  rather than general fare-paying customer data), intellectual_
+  property false.
+
+  confirmation_status `confirmed` retained: TransLink itself
+  publicly acknowledged the ransomware attack through CEO
+  Kevin Desmond's statement on 3 December 2020 and operates a
+  dedicated cyber-incident information page; the BC Court of
+  Appeal judgment formally records the incident.
+
+  German-language press: heise.de, Golem.de, Tagesschau and the
+  DSGVO-Portal Sicherheitsvorfalls-Datenbank were checked and
+  return no TransLink 2020 entry. Only the DZSF raw-data table
+  anchors this incident in the German-language record —
+  description_de is therefore a translation of the English facts
+  rather than a citation to a German-language primary or
+  secondary source. No CERT/CSIRT advisory (CCCS, CSE, CISA,
+  US-CERT, BSI, CERT-Bund) was issued publicly — the incident
+  was handled through TransLink's own incident response and
+  external forensics.
+
+  Deconfliction: the October 2020 STM (Société de transport de
+  Montréal) RansomExx attack is a distinct Canadian transit
+  incident and is already covered separately by
+  `2020-10-28_ransomexx.yaml`. The 2021 Toronto Transit
+  Commission (TTC) ransomware attack is a year later and
+  unrelated. A separately named "Translink" transit authority in
+  Northern Ireland is a naming collision only and not related.
+  TransLink's own 2019 Metro Vancouver data-breach incident
+  (a separate cloud-storage vendor exposure) is unrelated.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

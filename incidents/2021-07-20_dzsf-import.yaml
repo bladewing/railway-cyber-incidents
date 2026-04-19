@@ -2,20 +2,29 @@ id: 2021-07-20_dzsf-import
 schema_version: '1.0'
 event_date: '2021-07-20'
 event_date_precision: day
-reported_date: null
+reported_date: '2021-07-20'
 countries_impacted:
 - GB
-region: null
+region: England — Northern Trains network (North East England, North West England,
+  Yorkshire and the Humber, plus East Midlands and West Midlands fringes); Northern
+  Trains headquartered in York
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: Northern Trains Limited (train-operating company for the Northern
+  franchise; owned by DfT Operator Ltd / DfT OLR Holdings on behalf of the UK Department
+  for Transport since 1 March 2020) — via its ticket-vending-machine supplier Flowbird
+  Transport Intelligence (Paris, France; 2018 merger of Parkeon + Cale)
+industry_sector: regional_passenger
+operator_type: public_authority
 attack_vector: unknown
-supply_chain: false
-malware: null
-extortion: false
-motive: unknown
-mitre_attack_techniques: null
+supply_chain: true
+malware:
+- name: Unidentified ransomware
+  family: null
+  mitre_software_id: null
+extortion: true
+motive: financial
+mitre_attack_techniques:
+- T1486
 threat_actor: null
 threat_actor_country: null
 attribution_confidence: unknown
@@ -23,10 +32,87 @@ confirmation_status: confirmed
 affected_systems:
 - payment_system
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2021-07-20. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On or around 20 July 2021 the self-service ticket vending machines
+  (TVMs) operated for Northern Trains by supplier Flowbird Transport
+  Intelligence were taken offline following a ransomware cyber-attack
+  against the servers that run the TVM estate. Northern had completed a
+  £17 million modernisation scheme with Flowbird in May 2021, installing
+  621 new touch-screen TVMs at approximately 420 stations across North
+  East England, North West England, Yorkshire and the Humber. Flowbird
+  identified the incident via its own cyber-monitoring systems and
+  instigated its major-incident procedure, taking the TVM network
+  offline as a precautionary measure; the machines remained unavailable
+  for roughly one week. Northern Trains, a publicly-owned operator run
+  by DfT Operator (the UK government's "operator of last resort") since
+  March 2020, stated publicly that "the ticket machine service has been
+  subject to a ransomware cyber attack" and that only the TVM-operating
+  servers were affected; customer and payment data were not compromised.
+  Passengers were redirected to the Northern Trains website and mobile
+  app, to staffed ticket offices, and were told to board their trains
+  and pay the conductor or destination-station staff using "promise to
+  pay" arrangements where necessary. Train services, signalling and
+  safety-critical systems were unaffected. No specific ransomware
+  variant was publicly named by either organisation; Cybersecurity
+  Insiders (Naveen Goud, 2021-07-22) reported that REvil / Sodinokibi
+  was suspected, but this attribution was not corroborated by
+  mainstream coverage (The Register, Computer Weekly, ITPro, Railway
+  Technology, City AM, PYMNTS) and coincides with REvil's July-2021
+  post-Kaseya infrastructure blackout — so the draft records the malware
+  as "Unidentified ransomware" and `attribution_confidence: unknown`.
+  The attack vector is unconfirmed: Northern publicly framed the
+  incident as a "supply chain" issue routed through Flowbird, consistent
+  with the fact that the targeted servers and machines were supplier-
+  operated; `supply_chain: true` is therefore asserted but
+  `attack_vector` is left `unknown` because no source pins down the
+  initial-access technique (phishing, exploit, brute-force RDP against
+  Flowbird, etc.).
+description_de: >
+  Am 20. Juli 2021 wurden die vom Zulieferer Flowbird Transport
+  Intelligence für Northern Trains betriebenen Fahrkartenautomaten
+  (Ticket Vending Machines, TVM) nach einem Ransomware-Angriff auf die
+  TVM-Serverinfrastruktur vom Netz genommen. Northern Trains hatte im
+  Mai 2021 ein Modernisierungsprogramm im Wert von 17 Mio. £
+  abgeschlossen, in dessen Rahmen Flowbird 621 neue Touchscreen-
+  Automaten an rund 420 Bahnhöfen in Nordostengland, Nordwestengland,
+  Yorkshire and the Humber (sowie in Teilen der East und West Midlands)
+  installiert hatte. Flowbird erkannte den Vorfall über seine eigenen
+  Cyber-Monitoring-Systeme und löste sein Major-Incident-Verfahren aus;
+  die TVM-Flotte blieb rund eine Woche lang offline. Northern Trains —
+  seit März 2020 ein staatlich kontrolliertes Eisenbahnverkehrsunternehmen
+  (DfT Operator / "operator of last resort" des britischen
+  Verkehrsministeriums) — erklärte öffentlich, dass der Ticket-
+  Automaten-Dienst „Gegenstand eines Ransomware-Cyberangriffs" gewesen
+  sei, dass ausschließlich die TVM-Server betroffen gewesen seien und
+  dass weder Kunden- noch Zahlungsdaten kompromittiert worden seien.
+  Fahrgäste wurden auf die Northern-Website und -App, auf bediente
+  Fahrkartenschalter sowie auf das „Promise-to-Pay"-Verfahren
+  verwiesen. Zugbetrieb, Signalisierung und sicherheitsrelevante
+  Systeme waren nicht betroffen. Keine der beiden Organisationen nannte
+  eine konkrete Ransomware-Familie; Cybersecurity Insiders (Naveen Goud,
+  22. Juli 2021) spekulierte über REvil / Sodinokibi als Urheber, diese
+  Zuordnung wurde jedoch von keiner Leitmedien-Quelle (The Register,
+  Computer Weekly, ITPro, Railway Technology, City AM, PYMNTS) bestätigt
+  und fällt zudem in den Zeitraum, in dem die REvil-Infrastruktur nach
+  dem Kaseya-Angriff offline war. Der Entwurf führt die Schadsoftware
+  daher als „Unidentified ransomware" und `attribution_confidence:
+  unknown`. Der Angriffsvektor ist unbestätigt: Northern rahmte den
+  Vorfall öffentlich als „supply-chain"-Problem über Flowbird ein, was
+  zu der Tatsache passt, dass die betroffenen Server und Geräte vom
+  Zulieferer betrieben wurden; `supply_chain: true` wird daher gesetzt,
+  `attack_vector` bleibt jedoch `unknown`, weil keine Quelle die
+  Erstzugriffstechnik präzisiert.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +120,281 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.theregister.com/2021/07/20/northern_trains_ticketing_system/
+  type: news
+  publisher: The Register (Gareth Corfield)
+  published_date: '2021-07-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railway-technology.com/news/northern-rail-cyber-attack/
+  type: news
+  publisher: Railway Technology
+  published_date: '2021-07-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.pymnts.com/news/security-and-risk/2021/ransomware-attack-hits-uk-northern-railway-ticketing-terminals/
+  type: news
+  publisher: PYMNTS
+  published_date: '2021-07-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.itpro.com/security/ransomware/360295/northern-railways-ticket-machines-hit-by-ransomware-attack
+  type: news
+  publisher: ITPro (Dennis)
+  published_date: '2021-07-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cityam.com/northern-rail-ticket-machines-hit-by-ransomware-attack/
+  type: news
+  publisher: City AM
+  published_date: '2021-07-19'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securityweek.com/ransomware-attack-uk-rail-system-spray-and-pray-or-targeted/
+  type: news
+  publisher: SecurityWeek (Kevin Townsend)
+  published_date: '2021-07-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.computing.co.uk/news/4034795/ransomware-attack-ticket-machines
+  type: news
+  publisher: Computing.co.uk (Incisive Media)
+  published_date: '2021-07-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cybersecurity-insiders.com/ransomware-attack-on-northern-rail-uk/
+  type: blog
+  publisher: Cybersecurity Insiders (Naveen Goud) — REvil attribution reported only
+    here
+  published_date: '2021-07-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://pridesolutions.co.uk/northern-rail-cyber-attack-2021/
+  type: blog
+  publisher: Pride Solutions (Derby) — case study
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.completecyber.co.uk/post/northern-rail-hit-by-ransomware
+  type: blog
+  publisher: Complete Cyber
+  published_date: '2021-07-19'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.emcrc.co.uk/post/rail-company-taken-offline-due-to-suspected-ransomware-attack
+  type: blog
+  publisher: East Midlands Cyber Resilience Centre (EMCRC)
+  published_date: '2021-07-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://vpnoverview.com/news/hundreds-of-rail-ticket-machines-in-northern-england-still-offline-due-to-a-cyberattack/
+  type: news
+  publisher: VPNoverview
+  published_date: '2021-07-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.txone.com/blog/uk-based-northern-rails-ticketing-system-shut-down-after-ransomware-attack/
+  type: blog
+  publisher: TXOne Networks
+  published_date: '2021-07-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Northern_Trains
+  type: other
+  publisher: Wikipedia (English) — Northern Trains article
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Flowbird
+  type: other
+  publisher: Wikipedia (English) — Flowbird article
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1486/
+  type: other
+  publisher: MITRE ATT&CK — T1486 Data Encrypted for Impact
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification. The DZSF raw-data row (event 2021-07-20, country GB,
+  confirmation_status=confirmed, affected_systems=[payment_system],
+  all other core fields null / unknown / default) maps unambiguously
+  onto the ransomware attack against Northern Trains' Flowbird-operated
+  self-service ticket-vending-machine (TVM) estate publicly disclosed
+  on 19-20 July 2021 via the BBC and picked up by The Register, Railway
+  Technology, PYMNTS, City AM, ITPro, Computing and SecurityWeek. No
+  other UK railway cyber incident is publicly attested for 20 July 2021.
+  The 18 April 2021 Merseyrail LockBit incident (already enriched as
+  `2021-04-18_lockbit.yaml`) is a distinct event three months earlier,
+  targets a different operator (Merseyrail vs Northern Trains), uses
+  different affected_systems (internal_communication + data vs
+  payment_system), and has explicit attacker self-branding (LockBit);
+  this DZSF stub is clearly NOT the Merseyrail case. The 9 July 2021
+  Iranian Railways "Meteor" wiper and the 22 July 2021 South African
+  Transnet "Death Kitty" ransomware are also distinct events
+  (different countries: IR and ZA respectively) already present in
+  the repo; no duplication.
+
+  Dates. event_date = 2021-07-20 kept as-is from the DZSF row — the
+  day the ransomware incident became publicly known via the BBC (with
+  The Register, Railway Technology and multiple other outlets all
+  publishing on 20 July 2021). reported_date set to 2021-07-20
+  (same day). The actual attack onset is attested as "last week"
+  relative to 20 July (i.e. some time between 12-19 July 2021)
+  according to multiple outlets, but no source pins down the exact
+  initial-intrusion or encryption-detonation date; the publicly
+  documented event date is therefore 2021-07-20 and the internal
+  onset date is left implicit.
+
+  target_organization. Northern Trains Limited — the train-operating
+  company (TOC) for the Northern rail franchise, incorporated in
+  England and headquartered in York. Since 1 March 2020 it has been
+  owned by DfT Operator Ltd (formerly DfT OLR Holdings), the UK
+  Department for Transport's "operator of last resort" vehicle, after
+  Arriva Rail North's franchise was terminated. The attack surface
+  was the Flowbird-operated TVM server cluster, meaning the attack is
+  a supplier-compromise / supply-chain incident against Northern via
+  its TVM vendor Flowbird Transport Intelligence (a French payments
+  & ticketing firm headquartered in the 15th arrondissement of Paris,
+  formed in 2018 by the merger of Parkeon and Cale; acquired by
+  EasyPark Group in January 2025).
+
+  industry_sector = `regional_passenger`. Northern Trains runs
+  regional and commuter passenger services across the North of
+  England with some inter-regional flows into the East and West
+  Midlands; it is classified as a regional franchise rather than a
+  long-distance passenger operation (TransPennine Express, LNER,
+  Avanti West Coast are the long-distance operators in that
+  geography) or an urban-transit metro (Merseyrail, Tyne & Wear
+  Metro are the urban-transit comparators). `regional_passenger` is
+  the closest match in the schema enumeration.
+
+  operator_type = `public_authority`. Northern Trains Limited is
+  owned by DfT Operator Ltd on behalf of the UK Secretary of State
+  for Transport — i.e. a publicly-owned, state-run train operator
+  since March 2020. This is distinct from `incumbent` (which in
+  the repo's usage maps to national legacy state incumbents such
+  as DB, SNCF, Amtrak, RZD) and from `private` (which would apply
+  if Arriva Rail North still held the franchise). `public_authority`
+  is the best match for the "operator of last resort" status.
+
+  attack_vector = `unknown`. Northern publicly described the
+  incident as a "supply chain" issue routed through Flowbird
+  (explicit in multiple outlets). However, no public source names
+  the initial-access technique against Flowbird: no phishing lure,
+  exploited CVE, brute-forced RDP endpoint, compromised credential
+  or software-update trojanisation is documented. The draft keeps
+  `attack_vector: unknown` to avoid invention, while flipping
+  `supply_chain: true` to record the supplier-routing aspect that
+  is documented.
+
+  supply_chain = `true` (corrected from DZSF default of `false`).
+  The ransomware hit the Flowbird-operated TVM server cluster
+  (Flowbird's own infrastructure operated on Northern's behalf),
+  not Northern's own IT; both organisations explicitly described
+  the incident as affecting the "servers which operate the ticket
+  machines" and as a supplier-side issue. This maps cleanly to the
+  schema's `supply_chain: true` semantics.
+
+  malware = [{name: "Unidentified ransomware"}]. Neither Northern
+  Trains nor Flowbird publicly named a variant. Cybersecurity
+  Insiders (Naveen Goud, 2021-07-22) and aggregator sites echoing
+  that piece speculated REvil / Sodinokibi, but mainstream trade
+  coverage (The Register, Computer Weekly, ITPro, Railway
+  Technology, City AM, PYMNTS, Computing, SecurityWeek) does not
+  name a family, and the timing coincides with REvil's 13 July
+  2021 post-Kaseya infrastructure blackout — so the REvil
+  attribution is unreliable. The draft therefore records a single
+  malware entry with `name: "Unidentified ransomware"` (to preserve
+  the confirmed ransomware nature) and leaves both `family` and
+  `mitre_software_id` null. This approach matches the repo's
+  "prefer null over invention" rule; REvil is noted as a reported-
+  but-unconfirmed attribution in the description rather than
+  encoded structurally.
+
+  extortion = true (ransomware message demanded cryptocurrency for
+  a decryption key — attested by Cybersecurity Insiders and Pride
+  Solutions). motive = `financial` (standard commodity-ransomware
+  monetisation; SecurityWeek's Kevin Townsend explicitly called
+  this a "spray and pray" financial-crime attack with zero chance
+  of ransom payment from a UK public-sector target).
+  data_published = false (no leak-site listing by any ransomware
+  gang is on the public record).
+  data_compromise.* = false across the board — both Northern and
+  Flowbird explicitly stated that no customer data, payment data
+  or personal data was compromised; no evidence has emerged since
+  to contradict this.
+
+  mitre_attack_techniques = [T1486]. Only T1486 "Data Encrypted
+  for Impact" is publicly documented (the TVM server filesystems
+  were encrypted and a ransom message was displayed). Additional
+  REvil-generic techniques (T1078 Valid Accounts, T1133 External
+  Remote Services, T1190 Exploit Public-Facing Application,
+  T1490 Inhibit System Recovery, T1566 Phishing, T1583.003 VPS) are
+  deliberately not asserted — no Northern-specific public source
+  pins them to this intrusion, and the draft conforms to the
+  "prefer null over invention" rule.
+
+  threat_actor / threat_actor_country = null. No attacker
+  self-branding appeared (unlike the Merseyrail LockBit case three
+  months earlier, where the attacker mass-mailed journalists and
+  staff with a "Lockbit Ransomware Attack and Data Theft" subject
+  line). No gang publicly claimed the attack; no leak-site listing
+  appeared. attribution_confidence = `unknown` (null is not in
+  the enum — `unknown` is the closest valid value).
+
+  affected_systems = [payment_system] kept as DZSF had it. TVMs
+  are ticket-vending / payment machines; the repo's schema maps
+  them to `payment_system`. No other system was affected
+  (signalling, station IT displays, the public website,
+  internal_communication, passenger_information systems,
+  rail_operations — all explicitly stated to be untouched by
+  Northern's public statements and by every trade-press source).
+
+  confirmation_status = `confirmed` (unchanged): Northern Trains
+  and Flowbird both publicly confirmed the incident via on-the-
+  record spokespersons to The Register, BBC and multiple other
+  outlets.
+
+  impact.scope = `regional`: Northern's franchise footprint covers
+  North East England, North West England and Yorkshire & Humber —
+  a large but sub-national UK regional footprint. Not `national`
+  because the attack did not affect other UK operators, Network
+  Rail, or the national ticket-reservations system. Not `local`
+  because 420 stations across multiple counties is well beyond a
+  single locality. duration_hours left null — the qualitative
+  phrasing "about a week" / "several days" appears in multiple
+  sources but no source gives a numeric downtime figure.
+  affected_trains = 0 (train services were explicitly stated to be
+  running normally — only the TVM estate was offline).
+  affected_passengers left null (no source quantifies how many
+  journeys were delayed or disrupted by the need to queue at
+  staffed ticket offices instead of using the TVMs). monetary_
+  damage_eur null (no public loss figure).
+
+  German-language press coverage. Searches on heise.de, golem.de,
+  tagesschau.de, süddeutsche.de and the Tarnkappe IT-security
+  archive returned no dedicated German-language article on the
+  Northern Trains / Flowbird July 2021 ransomware incident; only
+  the DZSF Rohdaten row itself anchors the case in the German-
+  language academic record. The DZSF 2023 EI/Eurailpress summary
+  article "Cyberangriffe auf das Bahnsystem — Was bisher geschah"
+  (EI 8/2023) does not mention this incident per se. Noted as a
+  coverage gap rather than a substantive discrepancy.
+
+  No CERT / NCSC / ORR advisory specific to the Northern Trains
+  incident was published. The UK Information Commissioner's
+  Office (ICO) did not publicly confirm a notification for this
+  incident (contrast with the April 2021 Merseyrail case where
+  the ICO publicly acknowledged receipt). No court / enforcement
+  action is in the 2021-2026 public record.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

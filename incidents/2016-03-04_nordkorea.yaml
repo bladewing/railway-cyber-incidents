@@ -1,32 +1,61 @@
 id: 2016-03-04_nordkorea
 schema_version: '1.0'
-event_date: '2016-03-04'
-event_date_precision: day
-reported_date: null
+event_date: '2016-03-01'
+event_date_precision: month
+reported_date: '2016-03-08'
 countries_impacted:
 - KR
 region: null
 coordinates: null
 target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+industry_sector: regional_passenger
+operator_type: unknown
+attack_vector: phishing
 supply_chain: false
 malware: null
 extortion: false
-motive: unknown
+motive: state_geopolitical
 mitre_attack_techniques: null
-threat_actor: Nordkorea
-threat_actor_country: null
-attribution_confidence: suspected
+threat_actor: null
+threat_actor_country: KP
+attribution_confidence: reported
 confirmation_status: reported
 affected_systems:
-- unclear_system
+- internal_communication
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2016-03-04. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  In early 2016, North Korean hackers ran a spear-phishing campaign against
+  the email accounts of employees at two South Korean provincial/regional
+  railway operators in an attempt to steal their account credentials as
+  a staging step toward a later cyberattack on the railway transport
+  control system. South Korea's National Intelligence Service (NIS)
+  announced on 8 March 2016 that it had detected the attempts, disabled
+  the targeted accounts and prevented any follow-on access to the control
+  network. The NIS characterised the operation as "a step to prepare for
+  cyber terror against the railway transport control system"; no
+  operational rail systems were confirmed to have been compromised, and
+  North Korea publicly denied involvement.
+description_de: >
+  Anfang 2016 führten mutmaßlich nordkoreanische Angreifer eine
+  Spear-Phishing-Kampagne gegen E-Mail-Konten von Beschäftigten zweier
+  südkoreanischer Regionalbahn-Betreiber durch, um deren Zugangsdaten
+  abzugreifen und damit einen späteren Angriff auf das Leitsystem des
+  Bahnverkehrs vorzubereiten. Der südkoreanische Nachrichtendienst NIS
+  teilte am 8. März 2016 mit, er habe die Versuche erkannt, die
+  betroffenen Konten gesperrt und weitergehenden Zugriff verhindert. Eine
+  Kompromittierung operativer Bahnsysteme wurde nicht bestätigt;
+  Nordkorea bestritt die Vorwürfe.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +63,93 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.scmp.com/news/asia/east-asia/article/1922413/north-korea-targeted-seoul-officials-railway-system-cyberattacks
+  type: news
+  publisher: South China Morning Post
+  published_date: '2016-03-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.newsweek.com/south-korea-accuses-north-hacking-government-smartphones-and-railway-system-434553
+  type: news
+  publisher: Newsweek
+  published_date: '2016-03-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbc.ca/news/world/korea-cyberattack-allegations-1.3480525
+  type: news
+  publisher: CBC News
+  published_date: '2016-03-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.rt.com/news/334867-north-korea-hackers-railways/
+  type: news
+  publisher: RT
+  published_date: '2016-03-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://sg.news.yahoo.com/north-korea-tried-hack-souths-railway-system-spy-050444062.html
+  type: news
+  publisher: Reuters (via Yahoo News)
+  published_date: '2016-03-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.aljazeera.com/news/2016/3/8/south-says-north-korea-hacked-phones
+  type: news
+  publisher: Al Jazeera
+  published_date: '2016-03-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://phys.org/news/2016-03-korea-north-hacked-key.html
+  type: news
+  publisher: Phys.org (AFP)
+  published_date: '2016-03-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://edition.cnn.com/2016/03/08/asia/south-korea-smartphone-hack
+  type: news
+  publisher: CNN
+  published_date: '2016-03-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ytn.co.kr/_ln/0101_201603111800123284_001
+  type: news
+  publisher: YTN
+  published_date: '2016-03-11'
+  language: ko
+  accessed_date: '2026-04-19'
+- url: https://www.cyberwar.news/2016-03-15-north-korea-stepping-up-cyber-attacks-against-the-south.html
+  type: news
+  publisher: CyberWar.news
+  published_date: '2016-03-15'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The National Intelligence Service's announcement on 8 March 2016 bundled
+  three distinct DPRK cyber operations: (1) spear-phishing of employees
+  at two provincial/regional railway operators — the incident catalogued
+  here; (2) smartphone compromises of ~40 of 300 targeted senior foreign-
+  affairs, security and military officials between late February and
+  early March 2016; and (3) an intrusion attempt at a South Korean online-
+  banking security-software vendor. Only (1) is in scope for this dataset.
+  The exact day of the railway phishing wave is not publicly attested;
+  phys.org dated the emails to January–February 2016 while the NIS
+  detection and public announcement fall in early March, so event_date
+  is given at month precision. The original DZSF day value of 2016-03-04
+  could not be corroborated. The NIS did not name the two regional
+  railway operators; consequently `target_organization` is kept null. No
+  public source attributes the campaign to a specific named threat group
+  (Lazarus, Kimsuky, Andariel, etc.); attribution is to the DPRK state
+  at reported-confidence level, mirroring the NIS statement, and North
+  Korea denied the accusations. No malware artefacts were publicly
+  disclosed. `affected_systems` is set to `internal_communication`
+  because the attested impact was limited to the email accounts of
+  railway staff; the railway transport control system itself was
+  reportedly not reached.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

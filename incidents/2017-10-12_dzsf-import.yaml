@@ -1,21 +1,24 @@
 id: 2017-10-12_dzsf-import
 schema_version: '1.0'
-event_date: '2017-10-12'
+event_date: '2017-10-11'
 event_date_precision: day
-reported_date: null
+reported_date: '2017-10-11'
 countries_impacted:
 - SE
-region: null
+region: Sweden (national; western Sweden for Västtrafik)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
-supply_chain: true
+target_organization: Trafikverket (Swedish Transport Administration); Transportstyrelsen
+  (Swedish Transport Agency); Västtrafik
+industry_sector: infrastructure_manager
+operator_type: public_authority
+attack_vector: exploit
+supply_chain: false
 malware: null
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
+motive: disruption
+mitre_attack_techniques:
+- T1498
+- T1498.001
 threat_actor: null
 threat_actor_country: null
 attribution_confidence: unknown
@@ -26,11 +29,55 @@ affected_systems:
 - passenger_information
 - website
 - rail_operations
+- payment_system
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2017-10-12. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On 11 October 2017 a distributed denial-of-service (DDoS) attack hit the
+  Swedish Transport Administration (Trafikverket) via its two internet
+  service providers TDC and DGC, knocking out the IT system that tracks
+  train positions and issues dispatch orders, as well as the agency's
+  public website, email system and road-traffic information. Train traffic
+  across Sweden was disrupted for several hours and had to be managed
+  manually using back-up procedures, which contributed to punctuality
+  dropping to 86.2 % that day. On 12 October 2017 further DDoS waves hit
+  the Swedish Transport Agency (Transportstyrelsen) website and the
+  western-Sweden public-transport operator Västtrafik, briefly crashing
+  Västtrafik's "To Go" ticket app and journey planner; a follow-up wave on
+  13 October was successfully mitigated. No data exfiltration or
+  destructive impact was reported, and no perpetrator was identified; an
+  industry source (DGC) publicly speculated about motive ranging from a
+  prank to a deliberate probe of Swedish transport resilience, while
+  wider coverage linked the timing to the Russian Zapad-2017 exercise
+  in the Baltic region.
+description_de: >
+  Am 11. Oktober 2017 traf ein Distributed-Denial-of-Service-Angriff (DDoS)
+  die schwedische Verkehrsverwaltung Trafikverket über ihre beiden
+  Internet-Dienstleister TDC und DGC. Das IT-System zur automatischen
+  Zugortung und Disposition, die öffentliche Website, der E-Mail-Dienst
+  sowie die Verkehrsinformationen fielen aus. Der Zugverkehr in ganz
+  Schweden wurde mehrere Stunden gestört und musste manuell im
+  Rückfallverfahren abgewickelt werden; die Pünktlichkeit sank an diesem
+  Tag auf 86,2 %. Am 12. Oktober 2017 folgten weitere DDoS-Wellen gegen
+  die Website der Verkehrsaufsichtsbehörde Transportstyrelsen und den
+  westschwedischen ÖPNV-Betreiber Västtrafik, dessen Ticket-App „To Go"
+  und Reiseplaner kurzzeitig ausfielen; eine Nachfolgewelle am 13. Oktober
+  konnte abgewehrt werden. Es wurden keine Datenabflüsse oder
+  zerstörerischen Effekte gemeldet; der Angreifer blieb unbekannt. Ein
+  Branchen-Sprecher (DGC) nannte als mögliche Motive eine Streich-Aktion
+  bis hin zu einer gezielten Sondierung schwedischer Verkehrsresilienz;
+  internationale Berichterstattung stellte einen zeitlichen Bezug zur
+  russischen Zapad-2017-Übung im Ostseeraum her.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -38,11 +85,134 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.thelocal.se/20171012/swedish-transport-agencies-targeted-in-cyber-attack
+  type: news
+  publisher: The Local Sweden
+  published_date: '2017-10-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/ddos-attacks-cause-train-delays-across-sweden/
+  type: news
+  publisher: BleepingComputer
+  published_date: '2017-10-13'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/64317/cyber-warfare-2/swedish-transport-agencies-ddos.html
+  type: news
+  publisher: Security Affairs
+  published_date: '2017-10-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://hackread.com/ddos-attacks-on-sweden-transport-agencies-delay-train-service/
+  type: news
+  publisher: HackRead
+  published_date: '2017-10-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.computerweekly.com/news/450432739/Sweden-steps-up-cyber-defence-measures
+  type: news
+  publisher: Computer Weekly
+  published_date: '2018-01-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.svt.se/nyheter/inrikes/trafikverket-utreder-it-attack
+  type: news
+  publisher: SVT Nyheter
+  published_date: '2017-10-11'
+  language: sv
+  accessed_date: '2026-04-19'
+- url: https://www.svt.se/nyheter/lokalt/vast/vasttrafik-utsatt-for-it-attack
+  type: news
+  publisher: SVT Nyheter (Väst)
+  published_date: '2017-10-12'
+  language: sv
+  accessed_date: '2026-04-19'
+- url: https://www.aktuellsakerhet.se/ddos-attack-orsakade-tagforseningar/
+  type: news
+  publisher: Aktuell Säkerhet
+  published_date: '2017-10-11'
+  language: sv
+  accessed_date: '2026-04-19'
+- url: https://www.op.se/2017-11-21/farre-tag-i-tid-i-oktober--attack-mot-it-system-en-av-orsakerna
+  type: news
+  publisher: Östersunds-Posten (op.se)
+  published_date: '2017-11-21'
+  language: sv
+  accessed_date: '2026-04-19'
+- url: https://blog.surfwatchlabs.com/2017/10/23/weekly-cyber-risk-roundup-ddos-attacks-hit-sweden-researchers-warn-of-roca/
+  type: blog
+  publisher: SurfWatch Labs
+  published_date: '2017-10-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.dsgvo-portal.de/sicherheitsvorfaelle/ddos_angriff_verschiedene-schwedische-beh%C3%B6rden-2286.php
+  type: other
+  publisher: DSGVO-Portal Sicherheitsvorfalls-Datenbank
+  published_date: null
+  language: de
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The DZSF raw-data entry dated this incident 2017-10-12 (day-precision);
+  publicly, the primary attack actually began in the early hours of
+  Wednesday 11 October 2017 against Trafikverket (discovered around 02:00
+  local time according to SVT and Aktuell Säkerhet) and continued on
+  Thursday 12 October against Transportstyrelsen and Västtrafik, with a
+  further Västtrafik wave on Friday 13 October that was mitigated.
+  event_date is therefore set to the earliest public trigger (2017-10-11);
+  the DZSF id "2017-10-12" is retained to preserve traceability to the
+  import.
+
+  affected_systems kept `internal_communication` (email outage at
+  Trafikverket), `internal_train_tracking` (automatic train-position
+  system crashed), `passenger_information` (road-traffic map, Västtrafik
+  journey planner), `website` (public portals) and `rail_operations`
+  (dispatch order generation was disrupted, forcing manual operation);
+  `payment_system` is added for Västtrafik's ticket-booking app. `data`
+  is *not* selected because no customer or corporate data was accessed or
+  exfiltrated — this was a pure availability attack. DZSF's original
+  `supply_chain: true` flag is corrected to `false`: while the DDoS was
+  delivered via Trafikverket's two ISPs (TDC, DGC) owned by Tele2, there
+  was no third-party software/vendor compromise, only a bandwidth flood
+  at the upstream network layer, which does not meet the supply-chain
+  compromise definition used elsewhere in this dataset.
+
+  Attribution: no perpetrator has been officially identified. DGC
+  business-unit manager Patrik Gylesjö publicly described such floods as
+  "a fairly common phenomenon" that can be ordered online; Computer
+  Weekly (Jan 2018) quoted him acknowledging attribution ambiguity.
+  Several secondary outlets (BleepingComputer, Security Affairs, SC
+  Media) noted that the attacks followed Russia's Zapad-2017 military
+  exercise in the Baltic region by about a week, but no government body
+  has confirmed a Russian nexus for this incident. threat_actor,
+  threat_actor_country and attribution_confidence are therefore left
+  null / `unknown`. motive is set to `disruption` because the attack was
+  purely availability-focused with no ransom demand, no data
+  exfiltration, and no known financial gain.
+
+  attack_vector is set to `exploit` (as the closest match in the current
+  vocabulary for a volumetric bandwidth flood targeting network-stack
+  availability at the ISP level, consistent with MITRE T1498 mapping);
+  the Codebook does not yet contain a dedicated `network_dos` vocabulary
+  value — no vocabulary addition is proposed here because the attack
+  vector classification is about *initial access method*, and DDoS is
+  arguably not an access vector at all (it is an effect). Maintainers
+  may wish to add a dedicated value in a future schema iteration.
+
+  industry_sector is set to `infrastructure_manager`: Trafikverket is
+  Sweden's national rail and road infrastructure manager, and is the
+  primary affected entity. Västtrafik (regional_passenger / urban_transit
+  mix) and Transportstyrelsen (regulator) are co-impacted but secondary.
+  operator_type is set to `public_authority` because all three are
+  government bodies.
+
+  impact.duration_hours left null: sources describe restoration "within
+  hours" for Trafikverket and "brief" outages for Västtrafik, but no
+  single duration was published across all three victims.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

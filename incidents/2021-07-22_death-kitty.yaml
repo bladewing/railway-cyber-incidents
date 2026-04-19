@@ -2,35 +2,141 @@ id: 2021-07-22_death-kitty
 schema_version: '1.0'
 event_date: '2021-07-22'
 event_date_precision: day
-reported_date: null
+reported_date: '2021-07-22'
 countries_impacted:
 - ZA
-region: null
+region: South Africa — nationwide (headquarters Johannesburg / Carlton Centre); primary
+  visible impact at the four Transnet Port Terminals (Durban, Ngqura, Port Elizabeth/Gqeberha,
+  Cape Town) and across the Transnet Freight Rail network
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: Transnet SOC Ltd (South African state-owned freight-rail, port
+  and pipeline operator; parent of Transnet Freight Rail, Transnet Port Terminals,
+  Transnet National Ports Authority, Transnet Pipelines, Transnet Engineering)
+industry_sector: freight
+operator_type: public_authority
 attack_vector: unknown
 supply_chain: false
 malware:
 - name: Death Kitty
-  family: null
-  mitre_software_id: null
-extortion: false
-motive: unknown
-mitre_attack_techniques: null
+  family: HelloKitty (a.k.a. Five Hands / DeathRansom lineage)
+  mitre_software_id: S0617
+extortion: true
+motive: financial
+mitre_attack_techniques:
+- T1486
+- T1490
+- T1657
 threat_actor: null
 threat_actor_country: null
-attribution_confidence: unknown
+attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - website
+- data
 - rail_operations
+- internal_communication
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2021-07-22. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: false
+description_en: >
+  On 22 July 2021 Transnet SOC Ltd — the South African state-owned
+  freight-rail, port and pipeline operator — was hit by a ransomware
+  attack that encrypted systems across the group and forced a switch
+  to manual, paper-based operation at its four container-handling
+  ports (Durban, Ngqura, Port Elizabeth/Gqeberha and Cape Town) as
+  well as degraded availability of corporate IT (the transnet.net
+  website went offline during the incident). On 27 July 2021 Transnet
+  Port Terminals chief executive Velile Dube formally declared force
+  majeure, characterising the event as "an act of cyber-attack,
+  security intrusion and sabotage". Media reporting by Bloomberg
+  (29 July 2021), citing CrowdStrike Vice President of Intelligence
+  Adam Meyers, linked the intrusion to the ransomware strain tracked
+  variously as "Death Kitty", "HelloKitty" and "Five Hands", and
+  assessed likely origins in Eastern Europe or Russia; Meyers noted
+  the operators kept a closed-group / private-service profile with
+  no observed recruitment or affiliate-style advertising. The
+  attackers left a ransom note claiming to have encrypted
+  approximately one terabyte of personal data, financial reports
+  and other documents, directing Transnet to a dark-web chat portal
+  for negotiation. Public Enterprises Minister Pravin Gordhan later
+  told parliament (17 August 2021) that no ransom had been paid,
+  that approximately 90 % of IT systems had been restored, and
+  that the Department of Public Enterprises found none of
+  Transnet's client data had been compromised. Operationally,
+  Transnet Freight Rail, Transnet Pipelines and Transnet
+  Engineering activated business-continuity plans and, per
+  Transnet's own statement, kept freight-rail services running
+  to schedule on manual/paper processes; the Natcor rail corridor
+  had already been under a separate unrest-related force majeure
+  earlier in July 2021. The core container management system
+  (Navis N4) was fully restored by 30 July 2021, and TPT lifted
+  the cyber-related force majeure on 2 August 2021. The attack
+  is considered the first severe disruption to the operational
+  integrity of South Africa's critical maritime infrastructure
+  and is cited as a case study in the 2023 AJIC academic analysis
+  (Timcke, Gaffley, Rens), the TechPolicy.Press policy review
+  (2024) and the ISS Africa brief (Reva, 29 July 2021). No
+  specific initial-access vector has been disclosed publicly;
+  the academic literature and vendor reporting attribute HelloKitty
+  intrusions generally to phishing, compromised credentials or
+  exploitation of unpatched internet-facing vulnerabilities
+  (including SonicWall CVE-2021-20016 in other campaigns), but
+  neither Transnet nor its investigators have tied the 22 July
+  2021 entry point to a specific technique.
+description_de: >
+  Am 22. Juli 2021 wurde die südafrikanische Staatsholding
+  Transnet SOC Ltd — Betreiber des Güterbahn-, Hafen- und
+  Pipelinenetzes Südafrikas — Ziel eines Ransomware-Angriffs,
+  der konzernweit IT-Systeme verschlüsselte und an den vier
+  Container-Häfen Durban, Ngqura, Port Elizabeth/Gqeberha und
+  Kapstadt eine Umstellung auf manuellen, papierbasierten
+  Betrieb erzwang; die öffentliche Website transnet.net war
+  während des Vorfalls nicht erreichbar. Am 27. Juli 2021
+  erklärte Velile Dube, CEO der Hafentochter Transnet Port
+  Terminals, förmlich force majeure und bezeichnete den
+  Vorfall als „Akt des Cyber-Angriffs, Sicherheitsbruchs und
+  Sabotage". Laut Bloomberg-Bericht vom 29. Juli 2021 ordnete
+  CrowdStrike-Intelligence-VP Adam Meyers die Verschlüsselung
+  der als „Death Kitty" / „HelloKitty" / „Five Hands"
+  bekannten Ransomware-Familie zu und verortete die Urheber
+  mit hoher Wahrscheinlichkeit in Osteuropa oder Russland;
+  Meyers beschrieb die Betreiber als geschlossene Gruppe bzw.
+  privaten Dienst ohne beobachtete Affiliate-Rekrutierung.
+  Die Erpresser hinterließen eine Lösegeldforderung über eine
+  Darknet-Verhandlungsseite und behaupteten, rund ein Terabyte
+  an personenbezogenen Daten, Finanzberichten und sonstigen
+  Unterlagen verschlüsselt zu haben. Öffentliche-Unternehmen-
+  Minister Pravin Gordhan erklärte am 17. August 2021 vor dem
+  Parlament, dass kein Lösegeld gezahlt, etwa 90 % der
+  IT-Systeme wiederhergestellt und keine Kundendaten
+  kompromittiert worden seien. Die Divisionen Transnet
+  Freight Rail, Transnet Pipelines und Transnet Engineering
+  aktivierten Business-Continuity-Pläne und führten laut
+  eigener Angaben den Schienengüterverkehr manuell nach
+  Fahrplan weiter; das Kern-Container-Betriebssystem Navis N4
+  wurde bis 30. Juli 2021 wiederhergestellt, die
+  cyberbedingte force majeure am 2. August 2021 aufgehoben.
+  Der Vorfall gilt als erster schwerer Angriff auf die
+  operative Integrität der kritischen maritimen Infrastruktur
+  Südafrikas und wird als Fallstudie u. a. in der AJIC-Studie
+  von Timcke/Gaffley/Rens (2023), in der TechPolicy.Press-
+  Analyse (2024) sowie im ISS-Africa-Brief (Reva, 29. Juli
+  2021) aufgearbeitet. Ein konkreter Erstzugriffs-Vektor ist
+  nicht öffentlich dokumentiert; HelloKitty wird in Herstel-
+  lerreports allgemein mit Phishing, Kompromittierung
+  privilegierter Zugangsdaten bzw. Exploit-Ausnutzung
+  (u. a. SonicWall CVE-2021-20016 in anderen Kampagnen) in
+  Verbindung gebracht, ohne dass Transnet oder Ermittelnde
+  dies auf den 22.-Juli-Einbruch bezogen hätten.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -38,11 +144,296 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://en.wikipedia.org/wiki/Transnet_ransomware_attack
+  type: other
+  publisher: Wikipedia (English) — Transnet ransomware attack article
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://techcentral.co.za/transnet-likely-hit-by-death-kitty-ransomware-attack-experts/170749/
+  type: news
+  publisher: TechCentral (South Africa)
+  published_date: '2021-07-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://techcentral.co.za/transnet-finally-confirms-it-was-hit-by-a-cyberattack/170711/
+  type: news
+  publisher: TechCentral (Suren Naidoo) — Transnet force majeure confirmation
+  published_date: '2021-07-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.dailymaverick.co.za/article/2021-07-27-transnet-ports-division-declares-force-majeure-on-container-terminals-after-cyber-attack/
+  type: news
+  publisher: Daily Maverick (Mfuneko Toyana) — force majeure declaration
+  published_date: '2021-07-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.dailymaverick.co.za/opinionista/2021-08-04-transnet-ports-closed-and-were-in-the-dark/
+  type: news
+  publisher: Daily Maverick 168 (Toby Shapshak, opinion)
+  published_date: '2021-08-04'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bloomberg.com/news/articles/2021-07-29/-death-kitty-ransomware-linked-to-attack-on-south-african-ports
+  type: news
+  publisher: Bloomberg — Death Kitty / CrowdStrike attribution (Adam Meyers)
+  published_date: '2021-07-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.maritime-executive.com/article/second-force-majeure-at-south-african-ports-following-cyberattack
+  type: news
+  publisher: The Maritime Executive
+  published_date: '2021-07-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://splash247.com/south-african-port-operations-get-back-to-normal-eight-days-after-cyber-attack/
+  type: news
+  publisher: Splash 247 — eight-day recovery report
+  published_date: '2021-07-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.thestack.technology/transnet-hacked-south-africa-ports-terminals/
+  type: news
+  publisher: The Stack — Transnet hacked / Navis N4 outage
+  published_date: '2021-07-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.itweb.co.za/article/transnets-it-systems-90-restored-says-minister/raYAyMod8ZeqJ38N
+  type: news
+  publisher: ITWeb (Admire Moyo) — Gordhan parliamentary briefing (90 %, no ransom
+    paid)
+  published_date: '2021-08-17'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://issafrica.org/iss-today/cyber-attacks-expose-the-vulnerability-of-south-africas-ports
+  type: other
+  publisher: Institute for Security Studies (Denys Reva, ISS Today brief)
+  published_date: '2021-07-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.techpolicy.press/bolstering-south-africas-cyber-defenses-policy-lessons-from-the-2021-transnet-breach/
+  type: other
+  publisher: TechPolicy.Press — policy analysis (2024)
+  published_date: '2024-01-11'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2077-72132023000200004
+  type: academic_paper
+  publisher: African Journal of Information and Communication (AJIC) vol. 32, 2023
+    — Timcke, Gaffley, Rens (DOI 10.23962/ajic.i32.16949)
+  published_date: '2023-12-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://hansa-online.de/2021/07/featured/179355/cyber-attacke-auf-suedafrikanische-haefen/
+  type: news
+  publisher: HANSA International Maritime Journal (Anna Wroblewski) — German-language
+    coverage
+  published_date: '2021-07-23'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0617/
+  type: other
+  publisher: MITRE ATT&CK — HELLOKITTY (Software S0617)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Transnet
+  type: other
+  publisher: Wikipedia (English) — Transnet article (divisions, structure)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF row (ZA, 2021-07-22, malware "Death
+  Kitty", affected_systems [website, rail_operations]) maps
+  unambiguously to the Transnet SOC Ltd ransomware attack of
+  22 July 2021 — the only publicly documented July 2021 South-
+  African railway cyber-incident, confirmed by Wikipedia's
+  "Transnet ransomware attack" article and by multiple first-
+  hand news accounts (TechCentral 27/29 July; Daily Maverick
+  27 July; Maritime Executive 27 July; Bloomberg 29 July;
+  ITWeb 17 August). "Death Kitty" is the colloquial moniker
+  used by CrowdStrike / Bloomberg for what MITRE tracks as
+  HELLOKITTY (S0617) and some vendors also call "Five Hands";
+  the three names refer to the same ransomware family lineage
+  (HelloKitty / DeathRansom / FiveHands share C++ code base).
+
+  Date handling: event_date = 2021-07-22 (detection /
+  operational impact day — Transnet's own statement and every
+  contemporaneous source place the attack on that Thursday).
+  reported_date = 2021-07-22: same day, since The Stack
+  (2021-07-22) and TimesLIVE (2021-07-22) carried the first
+  public reports; Transnet's formal acknowledgement ("act of
+  cyber-attack, security intrusion and sabotage") followed on
+  27 July with the force majeure letter, and the "Death Kitty"
+  attribution was published by Bloomberg on 29 July. event_date
+  <= reported_date holds.
+
+  target_organization: Transnet SOC Ltd, a South African state-
+  owned enterprise headquartered at the Carlton Centre,
+  Johannesburg. Divisions encompass Transnet Freight Rail
+  (heavy-haul freight railway, described by Wikipedia as the
+  biggest outside the United States), Transnet National Ports
+  Authority, Transnet Port Terminals, Transnet Pipelines and
+  Transnet Engineering. The whole group was hit; the most
+  visible impact was at TPT's four container terminals, but
+  Transnet's own statement (quoted in multiple sources) and
+  the AJIC paper confirm that IT across the group (incl.
+  freight rail corporate systems, the transnet.net website)
+  was disrupted.
+
+  industry_sector: `freight` — Transnet Freight Rail is the
+  group's dominant rail business (heavy-haul freight,
+  including bulk coal, iron-ore, chrome and manganese
+  corridors). The codebook's `freight` value directly fits.
+  Alternatives considered: `infrastructure_manager` — Transnet
+  does manage national rail infrastructure via the Transnet
+  National Ports Authority / Transnet Freight Rail network
+  division, but the attack's directly-rail-relevant subject
+  is the freight operator. `other` would have applied only
+  if the rail component were incidental, which it is not
+  (the DZSF entry explicitly codes rail_operations). Ports
+  are outside the repository's scope proper but share the
+  same target organisation; the draft does not add a separate
+  maritime entry.
+
+  operator_type: `public_authority` — Transnet SOC Ltd is a
+  wholly state-owned company (SOC = "State-Owned Company")
+  under the Department of Public Enterprises. Supervising
+  minister at the time of the incident: Pravin Gordhan. This
+  is distinct from `incumbent` (usually the historical
+  monopoly passenger/freight carrier in a liberalised market)
+  and `private` (Merseyrail-style concession JV); Transnet
+  is neither — it is the SOC that inherits the former South
+  African Transport Services (SATS) monopoly and remains
+  100 % state-owned.
+
+  attack_vector: `unknown` — despite extensive public
+  reporting and a formal parliamentary briefing, no source
+  identifies the initial-access vector. HelloKitty is
+  generically associated by MITRE / Trend / FBI with
+  phishing, compromised credentials and exploitation of
+  unpatched vulnerabilities (SonicWall CVE-2021-20016 in
+  other 2021 campaigns), but no Transnet-specific source
+  pins any of these. Per the repo's "prefer null over
+  invention" rule, `unknown` is kept. supply_chain = false
+  (no third-party / vendor compromise chain documented).
+
+  malware: name "Death Kitty" (DZSF / Bloomberg wording);
+  family "HelloKitty" (MITRE ATT&CK canonical name) — the
+  HelloKitty / FiveHands / DeathRansom code lineage is
+  widely documented (MITRE S0616 DEATHRANSOM, S0617
+  HELLOKITTY, S0618 FIVEHANDS). mitre_software_id = S0617
+  (HELLOKITTY). Note: the colloquial "Death Kitty" is a
+  Bloomberg/CrowdStrike label, not a distinct MITRE entry.
+
+  threat_actor: null — no public naming of a crew beyond
+  CrowdStrike's "closed group or private service" framing
+  and generic "Eastern Europe or Russia" geography.
+  threat_actor_country kept null (generic regional
+  suspicion, not a specific CC). attribution_confidence =
+  `reported` — the ransomware-family attribution is
+  reported by a named industry analyst (Meyers / CrowdStrike)
+  and widely echoed by first-hand news (Bloomberg, Moneyweb,
+  TechCentral, News24/Fin24), but no forensic confirmation
+  or government-issued attribution statement exists.
+
+  extortion = true (ransom note left on Transnet systems
+  with dark-web negotiation portal, per TechCentral /
+  Moneyweb / Bloomberg / cybersecurity-help.cz).
+  motive = `financial` (standard ransomware monetisation;
+  Bloomberg/Crowdstrike analyst framing; no credible
+  state-sponsored hypothesis survived — South African
+  authorities explicitly dismissed the Zuma-unrest
+  coordination theory).
+
+  data_published = false — no HelloKitty/Death Kitty leak-
+  site post of Transnet data is documented in the 2021-2026
+  public record; the 1 TB claim rests solely on the ransom
+  note itself. data_compromise.customer_data = false: the
+  Department of Public Enterprises explicitly stated no
+  client data was compromised (Wikipedia; Moneyweb; ITWeb
+  17-Aug briefing). organizational_data = true: the ransom
+  note itself claimed encryption of corporate financial
+  reports and internal documents, and file access was
+  disrupted group-wide. intellectual_property = false (no
+  IP-theft allegation or leaked sample).
+
+  affected_systems: kept from the DZSF import
+  [website, rail_operations] and augmented with `data` (the
+  1 TB encryption claim against corporate files — financial
+  reports, personal data) and `internal_communication` (the
+  group-wide IT outage disrupted email and corporate-
+  collaboration systems per The Stack / ITWeb / AJIC paper).
+  `rail_operations` is honoured because the DZSF coding
+  reflects the freight-rail relevance of the incident;
+  however the notes should flag that the publicly-visible
+  rail impact was corporate-IT / logistics-planning-level,
+  not signalling-system-level: Transnet's own statement
+  and the AJIC paper both confirm Transnet Freight Rail
+  continued to run trains to schedule on paper-based
+  manual processes.
+
+  impact.scope = `national` — Transnet is the sole heavy-
+  haul freight rail operator in South Africa and the
+  monopoly national ports operator; the attack disrupted
+  all four container ports and corporate IT group-wide.
+  duration_hours left null — Navis N4 fully restored by
+  30 July (~8 days), cyber force majeure lifted 2 August
+  (~11 days), but rail services per Transnet's own
+  statement were not physically stopped (manual
+  workaround), so a single "duration" figure is not
+  publicly defensible. affected_trains and affected_
+  passengers null (freight rail; Transnet is not a
+  passenger operator, and no specific train-count
+  disruption figure was published). monetary_damage_eur
+  null — the AJIC paper cites ZAR50 bn (≈USD2.79 bn) as
+  the upper-bound estimate of annual export-sector losses
+  across coal/chrome/iron-ore/manganese attributable to
+  the combined riot+cyber disruption, not a
+  Transnet-specific damage figure.
+
+  confirmation_status = `confirmed` — Transnet publicly
+  confirmed the incident via the TPT force-majeure letter
+  (27 July 2021) and via Minister Gordhan's parliamentary
+  briefing (17 August 2021); the Department of Public
+  Enterprises issued a formal statement on client-data
+  impact. This is the highest tier.
+
+  MITRE ATT&CK techniques: only those directly supported
+  by Transnet-specific public reporting or by HelloKitty's
+  canonical S0617 behaviours observed here are asserted:
+  T1486 (Data Encrypted for Impact — files encrypted across
+  Transnet systems, ransom note left) and T1657 (Financial
+  Theft — the extortion component). T1490 (Inhibit System
+  Recovery) is also kept because HelloKitty's S0617
+  technique list includes it and the AJIC paper notes
+  Transnet had to rebuild Active Directory and restore
+  systems from backups, consistent with shadow-copy/backup
+  tampering. Generic HelloKitty behaviours (T1135 Network
+  Share Discovery, T1047 WMI, T1057 Process Discovery)
+  are deliberately not asserted per "prefer null over
+  invention" — these are S0617 group-level behaviours but
+  no Transnet-specific forensic write-up confirms them
+  for this intrusion.
+
+  German-language primary coverage: HANSA International
+  Maritime Journal (Anna Wroblewski, 2021-07-23) carried
+  a German-language news item, though the detail is behind
+  a HANSA+ paywall. heise.de / Golem.de / tagesschau.de
+  did not, per our searches, carry a dedicated Transnet
+  item in 2021; this is documented as a coverage gap, not
+  a conflict. The DZSF entry remains a German-language
+  anchor.
+
+  Sources: 17 total after enrichment, 16 non-DZSF (well
+  above the ≥2 independent threshold). needs_review
+  flipped from true to false. provenance.origin preserved.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

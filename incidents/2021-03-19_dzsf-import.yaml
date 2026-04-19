@@ -2,31 +2,92 @@ id: 2021-03-19_dzsf-import
 schema_version: '1.0'
 event_date: '2021-03-19'
 event_date_precision: day
-reported_date: null
+reported_date: '2021-03-22'
 countries_impacted:
 - CZ
-region: null
+region: Czech Republic (Správa železnic headquartered in Prague; České dráhy headquartered
+  in Prague; nationwide rail network)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: Správa železnic, státní organizace (Czech state railway infrastructure
+  manager) and České dráhy, a.s. (incumbent national passenger rail operator)
+industry_sector: infrastructure_manager
+operator_type: incumbent
+attack_vector: exploit
 supply_chain: false
 malware: null
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
+motive: espionage
+mitre_attack_techniques:
+- T1190
 threat_actor: null
 threat_actor_country: null
-attribution_confidence: unknown
+attribution_confidence: suspected
 confirmation_status: confirmed
 affected_systems:
-- unclear_system
+- internal_communication
+- data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2021-03-19. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: null
+    customer_data: false
+description_en: >
+  On Friday 19 March 2021 the Czech state railway infrastructure manager
+  Správa železnic (SŽ, formerly SŽDC) and the incumbent national
+  passenger rail operator České dráhy (ČD) detected and repelled a
+  cyber-intrusion attempt against their office / e-mail IT networks.
+  The attack formed part of a wider wave of intrusions against Czech
+  public-sector organisations — Prague City Hall, the Ministry of
+  Labour and Social Affairs (MPSV), a medical facility of the Ministry
+  of the Interior — exploiting the same Microsoft Exchange Server
+  zero-day vulnerabilities (ProxyLogon, CVE-2021-26855 / -26857 /
+  -26858 / -27065) that Microsoft had patched on 2 March 2021 and
+  which the Národní úřad pro kybernetickou a informační bezpečnost
+  (NÚKIB) had urgently ordered regulated entities to mitigate. Both
+  railway organisations informed NÚKIB immediately; Správa železnic
+  spokesperson Dušan Gavenda and Czech Railways CEO Ivan Bednárik
+  publicly confirmed that neither train operations nor railway-safety
+  systems were compromised. No data exfiltration, ransomware payload,
+  extortion demand or operational disruption was reported. Neither
+  organisation named the initial-access vector publicly, but Czech
+  press (iRozhlas, Lupa, Deník, Týden, Aktuálně) and NÚKIB's
+  contemporaneous context place the incident inside the HAFNIUM /
+  ProxyLogon Exchange exploitation campaign that Microsoft Threat
+  Intelligence attributed with high confidence to a Chinese
+  state-sponsored group (espionage motive).
+description_de: >
+  Am Freitag, dem 19. März 2021, entdeckten und wehrten der
+  tschechische staatliche Eisenbahninfrastrukturbetreiber Správa
+  železnic (SŽ, vormals SŽDC) und die tschechische Staatsbahn České
+  dráhy (ČD) einen Cyber-Angriff auf ihre Büro- und E-Mail-IT-Netze
+  ab. Der Vorfall reihte sich in eine breitere Angriffswelle auf
+  tschechische öffentliche Einrichtungen — das Prager Magistrat, das
+  Ministerium für Arbeit und Soziales (MPSV) und eine medizinische
+  Einrichtung des Innenministeriums — ein, die dieselben
+  Microsoft-Exchange-Zero-Day-Schwachstellen (ProxyLogon,
+  CVE-2021-26855 / -26857 / -26858 / -27065) ausnutzte, die Microsoft
+  am 2. März 2021 gepatcht und vor denen das tschechische Nationale
+  Amt für Cyber- und Informationssicherheit (NÚKIB) dringend gewarnt
+  hatte. Beide Bahnorganisationen informierten NÚKIB sofort; der
+  Sprecher von Správa železnic, Dušan Gavenda, sowie der Generaldirektor
+  der ČD, Ivan Bednárik, bestätigten öffentlich, dass weder der
+  Zugbetrieb noch die sicherheitsrelevanten Signal-/Stellwerkssysteme
+  betroffen gewesen seien. Es wurden keine Datenabflüsse,
+  Ransomware-Nutzlasten, Erpressungsforderungen oder operativen
+  Störungen gemeldet. Die betroffenen Organisationen nannten den
+  initialen Zugriffsvektor nicht öffentlich; die tschechische
+  Fachpresse (iRozhlas, Lupa, Deník, Týden, Aktuálně) und der
+  zeitliche Zusammenhang ordnen den Vorfall jedoch der
+  HAFNIUM-/ProxyLogon-Exchange-Ausnutzungskampagne zu, die Microsoft
+  Threat Intelligence mit hoher Zuversicht einer chinesischen
+  staatlich gesponserten Gruppe zuschreibt (Motiv: Spionage).
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +95,211 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://zpravy.aktualne.cz/ekonomika/doprava/hackeri-napadli-pocitacove-systemy-spravy-zeleznic-a-ceskych/r~801096948afe11eba4560cc47ab5f122/
+  type: news
+  publisher: Aktuálně.cz
+  published_date: '2021-03-22'
+  language: cs
+  accessed_date: '2026-04-19'
+- url: https://www.irozhlas.cz/zpravy-domov/sprava-zeleznic-hackersky-utok-doprava_2103221257_pj
+  type: news
+  publisher: Český rozhlas (iRozhlas)
+  published_date: '2021-03-22'
+  language: cs
+  accessed_date: '2026-04-19'
+- url: https://www.denik.cz/z_domova/zeleznice-hackeri-utok-vlak-20210322.html
+  type: news
+  publisher: Deník.cz (Vltava Labe Media)
+  published_date: '2021-03-22'
+  language: cs
+  accessed_date: '2026-04-19'
+- url: https://www.lupa.cz/aktuality/site-spravy-zeleznic-napadli-hackeri-bezpecnost-provozu-pry-neohrozili/
+  type: news
+  publisher: Lupa.cz (Internet Info)
+  published_date: '2021-03-22'
+  language: cs
+  accessed_date: '2026-04-19'
+- url: https://www.osz.org/index.php/zpravodajstvi-on-line-osz/37-zol-zajimavosti/5913-sprava-zeleznic-a-ceske-drahy-odrazily-utok-hackeru
+  type: news
+  publisher: Odborové sdružení železničářů (Czech rail union OSŽ)
+  published_date: '2021-03-23'
+  language: cs
+  accessed_date: '2026-04-19'
+- url: https://denikn.cz/587281/hackeri-napadli-spravu-zeleznic-bezpecnost-dopravy-neni-ohrozena-tvrdi-vedeni/
+  type: news
+  publisher: Deník N (Lukáš Prchal)
+  published_date: '2021-03-22'
+  language: cs
+  accessed_date: '2026-04-19'
+- url: https://www.tyden.cz/rubriky/domaci/hackeri-napadli-site-spravy-zeleznic-provoz-vlaku-neohrozili_550858.html
+  type: news
+  publisher: Týden.cz (Empresa Media)
+  published_date: '2021-03-22'
+  language: cs
+  accessed_date: '2026-04-19'
+- url: https://www.railtarget.eu/freight/cyber-attack-on-railways-in-the-czech-republic-215.html
+  type: news
+  publisher: RAILTARGET
+  published_date: '2021-03-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cyberscoop.com/microsoft-exchange-server-czech-republic-norway-hafnium-chinese-hackers/
+  type: news
+  publisher: CyberScoop (Sean Lyngaas)
+  published_date: '2021-03-05'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/2021_Microsoft_Exchange_Server_data_breach
+  type: other
+  publisher: Wikipedia (2021 Microsoft Exchange Server data breach)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Spr%C3%A1va_%C5%BEeleznic
+  type: other
+  publisher: Wikipedia (Správa železnic)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/groups/G0125/
+  type: other
+  publisher: MITRE ATT&CK (HAFNIUM / G0125 / Silk Typhoon)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1190/
+  type: other
+  publisher: MITRE ATT&CK (T1190 Exploit Public-Facing Application)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/
+  type: blog
+  publisher: Microsoft Security Response Center
+  published_date: '2021-03-02'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification. The DZSF raw-data row (event 2021-03-19, country CZ,
+  confirmation_status=confirmed, affected_systems=[unclear_system],
+  all other core fields null/unknown) maps unambiguously onto the
+  simultaneous cyber-intrusion attempt disclosed by Správa železnic
+  and České dráhy on 22 March 2021 but dated by both organisations to
+  "od pátku 19. března" — Friday 19 March 2021 — via their respective
+  spokespersons. No other CZ railway cyber incident is publicly
+  documented for this date; the next CZ railway cyber event in the
+  public record is the April 2022 pro-Russian Killnet DDoS wave
+  against the cd.cz website and the "Můj vlak" mobile app, which is a
+  distinct event and is not conflated here.
+
+  Dates. event_date = 2021-03-19 is the date both organisations gave
+  as the onset of the cyber-threat (SŽ spokesperson Dušan Gavenda;
+  ČD spokespeople / CEO Ivan Bednárik). reported_date = 2021-03-22,
+  the Monday on which the matter first became public via the Czech
+  news cluster (Aktuálně, iRozhlas, Deník, Deník N, Lupa, Týden,
+  RAILTARGET — all dated 22 March 2021, with OSŽ union follow-up on
+  23 March).
+
+  Attack vector. attack_vector = `exploit` and
+  mitre_attack_techniques = [T1190] ("Exploit Public-Facing
+  Application"). Neither organisation named the initial-access
+  technique publicly, but multiple Czech publishers (Aktuálně,
+  iRozhlas, Lupa, Týden) frame the railway incident alongside the
+  parallel Microsoft Exchange Server zero-day (ProxyLogon,
+  CVE-2021-26855) intrusions at Prague City Hall, MPSV and the
+  Interior-Ministry medical facility; NÚKIB had on the preceding
+  days ordered all regulated entities to patch Exchange. Aktuálně
+  notes explicitly that it was not yet confirmed whether the railway
+  attack exploited the same Exchange vulnerability, so this is
+  circumstantial — recorded as `suspected` / `espionage` rather than
+  `confirmed`. MITRE ATT&CK documents T1190 as the canonical
+  technique for ProxyLogon initial access (HAFNIUM G0125 /
+  Silk Typhoon).
+
+  Attribution. threat_actor = null because neither the affected
+  organisations nor NÚKIB nor any Czech press source publicly named
+  a specific actor. threat_actor_country = null for the same reason.
+  attribution_confidence = `suspected`: the broader ProxyLogon
+  campaign was attributed by Microsoft with high confidence to the
+  Chinese state-sponsored group HAFNIUM (Silk Typhoon), but the
+  specific railway victim attribution was never publicly confirmed.
+  motive = `espionage`: consistent with HAFNIUM's modus operandi
+  (intelligence collection via mailbox access) rather than
+  financial gain or disruption, and no ransom demand or leak was
+  observed. Left `suspected` not `confirmed` because the link
+  between the railway intrusion and HAFNIUM specifically is
+  circumstantial.
+
+  Affected systems. `internal_communication` and `data` are the two
+  systems most directly implicated: the exploited surface is
+  Microsoft Exchange (corporate e-mail = internal communication)
+  and the stolen-mail risk, even if not realised, is an
+  administrative/corporate-data risk. Both railway organisations
+  explicitly and repeatedly stated that rail-operations, signalling
+  and safety-critical systems were not affected (Gavenda, Bednárik,
+  and the explicit NÚKIB statement "není ohrožena či snížena
+  bezpečnost dopravy"). affected_systems therefore does NOT include
+  `rail_operations`, `internal_train_tracking`, `station_it`,
+  `train_driver_communication`, `passenger_information`,
+  `payment_system` or `website`. The DZSF placeholder
+  `unclear_system` has been replaced with the two more specific
+  values justified above.
+
+  Impact. scope = `national` because Správa železnic manages the
+  entire 9,400-km state rail network and České dráhy is the national
+  incumbent passenger operator; the exposure was therefore
+  nation-wide even though no rail-service disruption materialised.
+  duration_hours = null — the attack was repelled quickly but no
+  public source gave a numeric figure. affected_trains = 0 (all
+  Czech sources explicitly state train operations were not
+  disrupted). customer_data = false (no customer-data breach was
+  reported; the Exchange vector exposes mailbox contents rather
+  than rider data). intellectual_property = false. organizational_data
+  is left null because, while no exfiltration was reported, the
+  ProxyLogon vector typically targets mailbox contents and neither
+  SŽ nor ČD published a definitive post-incident forensic report
+  ruling out silent compromise of administrative e-mail.
+  data_published = false — no leak-site listing of SŽ or ČD has
+  appeared.
+
+  Organisational typing. Správa železnic is a Czech státní
+  organizace (state organisation) acting as the national railway
+  infrastructure manager for ~9,400 km of track, 6,700 bridges,
+  2,500 stations, 166 tunnels (Wikipedia: Správa železnic; SŽ
+  annual report 2021). České dráhy is the Czech state-owned
+  incumbent passenger rail operator. industry_sector =
+  `infrastructure_manager` (mapped to the headline target SŽ which
+  is the infrastructure manager rather than a train operating
+  company); operator_type = `incumbent` (SŽ and ČD are together
+  the Czech state-owned legacy rail group, analogous to DB Netz +
+  DB Fernverkehr).
+
+  Confirmation. confirmation_status = `confirmed` (unchanged):
+  affected organisations themselves confirmed the incident via
+  official statements to multiple media outlets (Gavenda for SŽ;
+  Bednárik and unnamed ČD spokespeople for ČD) on 22 March 2021,
+  and NÚKIB confirmed it was handling the case.
+
+  German-press coverage. German-language trade press
+  (heise.de, Golem.de, Eurailpress / EI, Tagesschau, DSGVO-Portal
+  Sicherheitsvorfalls-Datenbank) has no dedicated item on the
+  2021-03-19 Správa železnic / České dráhy incident; only the DZSF
+  Rohdaten row itself anchors the case in the German-language
+  academic record. The DZSF 2023 summary article "Cyberangriffe auf
+  das Bahnsystem — Was bisher geschah" (EI 8/2023) mentions the
+  wider CZ railway cyber-threat picture only as aggregate statistics,
+  not with per-incident attribution.
+
+  No CERT / CERT-Bund / US-CERT / CISA advisory was issued
+  specifically for the railway incident; the contemporaneous CISA
+  emergency directive AA21-062A and the Czech NÚKIB advisory on
+  Microsoft Exchange Server vulnerabilities are the governing
+  primary-sector guidance but name neither SŽ nor ČD individually.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

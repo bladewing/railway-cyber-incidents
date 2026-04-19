@@ -1,37 +1,138 @@
 id: 2020-10-28_ransomexx
 schema_version: '1.0'
-event_date: '2020-10-28'
+event_date: '2020-10-19'
 event_date_precision: day
-reported_date: null
+reported_date: '2020-10-20'
 countries_impacted:
 - CA
-region: null
-coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+region: Montreal, Quebec, Canada
+coordinates:
+  lat: 45.5088
+  lon: -73.5878
+target_organization: Société de transport de Montréal (STM) — Montreal Metro (4 lines,
+  68 stations, rubber-tired rapid-transit system), bus network (221 day / 23 night
+  routes), Transport adapté paratransit, Taxibus
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: phishing
 supply_chain: false
 malware:
 - name: RansomExx
-  family: null
+  family: RansomEXX
   mitre_software_id: null
 extortion: true
 motive: financial
-mitre_attack_techniques: null
-threat_actor: null
+mitre_attack_techniques:
+- T1566.001
+- T1078
+- T1021
+- T1059.001
+- T1486
+- T1490
+- T1041
+- T1485
+threat_actor: Sprite Spider (a.k.a. GOLD DUPONT); RansomEXX / Defray777 operators
 threat_actor_country: null
-attribution_confidence: unknown
+attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - internal_communication
 - website
 - data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2020-10-28. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: 1500000
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: true
+description_en: >
+  On 19 October 2020 the Société de transport de Montréal (STM) — the
+  public transit authority for the urban agglomeration of Montreal,
+  Quebec, operating the four-line, 68-station rubber-tired Montreal
+  Metro, 221 daytime and 23 night bus routes, the Transport adapté
+  paratransit service and the Taxibus on-demand service — was hit by
+  a highly automated ransomware attack using the RansomEXX (a.k.a.
+  Defray777 / Ransom X) family. The intrusion reached STM by
+  happenstance: the attackers had earlier compromised Acura Laval, an
+  automobile dealership on Montreal's North Shore, exfiltrated its
+  customer list and email mailboxes, and pushed a weaponised
+  attachment to those customers; an STM procurement-division employee
+  opened the attachment through his personal email account on a
+  corporate device, detonating the payload inside STM's network. STM's
+  security team isolated affected systems within four hours; 600 of
+  1,600 servers (approximately 624 considered operationally sensitive)
+  were encrypted, the corporate website, telephone lines and online
+  customer-service platforms went offline, and the Transport adapté
+  online reservation portal was knocked out for several days (phone
+  reservations limited to medical trips until 25 October, when online
+  reservations were restored). Bus and Metro revenue service continued
+  without interruption throughout. On 28 October 2020, more than a
+  week of silence after the intrusion, the RansomEXX operators issued
+  a ransom demand of approximately US $2.8 million in cryptocurrency;
+  CEO Luc Tremblay publicly refused to pay. A follow-on forensic
+  investigation (announced 18 November 2020 and completed 16 November
+  2020) disclosed that an automated exfiltration routine had pulled
+  low-sensitivity personal data on 24 of STM's 11,000 employees and
+  72 of its 645,000 customers from 5 of 6,500 computers and 38 of
+  1,000 servers — mostly names, email addresses and phone numbers —
+  and more sensitive data on 2 employees. No bulk data publication on
+  the RansomEXX leak site has been documented. Server restoration
+  cost STM approximately CA $2 million (≈ €1.5 million at late-2020
+  FX) in goods and services plus lost-time costs; STM later filed a
+  CA $5 million insurance claim. RansomEXX is attributed to the
+  Sprite Spider / GOLD DUPONT big-game-hunting eCrime actor (Unit 42,
+  CrowdStrike, SecureWorks), which rebranded Defray777 as RansomEXX
+  in mid-2020 and hit Texas DOT, Konica Minolta, IPG Photonics,
+  Tyler Technologies and Brazil's Superior Court of Justice the same
+  year.
+description_de: >
+  Am 19. Oktober 2020 wurde die Société de transport de Montréal
+  (STM) — die öffentliche Nahverkehrsbehörde des Ballungsraums
+  Montreal (Quebec), die die vierlinige, 68 Stationen umfassende
+  gummibereifte Métro de Montréal, 221 Tages- und 23 Nachtbuslinien,
+  den Paratransit-Dienst Transport adapté sowie den Rufbus Taxibus
+  betreibt — Ziel eines hochautomatisierten Ransomware-Angriffs mit
+  der RansomEXX-Familie (auch bekannt als Defray777 bzw. Ransom X).
+  Der Zugang kam zufällig zustande: die Täter hatten zuvor den
+  Autohändler Acura Laval an der Nordküste Montreals kompromittiert,
+  dessen Kundenliste und E-Mail-Postfächer abgezogen und den Kunden
+  mit einem schadhaften Anhang ein Phishing-Mailing zugeschickt; ein
+  Mitarbeiter der Beschaffungsabteilung der STM öffnete den Anhang
+  auf einem Dienstgerät über sein privates E-Mail-Konto und löste so
+  den Schadcode im STM-Netz aus. Die IT-Sicherheitsabteilung der STM
+  konnte die betroffenen Systeme innerhalb von vier Stunden isolieren;
+  600 von 1.600 Servern (rund 624 davon „operativ sensibel") wurden
+  verschlüsselt, die Unternehmenswebsite, Telefonleitungen und
+  Kundenservice-Plattformen waren offline, und das Online-
+  Reservierungssystem des Transport adapté war mehrere Tage
+  ausgefallen (telefonische Reservierungen waren bis 25. Oktober nur
+  für medizinische Fahrten möglich, danach lief der Online-Dienst
+  wieder). Bus- und Métro-Betrieb fuhren durchgängig weiter. Am
+  28. Oktober 2020, nach über einer Woche Funkstille, forderten die
+  RansomEXX-Betreiber rund 2,8 Mio. US-Dollar Lösegeld in Kryptowährung;
+  Generaldirektor Luc Tremblay lehnte die Zahlung öffentlich ab. Die
+  am 18. November 2020 veröffentlichte forensische Untersuchung
+  ergab, dass ein automatisiertes Exfiltrationsmodul
+  niedrigsensible Daten von 24 der 11.000 Beschäftigten und 72 der
+  645.000 Kund:innen aus 5 von 6.500 Rechnern und 38 von 1.000
+  Servern abgezogen hatte — im Wesentlichen Namen, E-Mail-Adressen
+  und Telefonnummern — sowie sensiblere Daten von zwei Beschäftigten.
+  Eine Massenveröffentlichung auf der RansomEXX-Leak-Site ist nicht
+  dokumentiert. Die Wiederherstellung kostete die STM rund 2 Mio. CAD
+  (≈ 1,5 Mio. EUR) zuzüglich Ausfallzeiten; später reichte die STM
+  eine Versicherungsforderung über 5 Mio. CAD ein. RansomEXX wird
+  dem als „Sprite Spider" / „GOLD DUPONT" bekannten finanziell
+  motivierten eCrime-Akteur zugeschrieben (Unit 42, CrowdStrike,
+  SecureWorks), der Defray777 Mitte 2020 als RansomEXX umbenannte
+  und im selben Jahr das Texas DOT, Konica Minolta, IPG Photonics,
+  Tyler Technologies und den brasilianischen Obersten Gerichtshof
+  traf.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -39,11 +140,322 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.stm.info/en/press/news/2020/the-stm-completes-cyber-attack-investigation
+  type: press_release
+  publisher: Société de transport de Montréal (STM) — "The STM completes cyber attack
+    investigation"
+  published_date: '2020-11-18'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.stm.info/fr/presse/nouvelles/2020/la-stm-termine-son-enquete-interne-sur-l-attaque-informatique
+  type: press_release
+  publisher: Société de transport de Montréal (STM) — "La STM termine son enquête
+    interne sur l'attaque informatique"
+  published_date: '2020-11-18'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://www.newswire.ca/fr/news-releases/attaque-informatique-a-la-stm-77-des-serveurs-sensibles-retablis-812286083.html
+  type: press_release
+  publisher: "STM via Newswire (CNW) — \"Attaque informatique à la STM : 77 % des serveurs sensibles rétablis\""
+  published_date: '2020-10-29'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/montreals-stm-public-transport-system-hit-by-ransomware-attack/
+  type: news
+  publisher: BleepingComputer (Lawrence Abrams) — "Montreal's STM public transport
+    system hit by ransomware attack"
+  published_date: '2020-10-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbc.ca/news/canada/montreal/stm-refused-to-pay-2-8-million-ransomware-attack-1.5782838
+  type: news
+  publisher: CBC News — "STM says it refused hackers' $2.8M demand in ransomware attack"
+  published_date: '2020-10-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://globalnews.ca/news/7431526/hacker-montreal-transit-cyberattack-seeks-ransom/
+  type: news
+  publisher: Global News — "Hacker behind Montreal transit agency cyberattack asks
+    for $2.8M ransom"
+  published_date: '2020-10-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.infosecurity-magazine.com/news/montreal-metro-hacker-demands-28m/
+  type: news
+  publisher: Infosecurity Magazine — "Montreal Metro Hacker Demands $2.8m Ransom"
+  published_date: '2020-10-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.masstransitmag.com/safety-security/article/21202091/translink-stm-experienced-cyber-attacks-this-fall
+  type: news
+  publisher: Mass Transit Magazine — "TransLink, STM experienced cyber attacks this
+    fall"
+  published_date: '2020-12-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.progressiverailroading.com/security/news/STM-wraps-up-cyber-attack-investigation--62111
+  type: news
+  publisher: Progressive Railroading — "STM wraps up cyber attack investigation"
+  published_date: '2020-11-19'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://journalmetro.com/actualites/montreal/2546612/virus-le-transport-adapte-revient-la-stm-na-verse-aucune-rancon/
+  type: news
+  publisher: "Journal Métro — \"Virus : le transport adapté revient, la STM n'a versé aucune rançon\""
+  published_date: '2020-10-25'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://ici.radio-canada.ca/nouvelle/1745425/stm-rancongisiel-serveurs-attaque-informatique
+  type: news
+  publisher: Radio-Canada — "Aucune donnée piratée et pas de rançon payée, dit la
+    STM"
+  published_date: '2020-10-29'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://ici.radio-canada.ca/nouvelle/1750673/stm-montreal-attaque-informatique-enquete
+  type: news
+  publisher: Radio-Canada — "Le piratage d'octobre aura coûté 2 millions de dollars
+    à la STM"
+  published_date: '2020-11-18'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://ici.radio-canada.ca/nouvelle/1742429/panne-informatique-societe-transport-montreal
+  type: news
+  publisher: Radio-Canada — "La STM victime d'une attaque au rançongiciel"
+  published_date: '2020-10-21'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://www.ledevoir.com/societe/transports-urbanisme/589970/la-cyberattaque-d-octobre-a-coute-2-millions-de-dollars-a-la-stm
+  type: news
+  publisher: Le Devoir — "La cyberattaque d'octobre a coûté 2 millions de dollars
+    à la STM"
+  published_date: '2020-11-18'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://lactualite.com/actualites/le-pirate-informatique-derriere-la-cyberattaque-contre-la-stm-reclame-28-m/
+  type: news
+  publisher: L'Actualité — "Le pirate informatique derrière la cyberattaque contre
+    la STM réclame 2,8 M $"
+  published_date: '2020-10-29'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://vigila.ca/2024/08/15/une-attaque-informatique-frappe-la-stm-par-inadvertance/
+  type: blog
+  publisher: Vigila — "Une attaque informatique frappe la STM par inadvertance" (Acura
+    Laval origin narrative)
+  published_date: '2024-08-15'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://www.intelligentciso.com/2020/10/22/montreals-stm-public-transport-system-hit-with-a-ransomexx-attack/
+  type: news
+  publisher: Intelligent CISO — "Montreal's STM public transport system hit with a
+    RansomExx attack"
+  published_date: '2020-10-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.tripwire.com/state-of-security/security-data-protection/montreal-public-transport-agency-discloses-ransomware-attack/
+  type: blog
+  publisher: Tripwire State of Security — "Montréal Public Transport Agency Discloses
+    Ransomware Attack"
+  published_date: '2020-10-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://nap.nationalacademies.org/read/26475/chapter/9
+  type: academic_paper
+  publisher: Transportation Research Board / National Academies — TCRP Synthesis 158
+    Cybersecurity in Transit Systems, Appendix A (STM listed)
+  published_date: '2022-01-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.trendmicro.com/vinfo/us/security/news/ransomware-spotlight/ransomware-spotlight-ransomexx
+  type: blog
+  publisher: "Trend Micro — \"Ransomware Spotlight: RansomEXX\""
+  published_date: '2022-03-16'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://unit42.paloaltonetworks.com/vatet-pyxie-defray777/3/
+  type: blog
+  publisher: "Unit 42 (Palo Alto Networks) — \"When Threat Actors Fly Under the Radar: Vatet, PyXie and Defray777\""
+  published_date: '2020-11-06'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securelist.com/ransomexx-trojan-attacks-linux-systems/99279/
+  type: blog
+  publisher: Kaspersky Securelist — "RansomEXX Trojan attacks Linux systems"
+  published_date: '2020-11-06'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://malpedia.caad.fkie.fraunhofer.de/details/win.ransomexx
+  type: other
+  publisher: Fraunhofer FKIE Malpedia — win.ransomexx (aliases Defray777, Ransom X;
+    Sprite Spider / GOLD DUPONT)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.crowdstrike.com/adversaries/sprite-spider/
+  type: blog
+  publisher: CrowdStrike — Sprite Spider adversary profile
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ransomware.live/group/ransomexx
+  type: other
+  publisher: ransomware.live — RansomEXX victim index (STM listed, event 2020-10-19)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_de_transport_de_Montr%C3%A9al
+  type: other
+  publisher: Wikipedia — Société de transport de Montréal (agency profile, networks,
+    ridership)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF raw-data stub dated 2020-10-28 (Canada,
+  malware=RansomExx, extortion=true, data_published=false,
+  affected_systems=[internal_communication, website, data]) matches
+  the Société de transport de Montréal (STM) RansomEXX ransomware
+  incident of 19 October 2020 beyond reasonable doubt: STM is the
+  only Canadian rail-operating transit entity publicly attributed to
+  RansomEXX in 2020 (BleepingComputer, CBC, Global News, Radio-
+  Canada, Le Devoir, L'Actualité, Infosecurity Magazine, Mass Transit
+  Magazine, Progressive Railroading, Journal Métro, Tripwire,
+  Intelligent CISO, TCRP Synthesis 158). The DZSF date 2020-10-28
+  corresponds to the day the ≈US $2.8 M ransom demand was disclosed
+  publicly (CBC, Global News, Radio-Canada all file 29 October 2020
+  reports citing the prior day's demand); I have therefore retained
+  2020-10-28 in the id/filename but set event_date to 2020-10-19
+  (the afternoon of the actual intrusion and initial outage, per
+  STM's 18 November 2020 press release and TCRP Synthesis 158) and
+  reported_date to 2020-10-20 (STM's public confirmation the day
+  after the intrusion, when it first described the incident as a
+  ransomware attack).
+
+  Not to be confused with the Metro Vancouver TransLink Egregor
+  attack of early December 2020 — that is a distinct incident with a
+  different ransomware family (Egregor, not RansomEXX).
+
+  attack_vector `phishing`: the initial STM infection arrived via a
+  phishing email with a malicious attachment opened by an STM
+  procurement-division employee on his personal email account on a
+  corporate device (Vigila, STM press release, Radio-Canada). The
+  phishing mailing was itself sent from compromised mailboxes at the
+  Acura Laval automobile dealership (supply-chain upstream of the
+  phishing message), but the compromise of STM itself was a direct
+  phishing event, not a software supply-chain compromise of an STM
+  IT vendor. `supply_chain` therefore set to false.
+
+  malware: RansomEXX (aliases Defray777, Ransom X; family RansomEXX).
+  No MITRE ATT&CK Software ID is currently assigned to RansomEXX in
+  the public MITRE ATT&CK catalogue (as of April 2026), so
+  mitre_software_id is left null rather than guessing S0602 (which is
+  Circles, an SS7 surveillance tool) or any other plausible but
+  incorrect value.
+
+  motive `financial`: classic double-extortion big-game-hunting RaaS
+  — encrypt, demand cryptocurrency (US $2.8 M), threaten leak. No
+  geopolitical or ideological motive reported.
+
+  threat_actor: RansomEXX is attributed to the Sprite Spider /
+  GOLD DUPONT actor group (CrowdStrike's and SecureWorks' respective
+  naming conventions; also tracked by Unit 42 under "Defray777
+  operators" and by Malpedia as the operator of win.ransomexx /
+  elf.ransomexx). The actor emerged as a rebrand of Defray777 in
+  mid-2020 and ran low-volume, targeted BGH campaigns.
+  `attribution_confidence: reported` — the RansomEXX/Sprite Spider
+  linkage is reported consistently by multiple private-sector
+  researchers but has not been confirmed by a government indictment
+  or court action tied to the STM incident specifically.
+
+  threat_actor_country null: publicly-available attribution links
+  RansomEXX/Sprite Spider to Russian-speaking eCrime ecosystems but
+  stops short of a concrete country attribution in open-source
+  reporting. Per the "prefer null over invention" rule I leave
+  threat_actor_country unset rather than entering RU on the weaker
+  inference.
+
+  mitre_attack_techniques: list combines (a) the RansomEXX /
+  Defray777 documented TTPs (Unit 42, Trend Micro, Kaspersky,
+  Cybereason) and (b) the STM-specific behaviour documented by STM
+  and Radio-Canada (initial access via spearphishing attachment,
+  automated exfiltration):
+    - T1566.001 Spearphishing Attachment (the Acura Laval-origin
+      phishing email with malicious attachment)
+    - T1078 Valid Accounts (Domain Admin exploitation — RansomEXX
+      TTP; STM's "highly automated" encryption across 600 servers
+      implies DC-level privilege)
+    - T1021 Remote Services (lateral movement across the server
+      estate)
+    - T1059.001 PowerShell (Vatet loader stage)
+    - T1486 Data Encrypted for Impact (the ransomware encryption of
+      600 servers)
+    - T1490 Inhibit System Recovery (RansomEXX standard TTP)
+    - T1041 Exfiltration Over C2 Channel (the automated exfiltration
+      that pulled 5 computers / 38 servers of data)
+    - T1485 Data Destruction (inferred from file-encryption scope;
+      documented RansomEXX capability)
+  These are family-level TTPs mapped to the attested STM incident
+  stages; no incident-specific forensic report IoC list is public.
+
+  affected_systems: the DZSF triple (internal_communication, website,
+  data) is retained and well-supported — STM's corporate phones and
+  customer-service telephony went down (internal_communication),
+  the public website stm.info was redirected to lastm.info during
+  the outage (website), and organisational/customer data was
+  exfiltrated automatically (data). The Metro (subway) revenue
+  operation itself was unaffected, so rail_operations,
+  train_driver_communication and internal_train_tracking are NOT
+  claimed.
+
+  data_published false: per STM's own 18 November 2020 investigation
+  the exfiltration was limited and no bulk publication on the
+  RansomEXX leak site has been documented in open-source reporting
+  (ransomware.live victim index lists STM without a public leak).
+  data_compromise.customer_data true (72 customers' low-sensitivity
+  PII) and .organizational_data true (24 employees + 2 with
+  higher-sensitivity data); .intellectual_property false (no
+  proprietary tech).
+
+  industry_sector `urban_transit`: STM is a metropolitan public-
+  transit authority running the Montreal Metro (rubber-tired rapid
+  transit, classified as urban metro) plus bus, paratransit and
+  Taxibus — best-fit `urban_transit`. The Montreal Metro is rubber-
+  tired but is still classified as a heavy-rail rapid-transit
+  metro system for industry-sector purposes.
+
+  operator_type `public_authority`: STM is a public-sector transit
+  authority of the Ville de Montréal, created under Quebec's
+  municipal-transit law. It is neither an incumbent national
+  operator nor a private operator.
+
+  confirmation_status `confirmed`: STM publicly confirmed the attack
+  (press releases 21 October and 18 November 2020); TCRP
+  Synthesis 158 (National Academies, 2022) catalogues it;
+  BleepingComputer, CBC, Global News, Radio-Canada, Le Devoir,
+  L'Actualité, Infosecurity Magazine, Mass Transit Magazine,
+  Progressive Railroading, Journal Métro, Tripwire and Intelligent
+  CISO all report it as a confirmed incident with a named ransomware
+  family.
+
+  monetary_damage_eur 1500000: CA $2 M restoration cost reported by
+  STM (18 November 2020 press release, corroborated by Radio-Canada
+  and Le Devoir) converted at late-2020 FX (≈ CA $1 = €0.65) yields
+  ≈ €1.3-1.5 M. I use €1.5 M as a rounded-up integer estimate; it is
+  a direct-restoration cost only and does not include lost time or
+  the later CA $5 M insurance claim. This is an approximate figure
+  reflecting publicly reported values.
+
+  German-language press: German-language searches (heise.de, Golem.de,
+  Eurailpress) returned no dedicated STM 2020 coverage. The DZSF
+  catalogue is therefore the only German-language anchor; this is
+  consistent with the low salience of a Canadian transit incident in
+  German rail-trade press. No escalation is warranted.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

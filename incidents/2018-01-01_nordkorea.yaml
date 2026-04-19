@@ -2,31 +2,70 @@ id: 2018-01-01_nordkorea
 schema_version: '1.0'
 event_date: '2018-01-01'
 event_date_precision: month
-reported_date: null
+reported_date: '2018-01-23'
 countries_impacted:
 - CA
-region: null
+region: Ontario (Greater Toronto and Hamilton Area)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: Metrolinx
+industry_sector: regional_passenger
+operator_type: public_authority
 attack_vector: unknown
 supply_chain: false
 malware: null
 extortion: false
 motive: unknown
 mitre_attack_techniques: null
-threat_actor: Nordkorea
-threat_actor_country: null
-attribution_confidence: suspected
+threat_actor: null
+threat_actor_country: KP
+attribution_confidence: rumored
 confirmation_status: confirmed
 affected_systems:
-- unclear_system
+- data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2018-01-01. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  In January 2018, Metrolinx — the Ontario Crown agency that coordinates
+  GO Transit regional rail, UP Express and the PRESTO fare system across
+  the Greater Toronto and Hamilton Area — publicly disclosed that malware
+  had been found on one of its corporate computer networks roughly two
+  weeks earlier, and attributed the intrusion to North Korea with the
+  traffic said to have been routed through servers in Russia. The agency
+  said its firewall had been breached but that safety-critical rail and
+  bus control systems, PRESTO (on a segregated network) and customer and
+  staff data were not affected, and the RCMP opened an investigation.
+  The DPRK attribution was widely reported but remained contested:
+  Metrolinx and the Ontario government declined to publish any evidence,
+  and cybersecurity experts including Citizen Lab director Ron Deibert
+  and Trend Micro's Mark Nunnikhoven publicly criticised the naming of a
+  nation-state without supporting proof.
+description_de: >
+  Im Januar 2018 meldete die Verkehrsagentur Metrolinx — eine
+  landeseigene Gesellschaft der Provinz Ontario, die den
+  Regionalzugbetrieb GO Transit, den Flughafenzubringer UP Express sowie
+  das Ticketing-System PRESTO in der Metropolregion Toronto/Hamilton
+  verantwortet — dass rund zwei Wochen zuvor Schadsoftware in einem
+  ihrer Verwaltungsnetze gefunden worden sei. Die Agentur schrieb den
+  Angriff Nordkorea zu; der Datenverkehr sei über russische Server
+  geleitet worden. Die Firewall sei durchbrochen worden, sicherheitsrelevante
+  Zug- und Busleitsysteme, das (getrennt betriebene) PRESTO-System sowie
+  Kunden- und Mitarbeiterdaten seien jedoch nicht betroffen gewesen; die
+  RCMP nahm Ermittlungen auf. Die DPRK-Zuschreibung wurde breit berichtet,
+  blieb aber umstritten: Metrolinx und die Regierung von Ontario
+  veröffentlichten keine Belege, und IT-Sicherheitsfachleute wie Ron
+  Deibert (Citizen Lab) und Mark Nunnikhoven (Trend Micro) kritisierten
+  die öffentliche Nennung eines Staatsakteurs ohne nachvollziehbaren
+  Nachweis.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +73,113 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.cbc.ca/news/canada/toronto/north-korean-cyber-attack-metrolinx-1.4500918
+  type: news
+  publisher: CBC News
+  published_date: '2018-01-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.theglobeandmail.com/news/toronto/metrolinx-says-it-was-targeted-by-cyberattack-that-originated-in-north-korea/article37712443/
+  type: news
+  publisher: The Globe and Mail
+  published_date: '2018-01-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://globalnews.ca/news/3983251/north-korea-metrolinx-hack-cyberattack/
+  type: news
+  publisher: Global News
+  published_date: '2018-01-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ctvnews.ca/toronto/article/metrolinx-thwarts-cyber-attack-by-north-korean-hackers
+  type: news
+  publisher: CTV News Toronto
+  published_date: '2018-01-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.itworldcanada.com/article/ontario-transit-agency-extremely-confident-cyber-attack-came-from-north-korea/401047
+  type: news
+  publisher: IT World Canada
+  published_date: '2018-01-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.progressiverailroading.com/security/news/Metrolinx-victim-of-North-Korean-cyberattack--53770
+  type: news
+  publisher: Progressive Railroading
+  published_date: '2018-01-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.theglobeandmail.com/news/toronto/alleged-north-korean-hack-on-metrolinx-may-open-frightening-new-chapter-in-cybersecurity/article37726914/
+  type: news
+  publisher: The Globe and Mail
+  published_date: '2018-01-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbc.ca/news/science/metrolinx-north-korea-cyber-attack-attribution-is-hard-1.4502180
+  type: news
+  publisher: CBC News
+  published_date: '2018-01-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://thecyberwire.com/issues/issues2018/January/CyberWire_2018_01_24.html
+  type: news
+  publisher: The CyberWire
+  published_date: '2018-01-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ctvnews.ca/toronto/article/metrolinx-says-recent-attack-involved-malware-and-had-many-targets/
+  type: news
+  publisher: CTV News Toronto
+  published_date: '2018-01-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: http://www.rcinet.ca/fr/2018/01/24/metrolinx-lagence-de-transport-du-grand-toronto-affirme-avoir-ete-victime-dune-cyberattaque-de-coree-du-nord/
+  type: news
+  publisher: Radio Canada International
+  published_date: '2018-01-24'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://www.zataz.com/cyberattaque-de-la-coree-du-nord-transports-publics/
+  type: news
+  publisher: ZATAZ
+  published_date: '2018-01-24'
+  language: fr
+  accessed_date: '2026-04-19'
+- url: https://www.cybersecuritydive.com/news/rail-transit-cyberattacks/619123/
+  type: news
+  publisher: Cybersecurity Dive
+  published_date: '2022-02-14'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The DZSF raw-data row carries country "Kanada" (CA) and actor
+  "Nordkorea?" with date 2018-01-01 (month precision). It corresponds
+  to the Metrolinx disclosure of 23 January 2018. Metrolinx spokesperson
+  Anne Marie Aikins said the malware had been found on a corporate
+  network roughly a week to two weeks before the announcement; no
+  precise incident date was ever released. `event_date` is therefore
+  kept at 2018-01-01 with month precision, and `reported_date` is set
+  to the public disclosure on 2018-01-23. `threat_actor_country: KP` is
+  recorded because that is the attribution Metrolinx made on the record,
+  but `attribution_confidence` is `rumored` rather than `reported`: no
+  evidence was published, Metrolinx declined to back the claim with
+  indicators, and multiple independent experts (Ron Deibert of Citizen
+  Lab; Mark Nunnikhoven, then of Trend Micro; Carmi Levy) publicly
+  criticised the attribution as unsubstantiated. No specific named
+  threat group (Lazarus, APT38, Kimsuky, Andariel, etc.) was ever
+  attached to this incident by a vendor or CERT. The malware itself
+  was not publicly named; references in some downstream pieces to
+  "WannaCry-like" behaviour are speculative and not supported by
+  Metrolinx's statements. `affected_systems: [data]` reflects that the
+  impact was limited to a Metrolinx corporate/administrative IT
+  network; PRESTO (ticketing), GO Transit operations, UP Express and
+  bus operations were explicitly stated to be unaffected, and PRESTO
+  runs on a segregated network.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

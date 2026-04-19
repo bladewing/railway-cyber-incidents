@@ -2,34 +2,86 @@ id: 2018-05-14_dzsf-import
 schema_version: '1.0'
 event_date: '2018-05-14'
 event_date_precision: day
-reported_date: null
+reported_date: '2018-05-14'
 countries_impacted:
 - DK
-region: null
+region: Denmark (nationwide)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: DSB (Danske Statsbaner)
+industry_sector: long_distance_passenger
+operator_type: incumbent
 attack_vector: unknown
 supply_chain: false
 malware: null
 extortion: false
-motive: unknown
+motive: disruption
 mitre_attack_techniques: null
 threat_actor: null
 threat_actor_country: null
 attribution_confidence: unknown
 confirmation_status: confirmed
 affected_systems:
-- internal_communication
-- train_driver_communication
-- payment_system
 - website
+- payment_system
+- internal_communication
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2018-05-14. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On the evening of Sunday 13 May 2018 and into the early hours of Monday
+  14 May 2018, Denmark's incumbent national railway operator DSB (Danske
+  Statsbaner) was hit by a distributed denial-of-service (DDoS) attack
+  that flooded its public-facing systems with traffic from multiple
+  external sources. Ticket sales via the DSB app, the DSB website, the
+  automated ticket-vending machines at stations and the 7-Eleven kiosks
+  inside Danish railway stations were all knocked offline, and internal
+  email, telephony and SMS systems used by DSB staff were also disrupted
+  so that the company could communicate with passengers only through
+  social media. Passengers holding a Rejsekort contactless travel card
+  could still board and travel as normal, and those without a card were
+  allowed to purchase a ticket on the train from the conductor; bus and
+  train operations themselves, and the signalling / safety systems,
+  were not affected. DSB's IT team, together with external contractors,
+  restored service by around 03:30 on the night into Monday 14 May, and
+  DSB deputy director Aske Wieth-Knudsen told Danish media the incident
+  was confirmed as an external attack aimed at bringing the system down;
+  no ransom was demanded, no data theft was reported, and Thomas
+  Lund-Sorensen of the Centre for Cyber Security (Centre for
+  Cybersikkerhed, under the Danish Defence Intelligence Service)
+  characterised the technique as a commodity booter-style DDoS of the
+  kind that can be rented online cheaply.
+description_de: >
+  Am Abend des Sonntags 13. Mai 2018 und bis in die fruehen Morgenstunden
+  des Montags 14. Mai 2018 wurde die daenische staatliche
+  Eisenbahngesellschaft DSB (Danske Statsbaner) Ziel eines Distributed-
+  Denial-of-Service-Angriffs (DDoS), bei dem oeffentlich erreichbare
+  Systeme mit Anfragen aus vielen externen Quellen ueberflutet wurden.
+  Der Ticketverkauf ueber die DSB-App, die DSB-Website, die
+  Fahrkartenautomaten in den Bahnhoefen und die 7-Eleven-Kioske in den
+  daenischen Bahnhoefen fiel vollstaendig aus; auch interne E-Mail-,
+  Telefon- und SMS-Systeme der DSB-Mitarbeiter waren gestoert, sodass
+  das Unternehmen mit Fahrgaesten nur noch ueber soziale Medien
+  kommunizieren konnte. Reisende mit Rejsekort-Karte konnten weiterhin
+  fahren, Fahrgaeste ohne Karte durften ihr Ticket beim Zugbegleiter
+  kaufen; Zug- und Busbetrieb sowie die Leit- und Sicherungstechnik
+  waren nicht betroffen. Das IT-Team von DSB stellte den Betrieb
+  zusammen mit externen Dienstleistern gegen 03:30 Uhr am Montag wieder
+  her. DSB-Vizedirektor Aske Wieth-Knudsen bestaetigte gegenueber
+  daenischen Medien einen externen Angriff mit dem Ziel, das System
+  lahmzulegen; Loesegeldforderungen oder Datenabfluss wurden nicht
+  gemeldet. Thomas Lund-Sorensen vom Center for Cybersikkerhed
+  (Zentrum fuer Cybersicherheit, Teil des daenischen militaerischen
+  Nachrichtendienstes) stufte die Technik als handelsuebliche, im
+  Internet guenstig mietbare Booter-DDoS-Attacke ein.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -37,11 +89,171 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.thelocal.dk/20180514/cyber-attack-hits-danish-rail-network/
+  type: news
+  publisher: The Local Denmark
+  published_date: '2018-05-14'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.infosecurity-magazine.com/news/danish-railway-ddos-attack/
+  type: news
+  publisher: Infosecurity Magazine
+  published_date: '2018-05-14'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/72530/hacking/rail-operator-dsb-ddos.html
+  type: news
+  publisher: Security Affairs
+  published_date: '2018-05-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.dr.dk/nyheder/indland/dsbs-systemer-lagt-ned-vi-har-ikke-set-den-type-angreb-foer
+  type: news
+  publisher: DR (Danmarks Radio)
+  published_date: '2018-05-14'
+  language: da
+  accessed_date: '2026-04-19'
+- url: https://nyheder.tv2.dk/samfund/2018-05-14-dsb-udsat-for-cyberangreb
+  type: news
+  publisher: TV 2 Nyheder
+  published_date: '2018-05-14'
+  language: da
+  accessed_date: '2026-04-19'
+- url: https://www.version2.dk/artikel/ddos-angreb-rammer-dsb
+  type: news
+  publisher: Version2 (Ingenioeren)
+  published_date: '2018-05-14'
+  language: da
+  accessed_date: '2026-04-19'
+- url: https://www.dr.dk/nyheder/indland/dsb-hackerangreb-var-skyld-i-teknisk-nedbrud
+  type: news
+  publisher: DR (Danmarks Radio)
+  published_date: '2018-05-14'
+  language: da
+  accessed_date: '2026-04-19'
+- url: https://www.dr.dk/nyheder/indland/center-cybersikkerhed-om-dsb-nedbrud-den-type-angreb-kan-koebes-paa-nettet
+  type: news
+  publisher: DR (Danmarks Radio)
+  published_date: '2018-05-14'
+  language: da
+  accessed_date: '2026-04-19'
+- url: https://gbhackers.com/massive-ddos-attack/
+  type: news
+  publisher: GBHackers
+  published_date: '2018-05-16'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://hackread.com/denmarks-train-operator-hit-by-ddos-attack/
+  type: news
+  publisher: HackRead
+  published_date: '2018-05-14'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://latesthackingnews.com/2018/05/15/danish-rail-network-target-of-cyber-attack/
+  type: news
+  publisher: Latest Hacking News
+  published_date: '2018-05-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cphpost.dk/2018-05-14/news/hackers-target-danish-train-service-over-the-weekend/
+  type: news
+  publisher: The Copenhagen Post
+  published_date: '2018-05-14'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.folketidende.dk/indland/dsb-cyberangreb-var-skyld-i-teknisk-nedbrud/2613346
+  type: news
+  publisher: Folketidende (Ritzau)
+  published_date: '2018-05-14'
+  language: da
+  accessed_date: '2026-04-19'
+- url: https://www.lok-report.de/news/europa/item/4850-daenemark-ddos-cyberangriff-legt-dsb-fahrkartenverkauf-lahm.html
+  type: news
+  publisher: LOK Report
+  published_date: '2018-05-14'
+  language: de
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The DZSF raw-data row dated 2018-05-14 (DK, confirmation=confirmed,
+  affected_systems spanning ticketing/website/staff communications,
+  extortion=false, motive=unknown) is a clear match for the DDoS attack
+  against DSB (Danske Statsbaner) that ran from the evening of Sunday
+  13 May 2018 into the early hours of Monday 14 May 2018, widely
+  reported in Danish (DR, TV 2, Version2, Folketidende/Ritzau) and
+  international English/German press (The Local Denmark, The Copenhagen
+  Post, Infosecurity Magazine, Security Affairs, HackRead, GBHackers,
+  Latest Hacking News, LOK Report). No other Danish railway cyber
+  incident on that date is publicly documented, so the DZSF stub is
+  resolved to DSB. event_date kept as 2018-05-14 (the DZSF record's
+  date) because the attack spanned the 13/14 May night and DSB's public
+  announcement as well as the bulk of media coverage fell on 14 May;
+  event_date_precision is `day` and description_en makes the two-day
+  chronology explicit. industry_sector is `long_distance_passenger`
+  because DSB is Denmark's incumbent long-distance and regional
+  passenger operator (IC, IC Lyn, regional services); DSB also runs the
+  Copenhagen S-tog urban S-Bahn, but the disruption affected the whole
+  DSB ticketing estate rather than the S-tog urban service specifically,
+  so `long_distance_passenger` best represents the victim. operator_type
+  is `incumbent` (DSB is the Danish state-owned incumbent operator).
+  attack_vector is `unknown`: the attack was clearly a volumetric DDoS,
+  but the schema's `attack_vector` enumerates the initial-access class
+  (exploit, phishing, credential_theft, ...), none of which map to an
+  external DDoS delivered via commodity booter traffic; per the
+  codebook we default to `unknown`. motive is `disruption`: DSB and
+  Danish media explicitly described the goal as taking systems down,
+  no ransom was demanded, and Centre for Cyber Security head Thomas
+  Lund-Sorensen classed the attack as a cheap rent-a-DDoS, so
+  `financial` and `state_geopolitical` are not supported by public
+  evidence. extortion is false (no ransom or payment demand was made
+  or reported). `supply_chain` is false. `malware` is null (a DDoS
+  flood does not require attacker-side malware on DSB systems; any
+  botnet / booter on the attacker side is not publicly characterised
+  and would not be recorded under the victim's `malware` field).
+  `mitre_attack_techniques` is kept null: although the incident is a
+  textbook fit for T1498 (Network Denial of Service), no CERT, vendor
+  or academic source formally maps this particular incident into the
+  ATT&CK framework, so per the codebook we do not commit the mapping.
+  `threat_actor`, `threat_actor_country` and `attribution_confidence`
+  are null/unknown: no individual, group or state has ever been
+  publicly identified for this attack. Reports in 2025 of Russian
+  state-sponsored DDoS campaigns (NoName057(16)) against European
+  rail operators refer to separate incidents against Deutsche Bahn and
+  are not, on public evidence, connected to the 2018 DSB case.
+  `affected_systems` expanded relative to the DZSF stub: the DZSF row
+  listed `train_driver_communication`, but no source supports an
+  impact on GSM-R / safety radio — Danish media and DSB's own
+  statements are explicit that train operations and the safety-critical
+  driver-dispatcher channel were NOT affected; the disrupted "internal
+  communication" was DSB's corporate mail, telephony and SMS to staff
+  (DR, TV 2, Version2, Infosecurity Magazine, Security Affairs). We
+  therefore drop `train_driver_communication` and retain `website`,
+  `payment_system` (ticket app, website sales, TVMs, 7-Eleven kiosks)
+  and `internal_communication` (corporate mail/phone/SMS). `impact.
+  scope` is `national`: the DSB ticketing estate covers all of Denmark
+  and national media treated it as a country-wide disruption. `impact.
+  magnitude.affected_trains` is 0 per DSB: no train movements were
+  cancelled or delayed due to the attack; passengers boarded on
+  Rejsekort or bought on-board from conductors. `affected_passengers`
+  is null: Infosecurity Magazine cited "around 15,000 customers"
+  affected but this figure was reported only once and not corroborated
+  by Danish primary reporting, so per the "null over invention" rule
+  we leave the field null. `monetary_damage_eur` is null (no public
+  cost estimate). `data_compromise.customer_data`, `.organizational_
+  data` and `.intellectual_property` are all false: DSB and Danish
+  media are consistent that this was a pure availability attack with
+  no exfiltration, no encryption and no defacement. `impact.duration_
+  hours` is null: the outage ran from Sunday evening to roughly 03:30
+  early Monday but no single-integer-hour duration is authoritatively
+  reported, so per the codebook we leave it null. `reported_date` set
+  to 2018-05-14 (the day DSB went public and the day of the bulk of
+  Danish and international coverage, including the earliest dated DR,
+  TV 2, Version2, Local Denmark, Copenhagen Post and LOK Report
+  stories).
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

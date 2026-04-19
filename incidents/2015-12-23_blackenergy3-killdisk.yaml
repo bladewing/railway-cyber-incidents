@@ -2,37 +2,84 @@ id: 2015-12-23_blackenergy3-killdisk
 schema_version: '1.0'
 event_date: '2015-12-23'
 event_date_precision: day
-reported_date: null
+reported_date: '2016-02-11'
 countries_impacted:
 - UA
 region: null
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: Unnamed large Ukrainian railway company (part of the national Ukrainian railway system, i.e. Ukrzaliznytsia / Ukrainian State Administration of Railway Transport)
+industry_sector: other
+operator_type: incumbent
+attack_vector: phishing
 supply_chain: false
 malware:
 - name: BlackEnergy3
-  family: null
-  mitre_software_id: null
-- name: KillDIsk
-  family: null
-  mitre_software_id: null
+  family: BlackEnergy
+  mitre_software_id: S0089
+- name: KillDisk
+  family: BlackEnergy
+  mitre_software_id: S0607
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
-threat_actor: Sandwurm
-threat_actor_country: null
-attribution_confidence: suspected
+motive: state_geopolitical
+mitre_attack_techniques:
+- T1566.001
+- T1204.002
+- T1561.002
+threat_actor: Sandworm Team
+threat_actor_country: RU
+attribution_confidence: reported
 confirmation_status: reported
 affected_systems:
-- unclear_system
+- data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2015-12-23. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: unknown
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+description_en: >
+  In a report published on 11 February 2016, Trend Micro researcher Kyle
+  Wilhoit disclosed that samples of the KillDisk disk-wiping malware — and
+  almost certainly the BlackEnergy 3 backdoor used to deliver it — had been
+  found in the networks of a large Ukrainian railway company that is part of
+  the national Ukrainian railway system, alongside a Ukrainian mining
+  company. The KillDisk binary recovered from the rail operator (tsk.exe,
+  SHA-1 f3e41eb94c4d72a98cd743bbb02d248f510ad925) matched the sample used
+  in the 23 December 2015 attacks on the Ukrainian power distribution
+  companies Prykarpattyaoblenergo, Kyivoblenergo and Chernivtsioblenergo,
+  and the malware communicated with the same command-and-control
+  infrastructure, leading Trend Micro to conclude that the same threat
+  actor — widely attributed to the Russian state-linked Sandworm Team
+  (Seashell Blizzard / APT44, GRU Unit 74455) — was behind the intrusions.
+  Trend Micro characterised the railway and mining infections as apparently
+  preliminary or test infections rather than a destructive disruption, and
+  no public service outage was reported at the railway as a result.
+description_de: >
+  In einem am 11. Februar 2016 veröffentlichten Bericht meldete der
+  Trend-Micro-Forscher Kyle Wilhoit, dass bei einem großen ukrainischen
+  Eisenbahnunternehmen, das Teil des nationalen Schienennetzes der Ukraine
+  ist (d. h. der Ukrzaliznytsia / der Ukrainischen Staatlichen Verwaltung
+  für Eisenbahntransport), sowie bei einem ukrainischen Bergbaukonzern
+  Proben der wiper-Malware KillDisk und sehr wahrscheinlich der
+  Backdoor-Malware BlackEnergy 3 gefunden wurden. Die beim Bahnbetreiber
+  sichergestellte KillDisk-Datei (tsk.exe, SHA-1
+  f3e41eb94c4d72a98cd743bbb02d248f510ad925) stimmte mit derjenigen
+  überein, die bei den Angriffen vom 23. Dezember 2015 auf die
+  ukrainischen Stromverteiler Prykarpattyaoblenergo, Kyivoblenergo und
+  Chernivtsioblenergo eingesetzt worden war, und kommunizierte mit
+  derselben Command-&-Control-Infrastruktur. Trend Micro schloss daraus,
+  dass derselbe Bedrohungsakteur — weithin der russlandnahen Gruppe
+  Sandworm Team (Seashell Blizzard / APT44, GRU-Einheit 74455)
+  zugeschrieben — auch hinter den Eindringversuchen bei Bahn und Bergbau
+  stand. Die Infektionen wurden als mutmaßlich vorbereitende oder
+  Test-Infektionen gewertet; eine öffentliche Betriebsstörung beim
+  Bahnbetreiber wurde nicht gemeldet.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -40,11 +87,109 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.securityweek.com/blackenergy-killdisk-infect-ukrainian-mining-railway-systems/
+  type: news
+  publisher: SecurityWeek
+  published_date: '2016-02-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.theregister.com/2016/02/15/blackenergy_trojan_trend_micro/
+  type: news
+  publisher: The Register
+  published_date: '2016-02-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.csoonline.com/article/3032684/hackers-of-two-ukrainian-utilities-probably-hit-mining-and-railroad-targets-too.html
+  type: news
+  publisher: CSO Online (IDG)
+  published_date: '2016-02-11'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.pcworld.com/article/419538/hackers-of-two-ukrainian-utilities-probably-hit-mining-and-railroad-targets-too.html
+  type: news
+  publisher: PCWorld (IDG)
+  published_date: '2016-02-11'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/44452/hacking/blackenergy-mining-and-railway-systems.html
+  type: news
+  publisher: Security Affairs
+  published_date: '2016-02-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.darkreading.com/threat-intelligence/ukraine-railway-mining-company-attacked-with-blackenergy
+  type: news
+  publisher: Dark Reading
+  published_date: '2016-02-11'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securitylab.ru/news/479406.php
+  type: news
+  publisher: SecurityLab.ru
+  published_date: '2016-02-12'
+  language: ru
+  accessed_date: '2026-04-19'
+- url: https://cys-centrum.com/ru/news/black_energy_2_3
+  type: blog
+  publisher: CyS Centrum
+  published_date: '2016-01-06'
+  language: ru
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0089/
+  type: other
+  publisher: MITRE ATT&CK
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0607/
+  type: other
+  publisher: MITRE ATT&CK
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/groups/G0034/
+  type: other
+  publisher: MITRE ATT&CK
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/campaigns/C0028/
+  type: other
+  publisher: MITRE ATT&CK
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The railway operator was never publicly named by Trend Micro, who
+  described it only as "a large Ukrainian railway company that is part of
+  the country's national railway system" — i.e. one of the six regional
+  railways under the state holding Ukrzaliznytsia (Ukrainian State
+  Administration of Railway Transport). A separate Ukrainian-language
+  source (CyS Centrum, 6 January 2016) states that as early as 12 May
+  2014 BlackEnergy-laden spear-phishing emails were delivered to all six
+  Ukrzaliznytsia-managed railways, which helps explain the foothold that
+  later produced the 2015 KillDisk findings. Trend Micro reported that
+  the rail and mining infections appeared to be preliminary or test
+  deployments rather than a destructive event: unlike at the three power
+  distributors, there is no public report of operational disruption at
+  the railway on or around 23 December 2015. The event_date kept here
+  (2015-12-23) matches the DZSF import and the reference point used
+  across the industry to cluster these KillDisk samples with the power
+  grid campaign; the exact date on which the sample was observed on
+  railway systems was never disclosed and the Trend Micro report only
+  bounds it to "November and December 2015". The name "Sandwurm" in the
+  DZSF raw data is the German-language rendering of Sandworm Team
+  (MITRE G0034; aliases include Seashell Blizzard, APT44, Voodoo Bear,
+  IRON VIKING, Telebots, ELECTRUM). Sandworm attribution is widely
+  reported (iSight Partners, ESET, Trend Micro) but for this specific
+  rail intrusion the link is inferred from shared C2 infrastructure and
+  matching binaries, not from a confirmation by the affected operator,
+  hence attribution_confidence: reported.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

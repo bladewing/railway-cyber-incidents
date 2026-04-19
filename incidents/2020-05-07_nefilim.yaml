@@ -2,34 +2,106 @@ id: 2020-05-07_nefilim
 schema_version: '1.0'
 event_date: '2020-05-07'
 event_date_precision: day
-reported_date: null
+reported_date: '2020-05-07'
 countries_impacted:
 - CH
-region: null
-coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+region: Switzerland (Stadler Rail AG headquarters Bussnang TG; group-wide impact
+  across Swiss and international subsidiaries)
+coordinates:
+  lat: 47.5628
+  lon: 9.0028
+target_organization: Stadler Rail AG (Swiss rolling-stock manufacturer, HQ Bussnang)
+industry_sector: rolling_stock_manufacturer
+operator_type: private
 attack_vector: unknown
 supply_chain: false
 malware:
 - name: Nefilim
-  family: null
+  family: Nefilim (successor/fork of Nemty 2.5; AES-128 file encryption with RSA-2048-wrapped
+    key; "double-extortion" exfil-then-leak ransomware)
   mitre_software_id: null
 extortion: true
 motive: financial
-mitre_attack_techniques: null
-threat_actor: null
+mitre_attack_techniques:
+- T1486
+- T1567.002
+threat_actor: Nefilim ransomware operators (unknown individuals; leak channel "@ransomleaks"
+  on Twitter)
 threat_actor_country: null
-attribution_confidence: unknown
+attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - data
+- internal_communication
 data_published: true
-impact: null
-description_en: Imported from DZSF raw data on 2020-05-07. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: international
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: true
+    organizational_data: true
+    customer_data: null
+description_en: >
+  On 7 May 2020 the Swiss rolling-stock manufacturer Stadler Rail AG
+  (headquartered in Bussnang, Canton Thurgau) disclosed that its
+  internal monitoring service had detected a malware-based intrusion
+  into the company's IT network affecting locations in Switzerland and
+  abroad. Attackers exfiltrated data and demanded a ransom of
+  approximately USD 6 million (≈ CHF 5.8 million) in Bitcoin,
+  threatening to publish stolen documents if the payment was refused.
+  Security researchers and industry press (Bleeping Computer, Security
+  Affairs, computerworld.ch, Netzwoche, inside-it.ch, Cyble) identified
+  the ransomware strain as Nefilim — a double-extortion ransomware
+  family first observed in March 2020 and widely reported to be a
+  successor to / fork of Nemty, typically deployed after initial
+  access via exposed or unpatched Citrix ADC/Gateway (CVE-2019-19781)
+  or abused RDP. Stadler publicly refused to negotiate or pay, filed a
+  criminal complaint with the Thurgau public prosecutor, engaged
+  external cybersecurity experts, restored from backups and notified
+  the data protection authorities in every country in which the
+  company operates. After the refusal, the Nefilim operators released
+  a first tranche of stolen material on 29 May 2020 and a second
+  tranche on 2 June 2020 via an anonymous Twitter account
+  ("@ransomleaks"); the attackers claimed roughly 10 000 documents
+  totalling ~4 GB, including financial statements, budgets, loan and
+  bank contracts (incl. a UBS syndicated loan agreement), tax-relief
+  rulings with the canton of Thurgau, KPMG audit documents and plans
+  relating to construction projects in Altenrhein. Stadler reported
+  that train production and service operations continued uninterrupted
+  through the incident and the COVID-19 pandemic.
+description_de: >
+  Am 7. Mai 2020 gab der Schweizer Schienenfahrzeughersteller Stadler
+  Rail AG (Hauptsitz Bussnang TG) bekannt, dass der interne
+  IT-Sicherheitsdienst einen Schadsoftware-Angriff auf das
+  unternehmensweite IT-Netzwerk festgestellt hatte; betroffen waren
+  Standorte in der Schweiz und im Ausland. Die Angreifer exfiltrierten
+  Daten und forderten rund 6 Mio. US-Dollar (≈ 5,8 Mio. CHF) in Bitcoin,
+  verbunden mit der Drohung, die erbeuteten Dokumente zu
+  veröffentlichen. Sicherheitsforscher und Fachpresse (Bleeping
+  Computer, Security Affairs, computerworld.ch, Netzwoche, inside-it.ch,
+  Cyble) identifizierten die eingesetzte Schadsoftware als Nefilim —
+  eine im März 2020 erstmals beobachtete „Double-Extortion"-Ransomware,
+  die als Nachfolger bzw. Fork von Nemty gilt und typischerweise nach
+  einem Erstzugriff über ungepatchte Citrix-ADC/Gateway-Installationen
+  (CVE-2019-19781) bzw. missbrauchte RDP-Zugänge ausgerollt wird.
+  Stadler verweigerte öffentlich jede Zahlung und jede Verhandlung,
+  erstattete Strafanzeige bei der Thurgauer Staatsanwaltschaft, zog
+  externe Cybersicherheitsspezialisten bei, spielte aus Backups zurück
+  und informierte die Datenschutzbehörden in allen Ländern, in denen
+  der Konzern tätig ist. Nach der Zahlungsverweigerung
+  veröffentlichten die Nefilim-Betreiber am 29. Mai 2020 einen ersten
+  und am 2. Juni 2020 einen zweiten Datensatz über den anonymen
+  Twitter-Account „@ransomleaks"; die Angreifer gaben rund 10 000
+  Dokumente mit insgesamt ~4 GB an — darunter Jahresabschlüsse,
+  Budgets, Kredit- und Bankverträge (u. a. ein UBS-Konsortialkredit),
+  Steuerabkommen mit dem Kanton Thurgau, KPMG-Auditunterlagen sowie
+  Bauunterlagen zum Standort Altenrhein. Die Zugfertigung und der
+  Service liefen laut Stadler trotz Cyberangriff und Corona-Pandemie
+  ununterbrochen weiter.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -37,11 +109,312 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.stadlerrail.com/media/pdf/2020_0507_media%20release_cyber-attack_en.pdf
+  type: press_release
+  publisher: Stadler Rail AG (official media release, English)
+  published_date: '2020-05-07'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.stadlerrail.com/media/pdf/2020_0507_medienmitteilung_cyberangriff_de.pdf
+  type: press_release
+  publisher: Stadler Rail AG (offizielle Medienmitteilung, Deutsch)
+  published_date: '2020-05-07'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/rail-vehicle-manufacturer-stadler-hit-by-cyberattack-blackmailed/
+  type: news
+  publisher: BleepingComputer
+  published_date: '2020-05-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.swissinfo.ch/eng/business/cyberattack-_hackers-demand-millions-in-ransom-for-stolen-stadler-rail-documents/45794036
+  type: news
+  publisher: SWI swissinfo.ch
+  published_date: '2020-05-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railjournal.com/technology/internal-documents-published-after-stadler-refuses-us-6m-ransom/
+  type: news
+  publisher: International Railway Journal
+  published_date: '2020-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railwayage.com/news/internal-documents-published-after-stadler-refuses-6mm-ransom/
+  type: news
+  publisher: Railway Age
+  published_date: '2020-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railway-technology.com/news/stadler-it-systems-malware/
+  type: news
+  publisher: Railway Technology
+  published_date: '2020-05-11'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.globalrailwayreview.com/news/100586/cyber-attack-stadler/
+  type: news
+  publisher: Global Railway Review
+  published_date: '2020-05-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railtech.com/digitalisation/2020/05/08/hackers-attack-stadler-it-network/
+  type: news
+  publisher: RailTech.com
+  published_date: '2020-05-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://railway-news.com/cyber-attack-stadler-it-network/
+  type: news
+  publisher: Railway-News
+  published_date: '2020-05-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://railway-news.com/rail-and-ransomware/
+  type: news
+  publisher: Railway-News / IL7 Security
+  published_date: '2020-06-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railwaygazette.com/business/cyberattack-seeks-to-extort-money-from-stadler/56477.article
+  type: news
+  publisher: Railway Gazette International
+  published_date: '2020-05-08'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/103012/cyber-crime/stadler-data-breach.html
+  type: news
+  publisher: Security Affairs (Pierluigi Paganini)
+  published_date: '2020-05-09'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://databreaches.net/2020/05/11/stadlers-it-network-suffers-malware-attack/
+  type: news
+  publisher: DataBreaches.net
+  published_date: '2020-05-11'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cyble.com/blog/stadler-rail-data-leak-part-2-being-published-by-the-netfilim-ransomware-operators/
+  type: blog
+  publisher: Cyble Research
+  published_date: '2020-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.nzz.ch/wirtschaft/cyberangriff-stadler-rail-im-visier-von-hackern-ld.1555552
+  type: news
+  publisher: Neue Zürcher Zeitung (NZZ)
+  published_date: '2020-05-07'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.nzz.ch/wirtschaft/hacker-stellen-stadler-rail-ein-ultimatum-ld.1558845
+  type: news
+  publisher: Neue Zürcher Zeitung (NZZ)
+  published_date: '2020-05-29'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.netzwoche.ch/news/2020-06-02/update-erpresser-veroeffentlichen-erste-dokumente-nach-stadler-rail-hack
+  type: news
+  publisher: Netzwoche
+  published_date: '2020-06-02'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.swisscybersecurity.net/cybersecurity/2020-06-02/update-erpresser-veroeffentlichen-erste-dokumente-nach-stadler-rail-hack
+  type: news
+  publisher: SwissCybersecurity.net
+  published_date: '2020-06-02'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.computerworld.ch/security/hacking/hack-stadler-weigert-loesegeld-zu-bezahlen-2541157.html
+  type: news
+  publisher: Computerworld.ch
+  published_date: '2020-05-11'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.inside-it.ch/de/post/daten-aus-cyber-attacke-auf-stadler-rail-veroeffentlicht-20200529
+  type: news
+  publisher: inside-it.ch
+  published_date: '2020-05-29'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.watson.ch/wirtschaft/schweiz/577085452-erste-stadler-daten-von-hackern-veroeffentlicht
+  type: news
+  publisher: Watson.ch
+  published_date: '2020-05-29'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.luzernerzeitung.ch/wirtschaft/nach-cyber-angriff-erpresser-erhohen-druck-auf-peter-spuhlers-stadler-rail-ld.1235844
+  type: news
+  publisher: Luzerner Zeitung (CH Media)
+  published_date: '2020-05-29'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.tagesanzeiger.ch/hacker-machen-daten-von-stadler-rail-publik-636003677241
+  type: news
+  publisher: Tages-Anzeiger
+  published_date: '2020-05-29'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://borncity.com/win/2020/05/08/cyberangriff-auf-schienenfahrzeughersteller-stadler-schweiz/
+  type: blog
+  publisher: Born's Tech and Windows World (Günter Born)
+  published_date: '2020-05-08'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.20min.ch/story/hacker-erpressen-stadler-nach-cyberangriff-531487717290
+  type: news
+  publisher: 20 Minuten
+  published_date: '2020-05-07'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/nefilim-ransomware-threatens-to-expose-stolen-data
+  type: blog
+  publisher: Trend Micro Research
+  published_date: '2020-03-17'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.trendmicro.com/en_us/research/21/b/nefilim-ransomware.html
+  type: blog
+  publisher: Trend Micro Research (An Analysis of the Nefilim Ransomware)
+  published_date: '2021-02-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.trendmicro.com/en_us/research/21/f/nefilim-modern-ransomware-attack-story.html
+  type: blog
+  publisher: Trend Micro Research (Nefilim Ransomware Attack Through a MITRE ATT&CK
+    Lens)
+  published_date: '2021-06-17'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.sentinelone.com/labs/meet-nemty-successor-nefilim-nephilim-ransomware/
+  type: blog
+  publisher: SentinelLabs (Vitali Kremez / SentinelOne)
+  published_date: '2020-03-25'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://malpedia.caad.fkie.fraunhofer.de/details/win.nefilim
+  type: other
+  publisher: Fraunhofer FKIE — Malpedia (win.nefilim)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1486/
+  type: other
+  publisher: MITRE ATT&CK (T1486 Data Encrypted for Impact)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1567/002/
+  type: other
+  publisher: MITRE ATT&CK (T1567.002 Exfiltration to Cloud Storage)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF raw-data row DZSF-2020-23-S-1202 (event
+  2020-05-07, CH, confirmed, affected_systems=[data], extortion=true,
+  malware "Nefilim") maps unambiguously onto Stadler Rail AG's
+  publicly disclosed Nefilim-ransomware attack. Stadler issued an
+  official German- and English-language media release dated
+  7 May 2020 (URLs preserved above) that fixes both event_date and
+  reported_date to that day; Swiss mainstream (NZZ, 20 Minuten,
+  Tages-Anzeiger, Luzerner Zeitung, Watson, inside-it.ch,
+  computerworld.ch, Netzwoche, SwissCybersecurity.net) and
+  international technical press (BleepingComputer, Security Affairs,
+  DataBreaches.net, IRJ, Railway Age, Railway Gazette, Railway
+  Technology, Global Railway Review, RailTech, Railway-News, Cyble)
+  corroborate the same facts across languages.
+
+  Malware attribution: Nefilim is reported as the specific ransomware
+  strain by Cyble, Railway-News/IL7 Security, Netzwoche,
+  SwissCybersecurity.net, computerworld.ch and Luzerner Zeitung;
+  Stadler's own statements refer only to "malware". Family set to a
+  descriptive free-text string since Nefilim is itself the family
+  label (Nemty-descendant) and the schema malware.family field is a
+  free-text string. mitre_software_id left null: as of 2026-04, MITRE
+  ATT&CK has no dedicated Nefilim software entry (S-ID); attempts to
+  resolve S0619 returned 404, and the software index does not list
+  Nefilim. Malpedia catalogues it as win.nefilim.
+
+  attack_vector retained as `unknown`. Although Trend Micro,
+  SentinelLabs, Qualys and BankInfoSecurity generically describe
+  Nefilim initial access as Citrix ADC/Gateway exploitation
+  (CVE-2019-19781) and/or abused RDP, none of the Stadler-specific
+  sources (neither Stadler's own release nor any Swiss or railway
+  publication) confirm which vector was used against Stadler in
+  particular. Per the enrichment hard rule "prefer null over
+  invention", the generic family-level vector is not retrofitted onto
+  this incident.
+
+  supply_chain kept `false` (no third-party software compromise
+  reported). extortion `true` (explicit — 6 M USD Bitcoin demand,
+  threat of and subsequent publication of stolen data). motive
+  `financial` (classic double-extortion ransomware). data_published
+  `true` (first tranche on 2020-05-29 via @ransomleaks Twitter,
+  followed by "Part 2" around 2020-06-02/03 per Cyble, Netzwoche,
+  IRJ, Railway Age).
+
+  affected_systems: `data` (document exfiltration) plus
+  `internal_communication` (Stadler's own release and
+  Global Railway Review describe the entire corporate IT network as
+  compromised and some machines as infected, then rebooted from
+  backup; no operational train/signalling systems were reported
+  affected). `rail_operations` deliberately excluded — production
+  continued per Stadler's statement.
+
+  industry_sector `rolling_stock_manufacturer` (Stadler is the
+  canonical Swiss OEM for passenger rolling stock: FLIRT, KISS, GTW,
+  Smile/Giruno, TRAMLINK etc.). operator_type `private` — Stadler
+  Rail AG is a privately controlled company; majority shareholder
+  Peter Spuhler, listed on SIX since April 2019.
+
+  threat_actor: "Nefilim ransomware operators" (the operator group;
+  some researchers later linked the Nefilim operation to the intrusion
+  set "Water Roc" per Trend Micro 2021, but this linkage postdates
+  the Stadler incident). threat_actor_country left null (no
+  attested nation-state attribution). attribution_confidence
+  `reported` — the Nefilim identification is widely attested by
+  multiple independent researchers/press but not formally confirmed
+  by Stadler itself, which used generic "malware" language.
+
+  MITRE ATT&CK techniques: T1486 (Data Encrypted for Impact —
+  Nefilim's encryption payload is the defining behaviour; encryption
+  was attempted/partially executed before backups were used) and
+  T1567.002 (Exfiltration to Cloud Storage — the ~4 GB / 10 000 docs
+  were staged externally and later published via Twitter/Mega
+  links). Broader Nefilim tradecraft (T1190 Exploit Public-Facing
+  Application against Citrix, T1078 Valid Accounts, T1021.001 RDP,
+  T1562 Impair Defenses) is not retrofitted because Stadler-specific
+  confirmation is absent.
+
+  impact.scope `international`: Stadler is a transnational group with
+  production sites in Switzerland, Germany, Poland, Spain, Hungary,
+  Austria, the US, Belarus and Algeria among others, and Stadler's
+  own release confirms the attack affected both Swiss and foreign
+  locations. impact.duration_hours left null (no numeric outage
+  figure disclosed; Stadler says production continued). magnitude
+  sub-fields all null — no customer-facing train or passenger count
+  is the right unit for a rolling-stock manufacturer, and no
+  monetary-damage figure was disclosed. data_compromise.
+  intellectual_property true (construction-project documents,
+  engineering-adjacent material included per Luzerner Zeitung /
+  IRJ), organizational_data true (financial statements, budgets,
+  bank contracts, tax rulings, KPMG audit material),
+  customer_data left null (not explicitly confirmed either way;
+  the leaked material was primarily corporate/financial rather
+  than passenger-facing).
+
+  coordinates: Bussnang TG headquarters (47.5628 N, 9.0028 E).
+
+  confirmation_status `confirmed` retained: attested by Stadler's own
+  media release plus ≥20 independent secondary sources.
+
+  needs_review flipped true → false. ≥2-independent-non-DZSF
+  threshold massively exceeded (≥27 non-DZSF sources including
+  Stadler's own release and dual-language Swiss mainstream).
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

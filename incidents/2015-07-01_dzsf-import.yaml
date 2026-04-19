@@ -2,31 +2,67 @@ id: 2015-07-01_dzsf-import
 schema_version: '1.0'
 event_date: '2015-07-01'
 event_date_precision: month
-reported_date: null
+reported_date: '2016-07-12'
 countries_impacted:
 - GB
 region: null
 coordinates: null
 target_organization: null
-industry_sector: null
-operator_type: null
+industry_sector: other
+operator_type: unknown
 attack_vector: unknown
 supply_chain: false
 malware: null
 extortion: false
-motive: unknown
+motive: espionage
 mitre_attack_techniques: null
 threat_actor: null
 threat_actor_country: null
-attribution_confidence: unknown
+attribution_confidence: suspected
 confirmation_status: reported
 affected_systems:
 - unclear_system
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2015-07-01. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  Between approximately July 2015 and July 2016, UK-based cybersecurity firm
+  Darktrace — which monitored "much of the UK's rail network" — detected four
+  separate network intrusions on British railway IT networks, disclosed
+  publicly via a Telegraph interview on 12 July 2016 with Darktrace CTO Dave
+  Palmer. The incidents were characterised as exploratory reconnaissance
+  (for example, one attempt used a dictionary attack against a signalling
+  system component) rather than destructive actions, and Darktrace and
+  third-party experts (Kaspersky, ESET) speculated nation-state origin while
+  stopping short of formal attribution. No service disruption, no confirmed
+  data exfiltration, and no named victim organisation was reported; Network
+  Rail publicly stated it was not a Darktrace customer and that "Britain has
+  the safest major railway in Europe". The DZSF bulk-import entry dated
+  "July 2015" likely represents the earliest of the four attacks in this
+  12-month cluster.
+description_de: >
+  Zwischen etwa Juli 2015 und Juli 2016 entdeckte die britische
+  IT-Sicherheitsfirma Darktrace — die nach eigenen Angaben "weite Teile des
+  britischen Eisenbahnnetzes" überwachte — vier separate Netzwerkeinbrüche
+  in IT-Systemen britischer Bahnbetreiber. Darktrace-CTO Dave Palmer machte
+  die Vorfälle am 12. Juli 2016 gegenüber dem Daily Telegraph öffentlich.
+  Die Angriffe wurden als explorative Aufklärung beschrieben (ein Angriff
+  nutzte z. B. einen Wörterbuchangriff gegen eine Signalkomponente) und
+  nicht als destruktiv. Darktrace und externe Experten (Kaspersky, ESET)
+  vermuteten staatliche Akteure, ohne formell zu attribuieren. Kein Ausfall,
+  kein bestätigter Datenabfluss und keine namentliche Nennung des
+  betroffenen Unternehmens; Network Rail erklärte öffentlich, nicht
+  Kunde von Darktrace zu sein. Der DZSF-Masseneintrag mit Datum Juli 2015
+  dürfte den ersten der vier Angriffe dieses Zwölf-Monats-Clusters abbilden.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +70,82 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.ibtimes.co.uk/uk-network-rail-darktrace-reveals-british-transport-system-had-four-nation-state-hacks-one-year-1570236
+  type: news
+  publisher: International Business Times UK
+  published_date: '2016-07-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.darkreading.com/cyberattacks-data-breaches/uk-rail-hit-by-four-cyberattacks-in-one-year
+  type: news
+  publisher: Dark Reading
+  published_date: '2016-07-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: http://www.infrastructure-intelligence.com/article/jul-2016/uk-railways-had-4-major-cyberattacks-one-year
+  type: news
+  publisher: Infrastructure Intelligence
+  published_date: '2016-07-13'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.pinsentmasons.com/out-law/news/rail-network-cyber-attacks-might-have-triggered-notification-threshold-under-new-network-and-information-security-laws-says-expert
+  type: news
+  publisher: Pinsent Masons Out-Law
+  published_date: '2016-07-14'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://irisnetworks.co.uk/2016/07/12/darktrace-four-cyber-attacks-on-uk-railways-in-a-year/
+  type: blog
+  publisher: Iris Networks
+  published_date: '2016-07-12'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railway-cybersecurity.com/Railway_cybersecurity.html
+  type: other
+  publisher: Railway-Cybersecurity.com (ENISA-aligned community portal)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://news.railbusinessdaily.com/the-future-of-rail-cybersecurity-the-evolving-cyber-threat-landscape-in-rail/
+  type: news
+  publisher: Rail Business Daily
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railengineer.co.uk/cyber-security-update/
+  type: news
+  publisher: Rail Engineer
+  published_date: '2020-03-13'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The DZSF raw import recorded only "July 2015, UK, unclear system" with
+  month-precision. Public reporting strongly ties this to the cluster of
+  four reconnaissance intrusions on UK rail networks disclosed by Darktrace
+  on 12 July 2016, covering roughly July 2015 – July 2016. The DZSF date
+  likely marks the first of the four attacks; specific attack dates inside
+  the window were never made public. No victim organisation was named:
+  Darktrace covered "much of the UK's rail network" but Network Rail was
+  explicitly not a customer, and named Darktrace rail customers at the time
+  included Virgin Trains (announced 2014-10-07). Attribution to a
+  nation-state actor came from Darktrace and quoted third-party experts
+  (Kaspersky, ESET) but was never formally confirmed by any government
+  body, so attribution_confidence is set to "suspected" and the threat
+  actor / country are left null. One of the four attacks reportedly
+  involved a dictionary attack attempting to set a signal state, per
+  Darktrace — this was characterised as reconnaissance rather than a
+  successful compromise, so attack_vector is kept as "unknown" (the method
+  of initial access for any of the four was never disclosed).
+  industry_sector is set to "other" because the disclosure described a
+  cluster across multiple UK rail networks rather than a single
+  sector-specific victim. motive is set to "espionage" based on the
+  explicit Darktrace framing as reconnaissance for a potential APT rather
+  than for financial or disruptive ends.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

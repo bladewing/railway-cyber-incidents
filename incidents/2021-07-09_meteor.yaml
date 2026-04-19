@@ -2,35 +2,188 @@ id: 2021-07-09_meteor
 schema_version: '1.0'
 event_date: '2021-07-09'
 event_date_precision: day
-reported_date: null
+reported_date: '2021-07-09'
 countries_impacted:
 - IR
-region: null
+region: Iran — nationwide (disrupted passenger-information displays and internal
+  staff systems at stations of Islamic Republic of Iran Railways / Rah Āhan-e
+  Jomhuri-ye Eslami-ye Iran; Raja Passenger Train Company operations affected
+  the same day; Ministry of Roads and Urban Development headquarters portal in
+  Tehran taken down the following day, 2021-07-10)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: Islamic Republic of Iran Railways (RAI / Rah Āhan-e Jomhuri-ye
+  Eslami-ye Iran — the state-owned national railway operator under the Ministry of
+  Roads and Urban Development) with cascading impact on Raja Passenger Train
+  Company (RAI's passenger subsidiary) and follow-on compromise of the Ministry
+  of Roads and Urban Development headquarters portal on 2021-07-10
+industry_sector: other
+operator_type: public_authority
 attack_vector: unknown
 supply_chain: false
 malware:
 - name: Meteor
-  family: null
-  mitre_software_id: null
+  family: MeteorExpress (campaign toolkit — Meteor wiper + mssetup.exe screen
+    locker + nti.exe MBR corruptor; related to earlier Indra wipers "Stardust" and
+    "Comet" used against Syrian targets 2019-2020)
+  mitre_software_id: S0688
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
-threat_actor: Indra
+motive: hacktivism
+mitre_attack_techniques:
+- T1047
+- T1053.005
+- T1057
+- T1059.001
+- T1059.003
+- T1070.001
+- T1070.004
+- T1082
+- T1105
+- T1106
+- T1036.004
+- T1484.001
+- T1485
+- T1489
+- T1490
+- T1491.001
+- T1518.001
+- T1531
+- T1562.001
+- T1564.003
+threat_actor: Indra (self-identifying anti-Iranian-regime hacktivist persona;
+  Check Point Research 2021-08-14 technical attribution; the same wiper family
+  was later re-used and/or re-branded by the "Predatory Sparrow" /
+  Gonjeshke Darande persona that publicly claimed the July 2021 transit attack
+  and subsequent 2021-10 fuel-station and 2022 steel-mill attacks)
 threat_actor_country: null
-attribution_confidence: suspected
+attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - station_it
 - internal_train_tracking
+- passenger_information
+- website
+- internal_communication
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2021-07-09. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On 9 July 2021 (Friday) the Islamic Republic of Iran Railways (RAI),
+  the state-owned national rail operator under the Ministry of Roads
+  and Urban Development, suffered a destructive cyberattack that
+  paralysed train-schedule management, ticketing and passenger-
+  information systems nationwide. Semi-official Fars news agency
+  reported "unprecedented chaos" at stations across the country with
+  hundreds of trains delayed or cancelled; RAI spokesman Sadegh Sekri
+  initially denied any service impact and claimed only the displays
+  were affected, a position contradicted by Fars and Iran International
+  reporting. Defaced platform displays at stations showed fake delay
+  and cancellation messages and instructed passengers to call
+  "64411" — the publicly listed phone number of Supreme Leader
+  Ayatollah Ali Khamenei's office — for further information, a
+  trolling element widely noted by Reuters-wire syndication, the
+  Times of Israel, Iran International, Xinhua, and Western security
+  press. The following day (10 July 2021) the headquarters portal of
+  the Ministry of Roads and Urban Development was also taken down;
+  Iranian state broadcaster Press TV confirmed the ministry incident
+  and characterised it as "new provocations by cyber aggressors",
+  while the telecoms minister urged agencies to route indicators to
+  Iran's MAHER CERT. Technical analysis published on 29 July 2021 by
+  Iranian antivirus vendor Amnpardaz and on the same day by
+  SentinelOne (Juan Andres Guerrero-Saade, "MeteorExpress") showed
+  the intrusion combined three components — a previously-unseen
+  externally-configurable wiper (Meteor / env.exe / msapp.exe,
+  compiled 2021-01-17, MITRE ATT&CK S0688), a screen-locker
+  (mssetup.exe) and an MBR-corrupting executable (nti.exe) — deployed
+  network-wide via Active Directory Group Policy Objects from CAB
+  archives on SMB shares, with scheduled-task execution at 23:55
+  local time. Contrary to early ransomware framing, no ransom demand
+  was made and no data exfiltration was claimed or published; the
+  operation was purely destructive/disruptive with an overt political-
+  trolling payload. On 14 August 2021 Check Point Research attributed
+  MeteorExpress to the self-identifying anti-regime hacktivist persona
+  "Indra" (named after the Hindu god of war) on the basis of shared
+  code lineage with the earlier "Stardust" (2020) and "Comet" (2019)
+  wipers Indra had used against Syrian companies Katerji Group,
+  Arfada Petroleum, Alfadelex Trading, Cham Wings Airlines, and
+  Banias Oil refinery — concluding that "judging by the quality of the
+  tools, their modus operandi, and their presence on social media"
+  Indra was unlikely to be a nation-state actor. In parallel, the
+  pro-Israel/anti-IRGC persona "Predatory Sparrow" (Persian:
+  گنجشک درنده / Gonjeshke Darande) publicly claimed the July 2021
+  Iranian-transit attack; Check Point Research later (2022) identified
+  code overlap between Predatory Sparrow's 2022 steel-mill tooling
+  and Indra's MeteorExpress code, leaving the precise relationship
+  between the two personae unresolved. No government-level attribution
+  to a specific nation-state exists; Iranian officials publicly blamed
+  Israel and the United States but published no indicators of
+  compromise tying the attack to either.
+description_de: >
+  Am 9. Juli 2021 (Freitag) erlitt die staatliche iranische
+  Eisenbahngesellschaft Rāh Āhan-e Jomhuri-ye Eslami-ye Iran (RAI) —
+  der nationale Bahnbetreiber unter dem iranischen Ministerium für
+  Straßen- und Stadtentwicklung — einen destruktiven Cyberangriff,
+  der landesweit die Fahrplansteuerung, den Ticketverkauf und die
+  Fahrgastinformationssysteme lahmlegte. Die halbamtliche
+  Nachrichtenagentur Fars berichtete von „beispiellosem Chaos" in den
+  Bahnhöfen des Landes mit hunderten verspäteten oder gestrichenen
+  Zügen; RAI-Sprecher Sadegh Sekri dementierte zunächst jegliche
+  Betriebsstörung und behauptete, nur die Anzeigetafeln seien
+  betroffen — eine Einschätzung, der Fars und Iran International
+  widersprachen. Auf defacten Bahnsteiganzeigen wurden gefälschte
+  Verspätungs- und Ausfallmeldungen angezeigt und Reisende
+  aufgefordert, unter der Rufnummer „64411" — der öffentlich
+  bekannten Telefonnummer des Büros des obersten Führers Ayatollah
+  Ali Khamenei — nachzufragen, ein hacktivistisch-trollender Zug,
+  der in Reuters-Agenturmaterial, Times of Israel, Iran International,
+  Xinhua und der westlichen IT-Sicherheitspresse breit dokumentiert
+  wurde. Am Folgetag (10. Juli 2021) wurde das Hauptportal des
+  iranischen Ministeriums für Straßen- und Stadtentwicklung offline
+  genommen; der iranische Staatssender Press TV bestätigte den
+  Ministeriumsvorfall und sprach von „neuen Provokationen durch
+  Cyber-Aggressoren"; der Telekommunikationsminister forderte die
+  Behörden auf, Indikatoren an die iranische CERT-Stelle MAHER zu
+  übermitteln. Die technische Analyse veröffentlichte am 29. Juli 2021
+  der iranische Antivirenhersteller Amnpardaz und — am selben Tag —
+  SentinelOne (Juan Andres Guerrero-Saade, „MeteorExpress"): Der
+  Angriff kombinierte drei Komponenten — einen bis dato unbekannten,
+  extern konfigurierbaren Wiper (Meteor / env.exe / msapp.exe,
+  kompiliert am 17. Januar 2021; MITRE ATT&CK S0688), einen
+  Screenlocker (mssetup.exe) sowie ein MBR-zerstörendes Binary
+  (nti.exe) — verteilt netzweit über Active-Directory-
+  Gruppenrichtlinien aus CAB-Archiven auf SMB-Freigaben, mit einer
+  geplanten Ausführung um 23:55 Uhr Ortszeit. Entgegen der
+  anfänglichen Einordnung als Ransomware gab es keine
+  Lösegeldforderung und keine Datenexfiltration oder -veröffentlichung;
+  die Operation war rein destruktiv/disruptiv mit einem offen
+  politisch-trolligen Payload. Am 14. August 2021 schrieb Check Point
+  Research MeteorExpress der sich selbst als regimekritisch
+  bezeichnenden Hacktivistengruppe „Indra" (benannt nach dem
+  hinduistischen Kriegsgott) zu — auf Grundlage gemeinsamer
+  Codebasis mit den älteren Wipern „Stardust" (2020) und „Comet"
+  (2019), die Indra zuvor gegen die syrischen Unternehmen Katerji
+  Group, Arfada Petroleum, Alfadelex Trading, Cham Wings Airlines
+  und die Banias-Raffinerie eingesetzt hatte — und kam zu dem
+  Schluss, dass Indra „angesichts der Werkzeugqualität, der
+  Vorgehensweise und der Social-Media-Präsenz" unwahrscheinlich als
+  Nationalstaatsakteur einzuordnen sei. Parallel dazu reklamierte die
+  pro-israelische / anti-IRGC-Persona „Predatory Sparrow" (persisch
+  گنجشک درنده / Gonjeshke Darande) öffentlich den Juli-Angriff auf
+  das iranische Verkehrssystem; Check Point Research stellte später
+  (2022) Code-Überschneidungen zwischen Predatory-Sparrow-Tools der
+  Stahlwerksangriffe 2022 und Indras MeteorExpress-Code fest — die
+  genaue Beziehung beider Personae bleibt ungeklärt. Eine offizielle
+  nationalstaatliche Attribution existiert nicht; iranische Stellen
+  beschuldigten Israel und die USA öffentlich, legten jedoch keine
+  technischen Indikatoren vor.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -38,11 +191,348 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.sentinelone.com/labs/meteorexpress-mysterious-wiper-paralyzes-iranian-trains-with-epic-troll/
+  type: blog
+  publisher: SentinelLabs / SentinelOne (Juan Andres Guerrero-Saade) —
+    "MeteorExpress | Mysterious Wiper Paralyzes Iranian Trains with Epic Troll"
+  published_date: '2021-07-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://research.checkpoint.com/2021/indra-hackers-behind-recent-attacks-on-iran/
+  type: blog
+  publisher: Check Point Research — "Indra — Hackers Behind Recent Attacks on
+    Iran" (attribution of July 2021 railway + MoR attacks to Indra on the basis
+    of Meteor / Stardust / Comet code lineage and prior Syrian targets)
+  published_date: '2021-08-14'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0688/
+  type: other
+  publisher: MITRE ATT&CK — Software S0688 (Meteor) — associated group Indra;
+    associated techniques T1047, T1053.005, T1057, T1059.001, T1059.003,
+    T1070.001, T1070.004, T1082, T1105, T1106, T1036.004, T1484.001, T1485,
+    T1489, T1490, T1491.001, T1518.001, T1531, T1562.001, T1564.003
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/new-destructive-meteor-wiper-malware-used-in-iranian-railway-attack/
+  type: news
+  publisher: BleepingComputer (Lawrence Abrams)
+  published_date: '2021-07-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://therecord.media/cyber-attack-on-iranian-railway-was-a-wiper-incident-not-ransomware
+  type: news
+  publisher: The Record from Recorded Future News (Catalin Cimpanu) —
+    "Cyber-attack on Iranian railway was a wiper incident, not ransomware"
+  published_date: '2021-07-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://therecord.media/cyber-attack-disrupts-irans-national-railway-system
+  type: news
+  publisher: The Record from Recorded Future News (Catalin Cimpanu) —
+    "Cyber-attack disrupts Iran's national railway system" (initial
+    same-day reporting)
+  published_date: '2021-07-10'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://thehackernews.com/2021/07/a-new-wiper-malware-was-behind-recent.html
+  type: news
+  publisher: The Hacker News (Ravie Lakshmanan) — "A New Wiper Malware Was
+    Behind Recent Cyberattack On Iranian Train System"
+  published_date: '2021-07-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://threatpost.com/novel-meteor-wiper-used-in-attack-that-crippled-iranian-train-system/168262/
+  type: news
+  publisher: Threatpost (Elizabeth Montalbano) — "Novel Meteor Wiper Used in
+    Attack that Crippled Iranian Train System"
+  published_date: '2021-07-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/120679/malware/meteor-wiper-irans-national-railway.html
+  type: news
+  publisher: Security Affairs (Pierluigi Paganini) — "Meteor was the wiper used
+    against Iran's national railway system"
+  published_date: '2021-07-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://fortiguard.fortinet.com/threat-signal-report/4072/attack-on-the-iranian-train-system-by-meteor-wiper
+  type: cert_advisory
+  publisher: Fortinet / FortiGuard Labs — "Attack on the Iranian train system by
+    Meteor Wiper" (threat-signal report)
+  published_date: '2021-07-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/hackers-behind-iranian-wiper-attacks-linked-to-syrian-breaches/
+  type: news
+  publisher: BleepingComputer (Sergiu Gatlan) — "Hackers behind Iranian wiper
+    attacks linked to Syrian breaches"
+  published_date: '2021-08-16'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://grahamcluley.com/indra-hacking-group-blamed-for-attack-on-iranian-railway-system-that-trolled-countrys-supreme-leader/
+  type: blog
+  publisher: Graham Cluley — "Indra hacking group blamed for attack on Iranian
+    railway system that trolled country's supreme leader"
+  published_date: '2021-08-16'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.timesofisrael.com/hacker-group-not-israel-behind-cyberattack-on-irans-train-system-report/
+  type: news
+  publisher: The Times of Israel — "Hacker group, not Israel, behind cyberattack
+    on Iran's train system - report"
+  published_date: '2021-08-16'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.presstv.ir/Detail/2021/07/10/661962/Iran-cyber-attack-transportation-ministry
+  type: official_statement
+  publisher: Press TV (Iranian state-media English service) — ministry's
+    confirmation of the 10 July attack on the Ministry of Roads and Urban
+    Development portal; quotes Telecoms Minister Mohammad Javad Azari-Jahromi
+  published_date: '2021-07-10'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://de.rt.com/der-nahe-osten/120515-hackerangriff-auf-eisenbahn-im-iran/
+  type: news
+  publisher: "RT DE (Russia Today Deutsch) — 'Iran: Hackerangriff auf Eisenbahn
+    soll landesweit beispielloses Chaos ausgelöst haben' (German-language
+    same-day coverage; cites IRIB, Fars, Iran International)"
+  published_date: '2021-07-10'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.iranintl.com/en/202403246859
+  type: news
+  publisher: Iran International (English) — "Cyber Attack On Iran's Railway
+    Network" (2024 retrospective article attributing July 2021 RAI disruption to
+    Gonjeshk-e-Darande / Predatory Sparrow)
+  published_date: '2024-03-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://offensivecyber.org/2021/09/23/balancing-on-the-rail/
+  type: academic_paper
+  publisher: Offensive Cyber Working Group (JD Work) — "Balancing on the rail —
+    considering responsibility and restraint in the July 2021 Iran railways
+    incident" (academic analysis of attribution ambiguity and restraint)
+  published_date: '2021-09-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Predatory_Sparrow
+  type: other
+  publisher: Wikipedia (English) — Predatory Sparrow article (claim of
+    responsibility for July 2021 Iranian-transit attack; Gonjeshke Darande
+    Persian name)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Rail_transport_in_Iran
+  type: other
+  publisher: Wikipedia (English) — Rail transport in Iran article (confirms RAI
+    state ownership under Ministry of Roads & Urban Development; Raja as RAI's
+    passenger-trains subsidiary)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF raw-data row (IR, 2021-07-09, malware
+  "Meteor", affected_systems [station_it, internal_train_tracking],
+  confirmation_status confirmed) maps unambiguously to the "MeteorExpress"
+  attack against the Islamic Republic of Iran Railways (RAI) publicly
+  disclosed by Fars, Iran International, IRIB and Reuters-wire outlets on
+  9 July 2021, technically analysed by Amnpardaz + SentinelOne on
+  29 July 2021, and attributed by Check Point Research to the Indra
+  persona on 14 August 2021. No other IR railway cyber-incident on
+  2021-07-09 is publicly attested.
+
+  Date handling: event_date kept at 2021-07-09 — the day operational
+  disruption at RAI stations became publicly visible (Fars, IRIB,
+  The Record, Iran International). event_date_precision `day`.
+  reported_date set to 2021-07-09 (same-day IRIB/Fars reporting; The
+  Record's first story is dated 2021-07-10 but the event was publicly
+  visible at Iranian stations throughout 9 July). The follow-on
+  Ministry of Roads portal incident (2021-07-10) is treated here as a
+  cascading consequence of the same Indra intrusion — consistent with
+  Check Point Research and Fortinet grouping both events under
+  MeteorExpress — rather than as a separate incident; it is noted in
+  `region` and in the descriptions. The compilation timestamp of the
+  Meteor binary (2021-01-17) is the earliest in-the-wild forensic
+  anchor.
+
+  target_organization: Islamic Republic of Iran Railways (RAI /
+  Rāh-Āhan-e Jomhuri-ye Eslāmi-ye Irān) — the state-owned national
+  rail operator under the Ministry of Roads and Urban Development
+  (Wikipedia: Rail transport in Iran). Raja Passenger Train Company
+  — RAI's passenger-services subsidiary — operated the inter-city
+  passenger services impacted by cancellations; it is therefore named
+  as a cascading affected party, not the primary target. The Ministry
+  of Roads and Urban Development (HQ, Tehran) portal outage of
+  2021-07-10 is named in `region` as a same-operation cascading
+  effect. Freight services (Railway Transportation Company / RAI
+  freight subsidiary) were also disrupted per The Record
+  ("both passenger and cargo transportation services").
+
+  industry_sector: `other` — RAI is a vertically-integrated state
+  railway operating passenger (via Raja subsidiary), freight (via
+  Railway Transportation Company subsidiary) and infrastructure-
+  manager functions; no single vocabulary value (`freight` /
+  `long_distance_passenger` / `regional_passenger` /
+  `infrastructure_manager`) captures the composite-target nature of
+  the incident, and impacts were reported across all three branches.
+  `other` is the codebook-sanctioned "mixed" fallback.
+
+  operator_type: `public_authority` — RAI is a state-owned operator
+  directly reporting to the Ministry of Roads and Urban Development,
+  with the ministry itself also compromised the following day; this
+  is the vocab value closest to a state-owned incumbent. `incumbent`
+  (Deutsche Bahn / SNCF / SBB-style commercialised national
+  incumbents) would mis-cast RAI's direct-ministry reporting line.
+
+  attack_vector: `unknown` — no public source pins down the initial-
+  access vector. SentinelOne states the attackers had "prior access
+  to the network" and the destructive chain was distributed via
+  Active Directory Group Policy Objects from CAB files on SMB shares
+  (lateral distribution, post-initial-access). Initial access itself
+  (phishing vs. exploit vs. credential theft vs. supply chain) is
+  not publicly attributed — SentinelOne/Amnpardaz recovered neither
+  the delivery vector nor the dwell-time forensics. `unknown` kept to
+  honour the "prefer null over invention" rule.
+
+  malware: Meteor — MITRE ATT&CK S0688 (confirmed; created in ATT&CK
+  2022-03-07; associated group Indra). `family` set to MeteorExpress
+  (the campaign toolkit) with explicit mention of the pre-operation
+  Stardust (2020) and Comet (2019) Indra wipers that share code
+  lineage per Check Point Research 2021-08-14.
+
+  extortion = false: no ransom demand, no extortion note, no data-
+  leak threat — explicitly noted by SentinelOne, The Record, Amnpardaz
+  and Check Point Research as pure destructive/disruptive operation.
+  data_published = false: no exfiltration claim or leaked sample in
+  the public record as of 2026-04-19.
+
+  motive = `hacktivism` — the self-identifying Indra persona frames
+  itself as regime opposition / anti-IRGC hacktivist (Check Point
+  Research, Graham Cluley, Times of Israel, BleepingComputer);
+  Predatory Sparrow's parallel claim carries pro-Israel / anti-
+  IRGC messaging (Wikipedia). Check Point explicitly assesses Indra
+  as "unlikely to be a nation-state actor". The overt political-
+  trolling payload (Khamenei phone number on platform displays) is
+  inconsistent with `financial` or `espionage` and more specific than
+  `disruption`; `hacktivism` is the best vocab fit. `state_
+  geopolitical` would overstate — no government has attributed the
+  campaign. `mixed` is a possible alternative but overloads motive
+  coding for a single persona's well-articulated anti-regime framing.
+
+  threat_actor: Indra (regime-opposition hacktivist persona; Check
+  Point Research 2021-08-14 technical attribution). threat_actor_
+  country = null — Check Point explicitly declines to assign a
+  country and notes Indra's social-media presence does not resolve
+  to a single geography; Iranian officials blamed Israel/US without
+  publishing IOCs; Predatory Sparrow's pro-Israel alignment is
+  suggestive but not formally attributed to an Israeli state entity.
+  "Prefer null over invention" controls. attribution_confidence =
+  `reported` — attribution rests on Check Point Research's code-
+  lineage analysis (primary technical source), corroborated by
+  Graham Cluley, Times of Israel, BleepingComputer — reported by a
+  primary technical vendor but not forensically confirmed by a
+  government authority.
+
+  MITRE ATT&CK techniques: full set from the ATT&CK S0688 mapping
+  (as listed on https://attack.mitre.org/software/S0688/), covering:
+  T1047 (WMI), T1053.005 (Scheduled Task — `mstask` at 23:55),
+  T1057 (Process Discovery), T1059.001 (PowerShell), T1059.003
+  (Windows Cmd batch-file orchestration), T1070.001 (Clear Windows
+  Event Logs), T1070.004 (File Deletion), T1082 (System Information
+  Discovery), T1105 (Ingress Tool Transfer via CAB/SMB), T1106
+  (Native API), T1036.004 (Masquerading: Masquerade Task or Service),
+  T1484.001 (Domain Policy Modification: GPO Modification), T1485
+  (Data Destruction — filesystem wipe), T1489 (Service Stop), T1490
+  (Inhibit System Recovery — shadow-copy deletion / boot-policy
+  mod), T1491.001 (Internal Defacement — platform displays + screen
+  locker), T1518.001 (Security Software Discovery — Kaspersky check),
+  T1531 (Account Access Removal — password change / domain removal),
+  T1562.001 (Impair Defenses: Disable or Modify Tools — Defender
+  exclusions), T1564.003 (Hide Artifacts: Hidden Window).
+
+  affected_systems = [station_it, internal_train_tracking,
+  passenger_information, website, internal_communication]. DZSF
+  already coded the first two. Added: passenger_information (defaced
+  platform display boards with fake delay/cancellation messages +
+  Khamenei-office number — directly attested by Times of Israel,
+  The Record, Iran International, RT DE, BleepingComputer, Graham
+  Cluley, SentinelOne); website (Ministry of Roads portal / RAI
+  ticketing and business-services websites down — attested by Press
+  TV, The Record, Iran International, Engadget); internal_
+  communication (staff-PC compromise at RAI + MoR HQ via AD/GPO
+  propagation — Press TV quotes ministry statement: "disruption in
+  the staff computer systems in the headquarters of the Ministry
+  of Road and Urban Development"; SentinelOne on AD/GPO-driven
+  network-wide deployment). rail_operations NOT asserted —
+  operational-technology / signalling / interlocking / CBTC / ETCS
+  systems were not reported as compromised; Iran's rail network is
+  largely non-ETCS and SentinelOne found no evidence the wiper
+  reached OT. payment_system NOT asserted — ticketing was down per
+  The Record, but this falls under internal_train_tracking /
+  passenger_information system outages rather than a targeted PoS /
+  payment compromise per se; no source attests compromise of
+  payment-card infrastructure.
+
+  impact.scope = `national` — RAI is the national operator and the
+  attack affected stations across the country (Fars: "unprecedented
+  chaos at rail stations" nationwide; Iran International, The Record,
+  BleepingComputer all describe nationwide scope). duration_hours
+  left null — RAI publicly claimed service restoration by evening
+  of 9 July, but no source provides a precise hour figure for full
+  systems recovery; the MoR portal was still offline on 10 July.
+  affected_trains / affected_passengers null: Fars reported
+  "hundreds delayed or cancelled" but no exact figure is publicly
+  confirmed, and RAI's spokesman disputed any train-operation
+  impact. monetary_damage_eur null (no public figure).
+  data_compromise.* all false: no data-theft claim or leak.
+
+  confirmation_status = `confirmed`: the Ministry of Roads and Urban
+  Development publicly confirmed the cyber incident via Press TV on
+  2021-07-10 (official_statement); Iran International and state-
+  media IRIB/Fars confirmed the railway disruption on 2021-07-09.
+  This meets the highest tier of confirmation. `confirmation_status`
+  was already `confirmed` in the DZSF row and is retained.
+
+  Indra vs. Predatory Sparrow: the two personae were initially
+  assumed separate — Indra on the basis of the Check Point 2021-08-14
+  attribution, Predatory Sparrow on the basis of its own 2021 claim
+  of responsibility for the railway attack. Check Point Research's
+  subsequent 2022 analysis of the June-2022 Iranian steel-mill
+  attack identified code overlap between Predatory Sparrow's 2022
+  tooling and Indra's 2021 MeteorExpress code (CyberScoop, 2022),
+  raising the possibility that Predatory Sparrow absorbed or re-used
+  Indra's code. `threat_actor` is coded as Indra (primary technical
+  attribution) with the Predatory Sparrow overlap documented in the
+  description. No academic or government source has resolved the
+  relationship.
+
+  Government-level attribution gap: Iranian officials (telecoms
+  minister Mohammad Javad Azari-Jahromi) publicly referenced
+  "cyber aggressors" and implied Israeli/US involvement per Iran's
+  historical accusations, but no IOCs or formal state attribution
+  were published. No NCSC-UK, CISA, ANSSI, BSI or other Western
+  government advisory specifically addresses the 2021 Iran railway
+  attack (the only CERT-style technical advisory is Fortinet's
+  FortiGuard 2021-07-30 threat-signal). German-language press
+  coverage was located (RT DE, Deutsche Wirtschafts Nachrichten) —
+  no heise.de, Golem.de or Tagesschau technical piece specifically on
+  the railway attack found; the main German-language academic anchor
+  is DZSF.
+
+  A third-party claim by a persona calling itself "MBC" surfaced on
+  2021-08-21 (The National, UAE) purporting to be ransomware-group
+  responsibility. This claim contradicts the SentinelOne / Amnpardaz
+  / Check Point wiper-not-ransomware finding and the Indra code-
+  lineage evidence; no technical corroboration exists and MBC's
+  claim is treated as noise, not a credible attribution.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

@@ -1,26 +1,38 @@
 id: 2020-07-02_netwalker
 schema_version: '1.0'
-event_date: '2020-07-02'
+event_date: '2020-07-01'
 event_date_precision: day
-reported_date: null
+reported_date: '2020-07-02'
 countries_impacted:
 - US
-region: null
-coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+region: Fort Worth / Tarrant County, Texas, United States
+coordinates:
+  lat: 32.7555
+  lon: -97.3308
+target_organization: Trinity Metro (Fort Worth Transportation Authority) — bus,
+  TEXRail hybrid rail, Trinity Railway Express commuter rail, ACCESS paratransit,
+  ZIPZONE and vanpool services
+industry_sector: urban_transit
+operator_type: public_authority
 attack_vector: unknown
 supply_chain: false
 malware:
 - name: NetWalker
-  family: null
-  mitre_software_id: null
+  family: NetWalker
+  mitre_software_id: S0457
 extortion: true
 motive: financial
-mitre_attack_techniques: null
-threat_actor: Netwalker, Circus Spider
-threat_actor_country: null
+mitre_attack_techniques:
+- T1486
+- T1490
+- T1059.001
+- T1003
+- T1055
+- T1562.001
+- T1047
+threat_actor: Circus Spider (NetWalker ransomware-as-a-service operators); unknown
+  affiliate
+threat_actor_country: RU
 attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
@@ -28,10 +40,86 @@ affected_systems:
 - website
 - data
 data_published: true
-impact: null
-description_en: Imported from DZSF raw data on 2020-07-02. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: true
+description_en: >
+  On the morning of 1 July 2020 Trinity Metro — the public transit
+  authority for Fort Worth and Tarrant County, Texas, which operates
+  city bus services, the TEXRail hybrid rail line between downtown
+  Fort Worth and DFW International Airport, the Trinity Railway
+  Express commuter rail to Dallas (jointly with DART), ACCESS
+  paratransit, ZIPZONE microtransit and vanpool services — disclosed
+  in a passenger alert on ridetrinitymetro.org that "all of our phone
+  lines are down including our customer service line and ACCESS
+  booking system" and provided a temporary alternate telephone number
+  (817-492-6733) for riders who had ACCESS trips scheduled that day.
+  The following day, 2 July 2020, the Circus Spider operators of the
+  NetWalker ransomware-as-a-service (MITRE ATT&CK Software S0457)
+  added Trinity Metro to their TOR-based "dump" leak site, publishing
+  screenshots of more than 200 folder names exfiltrated from the
+  agency's network before the encryption stage — including folders
+  labelled "Accounting and HR Shared", "Daily Operations Documents",
+  "Planning Documents", "Security", "Vendor W9s", "Passenger
+  information system" and "ACCESS stuff" — and set a ransom deadline
+  of 11 July 2020 for publication of the stolen data. By around
+  5 July 2020 Trinity Metro's entry had been removed from the
+  NetWalker leak site, which iTWire and subsequent commentators
+  interpreted as a likely ransom payment; Trinity Metro itself
+  declined to discuss cybersecurity publicly. Bus, rail and
+  paratransit vehicle operations continued — only back-office IT,
+  customer-service telephony and the ACCESS dispatch/booking system
+  were impacted. The incident is one of the early confirmed
+  ransomware-as-a-service compromises of a U.S. public-transit
+  agency, attributable via the NetWalker leak-site post to the
+  Russian-speaking Circus Spider operator group and one of its
+  affiliates (the NetWalker affiliate programme was later partly
+  dismantled in a January 2021 DOJ-led international operation that
+  indicted Canadian affiliate Sébastien Vachon-Desjardins for ≥91
+  NetWalker intrusions since April 2020).
+description_de: >
+  Am Morgen des 1. Juli 2020 veröffentlichte Trinity Metro — die
+  öffentliche Nahverkehrsbehörde von Fort Worth und Tarrant County
+  (Texas), die Stadtbusse, die Hybridbahn TEXRail zwischen der
+  Innenstadt von Fort Worth und dem Flughafen DFW, die
+  Vorortbahn Trinity Railway Express nach Dallas (gemeinsam mit
+  DART), den Paratransit-Dienst ACCESS sowie ZIPZONE-Mikrotransit
+  und Fahrgemeinschaften betreibt — auf ridetrinitymetro.org eine
+  Fahrgastmeldung, wonach „aufgrund eines technischen Problems alle
+  Telefonleitungen einschließlich Kundenservice und ACCESS-
+  Buchungssystem ausgefallen" seien; ersatzweise wurde die Nummer
+  817-492-6733 bekanntgegeben. Am Folgetag, dem 2. Juli 2020,
+  setzten die Circus-Spider-Betreiber des Ransomware-as-a-Service
+  NetWalker (MITRE ATT&CK Software S0457) Trinity Metro auf ihre
+  TOR-Leak-Site: Screenshots zeigten mehr als 200 vor der
+  Verschlüsselung exfiltrierte Ordnernamen — darunter „Accounting
+  and HR Shared", „Daily Operations Documents", „Planning
+  Documents", „Security", „Vendor W9s", „Passenger information
+  system" und „ACCESS stuff" — und es wurde eine Frist bis zum
+  11. Juli 2020 gesetzt, bis zu der die Daten veröffentlicht werden
+  sollten, falls kein Lösegeld gezahlt werde. Um den 5. Juli 2020
+  verschwand Trinity Metro von der Leak-Site; Branchenbeobachter
+  (iTWire u.a.) werteten dies als wahrscheinliche Lösegeldzahlung,
+  Trinity Metro selbst kommentierte öffentlich nicht. Der Bus-,
+  Schienen- und Paratransit-Betrieb lief weiter; betroffen waren
+  Back-Office-IT, Kundenservice-Telefonie und das Dispatch-/
+  Buchungssystem ACCESS. Der Vorfall gilt als einer der ersten
+  bestätigten RaaS-Angriffe auf eine US-amerikanische
+  ÖPNV-Behörde und wird über die Leak-Site-Einträge der
+  russischsprachigen Gruppe Circus Spider sowie einem ihrer
+  Affiliates zugeordnet — das NetWalker-Affiliate-Programm wurde
+  in einer international koordinierten Aktion des US-Justiz-
+  ministeriums im Januar 2021 teilweise zerschlagen (Anklage gegen
+  den kanadischen Affiliate Sébastien Vachon-Desjardins wegen
+  mindestens 91 NetWalker-Angriffen seit April 2020).
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -39,11 +127,271 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://ridetrinitymetro.org/passenger-alert-phone-lines-down-july-1/
+  type: official_statement
+  publisher: Trinity Metro (Fort Worth Transportation Authority) — passenger alert
+  published_date: '2020-07-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.scworld.com/news/netwalker-ransomware-group-claims-attack-on-fort-worth-transportation-agency
+  type: news
+  publisher: SC Media (SCWorld)
+  published_date: '2020-07-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://itwire.com/security/two-us-local-government-bodies-hit-by-doppelpaymer,-netwalker.html
+  type: news
+  publisher: iTWire (Sam Varghese)
+  published_date: '2020-07-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cyware.com/news/government-operated-trinity-metro-under-attack-by-netwalker-13dc627c
+  type: news
+  publisher: Cyware Hacker News
+  published_date: '2020-07-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://social.cyware.com/news/netwalker-ransomware-group-claims-attack-on-trinity-metro-5d5b64a0
+  type: news
+  publisher: Cyware Social Alerts
+  published_date: '2020-07-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://infimasec.com/blog/fort-worth-transit/
+  type: blog
+  publisher: Infima Security — NetWalker Ransomware Strikes Texas
+  published_date: '2020-07-06'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://newstral.com/en/article/en/1155134284/notorious-criminal-group-hacks-fort-worth-agency-holding-data-for-ransom-experts-say
+  type: news
+  publisher: Fort Worth Star-Telegram (via Newstral aggregator) — "Notorious criminal
+    group hacks Fort Worth agency, holding data for ransom, experts say"
+  published_date: '2020-07-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://ground.news/article/f92205c2-685e-47d2-a2be-35ea592dd77c
+  type: news
+  publisher: Ground News (aggregator of SC Media and others)
+  published_date: '2020-07-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ransomware.live/group/netwalker
+  type: other
+  publisher: ransomware.live (Trinity Metro listed in NetWalker victim index)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.emsisoft.com/en/blog/37677/ransomware-profile-netwalker/
+  type: blog
+  publisher: Emsisoft Malware Lab — Ransomware Profile NetWalker
+  published_date: '2021-02-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://unit42.paloaltonetworks.com/ransomware-threat-assessments/2/
+  type: blog
+  publisher: Unit 42 Palo Alto Networks — Threat Assessment NetWalker Ransomware
+  published_date: '2021-03-17'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.chainalysis.com/blog/netwalker-ransomware-disruption-arrest/
+  type: blog
+  publisher: Chainalysis — U.S. Authorities Disrupt NetWalker Ransomware
+  published_date: '2021-01-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0457/
+  type: other
+  publisher: MITRE ATT&CK — Netwalker (Software S0457)
+  published_date: '2020-05-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ic3.gov/CSA/2020/200929-2.pdf
+  type: cert_advisory
+  publisher: FBI Flash MI-000130-MW — Indicators Associated with Netwalker Ransomware
+  published_date: '2020-07-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.waterisac.org/portal/fbi-flash-indicators-associated-netwalker-ransomware
+  type: cert_advisory
+  publisher: WaterISAC hosting FBI Flash MI-000130-MW
+  published_date: '2020-07-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://nap.nationalacademies.org/read/26475/chapter/9
+  type: academic_paper
+  publisher: Transportation Research Board / National Academies — TCRP Synthesis
+    158 Cybersecurity in Transit Systems, Appendix A Cybersecurity Incidents
+  published_date: '2022-01-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Trinity_Metro
+  type: other
+  publisher: Wikipedia — Trinity Metro (agency description, services, ridership)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/TEXRail
+  type: other
+  publisher: Wikipedia — TEXRail (Trinity Metro hybrid-rail route)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF raw-data stub dated 2020-07-02 (US,
+  malware=NetWalker, threat_actor="Netwalker, Circus Spider",
+  extortion=true, data_published=true, affected_systems=[
+  internal_communication, website, data]) unambiguously matches the
+  Trinity Metro / Fort Worth Transportation Authority NetWalker
+  ransomware incident of 1-2 July 2020. Trinity Metro is the only
+  rail-operating U.S. transit victim publicly attributed to NetWalker
+  in early July 2020 (corroborated by SC Media, iTWire, Cyware,
+  Infima Security, the Fort Worth Star-Telegram, Ground News, the
+  Emsisoft and Unit 42 NetWalker victim profiles, the ransomware.live
+  historical victim index, and TCRP Synthesis 158's cybersecurity
+  incidents appendix). No other rail operator in the NetWalker victim
+  list maps to 2020-07-02.
+
+  Dates: Trinity Metro's own passenger alert on ridetrinitymetro.org
+  is dated 1 July 2020 (the morning the phone/ACCESS booking systems
+  went down). The NetWalker leak-site post appeared 2 July 2020
+  (matching the DZSF event_date of 2020-07-02 and the SC Media /
+  Ground News public-disclosure date). The DZSF date therefore
+  reflects the *reported* date (NetWalker leak-site publication /
+  SC Media coverage) rather than the operational-impact date. I have
+  set event_date to 2020-07-01 (the earliest attested operational
+  symptom) and reported_date to 2020-07-02 so that event_date ≤
+  reported_date as required. The ransom deadline was 11 July 2020;
+  Trinity Metro's leak-site entry disappeared around 5 July 2020
+  (iTWire update), suggesting either payment or a negotiated
+  withdrawal — the agency declined to discuss it publicly. The
+  actual initial-compromise date is unknown; NetWalker affiliates
+  typically spent days to weeks inside a network exfiltrating data
+  before the encryption stage, so the real intrusion is likely from
+  mid- to late-June 2020, but no source quantifies this so I leave
+  event_date at 2020-07-01.
+
+  attack_vector left `unknown`: NetWalker's known initial-access
+  methods in 2020 were (a) phishing emails with malicious VBScript/
+  PowerShell attachments (frequently COVID-19 themed) and (b)
+  exploitation of Pulse Secure VPN CVE-2019-11510 and Telerik UI
+  CVE-2019-18935 on public-facing appliances (FBI Flash
+  MI-000130-MW, 28 July 2020; Unit 42; Emsisoft). Neither Trinity
+  Metro nor any secondary source has publicly disclosed the specific
+  initial vector used against Trinity Metro, so `unknown` is the
+  correct DZSF-conservative call rather than guessing `phishing` or
+  `exploit`.
+
+  supply_chain: false — this was a direct RaaS intrusion into
+  Trinity Metro's own network, not a third-party software compromise.
+
+  malware: NetWalker (also known historically as "Mailto"; MITRE
+  ATT&CK Software S0457, created 2020-05-26). Family set to
+  "NetWalker" (single-family brand; Circus Spider is the operator
+  group, not the family).
+
+  motive `financial`: classic double-extortion RaaS — encrypt-and-
+  leak for cryptocurrency ransom. No geopolitical or ideological
+  framing.
+
+  threat_actor: The NetWalker RaaS is run by the Russian-speaking
+  "Circus Spider" actor group (CrowdStrike's naming; Unit 42,
+  Emsisoft, Heimdal, UpGuard corroborate). The Trinity Metro
+  attack itself was presumably carried out by one of Circus Spider's
+  affiliates (the identity of the specific affiliate is not
+  publicly known; it could plausibly be Sébastien Vachon-Desjardins,
+  later indicted for ≥91 NetWalker attacks since April 2020, but no
+  source links him specifically to Trinity Metro, so I attribute the
+  incident at the RaaS-brand level only).
+
+  threat_actor_country RU: Circus Spider is consistently reported as
+  Russian-speaking and based in Russia / the CIS (Unit 42, Emsisoft,
+  Heimdal); the NetWalker builder explicitly forbade affiliates from
+  attacking targets in Russia/CIS. This is reported (not confirmed
+  by government attribution), hence attribution_confidence `reported`.
+
+  mitre_attack_techniques: the list maps NetWalker's documented
+  enterprise-ATT&CK behaviour per MITRE S0457 and Unit 42:
+    - T1486 Data Encrypted for Impact (the ransomware encryption)
+    - T1490 Inhibit System Recovery (shadow-copy deletion via
+      PowerShell / WMI)
+    - T1059.001 Command and Scripting Interpreter: PowerShell
+      (NetWalker is PowerShell-based, runs in-memory)
+    - T1003 OS Credential Dumping (known lateral-movement step)
+    - T1055 Process Injection (reflective DLL into legitimate
+      processes)
+    - T1562.001 Impair Defenses: Disable or Modify Tools (detects
+      and terminates security software)
+    - T1047 Windows Management Instrumentation (shadow-copy deletion
+      via WMI)
+  These are NetWalker capability mappings from MITRE S0457 / Unit 42;
+  no Trinity-Metro-specific forensic report has been published, so
+  they represent the family's documented TTPs rather than per-incident
+  observations.
+
+  affected_systems: the DZSF triple (internal_communication, website,
+  data) is retained and well supported — phone lines and the ACCESS
+  dispatch/booking system went down (internal_communication), the
+  ridetrinitymetro.org public notice page documented the outage
+  (website, meaning the site was used as outage-notification surface
+  though the site itself was not defaced), and >200 folders of
+  corporate data were exfiltrated and teased on the NetWalker leak
+  site (data). Bus, TEXRail and TRE revenue operations continued —
+  rail_operations, train_driver_communication, internal_train_tracking
+  and passenger_information (train-related) are NOT claimed.
+
+  data_published true: the NetWalker leak-site post teased >200
+  folder names with screenshots, which is the "published sample"
+  stage of the double-extortion kill chain; full bulk publication
+  appears to have been averted (the Trinity Metro entry disappeared
+  around 5 July), but the initial tease was public. I keep
+  data_published=true (matching the DZSF value) because the teased
+  sample itself is public data.
+
+  impact.scope regional: Trinity Metro serves Fort Worth and Tarrant
+  County plus the TRE commuter-rail corridor to Dallas — a regional
+  (Dallas–Fort Worth metropolitan) footprint, not national.
+  impact.data_compromise.customer_data true (ACCESS-booking/
+  paratransit rider data exists in the environment and was in the
+  teased folder names), organizational_data true (HR, accounting,
+  planning, security, vendor W9s folders), intellectual_property
+  false (no proprietary technology reported).
+
+  industry_sector `urban_transit`: Trinity Metro is primarily a
+  metropolitan public-transit authority (bus + light-/hybrid-rail +
+  commuter-rail + paratransit). `regional_passenger` would fit TRE
+  alone, and `long_distance_passenger` does not apply — the overall
+  agency is best represented by `urban_transit`.
+
+  operator_type `public_authority`: Trinity Metro is the Fort Worth
+  Transportation Authority, a political subdivision of the State of
+  Texas created under Chapter 452 of the Texas Transportation Code
+  — a public transit authority, not an incumbent national operator
+  and not a private operator.
+
+  confirmation_status `confirmed`: Trinity Metro publicly confirmed
+  the systems outage via its own passenger-alert web page; the
+  NetWalker operators publicly claimed the attack on their leak
+  site with corroborating screenshots; the Fort Worth Star-Telegram,
+  SC Media, iTWire, Cyware, Infima and Ground News all report it as
+  a confirmed incident; TCRP Synthesis 158 (National Academies)
+  catalogues it. The agency never formally named NetWalker or
+  publicly disclosed whether a ransom was paid — but the
+  *occurrence* of a ransomware attack is confirmed beyond reasonable
+  doubt.
+
+  German-language press: searches of heise.de, Golem.de, Tagesschau,
+  Eurailpress, DSGVO-Portal Sicherheitsvorfalls-Datenbank and
+  general German-language results returned no Trinity Metro 2020
+  coverage. The DZSF catalogue itself remains the only German-
+  language anchor. This is consistent with the low German-media
+  salience of a US metropolitan transit agency; no escalation is
+  warranted.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

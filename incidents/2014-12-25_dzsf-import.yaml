@@ -2,32 +2,62 @@ id: 2014-12-25_dzsf-import
 schema_version: '1.0'
 event_date: '2014-12-25'
 event_date_precision: day
-reported_date: null
+reported_date: '2014-12-25'
 countries_impacted:
 - CN
 region: null
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
-supply_chain: true
+target_organization: China Railway Corporation (12306.cn)
+industry_sector: long_distance_passenger
+operator_type: incumbent
+attack_vector: credential_theft
+supply_chain: false
 malware: null
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
+motive: financial
+mitre_attack_techniques:
+- T1110.004
 threat_actor: null
-threat_actor_country: null
-attribution_confidence: unknown
+threat_actor_country: CN
+attribution_confidence: confirmed
 confirmation_status: confirmed
 affected_systems:
-- unclear_system
+- payment_system
+- website
 - data
 data_published: true
-impact: null
-description_en: Imported from DZSF raw data on 2014-12-25. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: 131653
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: true
+description_en: >
+  On 25 December 2014, Chinese vulnerability-reporting platform Wooyun
+  disclosed that a file containing roughly 131,653 records of 12306.cn users
+  — including usernames, plaintext passwords, ID card numbers, phone numbers,
+  email addresses and security-question answers — was circulating online. The
+  operator of 12306.cn, China Railway Corporation, confirmed the leak but
+  attributed it to credential-stuffing (撞库) using account data stolen from
+  unrelated websites, not to a direct compromise of its own database.
+  Chinese railway police detained two suspects on 25 December 2014 for
+  stealing and selling passenger data; the breach surfaced at the start of
+  the Chinese New Year (chunyun) travel rush.
+description_de: >
+  Am 25. Dezember 2014 veröffentlichte die chinesische Sicherheitsplattform
+  Wooyun einen Bericht über ein im Netz kursierendes Datenpaket mit rund
+  131.653 Nutzerdatensätzen des offiziellen Bahn-Buchungsportals 12306.cn.
+  Betroffen waren Benutzernamen, Klartext-Passwörter, Ausweisnummern,
+  Telefonnummern, E-Mail-Adressen und Sicherheitsfragen. Die Betreiberin
+  China Railway Corporation bestätigte das Leck, führte es jedoch auf
+  Credential-Stuffing ("撞库") mit Zugangsdaten aus anderen Datenlecks zurück
+  und nicht auf einen direkten Angriff auf ihre eigene Datenbank. Zwei
+  Verdächtige wurden am selben Tag von der Eisenbahnpolizei festgenommen.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -35,11 +65,84 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.chinadaily.com.cn/china/2014-12/25/content_19169286.htm
+  type: news
+  publisher: China Daily
+  published_date: '2014-12-25'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.chinadaily.com.cn/business/tech/2014-12/25/content_19168790.htm
+  type: news
+  publisher: China Daily
+  published_date: '2014-12-25'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.chinadaily.com.cn/kindle/2014-12/27/content_19181063.htm
+  type: news
+  publisher: China Daily
+  published_date: '2014-12-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.globaltimes.cn/content/898706.shtml
+  type: news
+  publisher: Global Times
+  published_date: '2014-12-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://archive.shine.cn/national/Railway-website-user-information-exposed-after-hacking-attack/shdaily.shtml
+  type: news
+  publisher: Shanghai Daily
+  published_date: '2014-12-25'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.techworm.net/2014/12/130000-chinese-rail-passengers-data-leaked.html
+  type: news
+  publisher: TechWorm
+  published_date: '2014-12-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.caixinglobal.com/2014-12-26/pair-arrested-for-leaking-user-data-for-train-ticket-sales-website-101012802.html
+  type: news
+  publisher: Caixin Global
+  published_date: '2014-12-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: http://china.cnr.cn/xwwgf/20141226/t20141226_517228885.shtml
+  type: news
+  publisher: China National Radio (CNR)
+  published_date: '2014-12-26'
+  language: zh
+  accessed_date: '2026-04-19'
+- url: http://china.chinadaily.com.cn/2014-12/26/content_19176673.htm
+  type: news
+  publisher: China Daily (Chinese edition)
+  published_date: '2014-12-26'
+  language: zh
+  accessed_date: '2026-04-19'
+- url: https://eudl.eu/pdf/10.4108/eai.15-12-2023.2345345
+  type: academic_paper
+  publisher: EAI Endorsed Transactions
+  published_date: '2023-12-15'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Two suspects were detained by railway police on 25 December 2014; Chinese
+  sources variously identify them only by surnames (Jiang and Shi in some
+  accounts). No organised threat-actor group has been attributed. The core
+  attack technique was credential stuffing (撞库) — reusing username/password
+  pairs harvested from unrelated breaches. 12306.cn denied that its own
+  database was breached, citing that its stored passwords are encrypted
+  whereas the leaked set contained plaintext passwords. Independent security
+  vendors (Qihoo 360, Beijing Rising, Chuangyu) flagged vulnerabilities in
+  the 12306 mobile-app login interface that facilitated automated attempts.
+  The count of 131,653 records comes from the Wooyun.org disclosure; some
+  later coverage rounds to 130,000 or cites 140,000 including duplicate/near
+  records.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

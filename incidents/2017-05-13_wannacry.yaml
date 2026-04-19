@@ -8,7 +8,7 @@ countries_impacted:
 - RU
 region: null
 coordinates: null
-target_organization: Deutsche Bahn AG
+target_organization: Deutsche Bahn AG (incl. DB Netz AG); Russian Railways (RZD / ОАО РЖД)
 industry_sector: long_distance_passenger
 operator_type: incumbent
 attack_vector: exploit
@@ -21,21 +21,26 @@ extortion: true
 motive: financial
 mitre_attack_techniques:
 - T1486
-- T1190
+- T1490
+- T1210
+- T1083
+- T1489
+- T1543.003
 threat_actor: Lazarus Group
 threat_actor_country: KP
-attribution_confidence: suspected
+attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - payment_system
 - station_it
 - passenger_information
+- internal_communication
 data_published: false
 impact:
-  scope: national
+  scope: international
   duration_hours: 48
   magnitude:
-    affected_trains: null
+    affected_trains: 0
     affected_passengers: null
     monetary_damage_eur: null
   data_compromise:
@@ -43,17 +48,34 @@ impact:
     organizational_data: false
     customer_data: false
 description_en: >
-  On 12 May 2017, ticket machines and passenger information displays of
-  Deutsche Bahn were infected with the WannaCry ransomware as collateral
-  damage during the global outbreak exploiting the EternalBlue SMB flaw.
-  Train operations themselves were not affected. Russian Railways (RZD)
-  also reported WannaCry infections on office systems on the same day.
+  On the evening of Friday 12 May 2017 the WannaCry ransomware worm spread
+  globally by exploiting the EternalBlue SMBv1 vulnerability (MS17-010) in
+  unpatched Windows systems. At Deutsche Bahn AG roughly 450 computers
+  became infected, knocking out digital passenger-information displays at
+  numerous stations (including Frankfurt Central Station), several ticket
+  vending machines, video-surveillance equipment operated on behalf of the
+  Federal Police, and all control systems at the DB Netz AG operating
+  centre in Hanover. DB emphasised that safety-critical signalling and
+  rail operations were not affected and no ransom was paid. Russian
+  Railways (RZD / ОАО РЖД) simultaneously reported WannaCry infections on
+  office computers on 12 May 2017; RZD President Oleg Belozerov stated
+  that the attack was localised, did not impact rail services, and was
+  neutralised without paying the ransom.
 description_de: >
-  Am 12. Mai 2017 wurden Fahrkartenautomaten und Anzeigetafeln der
-  Deutschen Bahn im Rahmen der globalen WannaCry-Welle (EternalBlue-SMB)
-  als Kollateralschaden infiziert. Der Zugbetrieb war nicht betroffen.
-  Auch die Russischen Eisenbahnen (RZD) meldeten am gleichen Tag
-  WannaCry-Infektionen auf Büro-IT.
+  Am Abend des Freitags, 12. Mai 2017, verbreitete sich die Ransomware
+  WannaCry weltweit, indem sie die SMBv1-Schwachstelle EternalBlue
+  (MS17-010) in nicht gepatchten Windows-Systemen ausnutzte. Bei der
+  Deutschen Bahn AG wurden rund 450 Rechner infiziert; betroffen waren
+  digitale Fahrgastinformationsanzeigen an zahlreichen Bahnhöfen
+  (darunter Frankfurt Hauptbahnhof), einzelne Fahrkartenautomaten, das
+  Videoüberwachungssystem der Bundespolizei sowie sämtliche Leitsysteme
+  der DB Netz AG Betriebszentrale Hannover. Der Zugbetrieb war laut DB
+  nicht beeinträchtigt, Lösegeld wurde nicht gezahlt. Auch die
+  Russischen Eisenbahnen (RZD / ОАО РЖД) meldeten am 12. Mai 2017
+  WannaCry-Infektionen auf Büro-PCs; RZD-Präsident Oleg Beloserow
+  erklärte, der Angriff sei lokal begrenzt gewesen, habe den
+  Bahnverkehr nicht beeinträchtigt und sei ohne Lösegeldzahlung
+  beseitigt worden.
 sources:
 - url: https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2017/2017-197149-10G2.pdf
   type: cert_advisory
@@ -61,20 +83,136 @@ sources:
   published_date: '2017-05-13'
   language: de
   accessed_date: '2026-04-19'
-- url: https://www.reuters.com/article/us-cyber-attack-germany-idUSKBN18905M
+- url: https://www.heise.de/news/Ransomware-WannaCry-befaellt-Rechner-der-Deutschen-Bahn-3713426.html
   type: news
-  publisher: Reuters
+  publisher: heise online
+  published_date: '2017-05-13'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.handelsblatt.com/unternehmen/handel-konsumgueter/wanna-cry-cyberangriff-legt-450-bahn-computer-lahm/19809190.html
+  type: news
+  publisher: Handelsblatt
+  published_date: '2017-05-16'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.computerbase.de/2017-05/krypto-trojaner-wannacry-deutsche-bahn/
+  type: news
+  publisher: ComputerBase
+  published_date: '2017-05-13'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://www.tagesspiegel.de/gesellschaft/panorama/bka-ubernimmt-ermittlungen-nach-weltweiter-cyber-attacke-5496841.html
+  type: news
+  publisher: Der Tagesspiegel
+  published_date: '2017-05-13'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://railway-news.com/global-cyber-attack-hits-deutsche-bahn/
+  type: news
+  publisher: Railway-News
   published_date: '2017-05-13'
   language: en
   accessed_date: '2026-04-19'
+- url: https://www.thelocal.de/20170513/international-cyber-attacks-put-ransoms-on-german-train-departure-boards
+  type: news
+  publisher: The Local (DE)
+  published_date: '2017-05-13'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railtech.com/digitalisation/2017/12/11/wannacry-virus-was-wake-up-call-for-railway-industry/
+  type: news
+  publisher: RailTech
+  published_date: '2017-12-11'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.rbth.com/international/2017/05/16/wannacry-hack-why-has-russia-suffered-more-than-other-countries_763869
+  type: news
+  publisher: Russia Beyond
+  published_date: '2017-05-16'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/WannaCry_ransomware_attack
+  type: other
+  publisher: Wikipedia
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0366/
+  type: other
+  publisher: MITRE ATT&CK
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.justice.gov/archives/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-cyber-attacks-and
+  type: press_release
+  publisher: U.S. Department of Justice
+  published_date: '2018-09-06'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://trumpwhitehouse.archives.gov/briefings-statements/press-briefing-on-the-attribution-of-the-wannacry-malware-attack-to-north-korea-121917/
+  type: press_release
+  publisher: The White House (Tom Bossert)
+  published_date: '2017-12-19'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.gov.uk/government/news/foreign-office-minister-condemns-north-korean-actor-for-wannacry-attacks
+  type: press_release
+  publisher: UK Foreign & Commonwealth Office
+  published_date: '2017-12-19'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.heise.de/news/WannaCry-Deutschland-laut-BSI-Chef-mit-blauem-Auge-davongekommen-3714338.html
+  type: news
+  publisher: heise online
+  published_date: '2017-05-15'
+  language: de
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
-- "Lukas Iffl\xE4nder"
+- Lukas Iffländer
 last_updated: '2026-04-19'
 notes: >
-  Collateral damage case: DB was not specifically targeted; WannaCry spread
-  via exposed SMBv1 services using the EternalBlue exploit. Attribution to
-  Lazarus Group (DPRK) is based on code-reuse analysis by multiple agencies.
+  Collateral-damage case: neither Deutsche Bahn nor Russian Railways was
+  the specific target of WannaCry; the worm spread indiscriminately via
+  the EternalBlue SMBv1 exploit (CVE-2017-0144, MS17-010) after Shadow
+  Brokers leaked the underlying NSA toolkit in April 2017. DB's infected
+  machines were reported to be running unpatched Windows versions
+  (including Windows XP / outdated Windows 7) in protected network
+  segments that had not received Microsoft's March 2017 patch.
+  Deutsche Bahn publicly stated that safety-critical signalling, train
+  control and interlocking systems (LST, ESTW) were not affected and no
+  ransom was paid; display-board repairs reportedly took several days to
+  complete across the ~5,400 station estate, but most user-facing
+  outages were resolved within about 48 hours.
+  The BSI (CERT-Bund, arm of the German federal government) issued
+  cybersecurity advisories on 13 May 2017; BSI President Arne Schönbohm
+  said Germany had "got off lightly" and called the attack a "wake-up
+  call". The BKA (Bundeskriminalamt) opened an investigation with
+  Europol/Eurojust support.
+  Russian Railways (RZD) was among the largest Russian organisations
+  that publicly acknowledged WannaCry infections; RZD confirmed the
+  event but said it was confined to office computers, did not affect
+  rail operations, and was cleaned without paying.
+  Attribution: the US White House (18 Dec 2017, Tom Bossert), the UK
+  Foreign Office, Canada, Australia, New Zealand and Japan formally
+  attributed WannaCry to the DPRK's Lazarus Group; Kaspersky Lab and
+  Symantec previously (May 2017) reported code-reuse evidence linking
+  WannaCry samples to earlier Lazarus tools (Contopee, Brambul). On
+  6 Sep 2018 the U.S. DoJ publicly indicted North Korean programmer
+  Park Jin Hyok for conspiracy tied to WannaCry, the 2014 Sony Pictures
+  hack and the 2016 Bangladesh Bank heist. Because no court conviction
+  has occurred and several researchers (e.g. Cybereason) questioned the
+  evidence, `attribution_confidence` is recorded as `reported`, not
+  `confirmed`. `motive: financial` reflects the immediate extortion
+  modality; the broader state-sponsored context is captured in the
+  actor fields.
+  MITRE ATT&CK technique mapping follows MITRE's S0366 software page
+  (accessed 2026-04-19). The original DZSF entry listed T1190
+  (Exploit Public-Facing Application); this has been corrected to
+  T1210 (Exploitation of Remote Services), which is the ATT&CK mapping
+  for EternalBlue SMB exploitation. `affected_trains` is recorded as 0
+  because multiple sources explicitly confirm that no trains or
+  safety-critical systems were affected.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx

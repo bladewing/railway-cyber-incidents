@@ -2,19 +2,20 @@ id: 2020-01-27_dzsf-import
 schema_version: '1.0'
 event_date: '2020-01-27'
 event_date_precision: day
-reported_date: null
+reported_date: '2020-02-28'
 countries_impacted:
 - US
-region: null
+- CA
+region: North America (US and Canada; headquarters New York, NY)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: RailWorks Corporation
+industry_sector: other
+operator_type: private
 attack_vector: unknown
 supply_chain: false
 malware: null
-extortion: false
-motive: unknown
+extortion: true
+motive: financial
 mitre_attack_techniques: null
 threat_actor: null
 threat_actor_country: null
@@ -23,10 +24,65 @@ confirmation_status: confirmed
 affected_systems:
 - data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2020-01-27. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: international
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: false
+description_en: >
+  On Monday 27 January 2020 RailWorks Corporation — a privately held
+  rail-infrastructure contractor headquartered in New York City that
+  builds and maintains track, signalling and transit systems across the
+  United States and Canada (about 3,500 employees, 45 offices, roughly
+  USD 3 billion of active contracts) — was hit by a ransomware attack in
+  which an unauthorised third party encrypted the company's servers and
+  systems and exfiltrated personnel data. Personally identifiable
+  information of current and former employees, their beneficiaries and
+  dependents, and 1099 independent contractors was exposed (names,
+  addresses, driver-licence numbers and government-issued IDs, Social
+  Security numbers, dates of birth and dates of hire / termination /
+  retirement). RailWorks notified affected individuals on 30 January and
+  7 February 2020, filed three data-breach notifications with the
+  California Office of the Attorney General, offered twelve months of
+  Identity Guard Total credit monitoring, and publicly disclosed the
+  incident around 28 February 2020. No ransomware family, attack vector
+  or threat actor has been publicly named; the incident resulted in the
+  Coleman v. RailWorks class-action (S.D.N.Y. 1:20-cv-02428-GBD)
+  which settled in 2021 with identity-theft protection through 1 April
+  2023 and up to US$50 time-reimbursement per class member. Rail
+  operations of RailWorks' customers were not publicly reported as
+  disrupted; impact was contained to the contractor's corporate IT.
+description_de: >
+  Am Montag, 27. Januar 2020, wurde die RailWorks Corporation — ein
+  privat geführter US-Bahninfrastruktur-Dienstleister mit Sitz in New
+  York City, der Gleisbau, Leit- und Sicherungstechnik sowie
+  Nahverkehrssysteme in den USA und Kanada baut und instandhält (rund
+  3.500 Beschäftigte, 45 Standorte, etwa 3 Mrd. US-Dollar laufende
+  Aufträge) — Ziel eines Ransomware-Angriffs. Dabei verschlüsselten
+  Unbekannte die Server und IT-Systeme des Unternehmens und entwendeten
+  Personaldaten. Betroffen waren personenbezogene Daten aktueller und
+  ehemaliger Beschäftigter, ihrer Angehörigen sowie von 1099-Vertrags­
+  partnern (Namen, Adressen, Führerscheinnummern und Ausweisdaten,
+  Sozialversicherungs­nummern, Geburtsdaten sowie Einstellungs-,
+  Austritts- und Renteneintrittsdaten). RailWorks informierte die
+  Betroffenen am 30. Januar und 7. Februar 2020, reichte drei
+  Meldungen beim kalifornischen Generalstaatsanwalt ein, bot zwölf
+  Monate Bonitätsüberwachung über Identity Guard Total an und machte
+  den Vorfall um den 28. Februar 2020 öffentlich. Eine
+  Ransomware-Familie, der Angriffsvektor oder ein Täterkreis wurden
+  nicht öffentlich benannt. Die anschließende Sammelklage Coleman v.
+  RailWorks (S.D.N.Y. 1:20-cv-02428-GBD) wurde 2021 verglichen
+  (Bonitätsüberwachung bis 1. April 2023, bis zu 50 US-$
+  Zeitaufwands-Entschädigung je Sammelklagemitglied). Eine Beein­
+  trächtigung des Bahnbetriebs der Kunden von RailWorks wurde
+  öffentlich nicht berichtet; der Schaden blieb auf die Unternehmens-IT
+  des Auftragnehmers beschränkt.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +90,187 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.bleepingcomputer.com/news/security/us-railroad-contractor-reports-data-breach-after-ransomware-attack/
+  type: news
+  publisher: Bleeping Computer
+  published_date: '2020-02-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securityweek.com/railroad-construction-firm-railworks-falls-victim-ransomware/
+  type: news
+  publisher: SecurityWeek
+  published_date: '2020-03-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/98669/data-breach/railworks-ransomware-data-breach.html
+  type: news
+  publisher: Security Affairs
+  published_date: '2020-03-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://siliconangle.com/2020/03/01/railroad-firm-railworks-hit-ransomware-employee-data-stolen/
+  type: news
+  publisher: SiliconANGLE
+  published_date: '2020-03-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cisomag.com/u-s-railworks-corp-reports-data-breach-post-ransomware-attack/
+  type: news
+  publisher: CISO MAG
+  published_date: '2020-03-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.technadu.com/railworks-corporation-disclosed-catastrophic-ransomware-infection/94045/
+  type: news
+  publisher: TechNadu
+  published_date: '2020-03-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.oodaloop.com/briefs/2020/03/02/us-railroad-contractor-reports-data-breach-after-ransomware-attack/
+  type: news
+  publisher: OODA Loop
+  published_date: '2020-03-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.rtands.com/news/railworks-reports-data-breach/
+  type: news
+  publisher: Railway Track & Structures
+  published_date: '2020-03-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.2-spyware.com/data-breach-at-railworks-corporation-was-caused-by-ransomware-attack
+  type: news
+  publisher: 2-Spyware
+  published_date: '2020-03-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://seclists.org/dataloss/2020/q1/181
+  type: other
+  publisher: SecLists / BreachExchange mailing list
+  published_date: '2020-03-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://databreaches.net/2020/02/29/us-railroad-contractor-reports-data-breach-after-ransomware-attack/
+  type: news
+  publisher: DataBreaches.net
+  published_date: '2020-02-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/the-week-in-ransomware-february-28th-2020-data-leaks-everywhere/
+  type: news
+  publisher: Bleeping Computer
+  published_date: '2020-02-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://rwcolemansettlement.com/
+  type: official_statement
+  publisher: RailWorks / Coleman v. RailWorks settlement administrator
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://topclassactions.com/lawsuit-settlements/privacy/data-breach/1012997-railworks-data-breach-class-action-settlement/
+  type: news
+  publisher: Top Class Actions
+  published_date: '2021-03-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.courtlistener.com/docket/16994601/coleman-v-railworks-corporation/
+  type: official_statement
+  publisher: CourtListener (Free Law Project) — docket 1:20-cv-02428 (S.D.N.Y.)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.incibe-cert.es/en/early-warning/cybersecurity-highlights/security-incident-railworks-corporation
+  type: cert_advisory
+  publisher: INCIBE-CERT (Spain)
+  published_date: '2020-03-03'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The DZSF raw-data row dated 2020-01-27 (US, affected_systems=[data],
+  confirmation=confirmed, origin DZSF-2020-23-S-1202) resolves
+  unambiguously to the RailWorks Corporation ransomware incident of
+  Monday 27 January 2020. The date, country, confirmation status and
+  "data" affected-system bucket all match, and no other US railway-sector
+  cyber incident on this date is publicly documented. Corrections
+  against the DZSF stub: `extortion` set to true (ransomware with ransom
+  demand is extortion by definition; DZSF default `false` is wrong);
+  `motive` set to `financial` (ransomware for payment); `industry_sector`
+  set to `other` because RailWorks is a rail-construction / signalling
+  contractor rather than a passenger or freight operator or a network
+  infrastructure manager — the incident still belongs in this dataset
+  because RailWorks' work is exclusively railway infrastructure and the
+  event was profiled by DZSF as a railway-sector cyber incident, but no
+  passenger- or freight-operator vocabulary value fits. `operator_type`
+  set to `private` (RailWorks is privately held). `supply_chain` kept
+  `false`: although RailWorks is itself a supplier to rail operators,
+  no public source describes the attack on RailWorks as having
+  propagated from or to a third-party supplier — the compromise was of
+  RailWorks' own corporate IT. `attack_vector` kept `unknown`: neither
+  RailWorks nor any press, CERT or vendor source has disclosed how
+  initial access was obtained. `malware` null: no specific ransomware
+  family (Maze, DoppelPaymer, Sodinokibi/REvil, Ryuk, CLOP, Nefilim,
+  Nemty, Sekhmet) was ever publicly linked to RailWorks despite the
+  attack occurring in the same February-2020 window when these families
+  dominated large-enterprise ransomware incidents; RailWorks has never
+  named a variant. `threat_actor` / `threat_actor_country` null and
+  `attribution_confidence` unknown: no attribution has been made public
+  in five years, no leak-site post on Dopple Leaks / Maze News /
+  Happy Blog was recorded, and no indictment mentions RailWorks.
+  `mitre_attack_techniques` left `null` because no primary, CERT or
+  vendor source maps this incident into the ATT&CK framework; T1486
+  (Data Encrypted for Impact) and T1005/T1041 (data exfiltration)
+  would be defensible inferences but remain the subagent's inference
+  rather than a cited one. `affected_systems` kept as [data] only:
+  corporate servers / PII store were hit; `internal_communication` is
+  not added because no source describes email / chat outage, and
+  `rail_operations`, `website`, `payment_system`, `station_it`,
+  `internal_train_tracking`, `passenger_information` and
+  `train_driver_communication` are all inapplicable to a contractor's
+  HR-data breach. `data_published` set to false: the stolen data was
+  never observed on a ransomware leak site and press reporting is
+  consistent that RailWorks said there was "no evidence the information
+  has been misused". `data_compromise.organizational_data` set to true
+  (employee PII is organisational data); `customer_data` false (the
+  stolen records were employees / contractors, not RailWorks' railway
+  customers); `intellectual_property` false. `impact.scope` set to
+  `international` because affected individuals span both the United
+  States and Canada (RailWorks' 45 offices are distributed across both
+  countries and the California AG filings plus press reporting confirm
+  multi-state impact), hence `countries_impacted` also lists CA.
+  `impact.magnitude.affected_trains` is `null` rather than 0 because
+  although no train service was publicly reported as disrupted, the
+  rail-infrastructure contracts that RailWorks was executing on the
+  attack date could have suffered schedule slippage that was simply
+  not reported publicly — leaving this null rather than inventing a
+  number. `impact.magnitude.affected_passengers` null (not applicable
+  to an employee PII breach at a contractor); `monetary_damage_eur`
+  null (remediation cost, lost productivity and the subsequent
+  class-action settlement amount were not publicly disclosed).
+  Date provenance: press coverage (Bleeping Computer, SecurityWeek,
+  Security Affairs, SiliconANGLE, OODA Loop, CISO MAG, TechNadu,
+  RT&S, 2-Spyware, BreachExchange/SecLists, DataBreaches.net) is
+  unanimous on Monday 27 January 2020 as the attack date, matching
+  the DZSF event_date. The Coleman v. RailWorks class-action
+  complaint alleges the attack "on or about January 14, 2020" — a
+  deliberately fuzzy legal formulation that is not inconsistent with
+  27 January 2020 and that sits alongside thirteen press sources
+  naming 27 January. Event_date is therefore retained at 2020-01-27
+  per the DZSF row and the press consensus; the class-action wording
+  is noted here rather than reflected in the structured fields.
+  `reported_date` set to 2020-02-28: the Bleeping Computer "Week in
+  Ransomware" roundup on Friday 28 February 2020 is the earliest
+  dated public third-party report; DataBreaches.net (2020-02-29) and
+  the remaining cluster followed between 1 and 3 March 2020. The
+  RailWorks notifications of 30 January and 7 February 2020 were
+  private letters to affected individuals filed with the California
+  AG rather than public reports, so they are not used as the
+  reported_date anchor.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

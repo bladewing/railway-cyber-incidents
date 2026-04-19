@@ -2,20 +2,22 @@ id: 2020-04-16_dzsf-import
 schema_version: '1.0'
 event_date: '2020-04-16'
 event_date_precision: day
-reported_date: null
+reported_date: '2020-05-29'
 countries_impacted:
 - US
-region: null
+region: United States (Amtrak operates in 46 states; headquarters Washington, D.C.)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: Amtrak (National Railroad Passenger Corporation) — Guest Rewards
+  loyalty programme
+industry_sector: long_distance_passenger
+operator_type: incumbent
+attack_vector: credential_theft
 supply_chain: false
 malware: null
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
+motive: financial
+mitre_attack_techniques:
+- T1110.004
 threat_actor: null
 threat_actor_country: null
 attribution_confidence: unknown
@@ -23,10 +25,54 @@ confirmation_status: confirmed
 affected_systems:
 - data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2020-04-16. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: true
+description_en: >
+  On the evening of 16 April 2020 Amtrak (National Railroad Passenger
+  Corporation) detected that an unknown third party had used compromised
+  username/password pairs — obtained from unrelated breaches of other
+  services and reused by Amtrak customers — to log in to an unspecified
+  number of Amtrak Guest Rewards loyalty accounts, a textbook credential
+  stuffing attack (MITRE ATT&CK T1110.004). Amtrak's IT security team
+  blocked the unauthorised access within a few hours of detection, reset
+  passwords on all potentially affected accounts, engaged external
+  cybersecurity experts and notified federal law enforcement. According
+  to notifications filed on 29 May 2020 with the Vermont and California
+  Attorneys-General, some personal information (names, email/contact
+  details, account numbers, and previous journey and payment/gift-card
+  details associated with the loyalty profile) may have been viewed, but
+  no full credit-card numbers, banking data or Social Security numbers
+  were accessed and no operational rail systems were affected. Impacted
+  members received a complimentary one-year Experian IdentityWorks
+  identity-theft monitoring subscription.
+description_de: >
+  Am Abend des 16. April 2020 stellte Amtrak (National Railroad
+  Passenger Corporation) fest, dass Unbekannte mit aus anderen
+  Datendiebstählen stammenden und von Kunden mehrfach verwendeten
+  Zugangsdaten in eine nicht näher bezifferte Anzahl von Konten des
+  Bonusprogramms „Amtrak Guest Rewards" eingedrungen waren — ein
+  klassischer Credential-Stuffing-Angriff (MITRE ATT&CK T1110.004).
+  Das IT-Sicherheitsteam beendete den unerlaubten Zugriff binnen
+  weniger Stunden, setzte alle potenziell betroffenen Passwörter zurück,
+  zog externe Cybersecurity-Experten hinzu und informierte die
+  US-Bundesstrafverfolgung. Nach den am 29. Mai 2020 beim
+  Generalstaatsanwalt von Vermont bzw. Kalifornien eingereichten
+  Meldungen könnten Namen, E-Mail- und Kontaktdaten, Kontonummern
+  sowie gespeicherte Reise-, Zahlungs- und Geschenkkartendetails
+  eingesehen worden sein; vollständige Kreditkartennummern, Bankdaten
+  oder Sozialversicherungsnummern waren nicht betroffen, operative
+  Bahnsysteme ebenso wenig. Amtrak bot den betroffenen Mitgliedern
+  eine einjährige kostenlose Identitätsschutz-Mitgliedschaft bei
+  Experian IdentityWorks an.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +80,195 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.bleepingcomputer.com/news/security/amtrak-resets-user-passwords-after-guest-rewards-data-breach/
+  type: news
+  publisher: BleepingComputer
+  published_date: '2020-05-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securityweek.com/amtrak-says-guest-rewards-accounts-hacked-in-credential-stuffing-attacks/
+  type: news
+  publisher: SecurityWeek
+  published_date: '2020-06-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cpomagazine.com/cyber-security/amtrak-data-breach-stemming-from-credential-stuffing-compromises-guest-rewards-accounts/
+  type: news
+  publisher: CPO Magazine
+  published_date: '2020-06-05'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.infosecurity-magazine.com/news/amtrak-guest-rewards-breach/
+  type: news
+  publisher: Infosecurity Magazine
+  published_date: '2020-06-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.darkreading.com/cyberattacks-data-breaches/hackers-amtrak-guest-rewards-accounts-breach
+  type: news
+  publisher: Dark Reading
+  published_date: '2020-06-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cybernews.com/news/amtrak-discloses-data-breach/
+  type: news
+  publisher: Cybernews
+  published_date: '2020-06-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bitdefender.com/en-us/blog/hotforsecurity/amtrak-announces-data-breach-and-potential-leak-of-guest-rewards-account-information
+  type: blog
+  publisher: Bitdefender Hot for Security
+  published_date: '2020-06-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.sophos.com/en-us/blog/amtrak-breached-some-customers-logins-and-pii-potentially-exposed/
+  type: blog
+  publisher: Sophos News
+  published_date: '2020-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.intelligentciso.com/2020/06/03/vermonts-national-railroad-passenger-corporation-confirms-data-breach/
+  type: news
+  publisher: Intelligent CISO
+  published_date: '2020-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.itpro.com/security/data-breaches/355908/amtrak-guest-reward-suffers-a-data-breach
+  type: news
+  publisher: IT Pro (Sarah Brennan)
+  published_date: '2020-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://siliconangle.com/2020/06/01/customer-information-stolen-breach-amtraks-guest-rewards-program/
+  type: news
+  publisher: SiliconANGLE
+  published_date: '2020-06-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.manageengine.com/log-management/data-breaches/amtrak-announces-data-breach.html
+  type: blog
+  publisher: ManageEngine Log360
+  published_date: '2020-05-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://dojmt.gov/wp-content/uploads/amtrakSamp.pdf
+  type: official_statement
+  publisher: Montana Department of Justice (Amtrak sample notification letter)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://oag.ca.gov/ecrime/databreach/reports/sb24-190440
+  type: official_statement
+  publisher: California Office of the Attorney General — data breach report
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1110/004/
+  type: other
+  publisher: MITRE ATT&CK (T1110.004 Credential Stuffing)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the original DZSF raw-data entry for 2020-04-16 (US,
+  affected_systems=[data], extortion=false) matches, across date,
+  country and affected-system profile, the publicly disclosed Amtrak
+  Guest Rewards credential-stuffing incident of the same evening
+  (16 April 2020). Amtrak is the U.S. national intercity passenger
+  rail operator; the Guest Rewards service is the loyalty programme
+  for its long-distance and Northeast Corridor services. No other
+  US railway cyber incident is documented for this exact date in
+  publicly available reporting (RailWorks' January 2020 ransomware and
+  Diebold Nixdorf's late-April 2020 ProLock ransomware were both
+  checked and deconflicted — different dates, different victim types;
+  Amtrak's later 2024 password reset and the 2026 ShinyHunters
+  Salesforce incident are separate events). Consequently this
+  enrichment maps the DZSF stub onto the Amtrak Guest Rewards breach.
+
+  Dates: event_date kept at 2020-04-16 (the day Amtrak detected the
+  suspicious access according to the breach notification — the
+  intrusion itself may have started slightly earlier as credentials
+  were stuffed). reported_date set to 2020-05-29, the day Amtrak filed
+  formal breach notifications with the Vermont and California
+  Attorneys-General (Vermont filing referenced by Infosecurity
+  Magazine, CPO Magazine, ManageEngine; California breach-report
+  listing cites breach dates 2020-04-16 and 2020-04-17). Public media
+  coverage began on 2020-05-30 (BleepingComputer) and clustered
+  around 2020-06-01 to 2020-06-03.
+
+  attack_vector set to `credential_theft`: the incident is the
+  canonical example of credential stuffing — attackers reused
+  username/password pairs harvested from unrelated prior breaches
+  to log in to Amtrak Guest Rewards. SecurityWeek, CPO Magazine,
+  Bleeping Computer, Intelligent CISO, Sophos and Infosecurity
+  Magazine all explicitly identify credential-stuffing (or the
+  equivalent "compromised usernames and passwords" language from
+  Amtrak's own notification). This differs from the DZSF default
+  value `unknown`. Amtrak's statement specifically said "no Amtrak
+  systems were compromised" — the authentication endpoint was
+  abused with valid, externally-sourced credentials.
+
+  MITRE ATT&CK T1110.004 (Brute Force: Credential Stuffing) is
+  therefore the precise technique mapping. Only enterprise-matrix
+  T1110.004 is asserted; no additional techniques are claimed
+  because no lateral movement or further tool deployment is
+  documented in any source.
+
+  motive set to `financial`: credential-stuffing attacks against
+  rail/airline loyalty programmes are near-universally monetised via
+  point theft, account resale on underground markets, or onward PII
+  abuse (Dark Reading, CPO Magazine quote industry analysts on this
+  pattern). No ransom was demanded (extortion=false kept), no
+  political/ideological framing surfaced, and no government
+  attribution exists. threat_actor, threat_actor_country,
+  attribution_confidence remain null / unknown because the actor was
+  never publicly identified.
+
+  affected_systems kept as `data` only (no operational, payment or
+  station IT systems were affected — Amtrak operations continued
+  normally through the COVID-19 service reductions of April 2020).
+  data_compromise.customer_data set true (Guest Rewards profile PII
+  was the compromised material); intellectual_property and
+  organizational_data set false (nothing corporate was exfiltrated).
+  data_published set false — no public leak of the scraped loyalty
+  data has been reported. impact.scope set `national`: Amtrak is a
+  US-national operator and the compromised loyalty accounts span
+  the entire customer base; however impact.duration_hours is left
+  null because Amtrak disclosed only that access was blocked
+  "within a few hours" of detection without a numeric figure, and
+  magnitude.affected_passengers left null because Amtrak declined
+  to disclose the count of affected accounts in either the Vermont
+  or California filings.
+
+  industry_sector `long_distance_passenger` and operator_type
+  `incumbent` describe Amtrak accurately: it is the USA's federally
+  chartered intercity passenger rail operator, operating the
+  Northeast Corridor plus ~15 long-distance routes and 29 state-
+  supported services, and it functions as the incumbent national
+  passenger rail operator. supply_chain flipped from the DZSF
+  default of `false` (unchanged) — this was a credential-reuse
+  attack, not a third-party software compromise.
+
+  confirmation_status `confirmed` retained: Amtrak (the affected
+  organisation itself) has publicly confirmed the incident via
+  regulator filings with two state Attorneys-General and via a
+  customer notification letter (Montana DoJ hosts a sample copy).
+
+  German-language press did not cover this event: heise.de, Golem.de,
+  Tagesschau, the DSGVO-Portal Sicherheitsvorfalls-Datenbank and
+  German Wikipedia's "Liste von Datendiebstählen" were all checked
+  and returned no Amtrak 2020 entry; only the DZSF raw-data table
+  itself anchors this case in the German-language record. No CERT
+  advisory was issued — credential stuffing is generally handled via
+  affected-organisation notifications rather than CERT/CVE advisories
+  because it does not require exploitation of a specific technical
+  vulnerability in the target.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

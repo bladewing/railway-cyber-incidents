@@ -1,35 +1,93 @@
 id: 2020-07-23_revil
 schema_version: '1.0'
-event_date: '2020-07-23'
+event_date: '2020-07-22'
 event_date_precision: day
-reported_date: null
+reported_date: '2020-07-22'
 countries_impacted:
 - ES
-region: null
+region: Spain (ADIF manages the national railway network; headquarters Madrid)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: Administrador de Infraestructuras Ferroviarias (ADIF) — Spanish
+  state-owned railway infrastructure manager
+industry_sector: infrastructure_manager
+operator_type: public_authority
 attack_vector: unknown
 supply_chain: false
 malware:
 - name: REvil
-  family: null
-  mitre_software_id: null
+  family: Sodinokibi
+  mitre_software_id: S0496
 extortion: true
 motive: financial
-mitre_attack_techniques: null
-threat_actor: REvil
-threat_actor_country: null
+mitre_attack_techniques:
+- T1486
+- T1567
+threat_actor: REvil (aka Sodinokibi; GOLD SOUTHFIELD)
+threat_actor_country: RU
 attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
 - data
 data_published: true
-impact: null
-description_en: Imported from DZSF raw data on 2020-07-23. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: true
+description_en: >
+  On 22 July 2020 the REvil/Sodinokibi ransomware-as-a-service group
+  (MITRE ATT&CK Software S0496; Russia-based, operated by the
+  GOLD SOUTHFIELD/UNKN operators) posted an entry on its "Happy Blog"
+  dark-web leak site claiming to have compromised Administrador de
+  Infraestructuras Ferroviarias (ADIF), Spain's state-owned national
+  railway infrastructure manager. REvil asserted it had exfiltrated
+  approximately 800 GB of corporate data — including contracts,
+  invoices, certificates, internal correspondence, employee and customer
+  contact details, financial-department records, property records,
+  high-speed hiring-committee contracts and project action plans — and
+  published an initial sample batch (reported around 8 GB) as proof
+  while threatening a full release and a "third attack" if ADIF did not
+  negotiate. ADIF publicly confirmed the ransomware incident on
+  22-23 July 2020, stating that it had been "controlled by its internal
+  security services" without payment, that no railway infrastructure had
+  been affected, and that train operations and signalling services
+  continued normally throughout the event. Spain's national
+  cybersecurity institute INCIBE/INCIBE-CERT acknowledged the case in
+  its Cybersecurity Highlights publication. No CVE, patch advisory or
+  specific initial-access vector was publicly disclosed; contemporary
+  reporting (iTWire, Cyble) speculated about an unpatched Windows
+  privilege-escalation issue but this was not corroborated by ADIF or
+  INCIBE-CERT.
+description_de: >
+  Am 22. Juli 2020 veröffentlichte die Ransomware-as-a-Service-Gruppe
+  REvil (auch bekannt als Sodinokibi; MITRE ATT&CK Software S0496;
+  russischsprachige Betreiber, GOLD SOUTHFIELD/UNKN) auf ihrer
+  Darknet-Leakseite „Happy Blog" einen Eintrag, in dem sie den Angriff
+  auf die Administrador de Infraestructuras Ferroviarias (ADIF), den
+  staatlichen spanischen Eisenbahninfrastrukturbetreiber, für sich
+  reklamierte. REvil gab an, rund 800 GB an Unternehmensdaten
+  exfiltriert zu haben — Verträge, Rechnungen, Zertifikate, interne
+  Korrespondenz, Mitarbeiter- und Kundendaten, Unterlagen der
+  Finanzabteilung sowie Vergabeunterlagen zu Hochgeschwindigkeits­
+  ausschreibungen und Projektpläne — und stellte eine erste Teilmenge
+  (berichtet rund 8 GB) als Beweis online, verbunden mit der Drohung
+  einer vollständigen Veröffentlichung und eines „dritten Angriffs",
+  falls ADIF nicht verhandle. ADIF bestätigte den Vorfall am
+  22.–23. Juli 2020 öffentlich: Der Angriff sei durch die internen
+  IT-Sicherheitsdienste abgefangen worden, es sei kein Lösegeld gezahlt
+  worden, die Bahninfrastruktur bleibe unbeeinträchtigt und der
+  reguläre Bahnbetrieb gewährleistet. Das spanische nationale
+  Cybersicherheitsinstitut INCIBE/INCIBE-CERT nahm den Fall in seine
+  „Cybersecurity Highlights" auf. Ein konkreter Einstiegsvektor, CVE
+  oder ein Patch-Advisory wurden nicht öffentlich bekannt; Spekulationen
+  über eine nicht gepatchte Windows-Rechteausweitungs-Lücke (iTWire,
+  Cyble) wurden weder von ADIF noch von INCIBE-CERT bestätigt.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -37,11 +95,208 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.incibe.es/en/incibe-cert/publications/cybersecurity-highlights/adif-hit-ransomware
+  type: official_statement
+  publisher: INCIBE-CERT (Instituto Nacional de Ciberseguridad, Spain)
+  published_date: '2020-07-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bitdefender.com/en-us/blog/hotforsecurity/revil-ransomware-gang-claims-spanish-state-owned-railway-infrastructure-manager-as-new-victim
+  type: blog
+  publisher: Bitdefender Hot for Security (Alina Bîzgă)
+  published_date: '2020-07-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/106304/cyber-crime/adif-revil-ransomware-attack.html
+  type: news
+  publisher: Security Affairs (Pierluigi Paganini)
+  published_date: '2020-07-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.railjournal.com/technology/adif-hit-by-cyberattack/
+  type: news
+  publisher: International Railway Journal
+  published_date: '2020-07-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://portswigger.net/daily-swig/spanish-state-railway-company-adif-hit-by-revil-ransomware-attack
+  type: news
+  publisher: The Daily Swig (PortSwigger)
+  published_date: '2020-07-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cyble.com/blog/spanish-state-owned-railway-infrastructure-management-body-got-allegedly-struck-by-revil/
+  type: blog
+  publisher: Cyble (Felipe Erazo)
+  published_date: '2020-07-25'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cointelegraph.com/news/spanish-railway-infrastructure-threatened-by-ransomware
+  type: news
+  publisher: Cointelegraph
+  published_date: '2020-07-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://itwire.com/business-it-news/security/windows-revil-ransomware-used-to-attack-spanish-govt-firm.html
+  type: news
+  publisher: iTWire (Sam Varghese)
+  published_date: '2020-07-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://blog.knowbe4.com/revil-criminal-ransomware-syndicate-attacks-spanish-state-owned-railway-operator-again
+  type: blog
+  publisher: KnowBe4 (Stu Sjouwerman)
+  published_date: '2020-07-28'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.technadu.com/revil-ransomware-hits-state-owned-railway-management-body-spain/155994/
+  type: news
+  publisher: TechNadu (Bill Toulas)
+  published_date: '2020-07-23'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.muyseguridad.net/2020/07/23/adif-victima-ataque-ransomware/
+  type: news
+  publisher: MuySeguridad (David Salces Guillem)
+  published_date: '2020-07-23'
+  language: es
+  accessed_date: '2026-04-19'
+- url: https://www.xataka.com/seguridad/ataque-ransomware-a-adif-grupo-ciberdelincuentes-anuncia-robo-800-gb-amenaza-difundir-contratos-facturas
+  type: news
+  publisher: Xataka (Enrique Pérez)
+  published_date: '2020-07-23'
+  language: es
+  accessed_date: '2026-04-19'
+- url: https://blog.elhacker.net/2020/07/ataque-de-ransomware-la-empresa-adif-800-gb-datos-secuestrados-revil.html
+  type: blog
+  publisher: elhacker.NET (el-brujo)
+  published_date: '2020-07-22'
+  language: es
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S0496/
+  type: other
+  publisher: MITRE ATT&CK (REvil / Sodinokibi — Software S0496)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/REvil
+  type: other
+  publisher: Wikipedia (English) — REvil article
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Adif
+  type: other
+  publisher: Wikipedia (English) — Adif article
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the original DZSF raw-data row (ES, 2020-07-23,
+  extortion=true, affected_systems=[data]) unambiguously maps to the
+  REvil/Sodinokibi leak-site extortion of Administrador de
+  Infraestructuras Ferroviarias (ADIF). The REvil "Happy Blog" post
+  and first media coverage are dated 22 July 2020 (elhacker.NET,
+  MuySeguridad); ADIF's confirmation and the bulk of secondary
+  coverage fall on 22-23 July 2020. No other Spanish railway cyber
+  incident is publicly attested for this date range.
+
+  Date handling: event_date set to 2020-07-22, the day REvil publicly
+  posted ADIF as a victim on its leak site (earliest documented date
+  in the public record — elhacker.NET 2020-07-22; Ransom Leaks tweet
+  2020-07-22). The DZSF raw row used 2020-07-23, which corresponds to
+  ADIF's public confirmation and the first Spanish mainstream coverage
+  (MuySeguridad, Xataka, INCIBE-CERT). The actual intrusion date
+  (when REvil gained initial access and began exfiltrating) is not
+  publicly known and is presumably earlier than either. reported_date
+  equals event_date (same-day disclosure via leak site).
+
+  attack_vector kept as `unknown`: no source identifies the specific
+  initial-access method. iTWire and Cyble both speculated about a
+  Windows privilege-escalation issue, but neither ADIF nor INCIBE-CERT
+  confirmed any CVE, vendor advisory, phishing lure or credential
+  abuse. Leaving the field as `unknown` is the schema-compliant honest
+  position.
+
+  malware: REvil / Sodinokibi, MITRE ATT&CK Software ID S0496,
+  family Sodinokibi (aliases: Sodin, REvil). Canonical encryption-
+  for-extortion RaaS operation attributed by US government, CrowdStrike,
+  SecureWorks (GOLD SOUTHFIELD) and others to Russia-based actors.
+  threat_actor_country set to RU per MITRE, Wikipedia, Krebs, Bloomberg
+  and 2026 German BKA doxing of group principal Daniil Shchukin as a
+  Krasnodar resident — attribution_confidence kept at `reported`
+  because no Spanish or EU judicial attribution was issued for this
+  specific case at the time; the Russian-origin attribution is the
+  industry-wide consensus for the group rather than a Spain-specific
+  finding.
+
+  MITRE ATT&CK techniques asserted: T1486 (Data Encrypted for Impact)
+  — REvil's canonical payload behaviour; T1567 (Exfiltration Over
+  Web Service) — applicable because REvil used its own Tor leak-site
+  infrastructure ("Happy Blog") to publish sample data and demand
+  payment. Additional REvil-associated techniques (T1190/T1566/T1078
+  for initial access, T1059.001 PowerShell, T1562.001 Impair Defenses,
+  T1490 Inhibit System Recovery) are deliberately NOT asserted because
+  no source ties them to the ADIF intrusion specifically — generic
+  REvil TTPs are catalogued at https://attack.mitre.org/software/S0496/
+  for reference but only techniques directly observable in public
+  reporting of this incident are encoded here.
+
+  motive = financial: textbook double-extortion ransomware (encrypt +
+  leak). extortion = true (explicit ransom threat and data-leak
+  coercion). data_published = true: REvil posted a sample batch
+  (~8 GB of 800 GB claimed) on its leak site as proof.
+  data_compromise.customer_data = true (customer phone numbers,
+  contact data) and organizational_data = true (employee
+  correspondence, HR, financial department, contracts, property
+  records, project plans). intellectual_property = false (no
+  IP/signalling-system blueprints reported as leaked in the sample
+  or in subsequent coverage).
+
+  affected_systems kept as [data] only. ADIF's own statement stresses
+  that rail infrastructure and signalling were unaffected; this is
+  consistent with REvil's standard playbook of corporate IT
+  compromise with data exfiltration rather than OT/rail-operations
+  impact. No station IT, passenger information, internal
+  communications or rail-operations outage is reported.
+
+  impact.scope = national: ADIF is the sole national infrastructure
+  manager for Spain, so a compromise of its corporate IT affects a
+  national-scope data set. duration_hours, affected_trains and
+  affected_passengers left null because no operational disruption was
+  reported (ADIF explicitly denied operational impact) and no financial
+  damage figure is public.
+
+  industry_sector = `infrastructure_manager` (exact vocab match —
+  ADIF is an EU-mandated unbundled infrastructure manager, legal
+  successor to the GIF/Feve/Renfe infrastructure functions created
+  2005-01-01 under the EU's rail-sector-unbundling regime).
+  operator_type = `public_authority` (state-owned entity reporting to
+  Spain's Ministry of Transport and Sustainable Mobility; not an
+  "incumbent national operator" because it does not run trains —
+  Renfe Operadora does). supply_chain = false (kept; no third-party
+  software compromise reported — REvil hit ADIF directly).
+
+  confirmation_status = `confirmed`: ADIF itself confirmed the attack
+  publicly on 22-23 July 2020 (quoted verbatim by Spanish and
+  international outlets) and INCIBE-CERT (Spain's national
+  cybersecurity authority) wrote it up in its Cybersecurity Highlights
+  section. This is the highest tier of confirmation available.
+
+  German-language press did not cover the ADIF case independently:
+  heise.de, Golem.de, Tagesschau and Süddeutsche searches surfaced
+  no ADIF 2020 entry; Railway-News.com carried a general Deutsche
+  Bahn WannaCry recap rather than an ADIF piece. The DZSF entry and
+  the present record are therefore the main German-language anchors
+  for the incident; this is noted rather than treated as evidence of
+  a different event. No CVE/CERT advisory was issued — the public
+  record relies on INCIBE-CERT's narrative write-up plus extensive
+  industry-press coverage.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

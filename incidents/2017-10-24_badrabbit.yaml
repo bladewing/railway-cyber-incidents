@@ -1,0 +1,213 @@
+id: 2017-10-24_badrabbit
+schema_version: '1.0'
+event_date: '2017-10-24'
+event_date_precision: day
+reported_date: '2017-10-24'
+countries_impacted:
+- UA
+region: >-
+  Kyiv Metro (Ukraine's capital city metro network) and Odesa (Odessa)
+  International Airport — Ukrainian transport operators most prominently
+  affected. BadRabbit's wider victim footprint also included Russia's
+  Interfax news agency, Fontanka news site, the Ukrainian Ministry of
+  Infrastructure, and targets in Turkey, Bulgaria, Germany and Japan.
+coordinates: null
+target_organization: >-
+  Kyiv Metro (Kyivskyi Metropoliten — Київський метрополітен) was the
+  primary railway victim; the attack disabled its contactless fare-payment
+  / turnstile systems. The Ukrainian Ministry of Infrastructure
+  (Міністерство інфраструктури України) and Odesa International Airport
+  were simultaneously affected. This record is indexed under Kyiv Metro as
+  the anchor railway operator.
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: exploit
+supply_chain: false
+malware:
+- name: BadRabbit
+  family: Petya
+  mitre_software_id: S0606
+extortion: true
+motive: state_geopolitical
+mitre_attack_techniques:
+- T1486
+- T1490
+- T1210
+- T1078
+- T1608.001
+threat_actor: >-
+  Sandworm Team (GRU Unit 74455) — attributed by the UK NCSC on 3 October
+  2018 in a joint public attribution with Australia, Canada, New Zealand
+  and the United States; the UK government assessed "with high confidence"
+  that the GRU was "almost certainly responsible" for BadRabbit and several
+  related operations.
+threat_actor_country: RU
+attribution_confidence: reported
+confirmation_status: confirmed
+affected_systems:
+- payment_system
+- station_it
+- passenger_information
+data_published: false
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On 24 October 2017 the BadRabbit ransomware (also known as
+  Win32/Diskcoder.D; a Petya-lineage wiper-style ransomware) disrupted
+  the contactless fare-payment and station-IT systems of Kyiv Metro,
+  Ukraine's capital-city metro network, as part of a wider outbreak
+  that also struck Odesa (Odessa) International Airport, the Ukrainian
+  Ministry of Infrastructure, Russia's Interfax news agency, the
+  Fontanka news site, and further targets in Turkey, Bulgaria, Germany
+  and Japan. The initial-access vector was a drive-by-download via
+  compromised legitimate Ukrainian and Russian news sites that
+  redirected visitors to a fake Adobe Flash Player update
+  (install_flash_player.exe) — a watering-hole operation pre-positioned
+  on the compromised sites for months per ESET. Once executed with
+  admin privileges the malware encrypted files with AES-128 (keys
+  wrapped by an RSA-2048 attacker key), modified the Master Boot
+  Record to display a ransom note on reboot, and used hardcoded
+  credentials plus an EternalRomance SMB exploit for lateral spread
+  inside networks. Kyiv Metro's turnstile / contactless-payment
+  systems were rendered unusable and passengers were advised to use
+  cash; the metro reported no disruption to train operations. Odesa
+  airport operated manually and delayed some flights. The UK NCSC,
+  with US/AU/CA/NZ partners, formally attributed BadRabbit to the
+  Russian GRU (Sandworm Team, Unit 74455) on 3 October 2018 as part
+  of a broader public attribution of GRU cyber-operations. Per
+  maintainer decision 2026-04-19 the original DZSF raw-data row
+  carrying this incident as "2021-10-24" is treated as a year typo
+  (2017 → 2021) and the record has been re-dated to the canonical
+  2017-10-24 (see ESCALATIONS.md).
+description_de: >
+  Am 24. Oktober 2017 störte die Ransomware BadRabbit (auch
+  Win32/Diskcoder.D; ein wiper-artiger Ransomware-Nachfahre der
+  Petya-Familie) das kontaktlose Fahrkarten- und Drehkreuz-Bezahlsystem
+  der Kyiv Metro, des U-Bahn-Netzes der ukrainischen Hauptstadt Kyjiw
+  (Kiew), im Rahmen eines breiteren Angriffs, der zugleich den Flughafen
+  Odesa (Odessa), das ukrainische Infrastrukturministerium, die
+  russische Nachrichtenagentur Interfax, das Nachrichtenportal Fontanka
+  sowie Ziele in der Türkei, Bulgarien, Deutschland und Japan traf. Der
+  initiale Zugriffsweg war ein Drive-by-Download über kompromittierte
+  legitime ukrainische und russische Nachrichtenseiten, die Besucher auf
+  ein gefälschtes Adobe-Flash-Update (install_flash_player.exe)
+  umleiteten — eine Watering-Hole-Operation, die laut ESET über Monate
+  vorbereitet worden war. Nach Ausführung mit Admin-Rechten
+  verschlüsselte die Schadsoftware Dateien mit AES-128 (Schlüssel mit
+  einem RSA-2048-Angreiferschlüssel verpackt), modifizierte den Master
+  Boot Record zur Anzeige einer Lösegeldforderung beim Neustart und
+  nutzte fest kodierte Zugangsdaten sowie den EternalRomance-SMB-Exploit
+  zur lateralen Ausbreitung im Netzwerk. Die Drehkreuz- und Bezahlsysteme
+  der Kyiv Metro wurden funktionsuntüchtig; Fahrgäste wurden aufgefordert,
+  bar zu bezahlen. Der Bahnbetrieb selbst war nicht beeinträchtigt. Der
+  Flughafen Odesa arbeitete manuell weiter, einige Flüge verzögerten
+  sich. Das britische NCSC schrieb BadRabbit am 3. Oktober 2018 gemeinsam
+  mit den Partnern USA, Australien, Kanada und Neuseeland öffentlich dem
+  russischen Militärnachrichtendienst GRU (Sandworm Team, Einheit 74455)
+  zu. Per Maintainer-Entscheidung vom 19. April 2026 wird der
+  ursprüngliche DZSF-Rohdateneintrag mit Datum „2021-10-24" als
+  Jahres-Tippfehler (2017 → 2021) gewertet und auf das kanonische Datum
+  2017-10-24 korrigiert (siehe ESCALATIONS.md).
+sources:
+- url: https://www.dzsf.bund.de/
+  type: academic_paper
+  publisher: DZSF
+  published_date: '2023-05-16'
+  language: de
+  accessed_date: null
+- url: https://attack.mitre.org/software/S0606/
+  type: other
+  publisher: MITRE ATT&CK
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securelist.com/bad-rabbit-ransomware/82851/
+  type: blog
+  publisher: Kaspersky Securelist
+  published_date: '2017-10-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.welivesecurity.com/2017/10/24/bad-rabbit-not-petya-back/
+  type: blog
+  publisher: ESET WeLiveSecurity
+  published_date: '2017-10-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://blog.checkpoint.com/2017/10/24/bad-rabbit-new-ransomware-outbreak-targeting-ukraine-russia/
+  type: blog
+  publisher: Check Point Research
+  published_date: '2017-10-24'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cfr.org/cyber-operations/bad-rabbit
+  type: other
+  publisher: Council on Foreign Relations — Cyber Operations Tracker
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securityweek.com/uk-australia-blame-russia-bad-rabbit-other-attacks/
+  type: news
+  publisher: SecurityWeek
+  published_date: '2018-10-04'
+  language: en
+  accessed_date: '2026-04-19'
+contributors:
+- DZSF import
+- "Lukas Iffl\xE4nder"
+last_updated: '2026-04-19'
+notes: >
+  Maintainer-corrected date (2026-04-19). The original DZSF raw-data row
+  placed this BadRabbit railway incident on 2021-10-24. In the April 2026
+  enrichment pass the subagent verified that no vendor advisory, CERT
+  bulletin, academic paper or press report documents any BadRabbit
+  activity on 2021-10-24; every credible source (Kaspersky Securelist,
+  ESET WeLiveSecurity, Cisco Talos, Trend Micro, Check Point, Fortinet,
+  the UK NCSC 2018 attribution, the CFR Cyber Operations Tracker, MITRE
+  ATT&CK S0606) dates the one and only BadRabbit / Win32/Diskcoder.D
+  outbreak to 2017-10-24 — exactly four years earlier to the day. The
+  escalation recommended correcting the date to 2017-10-24; per
+  maintainer decision dated 2026-04-19 the record has been re-dated
+  accordingly. The filename stem was changed from
+  `2021-10-24_badrabbit` to `2017-10-24_badrabbit`, the `id` and
+  `event_date` fields were updated, and the full 2017 BadRabbit
+  narrative (Kyiv Metro fare-payment network, Odesa International
+  Airport, Ukrainian Ministry of Infrastructure, Sandworm/GRU
+  attribution, MITRE technique mapping) was adopted into the draft —
+  the 2017 campaign is multiply corroborated by ≥ 6 independent
+  non-DZSF sources (Kaspersky, ESET, Check Point, CFR, SecurityWeek /
+  UK-NCSC attribution, MITRE) and comfortably clears the ≥ 2
+  independent-source threshold.
+  Field choices. industry_sector set `urban_transit` (Kyiv Metro is
+  the canonical urban transit operator anchoring this record).
+  operator_type `public_authority` (Kyiv Metro is a municipal utility
+  of the Kyiv City State Administration). attack_vector set `exploit`
+  to capture the EternalRomance SMB exploit used for lateral movement
+  after the drive-by-download initial access; the vocabulary does not
+  have a dedicated "drive-by-download" value, so `exploit` is the
+  closest fit and the detail is recorded in description_en. motive
+  `state_geopolitical` (Sandworm / GRU operations against Ukrainian
+  infrastructure are classic state-directed geopolitical
+  cyber-operations, not financially motivated, despite the ransomware
+  disguise; the UK NCSC 2018 attribution explicitly frames BadRabbit
+  as GRU activity). extortion retained `true` (the ransomware did
+  display a ransom note; whether any victim paid is not publicly
+  documented). affected_systems expanded from the DZSF stub
+  [payment_system] to [payment_system, station_it,
+  passenger_information] to reflect that Kyiv Metro's turnstiles and
+  contactless-payment readers (station_it + payment_system) were
+  disabled and real-time passenger-facing systems went offline.
+  Provenance preserved (DZSF-2020-23-S-1202 / Rohdaten XLSX origin)
+  so the re-dated record remains traceable to the original stub.
+provenance:
+  origin: DZSF-2020-23-S-1202
+  imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
+  needs_review: false

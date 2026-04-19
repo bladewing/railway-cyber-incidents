@@ -2,31 +2,141 @@ id: 2021-04-20_dzsf-import
 schema_version: '1.0'
 event_date: '2021-04-20'
 event_date_precision: day
-reported_date: null
+reported_date: '2021-06-02'
 countries_impacted:
 - US
-region: null
+region: New York metropolitan area, United States (MTA subsidiaries serve 12
+  counties in Downstate New York plus two counties in southwestern Connecticut
+  — NYC Transit in the five boroughs of New York City; Long Island Rail Road
+  in Nassau, Suffolk and NYC; Metro-North Railroad in Westchester, Putnam,
+  Dutchess, Orange and Rockland Counties NY, and Fairfield and New Haven
+  Counties CT)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: Metropolitan Transportation Authority (MTA), New York
+  State — public-benefit corporation operating NYC Transit (subway + buses),
+  MTA Long Island Rail Road (LIRR), MTA Metro-North Railroad, MTA Staten
+  Island Railway, MTA Regional Bus Operations, and MTA Bridges and Tunnels;
+  North America's largest public-transit network serving ~11 million
+  weekday riders system-wide
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: exploit
 supply_chain: false
-malware: null
+malware:
+- name: SLOWPULSE
+  family: Pulse Secure VPN implant (authentication bypass / credential
+    logging)
+  mitre_software_id: S1104
+- name: PULSECHECK
+  family: Pulse Secure VPN webshell (Perl-based command execution)
+  mitre_software_id: S1108
+- name: PACEMAKER
+  family: Pulse Secure VPN credential stealer
+  mitre_software_id: S1109
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
-threat_actor: null
-threat_actor_country: null
-attribution_confidence: unknown
+motive: espionage
+mitre_attack_techniques:
+- T1190
+- T1505.003
+- T1133
+- T1556.004
+- T1111
+- T1003
+- T1070
+- T1562
+threat_actor: APT5 (a.k.a. UNC2630 / Mulberry Typhoon / MANGANESE /
+  BRONZE FLEETWOOD / Keyhole Panda) — Chinese cyber-espionage actor; a
+  separate cluster UNC2717 was observed exploiting the same Pulse
+  Secure zero-day against European and US government targets but was
+  not publicly linked to MTA specifically
+threat_actor_country: CN
+attribution_confidence: reported
 confirmation_status: confirmed
 affected_systems:
-- unclear_system
+- internal_communication
+- data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2021-04-20. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: 0
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On 20 April 2021, at approximately 20:00 local time, the New York
+  Metropolitan Transportation Authority (MTA) received a joint
+  FBI / NSA / CISA alert warning that Chinese state-linked threat
+  actors (tracked by Mandiant / FireEye as UNC2630, overlapping
+  strongly with the APT5 cluster, and a second cluster UNC2717)
+  had been exploiting a chain of Pulse Connect Secure VPN
+  vulnerabilities — including the newly-disclosed zero-day
+  CVE-2021-22893 (authentication-bypass) plus the older
+  CVE-2019-11510, CVE-2020-8260 and CVE-2020-8243 — to place
+  custom webshells (PULSECHECK, SLIGHTPULSE), credential-harvesting
+  implants (SLOWPULSE, PACEMAKER, RADIALPULSE) and log-wiping
+  utilities (THINBLOOD) on Pulse Secure appliances at U.S.
+  government agencies and critical-infrastructure operators,
+  activity dating back to June 2020 or earlier. Forensic work by
+  the MTA in cooperation with IBM and Mandiant found that the
+  attackers had reached three of the MTA's 18 computer systems
+  across NYC Transit, the Long Island Rail Road and Metro-North
+  Railroad during two separate intrusions in the second week of
+  April 2021, but had not touched the safety-critical rail
+  operations / signalling / train-control environment, nor the
+  employee or customer data stores. MTA applied the Pulse Secure
+  mitigation on 21 April 2021 (the day after Pulse Secure issued
+  its advisory), force-reset passwords for roughly 3,700 users
+  (about 5 % of its workforce) and migrated affected remote
+  users to alternate VPN solutions. The breach was first made
+  public on 2 June 2021 by The New York Times; MTA Chief
+  Technology Officer Rafail Portnoy issued a public statement
+  the same day confirming the intrusion, the engagement of
+  Mandiant, and the absence of data loss or operational impact.
+  The MTA incident was one entry on a far-wider victim list
+  (defence contractors, financial firms, municipal governments,
+  at least five US federal agencies) compiled by CISA under
+  Alert AA21-110A and Emergency Directive 21-03.
+description_de: >
+  Am 20. April 2021 gegen 20:00 Ortszeit wurde die New Yorker
+  Metropolitan Transportation Authority (MTA) durch eine
+  gemeinsame FBI/NSA/CISA-Warnmeldung darüber informiert, dass
+  staatlich verbundene chinesische Akteure (von Mandiant /
+  FireEye als UNC2630 geführt, mit starker Überlappung zur
+  APT5-Gruppe, sowie ein separater Cluster UNC2717) eine Kette
+  von Schwachstellen in Pulse-Connect-Secure-VPN-Appliances
+  ausnutzten — neben dem frisch offengelegten Zero-Day
+  CVE-2021-22893 (Authentifizierungs-Umgehung) auch die älteren
+  CVE-2019-11510, CVE-2020-8260 und CVE-2020-8243. Auf
+  kompromittierten Geräten wurden maßgeschneiderte Webshells
+  (PULSECHECK, SLIGHTPULSE), Credential-Diebstahl-Implants
+  (SLOWPULSE, PACEMAKER, RADIALPULSE) und ein
+  Log-Wiping-Werkzeug (THINBLOOD) platziert; die Aktivität
+  reichte mindestens bis Juni 2020 zurück und traf US-
+  Behörden und Kritis-Betreiber breit. Die von MTA gemeinsam
+  mit IBM und Mandiant durchgeführte forensische Analyse
+  ergab, dass die Angreifer in zwei Einbrüchen in der zweiten
+  Aprilwoche 2021 drei der 18 MTA-Systeme erreicht hatten —
+  verteilt über NYC Transit, Long Island Rail Road und
+  Metro-North Railroad —, aber die sicherheitskritische
+  Betriebs- und Signaltechnik sowie die Beschäftigten- und
+  Kundendaten nicht kompromittiert worden waren. MTA spielte
+  den Pulse-Secure-Mitigation-Patch am 21. April 2021 ein,
+  setzte rund 3.700 Benutzerpasswörter (~5 % der Belegschaft)
+  zurück und stellte betroffene Fernzugänge auf alternative
+  VPN-Lösungen um. Öffentlich wurde der Vorfall erstmals am
+  2. Juni 2021 durch die New York Times; MTA-Technikvorstand
+  Rafail Portnoy bestätigte den Einbruch am selben Tag und
+  betonte das Fehlen von Datenabfluss oder betrieblichen
+  Auswirkungen. Der MTA-Angriff war ein Fall in einer weit
+  größeren Opferliste (Rüstungslieferanten, Finanzdienstleister,
+  Kommunalverwaltungen, mindestens fünf US-Bundesbehörden),
+  die CISA unter Alert AA21-110A und Emergency Directive
+  21-03 zusammengestellt hatte.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +144,305 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-110a
+  type: cert_advisory
+  publisher: CISA — Alert AA21-110A "Exploitation of Pulse Connect
+    Secure Vulnerabilities"
+  published_date: '2021-04-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://us-cert.cisa.gov/ncas/current-activity/2021/04/20/cisa-issues-emergency-directive-pulse-connect-secure
+  type: cert_advisory
+  publisher: CISA — Emergency Directive 21-03 announcement
+  published_date: '2021-04-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cisa.gov/news-events/alerts/2021/04/30/cisa-updates-alert-pulse-connect-secure
+  type: cert_advisory
+  publisher: CISA — Update to Alert AA21-110A (30 April 2021)
+  published_date: '2021-04-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cisa.gov/news-events/alerts/2021/05/27/updates-alert-pulse-connect-secure
+  type: cert_advisory
+  publisher: CISA — Update to Alert AA21-110A (27 May 2021)
+  published_date: '2021-05-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cloud.google.com/blog/topics/threat-intelligence/suspected-apt-actors-leverage-bypass-techniques-pulse-secure-zero-day/
+  type: blog
+  publisher: Mandiant / Google Cloud — "Check Your Pulse — Suspected
+    APT Actors Leverage Authentication Bypass Techniques and Pulse
+    Secure Zero-Day" (UNC2630 / UNC2717 / 12 malware families)
+  published_date: '2021-04-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cloud.google.com/blog/topics/threat-intelligence/updates-on-chinese-apt-compromising-pulse-secure-vpn-devices
+  type: blog
+  publisher: Mandiant / Google Cloud — "Re-Checking Your Pulse —
+    Updates on Chinese APT Actors Compromising Pulse Secure VPN
+    Devices" (adds BLOODMINE, BLOODBANK, CLEANPULSE, RAPIDPULSE;
+    confirms transportation sector victims)
+  published_date: '2021-05-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.bleepingcomputer.com/news/security/chinese-threat-actors-hacked-nyc-mta-using-pulse-secure-zero-day/
+  type: news
+  publisher: BleepingComputer (Sergiu Gatlan) — "Chinese threat actors
+    hacked NYC MTA using Pulse Secure zero-day"
+  published_date: '2021-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/118579/apt/metropolitan-transportation-authority-hack.html
+  type: news
+  publisher: Security Affairs (Pierluigi Paganini)
+  published_date: '2021-06-04'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://abc7ny.com/post/mta-hack-computer-nyc-new-york-city/10734358/
+  type: news
+  publisher: ABC7 New York (WABC)
+  published_date: '2021-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://ny1.com/nyc/all-boroughs/transit/2021/06/02/mta-computer-systems-hack
+  type: news
+  publisher: Spectrum News NY1 (Dan Rivoli)
+  published_date: '2021-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbsnews.com/newyork/news/mta-hacked/
+  type: news
+  publisher: CBS New York (Ali Bauman)
+  published_date: '2021-06-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.nbcnewyork.com/news/local/mta-hacked-in-april-cyberattack-employee-customer-info-was-not-compromised/3086785/
+  type: news
+  publisher: NBC New York
+  published_date: '2021-06-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://thehill.com/policy/cybersecurity/556598-new-york-subway-system-was-targeted-by-chinese-linked-hackers-in-april/
+  type: news
+  publisher: The Hill
+  published_date: '2021-06-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbsnews.com/news/china-pulse-verizon-mta-cyber-spying-campaign-wider-than-thought/
+  type: news
+  publisher: CBS News / Associated Press — "Little-noticed cyber
+    spying campaign blamed on China was much wider than thought"
+  published_date: '2021-06-15'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.infosecurity-magazine.com/news/chinese-actors-breached-mta-pulse/
+  type: news
+  publisher: Infosecurity Magazine
+  published_date: '2021-06-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cnn.com/2021/04/20/politics/fireeye-pulse-secure-vpn-exploit/index.html
+  type: news
+  publisher: CNN — FireEye / Pulse Secure VPN exploit coverage (broad
+    campaign disclosure day, 20 April 2021)
+  published_date: '2021-04-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/groups/G1023/
+  type: other
+  publisher: MITRE ATT&CK — APT5 (G1023), aliases UNC2630 / Mulberry
+    Typhoon / MANGANESE / BRONZE FLEETWOOD / Keyhole Panda
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S1104/
+  type: other
+  publisher: MITRE ATT&CK — SLOWPULSE (S1104)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S1108/
+  type: other
+  publisher: MITRE ATT&CK — PULSECHECK (S1108)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/software/S1109/
+  type: other
+  publisher: MITRE ATT&CK — PACEMAKER (S1109)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Ivanti_Pulse_Connect_Secure_data_breach
+  type: other
+  publisher: Wikipedia (English) — Ivanti Pulse Connect Secure data
+    breach
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Metropolitan_Transportation_Authority
+  type: other
+  publisher: Wikipedia (English) — Metropolitan Transportation
+    Authority (MTA)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF raw-data row (US, event_date 2021-04-20,
+  confirmation_status confirmed, affected_systems unclear_system) is
+  mapped here to the Metropolitan Transportation Authority (MTA, New
+  York) Pulse Connect Secure intrusion that MTA internally learned of
+  from an FBI/NSA/CISA joint alert issued on the evening of
+  20 April 2021 (MTA official quote: the alert arrived "at around
+  8 p.m. on April 20"). No other US rail/transit cyber incident
+  with an event or report date of 20 April 2021 is publicly attested;
+  the DZSF entry's date exactly matches the MTA-internal alert
+  arrival date and the same-day CISA AA21-110A publication. This is
+  NOT a duplicate of 2021-04-18_lockbit (Merseyrail, UK; LockBit
+  ransomware) or of the 2021-03-19_dzsf-import (Správa železnic)
+  entry; both differ in country, target and actor.
+
+  Date handling: event_date kept at 2021-04-20 (FBI/NSA/CISA alert
+  arrival at MTA + CISA AA21-110A publication + Mandiant "Check Your
+  Pulse" report). The actual intrusion dates are earlier — MTA
+  forensic work places two separate intrusions in the "second week
+  of April 2021" (~12-18 April), and the broader UNC2630/APT5
+  exploitation of Pulse Secure appliances dates back to June 2020
+  or earlier per CISA and Mandiant. reported_date set to
+  2021-06-02, the day the breach was first made public via a New
+  York Times report which triggered the same-day MTA statement by
+  CTO Rafail Portnoy.
+
+  target_organization: the New York State Metropolitan Transportation
+  Authority, a public-benefit corporation running North America's
+  largest public-transit network. operator_type = public_authority
+  (the MTA is a state-established public-benefit corporation, not a
+  private operator). industry_sector = urban_transit because
+  MTA's primary public identity is as NYC's subway/bus authority and
+  its subsidiaries — NYC Transit (subway), Staten Island Railway,
+  LIRR and Metro-North — are all commuter / rapid-transit operations
+  serving a single metropolitan region, not long-distance passenger
+  rail; the schema allows only one value. Subsidiaries explicitly
+  named by press and MTA itself as impacted: NYC Transit (subway +
+  buses), Long Island Rail Road, Metro-North Railroad.
+
+  attack_vector = exploit (authenticated / unauthenticated
+  exploitation of a chain of Pulse Connect Secure vulnerabilities,
+  primarily CVE-2021-22893 authentication-bypass; also
+  CVE-2019-11510, CVE-2020-8260, CVE-2020-8243). Not
+  credential_theft, even though compromised credentials were a
+  downstream consequence — the initial access vector is exploitation
+  of a software vulnerability in the Pulse Secure appliance itself.
+
+  malware: SLOWPULSE (MITRE S1104), PULSECHECK (S1108) and PACEMAKER
+  (S1109) — the three Mandiant-tracked Pulse-Secure-specific
+  implants that are also catalogued as MITRE ATT&CK Software IDs and
+  are attributed to APT5/UNC2630. Additional families enumerated by
+  Mandiant (RADIALPULSE, SLIGHTPULSE, ATRIUM, THINBLOOD, HARDPULSE,
+  QUIETPULSE, PULSEJUMP, STEADYPULSE, LOCKPICK, BLOODMINE,
+  BLOODBANK, CLEANPULSE, RAPIDPULSE) do not yet have public MITRE
+  Software IDs as of the 2026-04-19 research cut-off and are
+  therefore omitted from the structured `malware` block but
+  mentioned in the narrative. No MTA-specific enumeration of which
+  of these implants were actually found on MTA Pulse appliances has
+  been published — so this reflects campaign-level rather than
+  victim-level attribution.
+
+  threat_actor: APT5 / UNC2630 (MITRE ATT&CK G1023; aliases Mulberry
+  Typhoon, MANGANESE, BRONZE FLEETWOOD, Keyhole Panda). Mandiant
+  explicitly notes that UNC2630's Pulse Secure activity overlaps
+  strongly with historic APT5 tradecraft dating to 2014-2015. A
+  separate cluster UNC2717 exploited the same zero-day against
+  European / US government targets but press coverage ties the MTA
+  intrusion specifically to UNC2630 rather than UNC2717.
+  threat_actor_country = CN (Mandiant, FireEye, CISA and NYT all
+  describe the actor as Chinese state-linked; the Chinese
+  government denied involvement).
+
+  attribution_confidence = reported: the Chinese/APT5/UNC2630
+  attribution rests on Mandiant / FireEye technical analysis and
+  CISA/FBI/NSA advisories — strong primary-source reporting but not
+  a court judgement or US DOJ indictment; the Wikipedia article on
+  the Pulse Connect Secure data breach still describes attribution
+  as "suspected Chinese-state-backed." `confirmed` reserved for the
+  fact of the breach itself (MTA CTO public statement,
+  NYT reporting, CISA advisory).
+
+  motive = espionage. This is the point of strongest divergence
+  from surrounding ransomware entries: no ransom note, no leak site
+  posting, no extortion demand, no encryption payload. APT5's
+  mission profile (Mandiant, MITRE G1023) is long-standing
+  espionage against telecom, aerospace, defence and critical-
+  infrastructure targets — not financial. extortion = false;
+  data_published = false; data_compromise.intellectual_property /
+  organizational_data / customer_data all FALSE because both MTA
+  forensic findings and Mandiant's assessment of this intrusion in
+  particular state that no data loss occurred; distinguish from
+  access achieved (three systems touched) versus data exfiltrated
+  (none attested). Magnitude.affected_trains and
+  affected_passengers set to 0 (MTA stated services were never
+  disrupted and rider safety was never at risk).
+
+  affected_systems = [internal_communication, data]. The three
+  compromised systems were not individually identified by MTA but
+  the public description — Pulse Connect Secure remote-access VPN,
+  password-reset required for 3,700 employees + contractors,
+  forensic review of email/file-share data stores — maps to
+  internal_communication (VPN + email + remote-access) and data
+  (corporate/administrative file stores reviewed for exfiltration).
+  Rail operations / signalling / train-control, passenger
+  information, ticketing/payment, train-driver communication, and
+  public website are all explicitly excluded by the MTA public
+  statement ("no evidence operational systems were impacted …
+  hackers did not gain access to systems that control subway cars
+  or commuter rail trains").
+
+  impact.scope = regional: MTA covers the New York metropolitan
+  region including 12 NY counties and two Connecticut counties
+  served by Metro-North. Though MTA is North America's largest
+  transit network by volume, the footprint is a single
+  metropolitan region rather than national/international, and no
+  service disruption occurred.
+
+  MITRE ATT&CK techniques asserted: T1190 (Exploit Public-Facing
+  Application — Pulse Secure appliance exploitation); T1505.003
+  (Server Software Component: Web Shell — PULSECHECK / SLIGHTPULSE
+  / STEADYPULSE / ATRIUM webshell deployment); T1133 (External
+  Remote Services — Pulse Connect Secure VPN abused as initial-
+  access vector); T1556.004 (Modify Authentication Process:
+  Network Device Authentication — SLOWPULSE modifying Pulse VPN
+  authentication binaries); T1111 (Multi-Factor Authentication
+  Interception — SLOWPULSE bypassing single + 2FA flows); T1003
+  (OS Credential Dumping — PACEMAKER / BLOODBANK credential
+  extraction); T1070 (Indicator Removal — THINBLOOD log wiping);
+  T1562 (Impair Defenses — CLEANPULSE memory patching to suppress
+  log events). Additional techniques enumerated in Mandiant's 23-
+  technique table (T1016, T1021.001, T1027, T1036.005, T1048,
+  T1049, T1053, T1057, T1059.003, T1071.001, T1082, T1105, T1098,
+  T1134.001, T1136, T1140, T1518, T1569.002, T1574, T1592.004)
+  are deliberately not asserted at the incident level — they
+  describe campaign-wide tradecraft, not MTA-specific artefacts.
+  This follows the repo's "prefer null over invention" rule.
+
+  German-language coverage of the MTA incident specifically was
+  not located on heise.de, Golem.de, Tagesschau or Süddeutsche
+  (searches returned hits for the broader Pulse Secure / Chinese
+  hacking campaign but no dedicated MTA-NY article). The DZSF
+  entry remains the only German-language primary anchor. Noted
+  as a coverage gap, not a substantive discrepancy.
+
+  No ransomware payment, fine, enforcement action or subsequent
+  breach litigation has been publicly documented. MTA continued
+  to hold up the 2021 Pulse Secure incident as "the third
+  cyberattack" on its network by foreign-linked actors in recent
+  years (NYT / BleepingComputer), but the prior two incidents are
+  not publicly detailed.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

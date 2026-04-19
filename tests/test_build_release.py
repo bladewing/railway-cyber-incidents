@@ -98,3 +98,27 @@ def test_datapackage_declares_primary_and_foreign_keys(repo_with_two_incidents):
         and fk["reference"]["fields"] == "id"
         for fk in fks
     )
+
+
+def test_build_ignores_drafts_directory(tmp_repo, minimal_incident):
+    """Files under incidents/.drafts/ must never enter release artefacts."""
+    valid = dict(minimal_incident)
+    (tmp_repo / "incidents" / "2020-01-01_example.yaml").write_text(
+        yaml.safe_dump(valid, sort_keys=False)
+    )
+    drafts_dir = tmp_repo / "incidents" / ".drafts"
+    drafts_dir.mkdir()
+    # A deliberately broken draft — must not be loaded by the builder.
+    (drafts_dir / "2099-12-31_broken.yaml").write_text(
+        yaml.safe_dump({"id": "nope"}, sort_keys=False)
+    )
+
+    dist = build_release(tmp_repo)
+
+    with (dist / "incidents.csv").open() as f:
+        rows = list(csv.DictReader(f))
+    assert len(rows) == 1
+    assert rows[0]["id"] == "2020-01-01_example"
+
+    lines = (dist / "incidents.jsonl").read_text().splitlines()
+    assert len(lines) == 1

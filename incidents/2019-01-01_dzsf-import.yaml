@@ -2,31 +2,82 @@ id: 2019-01-01_dzsf-import
 schema_version: '1.0'
 event_date: '2019-01-01'
 event_date_precision: month
-reported_date: null
+reported_date: '2019-01-01'
 countries_impacted:
 - CN
 region: null
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: China Railway Corporation (12306.cn) / third-party ticketing platforms
+industry_sector: long_distance_passenger
+operator_type: incumbent
+attack_vector: credential_theft
 supply_chain: true
 malware: null
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
-threat_actor: null
-threat_actor_country: null
-attribution_confidence: unknown
+motive: financial
+mitre_attack_techniques:
+- T1110.004
+- T1589.001
+threat_actor: 'deepscorpions (individual; suspect Chen, 25, Xingtai/Beijing)'
+threat_actor_country: CN
+attribution_confidence: confirmed
 confirmation_status: confirmed
 affected_systems:
 - data
+- website
 data_published: true
-impact: null
-description_en: Imported from DZSF raw data on 2019-01-01. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: 4700000
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: true
+description_en: >
+  On 28 December 2018 a dark-web vendor operating under the handle
+  "deepscorpions" advertised a dataset for sale that allegedly contained
+  roughly 600,000 12306.cn user accounts (usernames, hashed/plaintext
+  passwords, real names, ID card numbers, phone numbers, email addresses
+  and security-question answers) together with about 4.1 million associated
+  passenger contact records — for a total of around 4.7 million affected
+  individuals. China Railway Corporation (operator of 12306.cn) denied on
+  its official Weibo that its own database had been breached and
+  attributed the exposure to third-party ticketing platforms. On
+  29 December 2018 Beijing's Xicheng District Public Security Bureau
+  detained a 25-year-old suspect surnamed Chen, an employee of a Beijing
+  tech company; the Beijing cyber-police (@首都网警) announced the arrest on
+  31 December 2018 and international outlets reported it from 1–2 January
+  2019. Chen confessed that he had purchased the 600,000 12306 credentials
+  from another online source (credential-stuffing data from unrelated
+  leaks) and used them to scrape further passenger data from third-party
+  ticket-booking platforms (e.g. Fliggy, Meituan, Ctrip), rather than
+  directly hacking 12306. The incident prompted Chinese regulators to
+  open a broader probe into third-party travel apps in January 2019.
+description_de: >
+  Am 28. Dezember 2018 bot ein Darknet-Verkäufer unter dem Pseudonym
+  "deepscorpions" einen Datensatz mit mutmaßlich rund 600.000
+  12306.cn-Benutzerkonten (Benutzernamen, Passwörter, Klarnamen,
+  Ausweisnummern, Telefonnummern, E-Mail-Adressen und Sicherheitsfragen)
+  sowie rund 4,1 Millionen zugehörigen Passagier-Kontaktdatensätzen zum
+  Kauf an — insgesamt etwa 4,7 Millionen betroffene Personen. Die
+  Betreiberin China Railway Corporation (12306.cn) dementierte auf ihrem
+  offiziellen Weibo einen direkten Angriff auf ihre eigene Datenbank und
+  verwies auf Drittanbieter-Buchungsplattformen. Am 29. Dezember 2018
+  nahm die Polizei im Pekinger Bezirk Xicheng einen 25-jährigen
+  Verdächtigen mit Familiennamen Chen fest (angestellt in einem Pekinger
+  IT-Unternehmen, gebürtig aus Xingtai, Hebei). Die Pekinger Cyberpolizei
+  (@首都网警) bestätigte die Festnahme am 31. Dezember 2018; die
+  internationale Berichterstattung setzte am 1./2. Januar 2019 ein. Chen
+  gestand, die 600.000 12306-Zugangsdaten online gekauft (Credential-
+  Stuffing aus anderen Datenlecks) und damit weitere Passagierinformationen
+  über Drittanbieter-Buchungsplattformen (u. a. Fliggy, Meituan, Ctrip)
+  abgegriffen zu haben — ohne direkten Angriff auf 12306. Der Vorfall
+  löste Anfang 2019 eine behördliche Überprüfung chinesischer
+  Reise-Buchungs-Apps aus.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -34,11 +85,125 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.chinadaily.com.cn/a/201901/01/WS5c2b387da310d91214051e9b.html
+  type: news
+  publisher: China Daily
+  published_date: '2019-01-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://technode.com/2019/01/02/beijing-police-data-leak-5-million/
+  type: news
+  publisher: TechNode
+  published_date: '2019-01-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.sixthtone.com/news/1003410/cyber-police-detain-suspect-over-railway-data-breach
+  type: news
+  publisher: Sixth Tone
+  published_date: '2019-01-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.freezenet.ca/online-train-platform-12306-suffers-data-breach-5-million-exposed/
+  type: news
+  publisher: Freezenet
+  published_date: '2019-01-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://chinatravelnews.com/article/126607
+  type: news
+  publisher: ChinaTravelNews
+  published_date: '2019-01-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://technode.com/2019/01/30/chinese-authorities-train-ticket-apps/
+  type: news
+  publisher: TechNode
+  published_date: '2019-01-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://technode.com/2019/02/01/hacking-gone-off-the-rails-holiday-travelers-react-to-data-breach/
+  type: news
+  publisher: TechNode
+  published_date: '2019-02-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: http://tech.sina.com.cn/i/2018-12-28/doc-ihqfskcn2195615.shtml
+  type: news
+  publisher: Sina Tech (Beijing News source)
+  published_date: '2018-12-28'
+  language: zh
+  accessed_date: '2026-04-19'
+- url: https://www.ithome.com/0/402/936.htm
+  type: news
+  publisher: IT Home
+  published_date: '2018-12-28'
+  language: zh
+  accessed_date: '2026-04-19'
+- url: https://www.secrss.com/articles/7453
+  type: news
+  publisher: 安全内参 (Secrss / Southern Metropolis Daily)
+  published_date: '2018-12-28'
+  language: zh
+  accessed_date: '2026-04-19'
+- url: https://m.thepaper.cn/newsDetail_forward_2801156
+  type: news
+  publisher: The Paper (澎湃新闻)
+  published_date: '2018-12-31'
+  language: zh
+  accessed_date: '2026-04-19'
+- url: https://eudl.eu/pdf/10.4108/eai.15-12-2023.2345345
+  type: academic_paper
+  publisher: EAI Endorsed Transactions
+  published_date: '2023-12-15'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The DZSF entry dated 2019-01-01 (month precision, country CN,
+  affected_systems [data], supply_chain true, data_published true,
+  confirmation confirmed) maps to the 12306.cn / third-party ticket-booking
+  platform data-leak incident that broke publicly on 28 December 2018
+  (dark-web ad by "deepscorpions"), peaked in international coverage on
+  1–2 January 2019, and was closed by the arrest of suspect Chen in
+  Beijing's Xicheng District on 29 December 2018. Figures as publicly
+  reported: 600,000 12306 account credentials (purchased from unrelated
+  prior leaks, i.e. credential-stuffing data) plus 4.1 million additional
+  passenger contact records scraped via third-party booking apps — total
+  ~4.7 million affected individuals (Beijing cyber-police @首都网警 figure).
+  `supply_chain: true` because the 4.1 M record set was obtained from
+  third-party ticket-booking platforms (Fliggy, Meituan, Ctrip and others)
+  acting as service providers used by 12306 customers, not from 12306
+  itself. `attack_vector: credential_theft` captures both the
+  credential-stuffing origin of the 600 k 12306 accounts and the
+  credential-abuse path into the third-party APIs; matches the sibling
+  2014-12-25 12306 incident's classification. `operator_type: incumbent`:
+  China Railway Corporation is the national incumbent rail operator.
+  `threat_actor: deepscorpions` is the dark-web handle; the real-world
+  suspect (Chen, 25, from Xingtai, working in a Beijing tech company) was
+  named only by surname in public reporting and was not acting as part of
+  a known threat-actor group, so `threat_actor_country: CN` and
+  `attribution_confidence: confirmed` (arrest + confession). MITRE
+  ATT&CK: `T1110.004` (Credential Stuffing) for the 12306 login stage and
+  `T1589.001` (Gather Victim Identity Information: Credentials) for the
+  purchase stage — conservative mapping grounded in the confessed modus
+  operandi, though no vendor has published a formal ATT&CK write-up.
+  `affected_systems: [data, website]`: 12306.cn credentials proved valid
+  on the public login (website) and the primary impact was exposure of
+  customer data; train operations were unaffected. Impact scope
+  `national` because CRC operates the entire Chinese national rail
+  network and the breach spanned all passenger segments ahead of the
+  Spring-Festival (chunyun) travel rush. No monetary damage figure was
+  ever published; dark-web asking price was reportedly around USD 20
+  (not used as `monetary_damage_eur`, which measures damage to the
+  victim, not sale price). China Railway Corporation publicly denied
+  that its own database was compromised; that denial is compatible with
+  the confessed modus operandi and with `confirmation_status: confirmed`
+  for the overall incident (the leak and criminal detention are
+  established facts via Beijing PSB and multiple independent outlets).
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

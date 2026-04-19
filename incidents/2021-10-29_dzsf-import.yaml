@@ -2,20 +2,28 @@ id: 2021-10-29_dzsf-import
 schema_version: '1.0'
 event_date: '2021-10-29'
 event_date_precision: day
-reported_date: null
+reported_date: '2021-10-29'
 countries_impacted:
 - CA
-region: null
+region: Canada — Ontario (City of Toronto; Greater Toronto Area served by
+  TTC subway / streetcar / bus network)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
+target_organization: Toronto Transit Commission (TTC) — municipal public
+  transit agency of the City of Toronto, operator of the Toronto subway
+  (four rapid-transit lines), the city's streetcar network and the bus
+  network; Canada's largest urban transit operator
+industry_sector: urban_transit
+operator_type: public_authority
+attack_vector: phishing
 supply_chain: false
 malware: null
-extortion: false
-motive: unknown
-mitre_attack_techniques: null
+extortion: true
+motive: financial
+mitre_attack_techniques:
+- T1566.002
+- T1199
+- T1486
+- T1657
 threat_actor: null
 threat_actor_country: null
 attribution_confidence: unknown
@@ -25,11 +33,91 @@ affected_systems:
 - train_driver_communication
 - passenger_information
 - website
-data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2021-10-29. Needs review and narrative
-  description.
-description_de: null
+data_published: true
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: false
+description_en: >
+  On 29 October 2021 the Toronto Transit Commission (TTC), the municipal
+  transit authority of the City of Toronto and Canada's largest urban
+  transit operator, was hit by a ransomware attack. TTC IT staff
+  detected unusual network activity on the evening of Thursday
+  28 October 2021; impact remained minimal until around midday on
+  Friday 29 October, when the attackers broadened their strike across
+  TTC network servers. The incident took down the "Vision" radio/data
+  system used by Transit Control to communicate with vehicle operators
+  (streetcar, bus and subway drivers fell back to analog radio), the
+  Wheel-Trans online booking portal for the paratransit service, the
+  Next Vehicle real-time arrival information displayed on station
+  platform screens and in trip-planning apps, the public TTC website,
+  and the TTC's internal email service. Public transport continued to
+  run; the TTC stated the incident did not cause significant service
+  disruptions, although it had to cancel a planned Line 1 Yonge-
+  University weekend closure (St Clair–College, 30 Oct) and a Line 2
+  Bloor-Danforth late-opening (31 Oct) because the outages prevented
+  normal service changeovers. The TTC disclosed on 26 November 2021
+  that the attackers had exfiltrated the personal information — names,
+  home addresses and Canadian Social Insurance Numbers — of
+  approximately 25,000 current and former employees, retirees and
+  pensioners, and that a small sample of TTC files had been briefly
+  posted on a dark-web leak site. According to the subsequent public
+  reporting and the Toronto Auditor General's two-phase cybersecurity
+  audit (Phase 1 tabled 14 April 2022; Phase 2 tabled 22 November
+  2023), the initial access vector was a spear-phishing email sent to
+  a TTC employee from the compromised email account of a trusted
+  third-party organisation, containing a malicious link the employee
+  clicked, and the TTC had additionally failed to apply a publicly-
+  available security patch within the 72-hour window required by its
+  own internal patching policy. No ransomware family and no threat
+  actor publicly claimed responsibility; the TTC has not disclosed
+  whether a ransom was demanded or paid.
+description_de: >
+  Am 29. Oktober 2021 wurde die Toronto Transit Commission (TTC), der
+  städtische Verkehrsbetrieb der Stadt Toronto und Kanadas größter
+  städtischer Nahverkehrsanbieter, Opfer eines Ransomware-Angriffs.
+  Die IT-Abteilung der TTC bemerkte bereits am Abend des Donnerstag,
+  28. Oktober 2021, ungewöhnliche Netzwerkaktivität; die Auswirkungen
+  blieben zunächst minimal, bis die Angreifer am Freitagmittag,
+  29. Oktober, ihren Angriff auf die TTC-Netzwerkserver deutlich
+  ausweiteten. Betroffen waren insbesondere das „Vision"-System
+  (Daten- und Sprachkommunikation der Leitstelle Transit Control mit
+  Fahrzeugpersonal — Busse, Straßenbahnen und U-Bahnen wichen auf
+  analogen Funk aus), das Online-Buchungsportal des Wheel-Trans-
+  Paratransportdienstes, die dynamische Fahrgastinformation („Next
+  Vehicle") auf Bahnsteig-Anzeigetafeln und in Apps, die
+  TTC-Website sowie der interne E-Mail-Dienst. Der öffentliche
+  Verkehr lief weiter; die TTC teilte mit, es habe keine nennenswerten
+  Betriebsstörungen gegeben, allerdings mussten eine geplante
+  Wochenend-Streckensperrung der Linie 1 Yonge-University
+  (St Clair–College, 30. Okt.) und ein verspäteter Betriebsbeginn
+  der Linie 2 Bloor-Danforth (31. Okt.) abgesagt werden, weil die
+  Ausfälle den regulären Betriebswechsel unmöglich machten. Am
+  26. November 2021 bestätigte die TTC, dass die Angreifer
+  personenbezogene Daten — Namen, Wohnadressen und kanadische
+  Sozialversicherungsnummern — von bis zu 25.000 aktuellen und
+  ehemaligen Beschäftigten, Rentnerinnen und Rentnern entwendet
+  hatten und dass kurzzeitig ein kleinerer Datenauszug auf einer
+  Leak-Seite im Darknet erschienen sei. Laut nachfolgenden
+  Berichten und dem zweiteiligen Cybersicherheits-Audit des Toronto
+  Auditor General (Phase 1 vorgelegt am 14. April 2022, Phase 2
+  am 22. November 2023) erfolgte der Erstzugriff über eine Spear-
+  Phishing-E-Mail, die ein Angreifer aus dem kompromittierten
+  E-Mail-Konto einer vertrauenswürdigen Drittorganisation an eine
+  TTC-Beschäftigte versandte und die einen schädlichen Link
+  enthielt, auf den geklickt wurde; zusätzlich hatte die TTC einen
+  öffentlich verfügbaren Sicherheits-Patch nicht innerhalb der
+  eigenen 72-Stunden-Frist ausgerollt. Keine Ransomware-Familie
+  und keine Tätergruppe hat die Verantwortung öffentlich
+  übernommen; ob Lösegeld gefordert oder gezahlt wurde, hat die
+  TTC nicht mitgeteilt.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -37,11 +125,360 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://therecord.media/ransomware-attack-disrupts-torontos-public-transportation-system
+  type: news
+  publisher: The Record from Recorded Future News (Catalin Cimpanu)
+  published_date: '2021-11-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://techcrunch.com/2021/11/10/toronto-cyberattack-employee-data/
+  type: news
+  publisher: TechCrunch (Carly Page)
+  published_date: '2021-11-10'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbc.ca/news/canada/toronto/ttc-ransomware-attack-1.6231349
+  type: news
+  publisher: CBC News
+  published_date: '2021-10-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.cbc.ca/news/canada/toronto/ttc-ransomware-attack-stolen-personal-information-1.6241326
+  type: news
+  publisher: CBC News
+  published_date: '2021-11-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://globalnews.ca/news/8337090/ttc-ransomware-attack/
+  type: news
+  publisher: Global News (Ryan Rocca)
+  published_date: '2021-10-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://globalnews.ca/news/8358094/ttc-cyber-attack-investigation-employee-information/
+  type: news
+  publisher: Global News
+  published_date: '2021-11-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ctvnews.ca/toronto/article/ttc-investigating-ransomware-attack-that-compromised-multiple-servers
+  type: news
+  publisher: CTV News Toronto (Bryann Aguilar)
+  published_date: '2021-10-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.ctvnews.ca/toronto/article/ttc-lacked-proper-measures-to-prevent-2021-cyberattack-despite-internal-warning-years-earlier-reports/
+  type: news
+  publisher: CTV News (Abby O'Brien)
+  published_date: '2024-07-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://dailyhive.com/toronto/ttc-ransomware-attack
+  type: news
+  publisher: Daily Hive (Zoe Demarco)
+  published_date: '2021-10-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://transittoronto.ca/archives/weblog/2021/10/30-ransomware.shtml
+  type: blog
+  publisher: Transit Toronto (Robert Mackenzie)
+  published_date: '2021-10-30'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://mobilesyrup.com/2021/11/01/several-ttc-services-are-still-down-following-ransomware-attack/
+  type: news
+  publisher: MobileSyrup (Karandeep Oberoi)
+  published_date: '2021-11-01'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.drizgroup.com/driz_group_blog/ransomware-attack-shuts-down-several-toronto-transit-commission-ttc-services
+  type: blog
+  publisher: The Driz Group
+  published_date: '2021-11-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.torontoauditor.ca/report/toronto-transit-commission-cybersecurity-audit-phase-1-critical-it-assets-and-user-access-management/
+  type: official_statement
+  publisher: Office of the Auditor General, City of Toronto — TTC Cybersecurity
+    Audit, Phase 1
+  published_date: '2022-04-14'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.torontoauditor.ca/report/toronto-transit-commission-cybersecurity-audit-phase-two-overall-network-security-and-cybersecurity-assessment-of-select-critical-systems/
+  type: official_statement
+  publisher: Office of the Auditor General, City of Toronto — TTC Cybersecurity
+    Audit, Phase 2
+  published_date: '2023-11-06'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Documents/Home/Public-Meetings/Board/2023/November-22/16_TTC_Cybersecurity_Audit_Phase_Two.pdf
+  type: official_statement
+  publisher: Toronto Transit Commission — Board transmittal, TTC Cybersecurity
+    Audit Phase Two
+  published_date: '2023-11-22'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://mcmillan.ca/insights/publications/lessons-learned-from-the-ttcs-ransomware-attack/
+  type: blog
+  publisher: McMillan LLP — Lessons Learned from the TTC's Ransomware Attack
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.lexology.com/library/detail.aspx?g=3ccb5437-8a6c-4971-a5e9-3527fcb8847c
+  type: blog
+  publisher: Lexology (republishing McMillan LLP)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.itworldcanada.com/article/toronto-transit-commission-still-recovering-from-ransomware-attack/463683
+  type: news
+  publisher: IT World Canada
+  published_date: '2021-11-03'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://canadianunderwriter.ca/news/industry/ttc-says-personal-info-of-up-to-25000-current-former-employees-accessed-in-cyberattack/
+  type: news
+  publisher: Canadian Underwriter
+  published_date: '2021-11-26'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/Toronto_Transit_Commission
+  type: other
+  publisher: Wikipedia (English) — Toronto Transit Commission article
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1566/002/
+  type: other
+  publisher: MITRE ATT&CK — T1566.002 Spearphishing Link
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1199/
+  type: other
+  publisher: MITRE ATT&CK — T1199 Trusted Relationship
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification: the DZSF raw-data row (CA, 2021-10-29, confirmation
+  status confirmed, affected systems = internal_communication +
+  train_driver_communication + passenger_information + website)
+  unambiguously maps to the 29 October 2021 ransomware attack on the
+  Toronto Transit Commission publicly disclosed that evening and
+  widely reported from 29 October 2021 onwards. The four DZSF
+  affected-systems tags match the TTC's own disclosure: internal email
+  (internal_communication), the Vision vehicle-operator communication
+  system (train_driver_communication), the Next Vehicle real-time
+  arrival displays / trip-planning apps / platform screens
+  (passenger_information) and the TTC public website (website). No
+  other 2021-10-29 Canadian railway cyber incident is publicly
+  attested; the only other comparable Canadian transit ransomware
+  cases from the same period are the Société de transport de Montréal
+  (STM) attack of 19 October 2020 (RansomEXX) and the Metro Vancouver
+  / TransLink attack of 1 December 2020 (Egregor). Neither matches
+  the DZSF date or country entry-city combination.
+
+  Not a duplicate of 2021-10-24_badrabbit: that escalated record
+  concerns a purported Ukrainian (UA) BadRabbit railway incident and
+  has no Canadian dimension. The date proximity (five days) is
+  coincidental.
+
+  Date handling: event_date kept at 2021-10-29 — the day the
+  attackers escalated their strike from initial intrusion to
+  network-wide impact (explicit in The Record, CBC, Global News,
+  CTV News, Daily Hive, MobileSyrup: "midday today (Friday,
+  Oct. 29) when hackers broadened their strike on network
+  servers"). Initial unusual-activity detection on Thursday evening
+  (28 October 2021) is documented; the earlier calendar date
+  (Thursday night) is noted in the narrative but not used as
+  event_date because the operational impact and public disclosure
+  both fall on Friday 29 October. reported_date set to 2021-10-29
+  because that is the day the incident became publicly known and
+  was confirmed by TTC spokesperson Stuart Green to journalists
+  (CTV News Toronto 29 Oct 2021 20:21 EDT; Global News 29 Oct
+  2021 20:33 EDT). The actual initial intrusion preceding the
+  detected "unusual network activity" is not publicly pinpointed
+  but is believed to be shortly before Thursday 28 October 2021.
+
+  target_organization: Toronto Transit Commission (TTC). Wikipedia
+  and the TTC's own materials characterise it as an agency of the
+  City of Toronto — a municipal public transit authority, with a
+  board of ten members (six Toronto City Council members + four
+  citizens), the mayor appointing the chair. Operator_type therefore
+  coded `public_authority` (municipal transit authority), not
+  `incumbent` (which is reserved for national mainline incumbents
+  such as DB / SNCF / SBB / VIA Rail) and not `private` (TTC is a
+  public-sector agency, not a private operator).
+
+  industry_sector: `urban_transit`. TTC runs four rapid-transit
+  subway lines (Lines 1 Yonge-University, 2 Bloor-Danforth,
+  3 Scarborough RT — closed 2023, 4 Sheppard), plus LRT / streetcar
+  lines and the city bus network; it is described by Wikipedia as
+  "the most heavily used urban transit system in Canada". This
+  record covers the TTC as a whole, not a specific mode — consistent
+  with the DZSF's lack of mode disaggregation.
+
+  attack_vector: `phishing`. Multiple independent sources — the
+  McMillan LLP post-incident legal analysis ("Lessons Learned from
+  the TTC's Ransomware Attack"), republished via Lexology, the
+  Toronto Auditor General Phase 1 and Phase 2 audit summaries,
+  and Canadian Underwriter's incident write-up — state that "a
+  threat actor sent an email to a TTC employee from the email
+  address of a trusted third party, whose systems the threat actor
+  had compromised. The employee clicked a malicious link in the
+  email, allowing the threat actor to infiltrate the TTC's systems."
+  This is textbook spear-phishing via a compromised-trusted-third-
+  party lure (MITRE T1566.002 Spearphishing Link combined with
+  T1199 Trusted Relationship for the upstream third-party
+  compromise). `phishing` is the best-fitting vocabulary value. A
+  secondary contributing factor flagged by the Auditor General and
+  McMillan is a failure to apply an available public security
+  patch within the TTC's own 72-hour critical-patch policy window,
+  but that is a compensating-control gap rather than the primary
+  entry vector.
+
+  supply_chain: false. The compromise of a third-party email
+  account was used only as a phishing lure — it was not a
+  software-supply-chain compromise of a vendor product updating
+  TTC systems (which is what the `supply_chain` flag captures in
+  this dataset — cf. SolarWinds, Kaseya). The trusted-third-party
+  phishing is captured via the `phishing` attack vector and the
+  T1199 MITRE tag.
+
+  malware: null. No ransomware family has been publicly identified.
+  McMillan, the Auditor General Phase 1 and Phase 2 reports, and
+  contemporary reporting (CBC, Global News, The Record, TechCrunch)
+  all characterise this as "a ransomware attack" without naming a
+  specific family; The Driz Group quoted TTC communications head
+  Shabnum Durrani stating she could not identify "what ransomware
+  strain attacked TTC". No ransomware gang publicly claimed the
+  attack on a leak site. Consistent with the repo's "prefer null
+  over invention" rule, the malware list is kept null rather than
+  speculating (for instance, some contemporary commentary suggested
+  parallels with the STM/Montreal RansomEXX attack, but no
+  public attribution ties TTC to RansomEXX).
+
+  extortion: true (explicit — the TTC confirmed this was a
+  ransomware attack; the FAQ-style coverage describes "the TTC did
+  not disclose the ransom demand it received" and a small sample
+  of files was briefly posted to a dark-web leak site).
+  motive: `financial` (standard ransomware monetisation pattern).
+  data_published: true — CBC News (26 Nov 2021) and subsequent
+  coverage confirms that "a small sample of TTC files may have
+  been briefly posted on the dark web", satisfying the dataset's
+  data_published definition even though the full trove was not
+  published.
+
+  threat_actor / threat_actor_country / attribution_confidence: no
+  public attribution exists. The Driz Group and DataBreaches.net
+  both explicitly note that no group claimed responsibility and
+  that the specific strain remains unidentified. threat_actor is
+  therefore kept null, threat_actor_country kept null,
+  attribution_confidence set to `unknown` (rather than `reported`).
+
+  mitre_attack_techniques: four high-confidence techniques are
+  asserted. T1566.002 (Spearphishing Link) because the initial-
+  access email contained a malicious link that the TTC employee
+  clicked (explicit in McMillan and Canadian Underwriter). T1199
+  (Trusted Relationship) because the email was sent from the
+  compromised mailbox of a "trusted third party" whose systems
+  the attackers had already breached (explicit in McMillan,
+  Lexology and Canadian Underwriter; see the MITRE T1199 write-
+  up on compromised-third-party-access vectors). T1486 (Data
+  Encrypted for Impact) because "a number of the TTC's servers
+  being encrypted and locked" is a canonical ransomware behaviour
+  confirmed by Global News / Daily Hive / MobileSyrup and the
+  Auditor General. T1657 (Financial Theft) for the extortion
+  component. Additional plausible techniques (T1078 Valid
+  Accounts for any onward use of stolen credentials; T1567 Data
+  Transfer to Cloud for the data exfiltration behind the leak-
+  site posting) are deliberately not asserted — no Merseyrail-
+  style public forensic breakdown pins them to this intrusion,
+  and the draft conforms to the repo's "prefer null over
+  invention" rule.
+
+  affected_systems: kept as DZSF-imported (internal_communication,
+  train_driver_communication, passenger_information, website).
+  All four are corroborated by independent reporting: internal
+  email (internal_communication — The Record, Global News, CBC,
+  MobileSyrup, Daily Hive, IT World Canada); Vision system used
+  by Transit Control to communicate with vehicle operators
+  (train_driver_communication — Daily Hive, Global News, The
+  Record explicitly identify Vision as the operator-
+  communication channel; MobileSyrup clarifies the system covers
+  streetcar, bus and subway operators alike); Next Vehicle real-
+  time arrival information on platform screens, in trip-planning
+  apps and on the TTC website (passenger_information — CTV News,
+  Global News, Daily Hive, MobileSyrup); TTC public website
+  (website — Daily Hive, MobileSyrup). Not added: `payment_system`
+  (no reporting indicates the PRESTO fare-card system or any
+  TTC ticketing was impaired — PRESTO is operated by Metrolinx,
+  not TTC), `data` (although 25,000 employee records were
+  exfiltrated, the repo's `data` system code refers to
+  administrative/corporate data systems as an operational target,
+  and the data_compromise.organizational_data = true flag already
+  captures the exfiltration; double-coding would overstate),
+  `rail_operations` (subway signalling / CBTC / interlocking were
+  explicitly unaffected — public transport continued to run).
+
+  impact.scope: `regional`. TTC serves the City of Toronto
+  (~2.8 million residents) and adjacent Greater Toronto Area; it
+  does not operate the national rail network. `regional` is
+  consistent with how the dataset treats other single-city
+  transit operators (STM Montreal, Metro Vancouver, SEPTA).
+  duration_hours: left null. Partial restoration was underway by
+  1 November 2021 (MobileSyrup: Wheel-Trans restored), but full
+  restoration of all affected systems (particularly internal
+  email) is not pinpointed in a single canonical source; The
+  Driz Group / IT World Canada indicate several systems remained
+  down into early November, while the Auditor General Phase 1
+  report (14 Apr 2022) was published five months later, implying
+  full operational recovery occurred in the interim but does not
+  quantify downtime.
+  affected_trains / affected_passengers: null — public transit
+  continued to run; the DZSF dataset does not track "affected
+  customers relying on passenger information apps" as a
+  quantified metric.
+  monetary_damage_eur: null — no public figure. No ransom
+  amount disclosed; no public recovery-cost breakdown in the
+  Auditor General report (the confidential recommendations
+  would have included cost detail, but were redacted).
+  data_compromise.organizational_data: true (25,000 employee
+  records — names, home addresses, Canadian Social Insurance
+  Numbers — explicit in CBC News 26 Nov 2021, Global News,
+  Canadian Underwriter, TechCrunch). customer_data: false —
+  CBC News and HostedPCI note that "client data compromise could
+  not be confirmed at the time of reporting" and subsequent
+  reporting (through 2024 CTV News follow-up) does not identify
+  any TTC customer-data compromise. intellectual_property: false
+  (no IP/design/trade-secret theft reported).
+
+  confirmation_status: `confirmed`. The TTC itself confirmed the
+  attack via spokesperson Stuart Green on 29 October 2021 (CBC,
+  CTV News, Global News); the Office of the Auditor General,
+  City of Toronto, independently confirmed the attack in the
+  TTC Cybersecurity Audit Phase 1 (April 2022) and Phase 2
+  (November 2023) public reports. This meets the highest tier
+  of confirmation.
+
+  German-language press coverage was not located (heise.de,
+  Golem.de, Tagesschau, Süddeutsche searches returned no TTC
+  2021 article). The DZSF entry remains the sole German-language
+  primary anchor; noted as a coverage gap rather than a
+  substantive discrepancy.
+
+  needs_review flipped from true to false: more than two
+  independent non-DZSF sources corroborate the core facts (date,
+  country, target organisation, systems affected, ransomware
+  nature, employee-data theft, phishing vector), and 15+
+  fields were moved off null / defaults — the threshold for
+  promotion to a fully reviewed record is comfortably met.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

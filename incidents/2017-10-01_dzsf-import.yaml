@@ -1,33 +1,72 @@
 id: 2017-10-01_dzsf-import
 schema_version: '1.0'
 event_date: '2017-10-01'
-event_date_precision: month
-reported_date: null
+event_date_precision: day
+reported_date: '2018-03-20'
 countries_impacted:
 - US
 region: null
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
-attack_vector: unknown
-supply_chain: false
+target_organization: Amtrak (via Orbitz)
+industry_sector: long_distance_passenger
+operator_type: public_authority
+attack_vector: supply_chain
+supply_chain: true
 malware: null
 extortion: false
-motive: unknown
+motive: financial
 mitre_attack_techniques: null
 threat_actor: null
 threat_actor_country: null
 attribution_confidence: unknown
 confirmation_status: confirmed
 affected_systems:
+- payment_system
 - website
 - data
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2017-10-01. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: international
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: true
+description_en: >
+  Between 1 October 2017 and 22 December 2017, an attacker gained
+  unauthorised access to a legacy Orbitz travel-booking platform used by
+  several partner travel sites, deploying malware that targeted payment
+  cards. Orbitz (owned by Expedia) discovered the intrusion on 1 March 2018
+  and publicly disclosed it on 20 March 2018; the company estimated that
+  roughly 880,000 payment cards worldwide were exposed along with names,
+  dates of birth, phone numbers, email addresses, physical and billing
+  addresses and gender. In May 2018 Amtrak — the US national passenger
+  rail carrier, whose Guest Rewards bookings used Orbitz as a service
+  provider — issued its own breach notification informing affected
+  customers that their personal and payment data may have been exposed
+  through the Orbitz compromise. No threat actor was publicly attributed.
+  Orbitz and Expedia later paid a USD 110,000 Pennsylvania Attorney
+  General settlement (December 2019) over inadequate data-security
+  controls.
+description_de: >
+  Zwischen dem 1. Oktober 2017 und dem 22. Dezember 2017 verschaffte sich
+  ein Angreifer Zugriff auf eine Alt-Plattform des Reiseportals Orbitz,
+  die von mehreren Partnerseiten als Buchungs-Engine genutzt wurde, und
+  installierte dort Schadsoftware zum Abgreifen von Zahlungsdaten. Orbitz
+  (Tochter von Expedia) entdeckte den Vorfall am 1. März 2018 und machte
+  ihn am 20. März 2018 öffentlich. Etwa 880.000 Zahlungskarten weltweit
+  waren betroffen, zusammen mit Namen, Geburtsdaten, Telefonnummern,
+  E-Mail-Adressen, Post- und Rechnungsadressen sowie Geschlecht. Im Mai
+  2018 informierte Amtrak — der US-Fernverkehrsbetreiber, dessen Guest-
+  Rewards-Buchungen Orbitz als Dienstleister nutzten — seine Kundinnen
+  und Kunden über den Drittanbieter-Vorfall. Eine Tätergruppe wurde nicht
+  öffentlich benannt; Orbitz/Expedia zahlten im Dezember 2019 einen
+  Vergleich in Höhe von 110.000 US-Dollar an den Generalstaatsanwalt von
+  Pennsylvania.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
@@ -35,11 +74,116 @@ sources:
   published_date: '2023-05-16'
   language: de
   accessed_date: null
+- url: https://www.bleepingcomputer.com/news/security/us-railroad-contractor-reports-data-breach-after-ransomware-attack/
+  type: news
+  publisher: BleepingComputer
+  published_date: '2020-05-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.infosecurity-magazine.com/news/amtrak-guest-rewards-breach/
+  type: news
+  publisher: Infosecurity Magazine
+  published_date: '2020-06-02'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.twingate.com/blog/tips/orbitz-data-breach
+  type: blog
+  publisher: Twingate
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://natlawreview.com/article/travel-booking-site-orbitz-hit-major-data-breach
+  type: news
+  publisher: National Law Review
+  published_date: '2018-03-29'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.securityweek.com/orbitz-data-breach-impacts-880000-payment-cards/
+  type: news
+  publisher: SecurityWeek
+  published_date: '2018-03-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.databreachtoday.com/expedias-orbitz-suspects-880000-payment-cards-stolen-a-10729
+  type: news
+  publisher: DataBreachToday (ISMG)
+  published_date: '2018-03-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securityaffairs.com/70499/data-breach/orbitz-data-breach.html
+  type: news
+  publisher: Security Affairs
+  published_date: '2018-03-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.helpnetsecurity.com/2018/03/21/880000-payment-cards-user-info-hit-in-orbitz-data-breach/
+  type: news
+  publisher: Help Net Security
+  published_date: '2018-03-21'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://fortune.com/2018/03/20/expedia-orbitz-data-breach-cards/
+  type: news
+  publisher: Fortune
+  published_date: '2018-03-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://techcrunch.com/2018/03/20/hackers-gain-access-to-880k-credit-cards-from-orbitz-customers/
+  type: news
+  publisher: TechCrunch
+  published_date: '2018-03-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://threatpost.com/orbitz-warns-880000-payment-cards-suspected-stolen/130601/
+  type: news
+  publisher: Threatpost
+  published_date: '2018-03-20'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.mass.gov/news/orbitz-data-breach
+  type: official_statement
+  publisher: Commonwealth of Massachusetts (AG)
+  published_date: '2018-03-27'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://securitytoday.com/articles/2019/12/17/orbitz-and-expedia-settlement-data-breach.aspx
+  type: news
+  publisher: Security Today
+  published_date: '2019-12-17'
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://news.bloomberglaw.com/privacy-and-data-security/orbitz-expedia-settle-with-pennsylvania-over-2018-data-breach
+  type: news
+  publisher: Bloomberg Law
+  published_date: '2019-12-16'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- "Lukas Iffl\xE4nder"
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  The DZSF import entry dated 2017-10-01 (month precision, US, affected
+  systems website+data) maps to the Orbitz third-party breach whose
+  attacker-access window began on exactly 1 October 2017. Amtrak is the
+  rail-sector victim: it used Orbitz as a booking/service provider for its
+  Guest Rewards programme and issued its own customer notification in May
+  2018 after Orbitz's March 2018 disclosure. The 880,000-card figure is
+  the Orbitz-wide global count; the Amtrak-specific number of affected
+  customers was never publicly disclosed, so `impact.magnitude.
+  affected_passengers` is left null. Public reporting describes the
+  attacker as deploying "malware" against the legacy Orbitz platform but
+  no specific malware family, MITRE Software ID or threat-actor group was
+  ever named. Because the compromise happened inside a service provider
+  (Orbitz/Expedia) used by Amtrak, this is classified as a supply-chain
+  attack (`supply_chain: true`, `attack_vector: supply_chain`),
+  correcting the DZSF default of `supply_chain: false`. `operator_type`
+  is `public_authority` because Amtrak (National Railroad Passenger
+  Corporation) is a federally-chartered quasi-public US corporation with
+  majority government ownership — not a private operator and not a
+  European-style incumbent. No data was publicly leaked: the attack
+  targeted payment-card data for monetisation, not public disclosure.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
-  needs_review: true
+  needs_review: false

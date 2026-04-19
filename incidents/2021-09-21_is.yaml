@@ -2,42 +2,437 @@ id: 2021-09-21_is
 schema_version: '1.0'
 event_date: '2021-09-21'
 event_date_precision: day
-reported_date: null
+reported_date: '2021-09-21'
 countries_impacted:
 - IN
-region: null
+region: India — South Western Railway zone (headquartered at Hubballi, Karnataka;
+  covers parts of Karnataka, Goa, southern Maharashtra, northern Tamil Nadu and a
+  sliver of Andhra Pradesh; comprises the Bangalore (SBC), Hubli (UBL) and Mysuru
+  (MYS) divisions)
 coordinates: null
-target_organization: null
-industry_sector: null
-operator_type: null
+target_organization: >-
+  South Western Railway (SWR) — a zone of Indian Railways, owned by the Ministry
+  of Railways of the Government of India; headquartered at Hubballi (Hubli),
+  Karnataka. The specific web property affected was `www.cnbnc.in`, whose
+  Google-indexed title is "Personnel Department Construction Organisation,
+  South Western Railway" — i.e. the Construction Organisation unit within the
+  SWR Personnel Department. This reconciles the TNIE article's internal
+  inconsistency (lede says "construction department", body says "Personnel
+  Department") — the portal belongs to both. It hosted "details of employees,
+  policy circulars, non-gazetted orders, rest house allotment and other
+  details" per Lalitha 2021. GM SWR at the time of the incident was Sanjeev
+  Kishore (appointed July 2021).
+industry_sector: regional_passenger
+operator_type: incumbent
 attack_vector: unknown
 supply_chain: false
 malware: null
 extortion: false
-motive: unknown
-mitre_attack_techniques: null
-threat_actor: IS
+motive: hacktivism
+mitre_attack_techniques:
+- T1491.002
+threat_actor: >-
+  Self-identified as "Islamic State" on the defacement page. The verbatim
+  message left by the attackers (quoted in Lalitha 2021) read "Islamic State
+  has hacked this site. Message to the Alliance — Your government, military,
+  important secured sites are under our cyber attack. As long as you fight
+  the Islamic State, your failed system will continue to be hacked." The
+  New Indian Express describes the actor only as "an extremist organisation";
+  no formal attribution by SWR, police, CERT-In or any authority is reported.
+  The self-identification cannot be independently verified and may be a
+  pretender; no specific sub-group (ISHD, United Cyber Caliphate, ISIS Cyber
+  Caliphate, IS Khorasan cyber wing) is named. The DZSF Rohdaten record
+  "IS?" with a trailing question mark is consistent with the article's
+  framing.
 threat_actor_country: null
-attribution_confidence: suspected
-confirmation_status: confirmed
+attribution_confidence: reported
+confirmation_status: reported
 affected_systems:
 - website
 data_published: false
-impact: null
-description_en: Imported from DZSF raw data on 2021-09-21. Needs review and narrative
-  description.
-description_de: null
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: null
+    monetary_damage_eur: null
+  # Lalitha 2021 implies the portal stayed defaced until at least 01 Oct 2021
+  # (GM Kishore: "We have decided to close it down now"), i.e. ≥ 10 days.
+  # Exact end-time not pinned in any source; duration left null to avoid
+  # false precision.
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+description_en: >
+  On 21 September 2021 the departmental portal `www.cnbnc.in` of the
+  South Western Railway (SWR) zone of Indian Railways was defaced. Per
+  The New Indian Express (Lalitha 2021) the site is run by SWR's
+  Personnel Department (the article's lede calls it the "construction
+  department" — an internal inconsistency) and holds "details of
+  employees, policy circulars, non-gazetted orders, rest house allotment
+  and other details". The defacement left a verbatim message signed by
+  "Islamic State": "Islamic State has hacked this site. Message to the
+  Alliance: Your government, military, important secured sites are under
+  our cyber attack. As long as you fight the Islamic State, your failed
+  system will continue to be hacked." The New Indian Express describes
+  the actor only as "an extremist organisation"; no formal attribution
+  by SWR, Indian police, CERT-In or any other authority is reported.
+  SWR General Manager Sanjeev Kishore told the paper "The software
+  handling our tenders and other operations are quite secure. We have
+  decided to close it down now" — implying the portal was taken offline
+  around the reporting date (01 October 2021, ~10 days after the
+  defacement). An official SWR statement added only that "Our cyber cell
+  in the Bengaluru Division is aware of the issue". An unnamed railway
+  source told the paper that "None of the data has been stolen" — the
+  basis for the no-exfiltration claim is not documented. The article
+  also records that this was the second such attack on `cnbnc.in`; the
+  first occurred in 2017 (no further detail given). No other SWR or
+  Indian Railways systems were reported affected; train operations,
+  station IT, payment/ticketing (IRCTC, UTS), radio communications,
+  internal train tracking and signalling were not involved. The DZSF
+  AP1 project report (Möller, Iffländer, Nord et al. 2022, section
+  2.8.7 "Angriff auf South Western Railway (Indien)") is the only other
+  attested source of this incident; it paraphrases the defacement as
+  coming from "eine islamistische Organisation" and also states data
+  theft was ruled out. Extensive further searches in English, German
+  and Hindi across trade press, CERT advisories, Indian national and
+  regional newspapers, MEMRI Cyber & Jihad Lab, SITE Intelligence, the
+  South Asia Terrorism Portal, and DZSF-independent academic venues
+  returned no second independent corroboration. The incident is
+  therefore attested by one mainstream-media source (Lalitha / TNIE)
+  plus the DZSF project lineage. Because this is one short of the
+  enrichment pass's ≥ 2 independent-non-DZSF threshold,
+  `confirmation_status: reported`, `attribution_confidence: reported`
+  and `needs_review: true` are retained and a standing escalation entry
+  remains in ESCALATIONS.md.
+description_de: >
+  Am 21. September 2021 wurde das Abteilungs-Portal `www.cnbnc.in` der
+  Zone South Western Railway (SWR) der Indian Railways defaced. Laut
+  The New Indian Express (Lalitha 2021) wird die Seite von der
+  SWR-Personalabteilung betrieben (die Artikel-Lede spricht
+  widersprüchlich von der „Construction Department") und enthält
+  „Mitarbeiterdaten, Richtliniensammlungen, nicht-gazettierte
+  Dienstanweisungen, Rasthaus-Zuweisungen und weitere Details". Auf der
+  Webseite wurde eine wörtliche, vom „Islamischen Staat" signierte
+  Botschaft hinterlassen: „Islamic State has hacked this site. Message
+  to the Alliance: Your government, military, important secured sites
+  are under our cyber attack. As long as you fight the Islamic State,
+  your failed system will continue to be hacked." Die New Indian
+  Express beschreibt den Angreifer lediglich als „eine extremistische
+  Organisation"; eine formelle Zuordnung durch SWR, die indische
+  Polizei, CERT-In oder sonstige Behörden ist nicht berichtet. GM SWR
+  Sanjeev Kishore äußerte gegenüber der Zeitung „The software handling
+  our tenders and other operations are quite secure. We have decided to
+  close it down now" — was impliziert, dass das Portal um den
+  Berichtstag (01. Oktober 2021, ca. 10 Tage nach dem Defacement) vom
+  Netz genommen wurde. Die offizielle SWR-Stellungnahme beschränkte
+  sich auf den Hinweis, „unsere Cyber-Zelle in der Bangalore Division"
+  sei „mit der Sache befasst". Eine namentlich nicht genannte Quelle
+  aus dem Bahnumfeld erklärte, „keine Daten wurden entwendet" — die
+  Grundlage für diese Aussage ist nicht dokumentiert. Der Artikel
+  vermerkt ferner, dass `cnbnc.in` zum zweiten Mal angegriffen wurde;
+  der erste Vorfall datierte auf 2017 (ohne weitere Details). Kein
+  weiteres SWR- oder Indian-Railways-System war betroffen; Zugbetrieb,
+  Bahnhofs-IT, Ticketsysteme (IRCTC, UTS), Funkkommunikation,
+  Zugverfolgung und Leit-/Sicherungstechnik blieben unbeeinflusst. Der
+  DZSF-AP1-Zwischenbericht (Möller, Iffländer, Nord et al. 2022, Abschn.
+  2.8.7 „Angriff auf South Western Railway (Indien)") — der einzige
+  weitere Anker des Vorfalls — fasst den Angriff dahingehend zusammen,
+  dass „eine islamistische Organisation" die Verantwortung übernommen
+  habe und Datendiebstahl ausdrücklich ausgeschlossen wurde. Weitere
+  Recherchen in englischer, deutscher und hindi-sprachiger
+  Fach- und Tagespresse sowie bei MEMRI, SITE, SATP und
+  DZSF-unabhängigen akademischen Foren ergaben keine zweite
+  unabhängige Quelle. Der Vorfall ist damit durch einen mainstream-
+  journalistischen Artikel (Lalitha/TNIE) plus die DZSF-Linie belegt —
+  eine Quelle weniger als die ≥ 2-Schwelle dieser
+  Anreicherungsrunde. `confirmation_status: reported`,
+  `attribution_confidence: reported` und `needs_review: true` werden
+  daher beibehalten; der Eintrag bleibt in ESCALATIONS.md offen.
 sources:
 - url: https://www.dzsf.bund.de/
   type: academic_paper
-  publisher: DZSF
+  publisher: >-
+    DZSF — Projekt 2020-23-S-1202 'Identifikation bestehender
+    Angriffspotentiale für das System Bahn' (REAVRS); DZSF-internal AP1
+    Zwischenbericht '20220318_Bericht_Cyberanschläge', section 2.8.7
+    'Angriff auf South Western Railway (Indien)'; DZSF Rohdaten row
+    2021-09-21 / Indien / Täter 'IS?'
   published_date: '2023-05-16'
   language: de
-  accessed_date: null
+  accessed_date: '2026-04-19'
+- url: https://www.dzsf.bund.de/SharedDocs/Downloads/DZSF/Veroeffentlichungen/Fachveroeffentlichungen/2023/2023-08_Fachartikel_EI_Cyberangriffe.pdf?__blob=publicationFile&v=2
+  type: academic_paper
+  publisher: >-
+    Iffländer, L.; Buder, T.; Buchetmann, B. (2023): 'Cyberangriffe auf
+    das Bahnsystem — Was bisher geschah'. Eisenbahn-Ingenieur (EI) 8/2023,
+    S. 17–21 (DVV Media Group). Table 2 row for 21.09.2021 / Indien /
+    Täter: IS / Webseite.
+  published_date: '2023-08-01'
+  language: de
+  accessed_date: '2026-04-19'
+- url: https://en.wikipedia.org/wiki/South_Western_Railway_zone
+  type: other
+  publisher: Wikipedia (English) — South Western Railway zone article (used only
+    for target-organization context, not as incident evidence)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://swr.indianrailways.gov.in/
+  type: official_statement
+  publisher: South Western Railway, Indian Railways — official zonal portal (used
+    only for target-organization context; no incident advisory is published for
+    21 September 2021)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://attack.mitre.org/techniques/T1491/002/
+  type: other
+  publisher: MITRE ATT&CK — T1491.002 External Defacement (used only for the
+    structural MITRE-technique tag for an externally-visible website defacement;
+    not a per-incident source)
+  published_date: null
+  language: en
+  accessed_date: '2026-04-19'
+- url: https://www.newindianexpress.com/states/karnataka/2021/Oct/01/south-western-railwaywebsite-hacked-no-data-stolen-2366045.html
+  type: news
+  publisher: "Lalitha, S. (2021): 'South Western Railway website hacked, no data
+    stolen'. The New Indian Express, 01 October 2021 (Karnataka edition).
+    Independent non-DZSF corroboration of the 21 September 2021 SWR website
+    defacement; DZSF AP1 report cites this article as reference [59]. Note the
+    canonical URL slug concatenates 'railwaywebsite' without a hyphen and uses
+    capitalised 'Oct'; the DZSF bibliography copy contained the German word
+    'Webseite' inside the slug (a find-replace artifact) which defeated the
+    enrichment subagent's search indexing."
+  published_date: '2021-10-01'
+  language: en
+  accessed_date: '2026-04-19'
 contributors:
 - DZSF import
+- Lukas Iffländer
 last_updated: '2026-04-19'
-notes: null
+notes: >
+  Identification. The DZSF raw-data row (20220824_Rohdaten_Cyber_Angriffe.xlsx,
+  row 31: event 2021-09-21, country "Indien", Bestätigung=Ja,
+  Supply-Chain=Nein, Angriffsmittel=empty, Malware=empty, Erpressung=Nein,
+  Täter="IS?", Webseite=1, all other systems=0) maps onto the incident
+  described in detail in the DZSF-internal AP1 project report
+  (20220318_Bericht_Cyberanschläge,li.docx) at section 2.8.7 "Angriff auf
+  South Western Railway (Indien)". The report paragraph reads: "Am 21.
+  September 2021 wurde die Webseite www.cnbnc.in der indischen
+  Bahngesellschaft South Western Railway angegriffen. Nach offiziellen
+  Angaben wurde eine islamistische Organisation dafür verantwortlich
+  gemacht, die eine Warnung bezüglich weiterer Cyber-Angriffe auf die
+  indische Infrastruktur hinterließ. Außer der Webseite waren keine
+  weiteren Systeme betroffen. Insbesondere wurde Datendiebstahl
+  ausgeschlossen." Subsequent DZSF publications reduced this to a single
+  row in Table 2 of the EI 8/2023 summary article (Iffländer, Buder,
+  Buchetmann 2023, p. 18) with "21.09.2021 / Indien / Bestätigung x /
+  Angriffsmittel-Kategorie: unklar / Täter: IS / Webseite=x". No other
+  Indian railway cyber incident is publicly dated 21 September 2021.
+
+  Interpretation of "IS". Post-batch the Lalitha / New Indian Express
+  article surfaced the verbatim defacement text: "Islamic State has
+  hacked this site. Message to the Alliance — Your government,
+  military, important secured sites are under our cyber attack. As
+  long as you fight the Islamic State, your failed system will continue
+  to be hacked." The attackers therefore self-identified as "Islamic
+  State" on the page itself. This is stronger than the DZSF paraphrase
+  ("islamistische Organisation") but it is still a self-claim, not a
+  third-party attribution: TNIE's lede only calls them "an extremist
+  organisation" and no SWR, police or CERT-In formal attribution is
+  reported. The draft therefore records the self-claim in the
+  `threat_actor` field while keeping `attribution_confidence: reported`
+  — appropriate for a publicly-made self-claim that has not been
+  validated forensically. No specific sub-group (IS Hacking Division,
+  United Cyber Caliphate, ISIS Cyber Caliphate, IS Khorasan cyber
+  wing) is named either by the attackers or by any source; the DZSF
+  Rohdaten cell records the attacker as "IS?" with a trailing
+  question mark that is consistent with this uncertainty.
+
+  Independent corroboration. The initial enrichment pass found zero
+  independent non-DZSF sources despite five rounds of search (≈ 25
+  distinct queries across English, German and Hindi terms, plus direct
+  domain / archive.org / CSIS / KonBriefing / Recorded Future / CloudSEK /
+  Threatpost / BleepingComputer / The Register / Hackread / CyberExpress /
+  CyFirma / MEMRI / SATP / SITE Intelligence / CRITIS 2022 proceedings /
+  heise / Golem / T-Online / Tagesschau / BSI Lagebericht / CERT-In /
+  ENISA). On maintainer follow-up the DZSF AP1 report's footnote [59]
+  was recovered and the underlying news source identified: S. Lalitha,
+  "South Western Railway website hacked, no data stolen", The New Indian
+  Express (Karnataka edition), 01 October 2021 — now added to `sources:`.
+  The URL as copy-pasted from the DZSF bibliography had the German word
+  "Webseite" inside the slug instead of "website" (a find-replace
+  artifact in the DZSF manuscript); the real URL uses "Oct" (capitalised)
+  and concatenates "railwaywebsite" without a hyphen — defeating the
+  enrichment subagent's search indexing. The full article was retrieved
+  on 2026-04-19 and its facts integrated into the draft:
+  `www.cnbnc.in` is confirmed as a SWR-operated departmental portal
+  (Lalitha's article attributes it to the Personnel Department in the
+  body and to the Construction Department in the lede — an internal
+  inconsistency — but explicitly frames it as "run by" SWR).
+  The earlier subagent speculation that `CNBNC` read as `Kanpur Central
+  (CNB) + North Central Railway (NCR)` and was therefore inconsistent
+  with an SWR property turns out to be coincidental — the article
+  documents two prior defacement incidents of the same domain (the
+  earlier one in 2017) and treats SWR ownership as settled. The domain
+  remains absent from the Wayback Machine but is no longer an
+  independent red flag. With one mainstream-media non-DZSF source
+  (Lalitha / TNIE) added, the incident is no longer DZSF-only-attested;
+  the count nevertheless remains below the ≥ 2 independent-non-DZSF
+  threshold used uniformly in this enrichment pass, so
+  `needs_review: true` is retained and the escalation entry remains
+  open (now framed as a one-source-short borderline case).
+
+  Dates. event_date = 2021-09-21 kept exactly as in DZSF (and explicitly
+  spelled out in the AP1 narrative "Am 21. September 2021"); precision =
+  day. reported_date set to 2021-09-21 (same day — no other reporting
+  date is available and the DZSF material implies same-day awareness).
+
+  target_organization = South Western Railway (SWR). A zone of Indian
+  Railways, established 1 April 2003 out of the southern portion of the
+  Central Railway and the south-western portion of the Southern Railway.
+  Headquartered at Hubballi (Hubli), Karnataka. Three operating
+  divisions: Bangalore (SBC), Hubli (UBL), Mysuru (MYS). Reports to the
+  Railway Board / Ministry of Railways, Government of India; the
+  General Manager is an Indian Railway Service cadre officer. SWR is
+  not a privatised train-operating company — it is a zone of the
+  monolithic Indian-Railways national incumbent; therefore
+  operator_type = `incumbent`. The domain www.cnbnc.in cited in the
+  DZSF report is not a known SWR URL; whether it was an ancillary
+  microsite, a contractor portal or a mis-transcription could not be
+  determined.
+
+  industry_sector = `regional_passenger`. SWR is predominantly a
+  mixed passenger/freight regional zone of Indian Railways, operating
+  regional/intercity passenger services and associated freight on its
+  portion of the IR network. In the repo's enumeration
+  (`regional_passenger` vs `long_distance_passenger` vs `freight` vs
+  `infrastructure_manager` vs `urban_transit`) the best match for a
+  zone of a monolithic national incumbent is `regional_passenger`;
+  `other` is reserved for genuinely non-rail or genuinely mixed
+  entities (rolling-stock manufacturers, research institutes, etc.).
+
+  operator_type = `incumbent`. SWR is a Ministry-of-Railways zone of
+  the Indian-Railways national incumbent, i.e. directly analogous to
+  DB-Netz / DB-Regio under Deutsche Bahn, SNCF Réseau under SNCF, or
+  Eesti Raudtee under the Estonian state. `public_authority` is
+  reserved in the repo's usage for bodies like TfL, TTC or MTA
+  (public-transport authorities that contract for services);
+  `incumbent` is the correct tag for a national-railway zone.
+
+  attack_vector = `unknown`. The DZSF narrative records that the
+  website was "angegriffen" (attacked) but does not specify the
+  initial-access technique — no phishing lure, exploited CVE,
+  credential-theft, brute-force, insider or supply-chain vector is
+  named. `unknown` is therefore preferred over invention.
+
+  supply_chain = false. Nothing in the DZSF material suggests a
+  supplier-side compromise; the attack is framed as directly targeting
+  an SWR-associated website.
+
+  malware = null. No malware name, family or hash is documented in
+  the DZSF material. Website defacements often do not involve
+  deployable malware (they can be achieved through CMS/credential
+  compromise or web-shell plant-and-overwrite flows), so leaving
+  `malware: null` is both conservative and consistent with the
+  source.
+
+  extortion = false, data_published = false. The DZSF narrative is
+  explicit that data theft was ruled out ("Insbesondere wurde
+  Datendiebstahl ausgeschlossen") and makes no mention of a
+  monetary demand, ransom message or leak-site listing.
+
+  motive = `hacktivism`. The attacker's stated purpose — leaving a
+  warning on the page about "further cyber-attacks on Indian
+  infrastructure" — is ideological / political signalling rather
+  than financial extortion or state-level espionage, so `hacktivism`
+  is the closest fit in the vocabulary. `mixed` or `disruption`
+  were considered but the narrow single-website impact argues
+  against a broader disruption motive, and there is no evidence of
+  a parallel financial angle to justify `mixed`.
+
+  mitre_attack_techniques = [T1491.002]. T1491.002 "Defacement:
+  External Defacement" is the canonical MITRE ATT&CK technique for
+  the publicly-visible modification of an external website with
+  messaging content, matching the DZSF description exactly.
+  T1491.001 "Internal Defacement" is rejected (the DZSF report
+  describes a public / external website). No credential-access,
+  execution, exfiltration or impact-beyond-defacement technique is
+  documented, so the list is kept to the single external-defacement
+  tag rather than speculating about the initial-access vector.
+
+  threat_actor = "Unidentified Islamist organisation (per DZSF;
+  originally recorded in the DZSF Rohdaten as 'IS?', i.e. an
+  uncertain 'Islamic State'-class attribution; no specific group
+  name, leak-site handle or self-branding is documented in the DZSF
+  narrative and no independent public source names the group)".
+  threat_actor_country = null (no country attribution is made in any
+  DZSF material). attribution_confidence = `reported` (following the
+  DZSF narrative phrasing "Nach offiziellen Angaben"); this is
+  softer than `confirmed` because the underlying official statement
+  could not be located, and harder than `suspected` because the
+  DZSF's own narrative presents the attribution as a publicly-made
+  claim rather than their own conjecture.
+
+  confirmation_status = `reported` (downgraded from the original DZSF
+  import value `confirmed`). Although the DZSF raw-data row records
+  "Bestätigung = Ja", the complete absence of any independent
+  corroborating source (press, CERT advisory, operator statement)
+  for this incident means the draft should be conservative about
+  confirmation. The downgrade from `confirmed` to `reported` reflects
+  the fact that the only public-record anchor is the DZSF project
+  itself.
+
+  affected_systems = [`website`] — kept as the DZSF row had it. No
+  other system is attested.
+
+  impact.scope = `regional` (SWR footprint: Karnataka / Goa / southern
+  Maharashtra / northern Tamil Nadu / sliver of AP — a multi-state
+  regional zone, not a single-station/local footprint, and not the
+  national footprint of all of Indian Railways). duration_hours left
+  `null` — the DZSF material does not quantify how long the defaced
+  page remained up. affected_trains = 0 (train operations were
+  explicitly unaffected — only the website). affected_passengers,
+  monetary_damage_eur: null. data_compromise.* = false across the
+  board, consistent with the DZSF explicit statement that data theft
+  was ruled out.
+
+  Sources — the DZSF generic URL is retained as the primary citation
+  (the AP1 report itself is DZSF-internal project material and not
+  publicly downloadable; it can be obtained from DZSF on request via
+  Forschung@dzsf.bund.de). The public-record DZSF anchor is the 2023
+  EI / Eurailpress summary article (Iffländer, Buder, Buchetmann 2023,
+  EI 8/2023) which lists the incident in Table 2. The incident-
+  corroborating independent non-DZSF source is the 01 October 2021
+  New Indian Express article by S. Lalitha cited as footnote [59] of
+  the DZSF AP1 report — added to `sources:` on the post-batch update.
+  Three further non-DZSF context URLs (Wikipedia SWR article, official
+  SWR zonal portal, MITRE ATT&CK T1491.002) remain as structural
+  context — they do NOT corroborate the incident itself and are
+  flagged as context-only in their publisher strings. The incident-
+  substantiating independent-non-DZSF-source count is therefore ONE
+  (Lalitha/New Indian Express); `needs_review: true` is kept because
+  the count is still below the ≥ 2 threshold.
+
+  needs_review flag retention. Per the project's enrichment protocol,
+  flipping `needs_review` from true → false requires ≥ 2 independent
+  non-DZSF sources. This incident has one. needs_review is therefore
+  kept at `true` and an escalation entry remains open in
+  `incidents/.drafts/ESCALATIONS.md` (now framed as a one-source-short
+  borderline case rather than a zero-source DZSF-only case).
+  contributors is extended with "Lukas Iffländer" per the protocol's
+  attribution rule — both ≥ 1 new non-DZSF incident-substantiating
+  source (Lalitha 2021) and ≥ 3 fields moved off null / defaults are
+  satisfied after the post-batch update.
+
+  Vocabulary. No new vocabulary values are required for this draft.
+  industry_sector `regional_passenger`, operator_type `incumbent`,
+  attack_vector `unknown`, motive `hacktivism`, affected_systems
+  `website`, impact.scope `regional`, source type `academic_paper`
+  and `official_statement` and `other` are all existing values.
 provenance:
   origin: DZSF-2020-23-S-1202
   imported_from: 20220824_Rohdaten_Cyber_Angriffe.xlsx
