@@ -1,0 +1,36 @@
+# Curated sources for the discovery pipeline. Editable by
+# non-dev contributors. See docs/superpowers/specs/2026-04-19-
+# incident-discovery-pipeline-design.md for the list rationale.
+aggregators:
+  - id: konbriefing
+    kind: html
+    enabled: true
+    url: https://konbriefing.com/en-topics/cyber-attacks-railway.html
+    source_type: news
+
+  - id: eurepoc
+    kind: json
+    enabled: true
+    url: https://eurepoc.eu/api/incidents?sector=Transport
+    source_type: database
+
+  - id: enisa_transport
+    kind: pdf
+    enabled: true
+    pdfs:
+      # Add URLs to annual Transport Threat Landscape PDFs here.
+      # Left empty until maintainer supplies stable URLs.
+    source_type: advisory
+
+  - id: ransomware_live
+    kind: json
+    enabled: true
+    url: https://api.ransomware.live/v2/recentvictims
+    source_type: leak_site
+
+  - id: bsi_lagebericht
+    kind: pdf
+    enabled: true
+    pdfs:
+      # BSI annual Lagebericht PDFs; populate on rollout.
+    source_type: advisory
