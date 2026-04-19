@@ -89,3 +89,6 @@ AGENTS.md
 
 # Enrichment sidecar drafts (see docs/superpowers/specs/2026-04-19-incident-enrichment-design.md)
 incidents/.drafts/
+
+# Discovery pipeline cost log (dist/ is already excluded, but pin it):
+dist/.discover-cost.log
