@@ -1,0 +1,11 @@
+ENISA Threat Landscape: Transport Sector
+Reporting period: April 2023 – March 2024
+
+In August 2023, a railway operator in Germany announced disruption
+following a ransomware incident attributed to an unnamed actor.
+Source: public disclosure by the operator.
+
+Separate from that, a port operator in Rotterdam experienced a
+phishing-driven breach in November 2023.
+
+The Paris metro operator confirmed a cyber incident in July 2023.
