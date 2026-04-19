@@ -1,4 +1,4 @@
-.PHONY: install validate build test lint clean
+.PHONY: install validate build test lint clean discover discover-fetch discover-stub
 
 install:
 	uv sync
@@ -17,3 +17,13 @@ lint:
 
 clean:
 	rm -rf dist/ .pytest_cache/ .ruff_cache/ **/__pycache__
+
+discover:          ## Full discovery: fetch candidates + write stubs
+	uv run python scripts/fetch_candidates.py
+	uv run python scripts/stub_candidates.py
+
+discover-fetch:    ## Stage 1 only — refresh dist/candidates.json
+	uv run python scripts/fetch_candidates.py
+
+discover-stub:     ## Stage 2 only — re-run LLM on existing candidates.json
+	uv run python scripts/stub_candidates.py
