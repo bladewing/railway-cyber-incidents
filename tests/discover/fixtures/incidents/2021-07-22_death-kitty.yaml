@@ -1,0 +1,13 @@
+id: 2021-07-22_death-kitty
+schema_version: "1.0"
+event_date: 2021-07-22
+event_date_precision: day
+countries_impacted: [IR]
+target_organization: Iranian Railways
+confirmation_status: reported
+description_en: >
+  Wiper attack against Iranian Railways display boards.
+sources:
+  - url: https://example.org/death-kitty-original
+    type: news
+last_updated: 2021-07-30

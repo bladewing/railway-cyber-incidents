@@ -1,0 +1,13 @@
+id: 2017-05-13_wannacry
+schema_version: "1.0"
+event_date: 2017-05-13
+event_date_precision: day
+countries_impacted: [DE]
+target_organization: Deutsche Bahn
+confirmation_status: confirmed
+description_en: >
+  WannaCry affected Deutsche Bahn display boards.
+sources:
+  - url: https://example.org/wannacry-db
+    type: news
+last_updated: 2021-07-30
