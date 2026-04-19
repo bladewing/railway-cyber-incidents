@@ -1,0 +1,24 @@
+{
+  "incidents": [
+    {
+      "id": "EuRepoC-2024-0321",
+      "name": "Ransomware against DB Schenker",
+      "date": "2024-03-01",
+      "sector": "Transport",
+      "subsector": "Rail",
+      "countries": ["Germany"],
+      "url": "https://eurepoc.eu/incident/2024-0321",
+      "summary": "Rail freight operator hit by ransomware..."
+    },
+    {
+      "id": "EuRepoC-2023-0818",
+      "name": "Metro Paris cyber incident",
+      "date": "2023-08-14",
+      "sector": "Transport",
+      "subsector": "Public transit",
+      "countries": ["France"],
+      "url": "https://eurepoc.eu/incident/2023-0818",
+      "summary": "Network disruption reported..."
+    }
+  ]
+}
