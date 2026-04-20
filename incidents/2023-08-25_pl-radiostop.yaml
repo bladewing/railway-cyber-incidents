@@ -1,0 +1,143 @@
+id: 2023-08-25_pl-radiostop
+schema_version: '1.0'
+
+event_date: '2023-08-25'
+event_date_precision: day
+reported_date: '2023-08-26'
+
+countries_impacted:
+- PL
+region: null
+coordinates: null
+
+target_organization: PKP PLK (PKP Polskie Linie Kolejowe) und weitere polnische EVU
+industry_sector: other
+operator_type: incumbent
+
+attack_vector: physical
+supply_chain: false
+malware: null
+extortion: false
+motive: mixed
+mitre_attack_techniques: null
+
+threat_actor: null
+threat_actor_country: PL
+attribution_confidence: confirmed
+
+confirmation_status: confirmed
+
+affected_systems:
+  - train_driver_communication
+  - rail_operations
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: 20
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+
+description_en: >
+  Starting on the evening of 25 August 2023, two Polish individuals used cheap
+  software-defined radio (SDR) equipment (cost ~$30–100) to broadcast the
+  unauthenticated three-tone RADIOSTOP emergency-stop signal on Poland's
+  legacy unencrypted 150.100 MHz VHF train radio, halting approximately 20
+  freight and passenger trains across multiple regions (Zachodniopomorskie,
+  Białystok, Gdynia, Wrocław). The same broadcasts interleaved Russian national
+  anthem recordings and excerpts of a Putin speech. Two suspects (aged 24 and
+  29), one a serving Białystok police officer, were arrested on 27–29 August
+  2023. Polish special services attributed the action to alleged support for
+  Russia in the context of the ongoing war in Ukraine. This is the first
+  publicly documented case where an unauthorized external radio signal directly
+  and intentionally triggered a railway safety function (emergency stop) on a
+  national scale.
+description_de: >
+  Ab dem Abend des 25. August 2023 sendeten zwei polnische Personen mit
+  günstigem SDR-Equipment (ca. 30–100 USD) das unauthentifizierte
+  RADIOSTOP-Drei-Ton-Signal über das unverschlüsselte analoge 150,100-MHz-VHF-
+  Zugfunknetz, was rund 20 Güter- und Personenzüge in mehreren Regionen
+  (Zachodniopomorskie, Białystok, Gdynia, Wrocław) zum Halten zwang. Parallel
+  wurden Aufnahmen der russischen Nationalhymne und Ausschnitte einer
+  Putin-Rede übertragen. Zwei Tatverdächtige (24 und 29 Jahre), einer davon
+  ein aktiver Polizeibeamter aus Białystok, wurden am 27.–29. August 2023
+  verhaftet. Polnische Sicherheitsbehörden ordneten die Aktion mutmaßlicher
+  Unterstützung Russlands im Kontext des Ukraine-Krieges zu. Es ist der erste
+  öffentlich dokumentierte Fall, bei dem ein unautorisiertes externes
+  Funksignal absichtlich eine Sicherheitsfunktion (Nothalt) eines nationalen
+  Bahnsystems auf nationaler Ebene ausgelöst hat.
+
+sources:
+  - url: https://therecord.media/two-arrested-poland-railway-hack
+    type: news
+    publisher: The Record (Recorded Future News)
+    published_date: '2023-08-29'
+    language: en
+    accessed_date: '2026-04-20'
+  - url: https://securityaffairs.com/149952/hacking/hacking-attack-polan-railways.html
+    type: news
+    publisher: Security Affairs
+    published_date: '2023-08-28'
+    language: en
+    accessed_date: '2026-04-20'
+  - url: https://niebezpiecznik.pl/post/ataki-polska-kolej-pkp-radiostop/
+    type: news
+    publisher: Niebezpiecznik.pl
+    published_date: '2023-08-26'
+    language: pl
+    accessed_date: '2026-04-20'
+  - url: https://industrialcyber.co/transport/cyber-hackers-target-polish-rail-network-cause-operational-disruptions/
+    type: news
+    publisher: Industrial Cyber
+    published_date: '2023-08-29'
+    language: en
+    accessed_date: '2026-04-20'
+  - url: https://www.schneier.com/blog/archives/2023/08/remotely-stopping-polish-trains.html
+    type: blog
+    publisher: Schneier on Security
+    published_date: '2023-08-28'
+    language: en
+    accessed_date: '2026-04-20'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-20'
+notes: >
+  Dieser Vorfall ist der empirische Bruchfall für These B des
+  Safety-Meets-Security-Vortrags 2026: erste direkt ausgelöste Safety-Funktion
+  durch einen nicht-autorisierten externen Eingriff in ein nationales Bahnnetz.
+
+  Vokabular-Abweichungen: (1) attack_vector=physical ist der nächstbeste Wert
+  für einen RF-Angriff — der Einsatz von SDR-Hardware erfordert physische Nähe
+  zur Übertragungsstrecke und physisches Equipment; radio_frequency existiert
+  nicht im Vokabular. (2) affected_systems: train_driver_communication deckt
+  den 150-MHz-VHF-Zugfunk ab; rail_operations erfasst die dadurch ausgelöste
+  Nothalt-Funktion. Eine dedizierte ID train_radio fehlt im Vokabular.
+  (3) industry_sector=other, da sowohl Fernverkehr (PKP Intercity) als auch
+  Regionalverkehr betroffen waren — kein einzelner Sektor trifft zu.
+  (4) motive=mixed: die Täter kombinierten ideologische Propaganda (russische
+  Hymne, Putin-Rede) mit operativer Disruption; einer der Verdächtigen soll
+  außerdem aus persönlicher Amüsement gehandelt haben ("joking around"
+  laut Niebezpiecznik.pl). Polnische Sonderdienste (Zaryn) ordneten dies
+  öffentlich der Unterstützung Russlands zu.
+
+  PKP PLK klassifizierte den Vorfall offiziell NICHT als Cyberangriff, da kein
+  Computersystem kompromittiert wurde — die Gefährdung resultierte aus der
+  physischen Sendung eines ungesicherten analogen Funksignals. In der
+  wissenschaftlichen und medialen Aufarbeitung wird der Vorfall dennoch als
+  sicherheitsrelevanter Cybervorfall eingestuft (fehlende Authentifizierung,
+  keine Verschlüsselung, SDR-basierter Angriff).
+
+  In 2023 wurden insgesamt 775 Fälle unautorisierten RADIOSTOP-Gebrauchs
+  registriert (Rynek Kolejowy, 2024) — der Augustvorfall ist der prominenteste
+  dieser Serie und der einzige mit bestätigten Verhaftungen und
+  politisch-propagandistischem Kontext.
