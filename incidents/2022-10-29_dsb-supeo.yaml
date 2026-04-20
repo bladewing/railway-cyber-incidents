@@ -1,0 +1,117 @@
+id: 2022-10-29_dsb-supeo
+schema_version: "1.0"
+
+event_date: '2022-10-29'
+event_date_precision: day
+reported_date: '2022-10-31'
+
+countries_impacted: [DK]
+region: null
+coordinates: null
+
+target_organization: Danske Statsbaner (DSB) via Supeo A/S
+industry_sector: long_distance_passenger
+operator_type: incumbent
+
+attack_vector: supply_chain
+supply_chain: true
+malware: null
+extortion: false
+motive: financial
+mitre_attack_techniques:
+  - T1486
+  - T1195
+
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: unknown
+
+confirmation_status: confirmed
+
+affected_systems:
+  - train_driver_communication
+  - internal_communication
+
+data_published: null
+
+impact:
+  scope: national
+  duration_hours: 5
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+
+description_en: >
+  On 29 October 2022 (Saturday morning), a ransomware-type attack on Supeo,
+  a Danish IT supplier to DSB (Danske Statsbaner), forced Supeo to shut down
+  its servers. The 'Digital Backpack 2' (Digitale Rygsæk 2) application used
+  by train drivers to access safety-critical operational information—including
+  speed limits and track-work notifications—became unavailable, halting all
+  DSB train operations across Denmark for several hours. DSB's security chief
+  described the attack as "economic crime" not targeting DSB infrastructure
+  directly. An emergency offline-access procedure failed due to a software
+  defect, extending the disruption. No attribution to a named threat actor was
+  established.
+description_de: >
+  Am 29. Oktober 2022 (Samstagmorgen) zwang ein Ransomware-artiger Angriff
+  auf den IT-Dienstleister Supeo zur Abschaltung seiner Server. Die von
+  Zugpersonal verwendete Applikation 'Digital Backpack 2' (Digitale Rygsæk 2)
+  war nicht mehr erreichbar, wodurch der DSB-Zugverkehr in ganz Dänemark
+  mehrere Stunden lang stillstand. Eine Notfall-Offline-Prozedur versagte
+  aufgrund eines Softwarefehlers. DSB-Sicherheitschef Carsten Dam
+  Sønderbo-Jacobsen bezeichnete den Angriff als 'wirtschaftliche
+  Kriminalität', der nicht auf DSB-Infrastruktur abzielte.
+
+sources:
+  - url: https://www.version2.dk/artikel/it-fejl-hos-dsb-leverandoer-fik-tog-til-holde-stille-over-hele-landet
+    type: news
+    publisher: Version2 (IDG Denmark)
+    published_date: '2022-10-31'
+    language: da
+    accessed_date: '2026-04-20'
+  - url: https://www.dr.dk/nyheder/seneste/dsb-loerdagens-totalnedbrud-af-togdriften-skyldtes-hackerangreb-og-fejl-i
+    type: news
+    publisher: DR (Danmarks Radio)
+    published_date: '2022-11-03'
+    language: da
+    accessed_date: '2026-04-20'
+  - url: https://nyheder.tv2.dk/krimi/2022-11-03-hackere-bag-dsb-angreb-ville-formentlig-begaa-oekonomisk-kriminalitet
+    type: news
+    publisher: TV 2 Danmark
+    published_date: '2022-11-03'
+    language: da
+    accessed_date: '2026-04-20'
+  - url: https://securityaffairs.com/138127/cyber-crime/cyberattack-blocked-trains-denmark.html
+    type: news
+    publisher: Security Affairs
+    published_date: '2022-11-06'
+    language: en
+    accessed_date: '2026-04-20'
+  - url: https://www.bitdefender.com/en-us/blog/hotforsecurity/denmarks-train-network-frozen-due-to-cyberattack-on-subcontractor
+    type: blog
+    publisher: Bitdefender Hot for Security
+    published_date: '2022-11-07'
+    language: en
+    accessed_date: '2026-04-20'
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-20'
+notes: >
+  First documented case of a ransomware attack on a railway supplier causing
+  a complete national train standstill without the railway operator itself
+  being compromised. DSB security chief Carsten Dam Sønderbo-Jacobsen told
+  DR and Reuters that Supeo's testing environment had been infiltrated by
+  criminals with a financial motive (suspected bitcoin mining / ransomware).
+  The backup offline-access procedure for 'Digital Backpack 2' was rendered
+  ineffective by a pre-existing software defect, compounding the disruption.
+  No named threat actor claimed responsibility; motive described as economic
+  crime. The incident triggered a review of Danish railway emergency procedures.
+  extortion is set to false because public sources confirm financial motive
+  (suspected ransomware / cryptominer) but no ransom demand or extortion
+  component was publicly confirmed.
