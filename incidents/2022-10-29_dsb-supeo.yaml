@@ -1,11 +1,12 @@
 id: 2022-10-29_dsb-supeo
-schema_version: "1.0"
+schema_version: '1.0'
 
 event_date: '2022-10-29'
 event_date_precision: day
 reported_date: '2022-10-31'
 
-countries_impacted: [DK]
+countries_impacted:
+- DK
 region: null
 coordinates: null
 
@@ -53,8 +54,8 @@ description_en: >
   by train drivers to access safety-critical operational information—including
   speed limits and track-work notifications—became unavailable, halting all
   DSB train operations across Denmark for several hours. DSB's security chief
-  described the attack as "economic crime" not targeting DSB infrastructure
-  directly. An emergency offline-access procedure failed due to a software
+  Carsten Dam Sønderbo-Jacobsen described the attack as "economic crime" not
+  targeting DSB infrastructure directly. An emergency offline-access procedure failed due to a software
   defect, extending the disruption. No attribution to a named threat actor was
   established.
 description_de: >
@@ -99,6 +100,7 @@ sources:
     language: en
     accessed_date: '2026-04-20'
 
+provenance: null
 contributors:
   - "Lukas Iffländer"
 last_updated: '2026-04-20'
