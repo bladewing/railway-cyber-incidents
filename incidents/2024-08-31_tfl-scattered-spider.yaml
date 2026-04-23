@@ -1,0 +1,156 @@
+id: 2024-08-31_tfl-scattered-spider
+schema_version: '1.0'
+
+event_date: '2024-08-31'
+event_date_precision: day
+reported_date: '2024-09-02'
+
+countries_impacted:
+- GB
+region: Greater London
+coordinates:
+  lat: 51.5074
+  lon: -0.1278
+
+target_organization: Transport for London (TfL) — London Underground, Overground, Elizabeth line, DLR, buses
+industry_sector: urban_transit
+operator_type: public_authority
+
+attack_vector: phishing
+supply_chain: false
+malware: null
+extortion: true
+motive: financial
+mitre_attack_techniques:
+  - T1566
+  - T1621
+  - T1078
+
+threat_actor: Scattered Spider (UNC3944 / Octo Tempest)
+threat_actor_country: null
+attribution_confidence: reported
+
+confirmation_status: confirmed
+
+affected_systems:
+  - data
+  - payment_system
+  - internal_communication
+  - station_it
+
+data_published: false
+
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: 10000000
+    monetary_damage_eur: 48000000
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: true
+
+description_en: >
+  On 31 August 2024 attackers affiliated with the English-speaking
+  social-engineering collective Scattered Spider (also tracked as
+  UNC3944 / Octo Tempest) gained persistent access to the corporate
+  network of Transport for London (TfL) through a targeted phishing
+  and help-desk social-engineering campaign. TfL detected the intrusion
+  on 1 September and publicly confirmed it on 2 September 2024. Over
+  the following weeks TfL took customer-facing back-office systems
+  offline to contain the incident: online refunds, Oyster auto-top-up
+  registrations, Dial-a-Ride bookings, live LU arrival data and
+  journey-history endpoints were all degraded or suspended. Investigators
+  determined that the personal data of approximately 10 million
+  customers was accessed (names, contact details, email and home
+  addresses, some date-of-birth records), and that around 5,000 Oyster
+  refund records containing bank account numbers and sort codes were
+  also exposed. TfL forced a password reset for its ~30,000 staff,
+  requiring in-person identity verification for many employees. Two
+  suspected Scattered Spider members — Thalha Jubair (19, East London)
+  and Owen Flowers (18, Walsall) — were arrested by the UK National
+  Crime Agency on 16 September 2024 and charged under the Computer
+  Misuse Act 1990; a further 17-year-old had been arrested on
+  6 September. Public-body accounts showed TfL response and remediation
+  costs approaching GBP 40 million (≈ EUR 48 M).
+description_de: >
+  Am 31. August 2024 verschafften sich Angreifer der
+  englischsprachigen Social-Engineering-Gruppe Scattered Spider (auch
+  UNC3944 / Octo Tempest) persistenten Zugriff auf das Unternehmensnetz
+  von Transport for London (TfL) durch gezieltes Phishing und
+  Helpdesk-Social-Engineering. TfL entdeckte den Einbruch am
+  1. September und bestätigte ihn öffentlich am 2. September 2024. In
+  den folgenden Wochen schaltete TfL zahlreiche Kundenfunktionen ab:
+  Online-Rückerstattungen, Oyster-Auto-Top-Up-Anmeldungen,
+  Dial-a-Ride-Buchungen, LU-Echtzeitdaten und Fahrthistorien waren
+  degradiert oder ausgesetzt. Laut Ermittlungen wurden Personendaten
+  von rund zehn Millionen Kunden abgegriffen (Namen, Kontaktdaten,
+  E-Mail und Postanschriften, teils Geburtsdaten) sowie rund
+  5.000 Oyster-Rückerstattungsdatensätze mit Bankkontonummern und
+  Bankleitzahlen. TfL erzwang für ~30.000 Beschäftigte einen
+  Passwort-Reset mit persönlicher Identitätsprüfung. Am 16. September
+  2024 verhaftete die britische National Crime Agency zwei mutmaßliche
+  Scattered-Spider-Mitglieder — Thalha Jubair (19, East London) und
+  Owen Flowers (18, Walsall) —; ein 17-Jähriger war bereits am
+  6. September festgenommen worden. Die TfL-Reaktions- und
+  Sanierungskosten belaufen sich auf knapp 40 Millionen GBP
+  (rund 48 Mio. EUR).
+
+sources:
+  - url: https://www.nationalcrimeagency.gov.uk/news/two-charged-for-tfl-cyber-attack
+    type: official_statement
+    publisher: UK National Crime Agency (NCA)
+    published_date: '2024-09-18'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://tfl.gov.uk/fares/free-and-discounted-travel/cyber-security-incident
+    type: press_release
+    publisher: Transport for London
+    published_date: null
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.computerweekly.com/news/366639589/Scattered-Spider-attack-on-TfL-affected-10-million-people
+    type: news
+    publisher: Computer Weekly
+    published_date: '2026-03-07'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.computerweekly.com/news/366616875/TfL-cyber-attack-cost-over-30m-to-date
+    type: news
+    publisher: Computer Weekly
+    published_date: '2024-12-18'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://thehackernews.com/2024/09/17-year-old-arrested-in-connection-with.html
+    type: news
+    publisher: The Hacker News
+    published_date: '2024-09-12'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  TfL is the public transport authority for Greater London (operator_
+  type=public_authority) and operates the London Underground, Elizabeth
+  line and Docklands Light Railway — clearly rail operations within
+  this dataset's remit — alongside buses and managed roads. industry_
+  sector=urban_transit rather than rolling_stock_manufacturer or
+  infrastructure_manager, matching the dataset's handling of BVG
+  (2025-04-07_bvg) and WMATA (2024-05-07_wmata). attack_vector=phishing
+  and motive=financial reflect Scattered Spider's documented tradecraft
+  (SIM-swap + help-desk social engineering + identity-provider abuse
+  → domain admin → extortion). extortion=true — Scattered Spider
+  attempted ransom negotiation according to TfL internal reporting
+  surfaced in later press coverage; no public ransom amount nor paid
+  ransom has been reported. monetary_damage_eur approximates the
+  GBP 30-40 M TfL response cost (2024-12 / 2026-03 reporting); exact
+  figure pending TfL annual report. Rail operations and signalling
+  were not directly affected; safety-of-life systems remained
+  segregated per TfL's confirmation. The 17-year-old's name is
+  withheld per UK youth-reporting restrictions.
