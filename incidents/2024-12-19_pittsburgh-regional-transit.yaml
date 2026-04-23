@@ -1,0 +1,138 @@
+id: 2024-12-19_pittsburgh-regional-transit
+schema_version: '1.0'
+
+event_date: '2024-12-19'
+event_date_precision: day
+reported_date: '2024-12-23'
+
+countries_impacted:
+- US
+region: Pittsburgh, Pennsylvania
+coordinates:
+  lat: 40.4406
+  lon: -79.9959
+
+target_organization: Pittsburgh Regional Transit (PRT) — Port Authority of Allegheny County
+industry_sector: urban_transit
+operator_type: public_authority
+
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: null
+motive: financial
+mitre_attack_techniques:
+  - T1486
+
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: unknown
+
+confirmation_status: confirmed
+
+affected_systems:
+  - internal_communication
+  - internal_train_tracking
+  - data
+
+data_published: null
+
+impact:
+  scope: local
+  duration_hours: 24
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: false
+
+description_en: >
+  On the morning of Thursday 19 December 2024, Pittsburgh Regional
+  Transit (PRT) — the public authority operating light-rail ("the T"),
+  bus and incline services in Allegheny County, Pennsylvania —
+  experienced a ransomware intrusion that disrupted the operations-
+  control applications used by dispatchers to track vehicles on the
+  light-rail network. Light-rail services ran with delays exceeding
+  20 minutes until manual workarounds were put in place; bus
+  operations were largely unaffected. PRT initially attributed the
+  issue to a "computer glitch" but confirmed the ransomware nature of
+  the incident in a public notice on 23 December 2024. The customer-
+  facing telephone system, real-time arrival boards and some
+  internal corporate systems were also intermittently affected during
+  the response. On 8 January 2025 PRT filed a supplementary breach
+  notification confirming that personal data belonging to 69 current
+  employees, former employees and job applicants had been accessed.
+  No ransomware group publicly claimed the attack and no leak-site
+  listing has been observed as of April 2026.
+description_de: >
+  Am Morgen des Donnerstag, 19. Dezember 2024, kam es bei Pittsburgh
+  Regional Transit (PRT) — der öffentlich-rechtlichen Verkehrsbehörde
+  für Stadtbahn ("the T"), Bus und Standseilbahn im Allegheny County,
+  Pennsylvania — zu einem Ransomware-Einbruch, der die
+  Leitstandsoftware für die Fahrzeugverfolgung im Stadtbahnnetz
+  beeinträchtigte. Die Stadtbahn fuhr bis zur manuellen Ersatzsteuerung
+  mit über 20 Minuten Verspätung; der Busbetrieb war weitgehend
+  unberührt. PRT sprach zunächst von einer "Computerstörung", bestätigte
+  die Ransomware-Natur aber am 23. Dezember 2024 öffentlich. Auch
+  das Telefonsystem, Echtzeit-Abfahrtsanzeigen und einzelne interne
+  Systeme waren zeitweilig betroffen. Am 8. Januar 2025 meldete PRT
+  nach, dass personenbezogene Daten von 69 aktiven und ehemaligen
+  Beschäftigten sowie Bewerbenden abgeflossen seien. Keine
+  Ransomware-Gruppe hat den Angriff bislang öffentlich bekannt gemacht;
+  Leak-Site-Einträge sind bis April 2026 nicht bekannt.
+
+sources:
+  - url: https://www.rideprt.org/siteassets/inside-the-pa/media-center/press-releases/2024/12232024cyber.pdf
+    type: press_release
+    publisher: Pittsburgh Regional Transit
+    published_date: '2024-12-23'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://therecord.media/pittsburgh-regional-transit-attributes-disruptions-to-ransomware-attack
+    type: news
+    publisher: The Record (Recorded Future News)
+    published_date: '2024-12-23'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.wesa.fm/development-transportation/2025-01-07/pittsburgh-regional-transit-ransomware-attack-personal-data
+    type: news
+    publisher: WESA (NPR Pittsburgh)
+    published_date: '2025-01-07'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://securityaffairs.com/172333/cyber-crime/pittsburgh-regional-transit-ransomware-attack.html
+    type: news
+    publisher: Security Affairs
+    published_date: '2024-12-24'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.unionprogress.com/2025/01/08/cyberattackers-got-information-on-69-employees-former-employees-and-job-applicants-at-pittsburgh-regional-transit/
+    type: news
+    publisher: Pittsburgh Union Progress
+    published_date: '2025-01-08'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  event_date=2024-12-19 per PRT's own press release (incident
+  "detected"). reported_date=2024-12-23 when the public notice was
+  issued; most media coverage followed on 24-25 December. industry_
+  sector=urban_transit (light-rail + bus + incline); operator_type=
+  public_authority (PRT = Port Authority of Allegheny County). The
+  light-rail dispatching/vehicle-tracking outage is captured by
+  internal_train_tracking; the customer hotline outage and corporate
+  IT impact by internal_communication. scope=local reflects the
+  single-urban-area impact. motive=financial is inferred from the
+  ransomware nature and absence of any political messaging; no ransom
+  amount or negotiation is public. data_compromise.customer_data=false
+  per PRT's "no evidence rider data accessed"; organizational_data=true
+  covers the 69-person employee-and-applicant record exposure disclosed
+  2025-01-08. attribution remains null / unknown through April 2026.
