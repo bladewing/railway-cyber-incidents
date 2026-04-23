@@ -45,3 +45,7 @@ then drill into per-incident drafts and logs as needed.
 | 2023-08-01_belt-railway-company-of-chicago | drafted | 7 | 24/31 | yes | — | — | .drafts/2023-08-01_belt-railway-company-of-chicago.yaml |
 | 2023-09-20_elron | drafted | 12 | 26/31 | yes | — | — | .drafts/2023-09-20_elron.yaml |
 | 2023-11-18_rostocker-strassenbahn-ag | drafted | 25 | 27/31 | yes | — | — | .drafts/2023-11-18_rostocker-strassenbahn-ag.yaml |
+| 2023-11-24_greater-richmond-transit-company-grtc | re-verified | 10 | 24/31 | yes | — | — | .drafts/2023-11-24_greater-richmond-transit-company-grtc.yaml |
+| 2024-01-18_nmbs-sncb | drafted | 14 | 23/31 | yes | — | — | .drafts/2024-01-18_nmbs-sncb.yaml |
+| 2024-05-07_wmata | drafted | 3 | 25/31 | yes | — | — | .drafts/2024-05-07_wmata.yaml |
+| 2025-01-27_metronom | re-verified | 14 | 27/31 | yes | — | — | .drafts/2025-01-27_metronom.yaml |
