@@ -1,0 +1,128 @@
+id: 2022-12-16_obb-ddos
+schema_version: '1.0'
+
+event_date: '2022-12-16'
+event_date_precision: day
+reported_date: '2022-12-16'
+
+countries_impacted:
+- AT
+region: null
+coordinates:
+  lat: 48.2082
+  lon: 16.3738
+
+target_organization: Österreichische Bundesbahnen (ÖBB)
+industry_sector: other
+operator_type: incumbent
+
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: state_geopolitical
+mitre_attack_techniques:
+  - T1498
+
+threat_actor: NoName057(16)
+threat_actor_country: RU
+attribution_confidence: reported
+
+confirmation_status: confirmed
+
+affected_systems:
+  - website
+  - payment_system
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: 6
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+
+description_en: >
+  On Friday 16 December 2022, the public websites and online ticketing
+  portal of Österreichische Bundesbahnen (ÖBB) suffered a sustained
+  distributed denial-of-service (DDoS) attack, making oebb.at and
+  tickets.oebb.at slow or unreachable from the morning until around
+  12:30 local time. Customers reported that ticket purchases failed
+  repeatedly and in some cases payments were debited multiple times.
+  ÖBB confirmed the incident as a targeted DDoS attack affecting the
+  entire online front-end. The pro-Russian hacktivist group
+  NoName057(16) subsequently claimed responsibility on Telegram, listing
+  ÖBB alongside other Austrian targets in a retaliation campaign linked
+  to Austria's support for Ukraine. Rail operations, signalling and
+  on-board systems were not affected; impact was confined to online
+  services.
+description_de: >
+  Am Freitag, 16. Dezember 2022, wurden die öffentliche Website und das
+  Online-Ticketingportal der Österreichischen Bundesbahnen (ÖBB) Ziel
+  eines anhaltenden DDoS-Angriffs. oebb.at und tickets.oebb.at waren
+  vom frühen Vormittag bis etwa 12:30 Uhr Ortszeit nur eingeschränkt
+  oder gar nicht erreichbar; Kundinnen und Kunden berichteten von
+  fehlgeschlagenen Buchungen und teilweise mehrfach belasteten
+  Zahlungen. Die ÖBB bestätigten den Vorfall als gezielten DDoS-Angriff
+  gegen das gesamte Online-Frontend. Die pro-russische Hacktivisten-
+  gruppe NoName057(16) bekannte sich später auf Telegram zum Angriff
+  und führte ÖBB neben weiteren österreichischen Zielen als Teil einer
+  Vergeltungskampagne gegen Österreichs Unterstützung für die Ukraine
+  auf. Zugbetrieb, Signaltechnik und Bordsysteme waren nicht betroffen.
+
+sources:
+  - url: https://borncity.com/blog/2022/12/18/ddos-angriff-auf-sterreichische-bundesbahn-bb-am-16-dez-2022/
+    type: blog
+    publisher: Borns IT- und Windows-Blog
+    published_date: '2022-12-18'
+    language: de
+    accessed_date: '2026-04-23'
+  - url: https://futurezone.at/netzpolitik/oebb-website-ddos-hacker-angriff-russland-ukraine-pro-russisch-cyberpeace-institut/402282629
+    type: news
+    publisher: futurezone.at
+    published_date: '2022-12-19'
+    language: de
+    accessed_date: '2026-04-23'
+  - url: https://futurezone.at/digital-life/oebb-oebb-website-down-stoerung-hacker-ddos/402261678
+    type: news
+    publisher: futurezone.at
+    published_date: '2022-12-16'
+    language: de
+    accessed_date: '2026-04-23'
+  - url: https://www.puls24.at/news/digital/technische-stoerung-hackerangriff-auf-oebb-website/283872
+    type: news
+    publisher: PULS 24
+    published_date: '2022-12-16'
+    language: de
+    accessed_date: '2026-04-23'
+  - url: https://www.csidb.net/csidb/incidents/c6389c3f-2cb0-4228-ba8c-579c929c8613/
+    type: other
+    publisher: Cyber Security Incident Database (CSIDB)
+    published_date: null
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  industry_sector=other because ÖBB-Holding includes passenger rail
+  (ÖBB-Personenverkehr, Postbus), freight (Rail Cargo Austria) and
+  the infrastructure manager (ÖBB-Infrastruktur); the DDoS hit the
+  shared public web layer. motive=state_geopolitical: NoName057(16)
+  is a pro-Russian hacktivist group targeting European supporters of
+  Ukraine; the ÖBB attack fits its stated pattern. attack_vector=
+  unknown since DDoS is not an enumerated value; MITRE T1498 (Network
+  Denial of Service) is captured instead. duration_hours=6 approximates
+  the window reported by multiple Austrian outlets (from roughly 06:30
+  to 12:30 CET). NoName057(16) later claimed a much larger and
+  multi-day DDoS campaign against Deutsche Bahn in February 2026
+  (separately catalogued).
