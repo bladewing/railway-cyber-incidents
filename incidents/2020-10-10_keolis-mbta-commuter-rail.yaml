@@ -1,0 +1,133 @@
+id: 2020-10-10_keolis-mbta-commuter-rail
+schema_version: '1.0'
+
+event_date: '2020-10-10'
+event_date_precision: day
+reported_date: '2020-10-23'
+
+countries_impacted:
+- US
+region: Massachusetts
+coordinates:
+  lat: 42.3601
+  lon: -71.0589
+
+target_organization: Keolis Commuter Services (contract operator of the MBTA Commuter Rail)
+industry_sector: regional_passenger
+operator_type: private
+
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: true
+motive: financial
+mitre_attack_techniques:
+  - T1486
+
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: unknown
+
+confirmation_status: confirmed
+
+affected_systems:
+  - data
+  - internal_communication
+
+data_published: true
+
+impact:
+  scope: local
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: false
+
+description_en: >
+  On the morning of 10 October 2020, Keolis Commuter Services — the
+  private contract operator of the Massachusetts Bay Transportation
+  Authority (MBTA) commuter-rail network in Boston — detected a
+  ransomware intrusion on its corporate IT environment. The company's
+  threat-detection tooling alerted staff, who disconnected the affected
+  systems from the network within hours; no MBTA networks, operational
+  or safety-critical systems, or passenger-facing applications were
+  reached. Train services continued to run on schedule. Attackers did,
+  however, exfiltrate and subsequently publish personal information
+  belonging to Keolis employees (names, Social Security numbers and
+  other HR records). Keolis declined to pay the ransom, engaged a
+  forensic firm and offered affected employees credit-monitoring and
+  identity-theft-protection services. The incident was publicly
+  disclosed by The Boston Globe on 23 October 2020.
+description_de: >
+  Am Morgen des 10. Oktober 2020 entdeckte Keolis Commuter Services —
+  der private Betreiber des Pendlerbahn-Netzes der Massachusetts Bay
+  Transportation Authority (MBTA) im Großraum Boston — einen
+  Ransomware-Einbruch in seiner Unternehmens-IT. Die Bedrohungs-
+  erkennung löste Alarm aus; Mitarbeitende trennten die betroffenen
+  Systeme binnen weniger Stunden vom Netz. MBTA-Netze, betrieblich
+  oder sicherheitsrelevante Systeme sowie fahrgastseitige Anwendungen
+  blieben unberührt; der Zugbetrieb lief fahrplanmäßig weiter. Die
+  Angreifer entwendeten und veröffentlichten jedoch Personaldaten von
+  Keolis-Beschäftigten (Namen, US-Sozialversicherungsnummern, weitere
+  HR-Datensätze). Keolis zahlte kein Lösegeld, beauftragte ein
+  forensisches Unternehmen und bot betroffenen Beschäftigten kostenlose
+  Kreditüberwachung und Identitätsdiebstahlschutz an. Öffentlich
+  gemacht wurde der Vorfall am 23. Oktober 2020 durch The Boston Globe.
+
+sources:
+  - url: https://www.bostonglobe.com/2020/10/23/metro/commuter-rail-operator-hit-with-ransomware-attack/
+    type: news
+    publisher: The Boston Globe
+    published_date: '2020-10-23'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.railjournal.com/technology/keolis-commuter-services-takes-boston-systems-offline-following-ransomware-attack/
+    type: news
+    publisher: International Railway Journal
+    published_date: '2020-10-26'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.govtech.com/security/MBTA-Commuter-Rail-Operator-Confirms-Cyberincident.html
+    type: news
+    publisher: GovTech
+    published_date: '2020-10-26'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.railwaygazette.com/technology-data-and-business/boston-commuter-operator-hit-by-ransomware-attack/57616.article
+    type: news
+    publisher: Railway Gazette International
+    published_date: '2020-10-26'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.tam-america.com/article/Keolis-faced-ransomware-attack-in-MBTA-commuter-rail-operations
+    type: news
+    publisher: TAM Metro Magazine
+    published_date: null
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  industry_sector=regional_passenger: MBTA Commuter Rail is a
+  suburban/commuter passenger network (14 lines, ~140 stations across
+  eastern Massachusetts and northern Rhode Island). operator_type=
+  private because the affected entity is Keolis Commuter Services
+  (Keolis North America subsidiary), not MBTA itself; MBTA contracts
+  Keolis as operating company. attack_vector=unknown: no public
+  attribution or initial-access vector; the company did not name the
+  ransomware family or the attacker. extortion=true and data_published=
+  true reflect the confirmed leak of employee HR data on the
+  attacker's shaming site after Keolis refused to pay. affected_trains=
+  0 because operations were not impacted. No MBTA rider data was
+  compromised per Keolis's statement. Parallels the dataset's existing
+  2021-04-18_lockbit (Merseyrail) pattern: ransomware at a rail
+  operator with leak-site employee-data extortion but no train impact.
