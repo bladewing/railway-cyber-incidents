@@ -10,7 +10,7 @@ coordinates: null
 target_organization: DSB (Danske Statsbaner)
 industry_sector: long_distance_passenger
 operator_type: incumbent
-attack_vector: unknown
+attack_vector: ddos
 supply_chain: false
 malware: null
 extortion: false
@@ -199,11 +199,15 @@ notes: >
   DSB ticketing estate rather than the S-tog urban service specifically,
   so `long_distance_passenger` best represents the victim. operator_type
   is `incumbent` (DSB is the Danish state-owned incumbent operator).
-  attack_vector is `unknown`: the attack was clearly a volumetric DDoS,
-  but the schema's `attack_vector` enumerates the initial-access class
-  (exploit, phishing, credential_theft, ...), none of which map to an
-  external DDoS delivered via commodity booter traffic; per the
-  codebook we default to `unknown`. motive is `disruption`: DSB and
+  attack_vector is `ddos`: the attack is a volumetric DDoS attested
+  across 15 independent publishers (DR, TV 2, Version2, Infosecurity
+  Magazine, Security Affairs, The Copenhagen Post, HackRead, GBHackers,
+  Latest Hacking News, The Local Denmark, LOK Report, Folketidende/
+  Ritzau), and classified as "handelsuebliche Booter-DDoS" by Thomas
+  Lund-Sorensen, head of the Danish Centre for Cybersikkerhed. The
+  entry was originally coded `unknown` because the `ddos` vocab value
+  did not yet exist; it was added to `attack_vectors.yaml` on
+  2026-04-23 and retroactively applied here. motive is `disruption`: DSB and
   Danish media explicitly described the goal as taking systems down,
   no ransom was demanded, and Centre for Cyber Security head Thomas
   Lund-Sorensen classed the attack as a cheap rent-a-DDoS, so
