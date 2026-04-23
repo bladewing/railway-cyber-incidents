@@ -1,0 +1,129 @@
+id: 2022-02-26_rzd-it-army-ddos
+schema_version: '1.0'
+
+event_date: '2022-02-26'
+event_date_precision: month
+reported_date: '2022-02-26'
+
+countries_impacted:
+- RU
+region: null
+coordinates: null
+
+target_organization: Russian Railways (РЖД / RZD — ОАО «Российские железные дороги»)
+industry_sector: other
+operator_type: incumbent
+
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: hacktivism
+mitre_attack_techniques:
+  - T1498
+
+threat_actor: IT Army of Ukraine
+threat_actor_country: UA
+attribution_confidence: reported
+
+confirmation_status: reported
+
+affected_systems:
+  - website
+  - payment_system
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: null
+    customer_data: null
+
+description_en: >
+  Shortly after the start of the Russian invasion of Ukraine on 24 February
+  2022 and the 26 February 2022 formal founding of the IT Army of Ukraine
+  by Ukraine's Minister of Digital Transformation Mykhailo Fedorov, the
+  volunteer hacktivist collective published Russian Railways (РЖД / RZD)
+  on its Telegram target list. During the following days the public
+  website (rzd.ru) and mobile booking app were rendered intermittently
+  unavailable by sustained distributed denial-of-service (DDoS) traffic,
+  preventing Russian passengers from purchasing or refunding tickets
+  online. RZD responded by opening additional staffed ticket counters at
+  major stations; rail operations (dispatching, signalling) were not
+  affected. The IT Army explicitly framed the attacks as economic pressure
+  on "the aggressor state", stating that even one hour of downtime would
+  damage the Russian economy.
+description_de: >
+  Unmittelbar nach Beginn des russischen Angriffs auf die Ukraine
+  am 24. Februar 2022 und der formellen Gründung der IT Army of Ukraine
+  durch den ukrainischen Minister für digitale Transformation Mychajlo
+  Fedorow am 26. Februar 2022 setzte das Freiwilligenkollektiv die
+  Russischen Eisenbahnen (РЖД / RZD) auf ihre Telegram-Zielliste. In
+  den folgenden Tagen waren die öffentliche Website (rzd.ru) sowie die
+  Buchungs-App wiederholt nicht erreichbar; russische Reisende konnten
+  weder Tickets kaufen noch stornieren. RZD öffnete zusätzliche Schalter
+  an großen Bahnhöfen; der Bahnbetrieb selbst blieb unberührt. Die IT
+  Army bezeichnete die Angriffe offen als wirtschaftliche Druckmittel
+  gegen den Aggressorstaat.
+
+sources:
+  - url: https://cybernews.com/cyber-war/ukraine-cyberattack-russian-railways-down/
+    type: news
+    publisher: Cybernews
+    published_date: null
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.cybersecurity-insiders.com/russian-railways-hit-by-ddos-cyber-attack-from-hacker-army/
+    type: news
+    publisher: Cybersecurity Insiders
+    published_date: null
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://en.wikipedia.org/wiki/IT_Army_of_Ukraine
+    type: other
+    publisher: Wikipedia
+    published_date: null
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.europarl.europa.eu/RegData/etudes/BRIE/2022/733549/EPRS_BRI(2022)733549_EN.pdf
+    type: official_statement
+    publisher: European Parliamentary Research Service (EPRS)
+    published_date: '2022-06-01'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.csis.org/blogs/strategic-technologies-blog/it-army-ukraine
+    type: blog
+    publisher: Center for Strategic and International Studies (CSIS)
+    published_date: null
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  Dated 2022-02-26 with month-level precision. The IT Army of Ukraine
+  was formally announced by Minister Mykhailo Fedorov on 26 February
+  2022, and RZD was one of the earliest targets listed on its Telegram
+  channel; multiple outlets (Cybernews, Cybersecurity Insiders, the
+  EPRS timeline) report the rzd.ru website and mobile app being
+  intermittently unreachable in the days immediately following.
+  The exact onset day of the RZD campaign is not independently
+  pinpointed in open sources, so month-precision is used.
+  industry_sector=other (RZD combines freight + long-distance + regional
+  passenger segments). extortion=false: no ransom demand; politically
+  motivated disruption. attack_vector=unknown: DDoS does not map cleanly
+  to the existing vocabulary (exploit/phishing/supply_chain/insider/
+  physical/credential_theft); MITRE T1498 (Network Denial of Service)
+  captured under mitre_attack_techniques. This is the first documented
+  wartime cyberattack on RZD; subsequent incidents in 2023-07-05,
+  2025-03, and 2025-04 are separately catalogued.
