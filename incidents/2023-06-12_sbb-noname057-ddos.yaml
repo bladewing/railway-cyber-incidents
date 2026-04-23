@@ -1,0 +1,131 @@
+id: 2023-06-12_sbb-noname057-ddos
+schema_version: '1.0'
+
+event_date: '2023-06-12'
+event_date_precision: day
+reported_date: '2023-06-12'
+
+countries_impacted:
+- CH
+region: null
+coordinates:
+  lat: 46.9481
+  lon: 7.4474
+
+target_organization: Schweizerische Bundesbahnen (SBB / CFF / FFS)
+industry_sector: other
+operator_type: incumbent
+
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: state_geopolitical
+mitre_attack_techniques:
+  - T1498
+  - T1498.001
+
+threat_actor: NoName057(16)
+threat_actor_country: RU
+attribution_confidence: confirmed
+
+confirmation_status: confirmed
+
+affected_systems:
+  - website
+  - payment_system
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+
+description_en: >
+  On Monday 12 June 2023, the public website (sbb.ch) and online portal
+  of Schweizerische Bundesbahnen (SBB) were targeted by a layer-7
+  distributed denial-of-service (DDoS) campaign conducted by the
+  pro-Russian hacktivist collective NoName057(16) using its DDoSia tool.
+  The attack was part of a broader wave also affecting the Swiss federal
+  administration, the Swiss Parliament and Swiss Post, timed around
+  Ukrainian President Volodymyr Zelenskyy's video address to the Swiss
+  Parliament on 15 June 2023. SBB's customer-facing web services were
+  intermittently unreachable for short periods; no rail-operational,
+  signalling or on-board systems were affected. The Swiss National
+  Cyber Security Centre (NCSC) published a detailed post-incident
+  analysis of the NoName057(16) / DDoSia campaign attributing the
+  activity to the same pro-Russian group that later targeted ÖBB
+  (2022-12-16) and Deutsche Bahn (2026-02-17).
+description_de: >
+  Am Montag, 12. Juni 2023, wurden die öffentliche Website (sbb.ch)
+  und das Online-Portal der Schweizerischen Bundesbahnen (SBB) Ziel
+  einer Layer-7-DDoS-Kampagne der pro-russischen Hacktivistengruppe
+  NoName057(16) mit deren DDoSia-Werkzeug. Der Angriff war Teil einer
+  breiteren Welle, die auch die schweizerische Bundesverwaltung, das
+  Parlament und die Schweizerische Post traf und zeitlich mit der
+  Videoansprache des ukrainischen Präsidenten Wolodymyr Selenskyj
+  am 15. Juni 2023 vor dem Schweizer Parlament zusammenfiel.
+  Kundenseitige Webdienste der SBB waren kurzfristig nicht erreichbar;
+  Betrieb, Signaltechnik und Bordsysteme waren nicht betroffen. Das
+  Nationale Zentrum für Cybersicherheit (NCSC) veröffentlichte eine
+  ausführliche Nachanalyse der NoName057(16)-/DDoSia-Kampagne.
+
+sources:
+  - url: https://www.swissinfo.ch/eng/politics/swiss-government-and-federal-railways-hit-by-cyberattacks/48583086
+    type: news
+    publisher: SWI swissinfo.ch
+    published_date: '2023-06-12'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.bankinfosecurity.com/blogs/swiss-government-reports-nuisance-level-ddos-disruptions-p-3554
+    type: blog
+    publisher: BankInfoSecurity
+    published_date: '2023-06-13'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.helpnetsecurity.com/2023/06/14/swiss-government-ddos/
+    type: news
+    publisher: Help Net Security
+    published_date: '2023-06-14'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.ncsc.admin.ch/dam/ncsc/en/dokumente/dokumentation/fachberichte/Bericht-Analyse-DDoS-NCSC-EN.pdf.download.pdf/Bericht-Analyse-DDoS-NCSC-EN.pdf
+    type: cert_advisory
+    publisher: Swiss National Cyber Security Centre (NCSC)
+    published_date: '2023-06-30'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.silicon.co.uk/security/swiss-hacks-sbb-svp-ddos-188254
+    type: news
+    publisher: Silicon UK
+    published_date: '2023-06-13'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  The 2026-04 research pass initially planned this entry for January 2024
+  (a separate NoName057(16) wave timed around WEF Davos and Zelenskyy's
+  2024 visit). However, the explicit SBB impact was in the 12 June 2023
+  wave; the January 2024 campaign primarily targeted the federal
+  administration and municipalities, with SBB only mentioned as a
+  previous victim. industry_sector=other (SBB runs passenger rail,
+  freight via SBB Cargo, and the national infrastructure manager within
+  one integrated group). attack_vector=unknown — DDoS is not in the
+  vocabulary; captured via MITRE T1498 (Network Denial of Service) and
+  T1498.001 (Direct Network Flood). confirmation_status=confirmed
+  because both SBB and the NCSC published confirmations. Part of the
+  same NoName057(16) campaign that the dataset records for ÖBB
+  (2022-12-16) and Deutsche Bahn (2026-02-17).

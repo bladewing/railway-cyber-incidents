@@ -1,0 +1,140 @@
+id: 2026-02-17_deutsche-bahn-noname057-ddos
+schema_version: '1.0'
+
+event_date: '2026-02-17'
+event_date_precision: day
+reported_date: '2026-02-17'
+
+countries_impacted:
+- DE
+region: null
+coordinates:
+  lat: 52.5200
+  lon: 13.4050
+
+target_organization: Deutsche Bahn AG — bahn.de and DB Navigator
+industry_sector: other
+operator_type: incumbent
+
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: state_geopolitical
+mitre_attack_techniques:
+  - T1498
+  - T1498.001
+
+threat_actor: NoName057(16)
+threat_actor_country: RU
+attribution_confidence: reported
+
+confirmation_status: confirmed
+
+affected_systems:
+  - website
+  - payment_system
+  - passenger_information
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: 20
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+
+description_en: >
+  From approximately 16:45 CET on Tuesday 17 February 2026 into the
+  afternoon of 18 February, the public website bahn.de and the
+  DB Navigator mobile app — Deutsche Bahn's primary timetable and
+  booking channels — were rendered intermittently unreachable by a
+  large-scale, multi-wave distributed denial-of-service (DDoS) attack.
+  Deutsche Bahn characterised the attack as "targeted" and confirmed
+  that safety-relevant rail-operations systems were not affected;
+  BSI President Claudia Plattner described the volume as "billions
+  of requests per minute" and the attack's bandwidth as "unusually
+  severe." DB restored both services progressively, with some
+  temporary rate-limits in place, by around 14:00 CET on 18 February.
+  Sources inside Deutsche Bahn and German press reporting attributed
+  the campaign to the pro-Russian hacktivist collective NoName057(16),
+  which ran parallel DDoSia attacks against targets in multiple NATO
+  countries during the same period. No customer data was exfiltrated
+  and train operations continued normally throughout.
+description_de: >
+  Ab etwa 16:45 Uhr MEZ am Dienstag, 17. Februar 2026, bis in den
+  Nachmittag des 18. Februar waren bahn.de und der DB Navigator —
+  die wichtigsten Auskunfts- und Buchungskanäle der Deutschen Bahn —
+  durch einen großangelegten, in Wellen erfolgenden DDoS-Angriff
+  zeitweise nicht erreichbar. Die Deutsche Bahn bezeichnete den
+  Angriff als "gezielt" und bestätigte, dass sicherheitsrelevante
+  Bahnbetriebssysteme nicht betroffen waren; BSI-Präsidentin Claudia
+  Plattner sprach im WDR-Interview von "Milliarden Anfragen pro
+  Minute" und einer "ungewöhnlichen Härte" des Angriffs. Beide Dienste
+  wurden bis ca. 14:00 Uhr MEZ am 18. Februar schrittweise
+  wiederhergestellt, zunächst mit Ratenbegrenzungen. Deutsche-Bahn-
+  interne Quellen und deutsche Presseberichte schrieben die Kampagne
+  dem pro-russischen Hacktivistenkollektiv NoName057(16) zu, das
+  zeitgleich DDoSia-Angriffe gegen Ziele in mehreren NATO-Staaten
+  fuhr. Kundendaten wurden nicht entwendet; der Zugbetrieb lief
+  durchgehend normal.
+
+sources:
+  - url: https://www.securityweek.com/german-rail-giant-deutsche-bahn-hit-by-large-scale-ddos-attack/
+    type: news
+    publisher: SecurityWeek
+    published_date: '2026-02-18'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.theregister.com/2026/02/18/deutsche_bahn_ddos
+    type: news
+    publisher: The Register
+    published_date: '2026-02-18'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.tagesspiegel.de/wirtschaft/auskunftssysteme-wie-der-db-navigator-waren-betroffen-russische-hacker-sollen-hinter-cyberangriff-auf-die-bahn-stecken-15263251.html
+    type: news
+    publisher: Der Tagesspiegel
+    published_date: '2026-02-18'
+    language: de
+    accessed_date: '2026-04-23'
+  - url: https://www.finanznachrichten.de/nachrichten-2026-02/67731631-cyberangriff-auf-die-deutsche-bahn-bsi-chefin-spricht-im-wdr-interview-von-unglaublich-breitbandiger-attacke-007.htm
+    type: news
+    publisher: finanznachrichten.de (citing WDR interview with BSI President Plattner)
+    published_date: '2026-02-18'
+    language: de
+    accessed_date: '2026-04-23'
+  - url: https://www.railtech.com/all/2026/02/20/deutsche-bahn-suffered-targeted-cyber-attack-disrupting-information-and-booking-system-for-several-hours/
+    type: news
+    publisher: RailTech.com
+    published_date: '2026-02-20'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  industry_sector=other because Deutsche Bahn AG covers passenger
+  (DB Fernverkehr / DB Regio), freight (DB Cargo) and infrastructure
+  (DB InfraGO) within the group; the attack hit the shared customer
+  front-end (bahn.de, DB Navigator, WLAN portal). attack_vector=
+  unknown — DDoS is not enumerated in the vocabulary; MITRE T1498
+  (Network DoS) / T1498.001 (Direct Network Flood) captured under
+  mitre_attack_techniques. attribution_confidence=reported: internal
+  DB sources pointed to NoName057(16) and German press corroborated,
+  but DB and BSI have declined to make a formal public attribution
+  statement as of April 2026; NoName057(16) did post celebratory
+  claims on Telegram during the attack window. duration_hours≈20
+  matches the 16:45 CET 2026-02-17 → ~14:00 CET 2026-02-18 window
+  described by BSI/DB. Part of the same pro-Russian DDoSia
+  hacktivist campaign previously affecting ÖBB (2022-12-16) and SBB
+  (2023-06-12), both separately catalogued.

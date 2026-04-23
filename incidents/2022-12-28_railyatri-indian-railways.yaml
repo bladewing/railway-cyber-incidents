@@ -1,0 +1,134 @@
+id: 2022-12-28_railyatri-indian-railways
+schema_version: '1.0'
+
+event_date: '2022-12-28'
+event_date_precision: day
+reported_date: '2023-01-02'
+
+countries_impacted:
+- IN
+region: null
+coordinates: null
+
+target_organization: RailYatri (Stelling Technologies Pvt. Ltd.) — IRCTC-authorised B2C train-ticket booking platform
+industry_sector: other
+operator_type: private
+
+attack_vector: exploit
+supply_chain: true
+malware: null
+extortion: false
+motive: financial
+mitre_attack_techniques:
+  - T1190
+
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: unknown
+
+confirmation_status: confirmed
+
+affected_systems:
+  - data
+  - payment_system
+
+data_published: true
+
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: 31000000
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: true
+    customer_data: true
+
+description_en: >
+  On 28 December 2022, the IRCTC-authorised third-party train-ticket
+  booking platform RailYatri (operated by Stelling Technologies Pvt.
+  Ltd.) suffered a data breach caused by an unprotected, internet-
+  facing server with no authentication. Approximately 31 million user
+  records and 37,000 invoices were exfiltrated; the data — including
+  names, email addresses, phone numbers, genders, tickets purchased,
+  fares and travel itineraries — was advertised for sale on
+  BreachForums on 16 February 2023. India's CERT-In notified the
+  Ministry of Railways, which in turn halted RailYatri's booking
+  integration with the Indian Railway Catering and Tourism Corporation
+  (IRCTC) and imposed a penalty; the app was restored only after
+  RailYatri implemented remedial controls. The Ministry of Railways
+  publicly maintained that IRCTC's own servers were not compromised
+  and that the breach was confined to its third-party integrator.
+description_de: >
+  Am 28. Dezember 2022 erlitt die IRCTC-lizenzierte
+  Drittanbieter-Ticketbuchungsplattform RailYatri (betrieben von
+  Stelling Technologies Pvt. Ltd.) eine Datenschutzverletzung durch
+  einen ungeschützten, aus dem Internet erreichbaren Server ohne
+  Authentifizierung. Rund 31 Millionen Nutzerdatensätze und 37.000
+  Rechnungen wurden entwendet; die Daten — Namen, E-Mail-Adressen,
+  Telefonnummern, Geschlecht, gekaufte Tickets, Preise und
+  Reiseverbindungen — wurden am 16. Februar 2023 in BreachForums
+  zum Verkauf angeboten. Das indische CERT-In informierte das
+  Eisenbahnministerium, das daraufhin die IRCTC-Buchungsanbindung
+  von RailYatri aussetzte und eine Strafe verhängte; die App wurde
+  erst nach Nachbesserungen wieder freigeschaltet. Das
+  Eisenbahnministerium betonte öffentlich, dass die eigenen
+  IRCTC-Server nicht kompromittiert worden seien.
+
+sources:
+  - url: https://heimdalsecurity.com/blog/railyatri-data-breach/
+    type: blog
+    publisher: Heimdal Security
+    published_date: '2023-02-20'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://thecyberexpress.com/the-railyatri-data-breach-data-dump-dark-web/
+    type: news
+    publisher: The Cyber Express
+    published_date: '2023-02-17'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://haveibeenpwned.com/Breach/RailYatri
+    type: other
+    publisher: Have I Been Pwned
+    published_date: null
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.business-standard.com/article/companies/railyatri-penalised-for-data-leak-app-restored-after-security-measures-123031500989_1.html
+    type: news
+    publisher: Business Standard
+    published_date: '2023-03-15'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.medianama.com/2023/01/223-railways-data-breach-confirmed-rail-yatri-2/
+    type: news
+    publisher: MediaNama
+    published_date: '2023-01-04'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  event_date=2022-12-28: date on which RailYatri says it "observed" the
+  breach; exfiltration likely pre-dated this since the exposed server
+  was long-standing. reported_date set to the first substantive Indian
+  press coverage (MediaNama, 4 Jan 2023) after CERT-In's notification
+  to the Ministry of Railways. supply_chain=true and operator_type=
+  private because RailYatri is a private IRCTC-authorised partner
+  rather than Indian Railways / IRCTC itself; the Ministry of Railways
+  explicitly rejected claims that IRCTC's own systems were breached.
+  data_published=true given the 16 Feb 2023 BreachForums sale and the
+  HIBP listing. attack_vector=exploit reflects the "unprotected,
+  internet-facing, no-authentication server" root cause; a "Meow bot"
+  wipe subsequently deleted residual data on the exposed host. affected
+  passenger count (31 M) and invoice count (37 k) are reported by
+  RailYatri in a public statement relayed by The Cyber Express and
+  Business Standard. Dataset already catalogues the 2014-12-25 and
+  2019-01-01 12306.cn breaches for comparable B2C-ticketing data
+  exposures in Asia.

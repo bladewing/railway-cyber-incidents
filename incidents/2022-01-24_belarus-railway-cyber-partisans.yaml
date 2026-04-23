@@ -1,0 +1,124 @@
+id: 2022-01-24_belarus-railway-cyber-partisans
+schema_version: '1.0'
+
+event_date: '2022-01-24'
+event_date_precision: day
+reported_date: '2022-01-24'
+
+countries_impacted:
+- BY
+region: null
+coordinates: null
+
+target_organization: Belarusian Railway (Беларуская чыгунка / Belaruskaya chyhunka — BCh)
+industry_sector: other
+operator_type: incumbent
+
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: true
+motive: hacktivism
+mitre_attack_techniques:
+  - T1486
+
+threat_actor: Belarusian Cyber-Partisans (Кіберпартызаны)
+threat_actor_country: BY
+attribution_confidence: confirmed
+
+confirmation_status: confirmed
+
+affected_systems:
+  - data
+  - internal_communication
+  - payment_system
+  - website
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: null
+
+description_en: >
+  On 24 January 2022, the Belarusian hacktivist collective Cyber-Partisans
+  (Кіберпартызаны) announced they had encrypted the majority of servers,
+  databases and workstations of the state-owned Belarusian Railway (BCh)
+  with a self-built ransomware. The group said the intrusion disrupted
+  internal traffic-control, customs and ticketing systems in order to
+  slow Russian troop and materiel movements into Belarus in the run-up
+  to the invasion of Ukraine. As political ransom, the Cyber-Partisans
+  demanded the release of 50 political prisoners in need of medical
+  care and a guarantee that Russian military units would not be allowed
+  on Belarusian territory; independent OSINT analysts (including CyberKnow
+  and Curated Intelligence) corroborated service degradation of BCh
+  ticketing websites and internal systems during the following days.
+description_de: >
+  Am 24. Januar 2022 erklärte das belarussische hacktivistische Kollektiv
+  Cyber-Partisans (Кіберпартызаны), die Mehrzahl der Server, Datenbanken
+  und Arbeitsplatzrechner der staatseigenen Belarussischen Eisenbahn
+  (Беларуская чыгунка, BCh) mit einer selbstentwickelten Ransomware
+  verschlüsselt zu haben. Ziel war laut eigenen Angaben die Störung von
+  Betriebsführung, Zoll- und Ticketingsystemen, um russische Truppen-
+  und Materialbewegungen im Vorfeld des Angriffs auf die Ukraine zu
+  verlangsamen. Als politisches Lösegeld forderte die Gruppe die Freilassung
+  von 50 politischen Gefangenen sowie ein Verbot russischer Truppen auf
+  belarussischem Staatsgebiet. OSINT-Analysten bestätigten Störungen der
+  BCh-Ticketingsysteme in den Folgetagen.
+
+sources:
+  - url: https://www.bloomberg.com/news/articles/2022-01-24/hackers-say-they-breached-belarusian-rail-to-stop-russian-troops
+    type: news
+    publisher: Bloomberg
+    published_date: '2022-01-24'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.bleepingcomputer.com/news/security/hackers-say-they-encrypted-belarusian-railway-servers-in-protest/
+    type: news
+    publisher: BleepingComputer
+    published_date: '2022-01-24'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.npr.org/2022/01/31/1076895949/group-launched-cyberattacks-to-try-to-keep-russian-troops-out-of-belarus
+    type: news
+    publisher: NPR
+    published_date: '2022-01-31'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://archive.kyivpost.com/ukraine-politics/cyber-partisans-hijack-belarus-railways-to-slow-russian-troop-movements.html
+    type: news
+    publisher: Kyiv Post
+    published_date: '2022-01-25'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://gizmodo.com/hackers-claim-strike-on-belarus-railway-intended-to-dis-1848411726
+    type: news
+    publisher: Gizmodo
+    published_date: '2022-01-24'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  First widely publicised case of ransomware deployed as a hacktivist
+  political-coercion tool rather than for financial extortion; the
+  Cyber-Partisans' ransom demand was for release of political prisoners
+  and withdrawal of Russian troops, not money. extortion is set to true
+  because a ransom demand (non-monetary) was made, per the group's own
+  Telegram statement. industry_sector=other because BCh operates both
+  freight and passenger rail and the attack affected the corporate IT
+  stack rather than any single segment. attack_vector left as unknown:
+  the group hinted at insider assistance and a multi-month foothold but
+  did not disclose initial access publicly.

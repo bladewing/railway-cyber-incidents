@@ -1,0 +1,135 @@
+id: 2022-03-23_trenitalia-hive-ransomware
+schema_version: '1.0'
+
+event_date: '2022-03-23'
+event_date_precision: day
+reported_date: '2022-03-23'
+
+countries_impacted:
+- IT
+region: null
+coordinates:
+  lat: 41.9028
+  lon: 12.4964
+
+target_organization: Ferrovie dello Stato Italiane S.p.A. (holding), incl. Trenitalia S.p.A. and Rete Ferroviaria Italiana (RFI)
+industry_sector: other
+operator_type: incumbent
+
+attack_vector: phishing
+supply_chain: false
+malware:
+  - name: Hive
+    family: Hive
+    mitre_software_id: S0760
+extortion: true
+motive: financial
+mitre_attack_techniques:
+  - T1486
+  - T1566
+
+threat_actor: Hive
+threat_actor_country: null
+attribution_confidence: reported
+
+confirmation_status: confirmed
+
+affected_systems:
+  - payment_system
+  - station_it
+  - internal_communication
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: 48
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: null
+    organizational_data: true
+    customer_data: null
+
+description_en: >
+  On the morning of 23 March 2022, Ferrovie dello Stato Italiane (FS)
+  detected a ransomware intrusion affecting subsidiaries Trenitalia and
+  Rete Ferroviaria Italiana (RFI). Self-service ticket machines, station
+  ticket offices and the "Freccia Lounges" were knocked offline across
+  Italy; online sales via trenitalia.com initially remained available and
+  rail traffic itself continued to run, with station staff manually
+  announcing arrivals and departures using megaphones. Investigators
+  attributed the attack to the Hive ransomware-as-a-service gang; leaked
+  negotiation chats (first published by Red Hot Cyber) showed a ransom
+  demand of USD 5 million in Bitcoin, set to double to USD 10 million
+  after three days. FS declined to pay. Most station-IT services were
+  restored within 48 hours; the incident was reported to the Italian
+  Postal Police (Polizia Postale) and the national cyber-security agency
+  ACN.
+description_de: >
+  Am Morgen des 23. März 2022 entdeckte Ferrovie dello Stato Italiane
+  (FS) einen Ransomware-Vorfall bei den Tochtergesellschaften Trenitalia
+  und Rete Ferroviaria Italiana (RFI). Fahrkartenautomaten, Schalter und
+  "Freccia Lounges" waren italienweit offline; der Online-Verkauf über
+  trenitalia.com funktionierte weitgehend, der Zugbetrieb selbst lief
+  weiter, Stationspersonal kündigte Ankünfte und Abfahrten per Megaphon
+  an. Ermittler führten den Angriff auf die Ransomware-Gruppe Hive zurück;
+  von Red Hot Cyber veröffentlichte Verhandlungs-Chats zeigen eine
+  Lösegeldforderung von 5 Mio. USD in Bitcoin, die sich nach drei Tagen
+  auf 10 Mio. USD verdoppeln sollte. FS zahlte nicht. Die Station-IT war
+  nach ca. 48 Stunden weitgehend wiederhergestellt; der Vorfall wurde
+  an Polizia Postale und die italienische Cybersicherheitsbehörde ACN
+  gemeldet.
+
+sources:
+  - url: https://www.bloomberg.com/news/articles/2022-03-23/italy-rail-operator-says-it-detected-signs-of-hacking-in-system
+    type: news
+    publisher: Bloomberg
+    published_date: '2022-03-23'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.redhotcyber.com/post/hive-ransomware-colpisce-ferrovie-dello-stato-5-milioni-di-riscatto/
+    type: blog
+    publisher: Red Hot Cyber
+    published_date: '2022-03-23'
+    language: it
+    accessed_date: '2026-04-23'
+  - url: https://www.cybersecurity360.it/nuove-minacce/attacco-a-trenitalia-ferrovie-bloccata-vendita-biglietti-e-un-ransomware/
+    type: news
+    publisher: Cybersecurity 360
+    published_date: '2022-03-23'
+    language: it
+    accessed_date: '2026-04-23'
+  - url: https://www.open.online/2022/03/24/trenitalia-attacco-hacker-gruppo-hive-russia/
+    type: news
+    publisher: Open (Italy)
+    published_date: '2022-03-24'
+    language: it
+    accessed_date: '2026-04-23'
+  - url: https://www.computing.co.uk/news/4047216/italian-rail-operator-stops-ticket-sales-suspected-cyberattack
+    type: news
+    publisher: Computing (UK)
+    published_date: '2022-03-23'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  industry_sector=other because FS is a holding group covering passenger
+  (Trenitalia), freight (Mercitalia), and infrastructure (RFI); the
+  attack affected the shared corporate IT stack rather than any single
+  operating segment. attack_vector=phishing because Italian press
+  (Open, Cybersecurity 360) reported that the malware was delivered via
+  a malicious email attachment opened by an administrator; primary
+  sources do not confirm this definitively so attribution_confidence
+  stays at reported. Hive was a prolific RaaS operation subsequently
+  dismantled by a coordinated FBI/BKA operation in January 2023
+  (decryption keys seized by FBI covertly from mid-2022). Rail traffic
+  was not interrupted; impact was confined to station-IT and back-office
+  systems, so rail_operations is not tagged.

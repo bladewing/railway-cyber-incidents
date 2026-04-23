@@ -1,0 +1,141 @@
+id: 2024-05-15_amtrak-guest-rewards-2024
+schema_version: '1.0'
+
+event_date: '2024-05-15'
+event_date_precision: day
+reported_date: '2024-06-14'
+
+countries_impacted:
+- US
+region: null
+coordinates: null
+
+target_organization: National Railroad Passenger Corporation (Amtrak) — Guest Rewards loyalty programme
+industry_sector: long_distance_passenger
+operator_type: incumbent
+
+attack_vector: credential_theft
+supply_chain: false
+malware: null
+extortion: false
+motive: financial
+mitre_attack_techniques:
+  - T1110.004
+
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: unknown
+
+confirmation_status: confirmed
+
+affected_systems:
+  - data
+  - payment_system
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: 72
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: true
+
+description_en: >
+  Between 15 and 18 May 2024, unidentified threat actors gained access
+  to an unspecified number of Amtrak Guest Rewards loyalty accounts by
+  credential stuffing — replaying username/password combinations
+  obtained from unrelated third-party breaches and info-stealer logs.
+  Amtrak's own authentication and rewards-programme back-end was not
+  compromised; the attackers abused valid customer credentials to log
+  in, change the registered e-mail address on hijacked accounts and
+  access profile data (names, contact details, dates of birth, Guest
+  Rewards account numbers, partial credit-card numbers with expiry
+  dates, gift-card balances, trip and transaction history). Amtrak
+  detected the activity, force-reset affected accounts on 18 May,
+  enabled multi-factor authentication (email or SMS OTP) for Guest
+  Rewards on 20 May, and sent breach-notification letters on 14 June
+  2024 under state breach laws (initial notification filed with the
+  Massachusetts Attorney General). Amtrak offered 12 months of
+  Experian IdentityWorks credit-monitoring at no cost to affected
+  customers. This is the second disclosed Guest Rewards credential
+  incident, following the 2020 case catalogued as
+  `2020-04-16_dzsf-import`.
+description_de: >
+  Zwischen dem 15. und 18. Mai 2024 verschafften sich nicht
+  identifizierte Angreifer Zugang zu einer unbekannten Zahl von Amtrak
+  Guest Rewards-Konten mittels Credential Stuffing — also durch das
+  Wiedereinspielen von Nutzername-Passwort-Paaren aus Drittbreaches
+  und Infostealer-Logs. Amtraks eigene Authentifizierungs- und Treue-
+  programm-Backends wurden nicht kompromittiert; die Angreifer
+  missbrauchten gültige Kundenzugangsdaten, änderten bei übernommenen
+  Konten die hinterlegte E-Mail-Adresse und griffen auf Profildaten
+  (Name, Kontakt, Geburtsdatum, Guest-Rewards-Kontonummer, Teilangaben
+  der Kreditkarte mit Ablaufdatum, Gutscheinbalancen, Reise- und
+  Transaktionshistorie) zu. Amtrak erkannte die Aktivität, setzte
+  betroffene Konten am 18. Mai zurück, aktivierte MFA (E-Mail- oder
+  SMS-OTP) am 20. Mai und verschickte am 14. Juni 2024 Benachrichtigungen
+  nach US-Bundesstaaten-Datenschutzrecht (erste Meldung an die
+  Generalstaatsanwaltschaft von Massachusetts). Amtrak bot zwölf Monate
+  kostenlose Kreditüberwachung über Experian IdentityWorks an. Es ist
+  der zweite offengelegte Guest-Rewards-Credential-Vorfall nach dem
+  2020er Fall `2020-04-16_dzsf-import`.
+
+sources:
+  - url: https://www.securityweek.com/amtrak-says-guest-rewards-accounts-hacked-in-credential-stuffing-attacks/
+    type: news
+    publisher: SecurityWeek
+    published_date: '2024-06-19'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.mass.gov/doc/assigned-data-breach-number-2024-1160-damico-pettinicchi-llc-0/download
+    type: official_statement
+    publisher: Office of the Massachusetts Attorney General (Amtrak breach notification)
+    published_date: '2024-06-14'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.cpomagazine.com/cyber-security/amtrak-data-breach-stemming-from-credential-stuffing-compromises-guest-rewards-accounts/
+    type: news
+    publisher: CPO Magazine
+    published_date: '2024-06-21'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.theregister.com/2024/06/19/amtrak_has_had_another_breach/
+    type: news
+    publisher: The Register
+    published_date: '2024-06-19'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://cybernews.com/news/amtrak-discloses-data-breach/
+    type: news
+    publisher: Cybernews
+    published_date: '2024-06-19'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  Second Amtrak Guest Rewards credential-abuse incident; 2020 predecessor
+  catalogued as 2020-04-16_dzsf-import. attack_vector=credential_theft
+  per the Amtrak notification letter, which explicitly rules out any
+  breach of Amtrak's own systems and attributes compromise to reused
+  passwords. MITRE T1110.004 (Credential Stuffing) is the precise
+  technique. extortion=false, motive=financial: typical
+  loyalty-programme account-takeover fraud (gift-card liquidation,
+  rewards-points cash-out, resale of account access). duration_hours≈72
+  reflects the 15–18 May intrusion window before Amtrak's forced
+  password reset. Total affected-account count is not in the public
+  notification; Massachusetts alone received 134 notification letters
+  under the 2024-1160 filing number. Dataset now carries two Amtrak
+  records — see also the May 2024 → June 2024 timeline for
+  ShinyHunters / Salesforce claims (separately reported April 2026, not
+  catalogued yet due to insufficient corroboration as of 2026-04-23).
