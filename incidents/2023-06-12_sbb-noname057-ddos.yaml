@@ -16,7 +16,7 @@ target_organization: Schweizerische Bundesbahnen (SBB / CFF / FFS)
 industry_sector: other
 operator_type: incumbent
 
-attack_vector: unknown
+attack_vector: ddos
 supply_chain: false
 malware: null
 extortion: false
