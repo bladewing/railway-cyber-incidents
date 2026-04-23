@@ -53,3 +53,6 @@ then drill into per-incident drafts and logs as needed.
 | 2025-03-23_ukrzaliznytsia | re-verified | 7 | 24/31 | yes | — | — | .drafts/2025-03-23_ukrzaliznytsia.yaml |
 | 2025-03-29_mycicero-mooneygo-italian-transit-supply-chain | re-verified | 18 | 24/31 | yes | — | — | .drafts/2025-03-29_mycicero-mooneygo-italian-transit-supply-chain.yaml |
 | 2025-04-01_rzd | drafted | 20 | 24/31 | yes | — | — | .drafts/2025-04-01_rzd.yaml |
+| 2025-04-07_bvg | re-verified | 16 | 28/31 | yes | — | — | .drafts/2025-04-07_bvg.yaml |
+| 2025-07-09_transdev-hannover-s-bahn-hannover | drafted | 15 | 27/31 | yes | — | — | .drafts/2025-07-09_transdev-hannover-s-bahn-hannover.yaml |
+| 2025-07-24_transdev-hannover-s-bahn-hannover | drafted | 14 | 25/31 | yes | attack_vectors.ddos | — | .drafts/2025-07-24_transdev-hannover-s-bahn-hannover.yaml |
