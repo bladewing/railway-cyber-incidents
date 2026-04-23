@@ -37,3 +37,7 @@ then drill into per-incident drafts and logs as needed.
 | 2021-10-29_dzsf-import | drafted | 23 | 30/31 | yes | — | — (TTC Toronto) | .drafts/2021-10-29_dzsf-import.yaml |
 | 2014-03-01_seoul-metro | drafted | 11 | 28/31 | yes | — | — | .drafts/2014-03-01_seoul-metro.yaml |
 | 2024-09-25_network-rail | drafted | 16 | 27/31 | yes | — | — | .drafts/2024-09-25_network-rail.yaml |
+| 2017-01-01_georgian-railway-gru-espionage | re-verified | 6 | 23/31 | yes | — | — | .drafts/2017-01-01_georgian-railway-gru-espionage.yaml |
+| 2022-01-01_newag-sa | drafted | 26 | 26/31 | yes | — | — | .drafts/2022-01-01_newag-sa.yaml |
+| 2022-04-01_metrospetstekhnika | drafted | 8 | 23/31 | yes | — | — | .drafts/2022-04-01_metrospetstekhnika.yaml |
+| 2022-04-18_ceske-drahy | drafted | 19 | 26/31 | yes | — | — | .drafts/2022-04-18_ceske-drahy.yaml |
