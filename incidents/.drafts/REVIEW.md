@@ -41,3 +41,7 @@ then drill into per-incident drafts and logs as needed.
 | 2022-01-01_newag-sa | drafted | 26 | 26/31 | yes | — | — | .drafts/2022-01-01_newag-sa.yaml |
 | 2022-04-01_metrospetstekhnika | drafted | 8 | 23/31 | yes | — | — | .drafts/2022-04-01_metrospetstekhnika.yaml |
 | 2022-04-18_ceske-drahy | drafted | 19 | 26/31 | yes | — | — | .drafts/2022-04-18_ceske-drahy.yaml |
+| 2023-07-05_rzd | re-verified | 20 | 24/31 | yes | — | — | .drafts/2023-07-05_rzd.yaml |
+| 2023-08-01_belt-railway-company-of-chicago | drafted | 7 | 24/31 | yes | — | — | .drafts/2023-08-01_belt-railway-company-of-chicago.yaml |
+| 2023-09-20_elron | drafted | 12 | 26/31 | yes | — | — | .drafts/2023-09-20_elron.yaml |
+| 2023-11-18_rostocker-strassenbahn-ag | drafted | 25 | 27/31 | yes | — | — | .drafts/2023-11-18_rostocker-strassenbahn-ag.yaml |
