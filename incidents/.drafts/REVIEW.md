@@ -35,3 +35,24 @@ then drill into per-incident drafts and logs as needed.
 | 2017-10-24_badrabbit | drafted | 7 | 30/31 | yes | — | date corrected 2021-10-24→2017-10-24 per maintainer decision | .drafts/2017-10-24_badrabbit.yaml |
 | 2021-09-21_is | escalated | 6 | 13/31 | no change | — | yes (1-source short of ≥2 threshold; domain inconsistency) | .drafts/2021-09-21_is.yaml |
 | 2021-10-29_dzsf-import | drafted | 23 | 30/31 | yes | — | — (TTC Toronto) | .drafts/2021-10-29_dzsf-import.yaml |
+| 2014-03-01_seoul-metro | drafted | 11 | 28/31 | yes | — | — | .drafts/2014-03-01_seoul-metro.yaml |
+| 2024-09-25_network-rail | drafted | 16 | 27/31 | yes | — | — | .drafts/2024-09-25_network-rail.yaml |
+| 2017-01-01_georgian-railway-gru-espionage | re-verified | 6 | 23/31 | yes | — | — | .drafts/2017-01-01_georgian-railway-gru-espionage.yaml |
+| 2022-01-01_newag-sa | drafted | 26 | 26/31 | yes | — | — | .drafts/2022-01-01_newag-sa.yaml |
+| 2022-04-01_metrospetstekhnika | drafted | 8 | 23/31 | yes | — | — | .drafts/2022-04-01_metrospetstekhnika.yaml |
+| 2022-04-18_ceske-drahy | drafted | 19 | 26/31 | yes | — | — | .drafts/2022-04-18_ceske-drahy.yaml |
+| 2023-07-05_rzd | re-verified | 20 | 24/31 | yes | — | — | .drafts/2023-07-05_rzd.yaml |
+| 2023-08-01_belt-railway-company-of-chicago | drafted | 7 | 24/31 | yes | — | — | .drafts/2023-08-01_belt-railway-company-of-chicago.yaml |
+| 2023-09-20_elron | drafted | 12 | 26/31 | yes | — | — | .drafts/2023-09-20_elron.yaml |
+| 2023-11-18_rostocker-strassenbahn-ag | drafted | 25 | 27/31 | yes | — | — | .drafts/2023-11-18_rostocker-strassenbahn-ag.yaml |
+| 2023-11-24_greater-richmond-transit-company-grtc | re-verified | 10 | 24/31 | yes | — | — | .drafts/2023-11-24_greater-richmond-transit-company-grtc.yaml |
+| 2024-01-18_nmbs-sncb | drafted | 14 | 23/31 | yes | — | — | .drafts/2024-01-18_nmbs-sncb.yaml |
+| 2024-05-07_wmata | drafted | 3 | 25/31 | yes | — | — | .drafts/2024-05-07_wmata.yaml |
+| 2025-01-27_metronom | re-verified | 14 | 27/31 | yes | — | — | .drafts/2025-01-27_metronom.yaml |
+| 2025-03-21_rvbw | drafted | 12 | 27/31 | yes | — | — | .drafts/2025-03-21_rvbw.yaml |
+| 2025-03-23_ukrzaliznytsia | re-verified | 7 | 24/31 | yes | — | — | .drafts/2025-03-23_ukrzaliznytsia.yaml |
+| 2025-03-29_mycicero-mooneygo-italian-transit-supply-chain | re-verified | 18 | 24/31 | yes | — | — | .drafts/2025-03-29_mycicero-mooneygo-italian-transit-supply-chain.yaml |
+| 2025-04-01_rzd | drafted | 20 | 24/31 | yes | — | — | .drafts/2025-04-01_rzd.yaml |
+| 2025-04-07_bvg | re-verified | 16 | 28/31 | yes | — | — | .drafts/2025-04-07_bvg.yaml |
+| 2025-07-09_transdev-hannover-s-bahn-hannover | drafted | 15 | 27/31 | yes | — | — | .drafts/2025-07-09_transdev-hannover-s-bahn-hannover.yaml |
+| 2025-07-24_transdev-hannover-s-bahn-hannover | drafted | 14 | 25/31 | yes | attack_vectors.ddos | — | .drafts/2025-07-24_transdev-hannover-s-bahn-hannover.yaml |
