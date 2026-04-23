@@ -41,7 +41,7 @@
     },
     "attack_vector": {
       "type": ["string", "null"],
-      "enum": ["exploit", "phishing", "supply_chain", "insider", "physical",
+      "enum": ["exploit", "ddos", "phishing", "supply_chain", "insider", "physical",
                "credential_theft", "unknown", null]
     },
     "supply_chain": {"type": ["boolean", "null"]},

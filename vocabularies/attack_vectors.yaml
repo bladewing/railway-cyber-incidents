@@ -1,6 +1,8 @@
 values:
   - id: exploit
     label: Exploitation of a software vulnerability
+  - id: ddos
+    label: Distributed denial-of-service / availability attack
   - id: phishing
     label: Phishing / social engineering
   - id: supply_chain
