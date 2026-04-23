@@ -1,0 +1,134 @@
+id: 2023-03-28_ns-nebu-blauw-supply-chain
+schema_version: '1.0'
+
+event_date: '2023-03-28'
+event_date_precision: day
+reported_date: '2023-03-28'
+
+countries_impacted:
+- NL
+region: null
+coordinates: null
+
+target_organization: Nederlandse Spoorwegen (NS) — via Blauw Research B.V. (market research agency) and Nebu B.V. (survey-software supplier)
+industry_sector: long_distance_passenger
+operator_type: incumbent
+
+attack_vector: supply_chain
+supply_chain: true
+malware: null
+extortion: false
+motive: financial
+mitre_attack_techniques: null
+
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: unknown
+
+confirmation_status: confirmed
+
+affected_systems:
+  - data
+
+data_published: null
+
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: 780000
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: true
+
+description_en: >
+  On 10 March 2023, attackers breached the systems of Nebu B.V., a Dutch
+  supplier of online-survey software used by the market-research agency
+  Blauw Research B.V., which ran customer-satisfaction surveys on behalf
+  of dozens of Dutch organisations including Nederlandse Spoorwegen (NS).
+  Nebu detected the intrusion on 11 March but did not notify downstream
+  clients until later that month; NS began warning approximately 780,000
+  customers on 28 March 2023 that their names, email addresses, phone
+  numbers and postal addresses — collected from NS satisfaction surveys
+  — may have been exfiltrated. No passwords, Mijn-NS credentials,
+  OV-chipkaart or payment data were involved. The Nebu compromise
+  propagated to at least nine other Dutch organisations (VodafoneZiggo,
+  Heineken, CZ, ArboNed, Trevvel, the Dutch Rental Commission /
+  Huurcommissie, the Dutch Golf Federation, IFFR and others), ultimately
+  affecting around 2 million individuals in total; a Dutch court
+  subsequently ordered Nebu to commission an independent forensic
+  investigation.
+description_de: >
+  Am 10. März 2023 drangen Angreifer in die Systeme der niederländischen
+  Firma Nebu B.V. ein, einer Softwarefirma für Online-Umfragen, die von
+  der Marktforschungsagentur Blauw Research B.V. für
+  Kundenzufriedenheitsbefragungen im Auftrag von Nederlandse Spoorwegen
+  (NS) und weiteren Auftraggebern eingesetzt wurde. Nebu entdeckte den
+  Einbruch am 11. März, informierte nachgelagerte Kunden aber erst
+  später im Monat; NS begann am 28. März 2023 rund 780.000 Kundinnen
+  und Kunden darüber zu informieren, dass Namen, E-Mail-Adressen,
+  Telefonnummern und Postadressen aus NS-Zufriedenheitsbefragungen
+  möglicherweise entwendet worden seien. Mijn-NS-Zugangsdaten,
+  OV-Chipkarten- und Zahlungsdaten waren nicht betroffen. Der
+  Nebu-Vorfall breitete sich auf mindestens neun weitere niederländische
+  Organisationen aus (VodafoneZiggo, Heineken, CZ, ArboNed, Trevvel,
+  Huurcommissie, Dutch Golf Federation, IFFR u. a.) mit insgesamt rund
+  zwei Millionen Betroffenen; ein niederländisches Gericht ordnete
+  später eine unabhängige forensische Untersuchung an.
+
+sources:
+  - url: https://nltimes.nl/2023/03/28/dutch-railway-ns-warns-780000-customers-data-breach
+    type: news
+    publisher: NL Times
+    published_date: '2023-03-28'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.bitdefender.com/en-us/blog/hotforsecurity/dutch-national-railway-data-breach-impacts-780-000-customers
+    type: blog
+    publisher: Bitdefender Hot for Security
+    published_date: '2023-03-30'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://databreaches.net/2023/03/30/dutch-railway-ns-warns-780000-customers-about-data-breach/
+    type: news
+    publisher: DataBreaches.Net
+    published_date: '2023-03-30'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.dutchnews.nl/2023/03/market-research-security-breach-spreads-millions-of-people-affected/
+    type: news
+    publisher: DutchNews.nl
+    published_date: '2023-03-30'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://nltimes.nl/2023/04/06/court-orders-software-supplier-provide-information-massive-data-leak
+    type: news
+    publisher: NL Times
+    published_date: '2023-04-06'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  Four-level supply chain: NS → Blauw Research (market-research
+  agency) → Nebu B.V. (survey-software vendor) → attacker.
+  event_date=2023-03-28 matches the NS public customer-notification day
+  (the date on which the incident became a matter of public record for
+  NS). The underlying Nebu intrusion is dated 2023-03-10 in the court-
+  ordered independent forensic report; Nebu internally detected the
+  breach on 11 March and began informing downstream clients later that
+  month. supply_chain=true and attack_vector=supply_chain captures
+  the root cause; Nebu has not publicly named a threat actor and the
+  forensic report (April 2023) did not attribute the breach, so
+  threat_actor remains null. affected_passengers=780000 is the NS
+  customer-notification figure; aggregate across all Blauw/Nebu clients
+  exceeds ~2 M Dutch residents but that figure spans multiple sectors
+  outside rail. data_published left null because no leak-site listing
+  or public dump has been documented as of April 2026.
