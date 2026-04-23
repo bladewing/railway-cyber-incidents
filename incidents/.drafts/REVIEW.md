@@ -49,3 +49,7 @@ then drill into per-incident drafts and logs as needed.
 | 2024-01-18_nmbs-sncb | drafted | 14 | 23/31 | yes | — | — | .drafts/2024-01-18_nmbs-sncb.yaml |
 | 2024-05-07_wmata | drafted | 3 | 25/31 | yes | — | — | .drafts/2024-05-07_wmata.yaml |
 | 2025-01-27_metronom | re-verified | 14 | 27/31 | yes | — | — | .drafts/2025-01-27_metronom.yaml |
+| 2025-03-21_rvbw | drafted | 12 | 27/31 | yes | — | — | .drafts/2025-03-21_rvbw.yaml |
+| 2025-03-23_ukrzaliznytsia | re-verified | 7 | 24/31 | yes | — | — | .drafts/2025-03-23_ukrzaliznytsia.yaml |
+| 2025-03-29_mycicero-mooneygo-italian-transit-supply-chain | re-verified | 18 | 24/31 | yes | — | — | .drafts/2025-03-29_mycicero-mooneygo-italian-transit-supply-chain.yaml |
+| 2025-04-01_rzd | drafted | 20 | 24/31 | yes | — | — | .drafts/2025-04-01_rzd.yaml |
