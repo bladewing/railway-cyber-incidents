@@ -14,6 +14,9 @@ license: CC-BY-4.0
 repository-code: https://github.com/bladewing/railway-cyber-incidents
 identifiers:
   - type: doi
+    value: 10.5281/zenodo.19712536
+    description: Zenodo archive for v0.4.1
+  - type: doi
     value: 10.5281/zenodo.19710361
     description: Zenodo archive for v0.4.0
   - type: doi
