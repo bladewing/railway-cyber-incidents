@@ -35,3 +35,5 @@ then drill into per-incident drafts and logs as needed.
 | 2017-10-24_badrabbit | drafted | 7 | 30/31 | yes | — | date corrected 2021-10-24→2017-10-24 per maintainer decision | .drafts/2017-10-24_badrabbit.yaml |
 | 2021-09-21_is | escalated | 6 | 13/31 | no change | — | yes (1-source short of ≥2 threshold; domain inconsistency) | .drafts/2021-09-21_is.yaml |
 | 2021-10-29_dzsf-import | drafted | 23 | 30/31 | yes | — | — (TTC Toronto) | .drafts/2021-10-29_dzsf-import.yaml |
+| 2014-03-01_seoul-metro | drafted | 11 | 28/31 | yes | — | — | .drafts/2014-03-01_seoul-metro.yaml |
+| 2024-09-25_network-rail | drafted | 16 | 27/31 | yes | — | — | .drafts/2024-09-25_network-rail.yaml |
