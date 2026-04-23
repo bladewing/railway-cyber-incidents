@@ -1,0 +1,146 @@
+id: 2021-10-13_ratp-github-exposure
+schema_version: '1.0'
+
+event_date: '2021-10-13'
+event_date_precision: day
+reported_date: '2021-11-11'
+
+countries_impacted:
+- FR
+region: Île-de-France
+coordinates:
+  lat: 48.8566
+  lon: 2.3522
+
+target_organization: Régie Autonome des Transports Parisiens (RATP)
+industry_sector: urban_transit
+operator_type: public_authority
+
+attack_vector: exploit
+supply_chain: false
+malware: null
+extortion: false
+motive: unknown
+mitre_attack_techniques:
+  - T1530
+  - T1552.001
+
+threat_actor: null
+threat_actor_country: null
+attribution_confidence: unknown
+
+confirmation_status: reported
+
+affected_systems:
+  - data
+
+data_published: false
+
+impact:
+  scope: regional
+  duration_hours: null
+  magnitude:
+    affected_trains: 0
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: true
+    organizational_data: true
+    customer_data: false
+
+description_en: >
+  On 13 October 2021, vpnMentor's research team discovered an
+  unsecured, internet-facing server belonging to Régie Autonome des
+  Transports Parisiens (RATP) — the public authority operating the
+  Paris Métro, RER (shared with SNCF), tramway and bus network. The
+  exposed server held configuration files and full source code for
+  an RATP employee-benefits web portal, together with a database of
+  approximately 57,000 current and former RATP employees (names,
+  e-mail addresses, RATP login names and outdated MD5-hashed
+  passwords). Records of senior executives and members of the RATP
+  cyber-security team were among the exposed entries. The
+  configuration files included live API keys, including at least
+  one key linked to an RATP GitHub account, which could have allowed
+  an attacker to modify software projects, embed backdoors or
+  ransomware in RATP apps, and pivot into production systems.
+  vpnMentor disclosed responsibly; the server was secured before
+  public reporting and the keys were rotated. No rail-operational
+  or signalling systems were impacted; no passenger data was exposed.
+description_de: >
+  Am 13. Oktober 2021 entdeckte das Forschungsteam von vpnMentor
+  einen ungesicherten, aus dem Internet erreichbaren Server der
+  Régie Autonome des Transports Parisiens (RATP) — der öffentlich-
+  rechtlichen Betreiberin von Pariser Metro, RER (gemeinsam mit
+  SNCF), Tram und Bus. Auf dem Server lagen Konfigurationsdateien
+  und vollständiger Quellcode eines Mitarbeiterportals sowie eine
+  Datenbank mit rund 57.000 aktuellen und ehemaligen
+  RATP-Beschäftigten (Namen, E-Mail-Adressen, RATP-Login-Namen und
+  veraltete MD5-Passwort-Hashes). Datensätze von Geschäftsführung
+  und Cybersicherheitsteam waren betroffen. Die Konfigurationsdateien
+  enthielten aktive API-Schlüssel, darunter mindestens einen mit
+  Zugriff auf ein RATP-GitHub-Konto; ein Angreifer hätte damit
+  Softwareprojekte manipulieren, Backdoors oder Ransomware in
+  RATP-Apps einschleusen und in produktive Systeme eindringen können.
+  vpnMentor meldete verantwortungsvoll; der Server wurde vor der
+  Veröffentlichung abgesichert und die Schlüssel rotiert. Betrieb
+  und Signaltechnik waren nicht betroffen, Fahrgastdaten nicht
+  exponiert.
+
+sources:
+  - url: https://www.vpnmentor.com/blog/report-ratp-leak/
+    type: blog
+    publisher: vpnMentor Research Team
+    published_date: '2021-11-11'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.infosecurity-magazine.com/news/french-transport-giant-exposes/
+    type: news
+    publisher: Infosecurity Magazine
+    published_date: '2021-11-11'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.bitdefender.com/blog/hotforsecurity/french-transport-giant-data-breach-exposed-over-50-000-of-employee-records/
+    type: blog
+    publisher: Bitdefender Hot for Security
+    published_date: '2021-11-12'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://cyware.com/news/french-public-transport-giant-ratp-exposes-data-of-57000-employees-and-source-code-03502a8f
+    type: news
+    publisher: Cyware
+    published_date: '2021-11-12'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.bitdefender.fr/blog/hotforsecurity/une-violation-de-donnees-ratp-revele-50-000-dossiers-demployes/
+    type: blog
+    publisher: Bitdefender Hot for Security (France)
+    published_date: '2021-11-12'
+    language: fr
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  industry_sector=urban_transit matches the dataset's handling of
+  other metropolitan transport authorities (BVG 2025-04-07, WMATA
+  2024-05-07, RVBW 2025-03-21). operator_type=public_authority
+  because RATP is an établissement public à caractère industriel
+  et commercial (EPIC) owned by the French state. attack_vector=
+  exploit reflects the root cause: a publicly reachable server with
+  no authentication allowed directory-listing access. MITRE
+  T1530 (Data from Cloud Storage Object) and T1552.001 (Unsecured
+  Credentials: Credentials in Files) capture the two data-classes
+  exposed (employee PII and API keys). confirmation_status=reported:
+  vpnMentor is a primary security-researcher source, independently
+  republished by Infosecurity Magazine, Bitdefender and Cyware; RATP
+  acknowledged the responsible-disclosure fix but has not published
+  a formal incident statement, so the record stays at reported
+  rather than confirmed. event_date=2021-10-13 is the vpnMentor
+  discovery day; reported_date=2021-11-11 is the coordinated public-
+  disclosure day. data_published=false — the leak was found by
+  researchers, secured before criminal exploitation, and not dumped
+  publicly. threat_actor_country/null because no malicious actor
+  ever appears to have accessed the data before remediation.
