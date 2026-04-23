@@ -1,0 +1,128 @@
+id: 2022-06-27_ltg-killnet-ddos
+schema_version: '1.0'
+
+event_date: '2022-06-27'
+event_date_precision: day
+reported_date: '2022-06-27'
+
+countries_impacted:
+- LT
+region: null
+coordinates: null
+
+target_organization: Lietuvos geležinkeliai (LTG — Lithuanian Railways)
+industry_sector: other
+operator_type: incumbent
+
+attack_vector: unknown
+supply_chain: false
+malware: null
+extortion: false
+motive: state_geopolitical
+mitre_attack_techniques:
+  - T1498
+
+threat_actor: Killnet
+threat_actor_country: RU
+attribution_confidence: reported
+
+confirmation_status: confirmed
+
+affected_systems:
+  - website
+  - payment_system
+
+data_published: false
+
+impact:
+  scope: national
+  duration_hours: null
+  magnitude:
+    affected_trains: null
+    affected_passengers: null
+    monetary_damage_eur: null
+  data_compromise:
+    intellectual_property: false
+    organizational_data: false
+    customer_data: false
+
+description_en: >
+  On 27 June 2022, the pro-Russian hacktivist collective Killnet launched
+  a large-scale distributed denial-of-service (DDoS) campaign against
+  Lithuanian state and private institutions in retaliation for Lithuania's
+  18 June 2022 enforcement of EU sanctions on rail-and-road transit of
+  restricted goods (steel, metals) to the Russian exclave of Kaliningrad.
+  The campaign included the website and online ticketing portal of the
+  state-owned Lithuanian Railways (Lietuvos geležinkeliai, LTG), rendering
+  passenger ticket purchases temporarily unavailable. The Lithuanian
+  National Cyber Security Centre (NKSC) confirmed the incident and
+  described the DDoS traffic as among the most intense ever recorded
+  against Lithuania. Killnet publicly demanded on Telegram that Vilnius
+  reinstate the Kaliningrad transit routes and claimed it had "demolished
+  1,652 web resources" during the campaign; rail operations themselves
+  were unaffected.
+description_de: >
+  Am 27. Juni 2022 startete das pro-russische Hacktivistenkollektiv
+  Killnet eine großangelegte DDoS-Kampagne gegen litauische staatliche
+  und private Einrichtungen — als Reaktion auf Litauens Durchsetzung
+  der EU-Sanktionen zum Transit von Stahl und weiteren Gütern in die
+  russische Exklave Kaliningrad (18. Juni 2022). Betroffen waren u. a.
+  die Website und das Online-Ticketportal der staatlichen Litauischen
+  Eisenbahn (Lietuvos geležinkeliai, LTG), sodass Fahrkartenkauf
+  zeitweise nicht möglich war. Das litauische Nationale Cybersicherheits-
+  zentrum (NKSC) bestätigte den Vorfall und bezeichnete die DDoS-Flut
+  als eine der intensivsten, die jemals gegen Litauen registriert wurde.
+  Killnet forderte auf Telegram öffentlich die Wiederherstellung des
+  Kaliningrad-Transits und behauptete, "1.652 Web-Ressourcen zerstört"
+  zu haben; der Zugbetrieb selbst war nicht betroffen.
+
+sources:
+  - url: https://www.aljazeera.com/news/2022/6/27/russia-hackers-claim-responsibility-for-cyber-attack-on-lithuania
+    type: news
+    publisher: Al Jazeera
+    published_date: '2022-06-27'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://www.lrt.lt/en/news-in-english/19/1728365/major-incidents-contained-after-lithuania-gets-hit-with-massive-cyber-attacks
+    type: news
+    publisher: LRT (Lithuanian Public Radio and Television)
+    published_date: '2022-06-27'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://threatpost.com/killnet-pummels-lithuania/180075/
+    type: news
+    publisher: Threatpost
+    published_date: '2022-06-27'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://flashpoint.io/blog/killnet-kaliningrad-and-lithuanias-transport-standoff-with-russia/
+    type: blog
+    publisher: Flashpoint
+    published_date: '2022-06-29'
+    language: en
+    accessed_date: '2026-04-23'
+  - url: https://cybernews.com/cyber-war/killnet-hits-lithuania-over-eu-sanctions-affecting-kaliningrad/
+    type: news
+    publisher: Cybernews
+    published_date: '2022-06-27'
+    language: en
+    accessed_date: '2026-04-23'
+
+provenance: null
+
+contributors:
+  - "Lukas Iffländer"
+last_updated: '2026-04-23'
+notes: >
+  industry_sector=other: LTG Group operates both freight (LTG Cargo —
+  especially Kaliningrad transit) and passenger (LTG Link) segments;
+  the attack affected the group's public web presence. motive is
+  state_geopolitical because Killnet explicitly conditioned the attack
+  on a Lithuanian policy decision (EU sanctions enforcement against
+  Russia / Kaliningrad). attack_vector=unknown — DDoS does not map
+  cleanly to the vocabulary; captured under mitre_attack_techniques
+  as T1498 (Network Denial of Service). extortion=false: Killnet's
+  demand was for policy reversal, not ransom. The Lithuanian NKSC
+  characterised the broader campaign as the largest DDoS activity
+  ever seen against Lithuania, though no rail-operational or safety
+  systems were reached.
