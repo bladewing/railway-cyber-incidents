@@ -8,11 +8,14 @@ abstract: >
 authors:
   - family-names: Iffländer
     given-names: Lukas
-version: 0.3.0
-date-released: "2026-04-20"
+version: 0.4.0
+date-released: "2026-04-23"
 license: CC-BY-4.0
 repository-code: https://github.com/bladewing/railway-cyber-incidents
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19710361
+    description: Zenodo archive for v0.4.0
   - type: doi
     value: 10.5281/zenodo.19655936
     description: Zenodo archive for v0.3.0
